@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:14.586805-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: K\u1EBFt qu\u1EA3 m\u1EABu."
-lastmod: '2024-04-05T21:53:37.548366-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Vi\u1EC7c \u0111\u1ECDc t\u1EC7p v\u0103\
+  n b\u1EA3n l\xE0 c\u01A1 b\u1EA3n - v\xE0 \u0111\xE3 t\u1ED3n t\u1EA1i t\u1EEB nh\u1EEF\
+  ng ng\xE0y \u0111\u1EA7u c\u1EE7a l\u1EADp tr\xECnh. H\xE0m `open` \u0111\u01A1\
+  n gi\u1EA3n c\u1EE7a Python c\xF3 ngu\u1ED3n g\u1ED1c t\u1EEB h\xE0m `fopen`\u2026"
+lastmod: '2024-04-05T22:50:50.469522-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Vi\u1EC7c \u0111\u1ECDc t\u1EC7p v\u0103n b\u1EA3n l\xE0 c\u01A1 b\u1EA3\
+  n - v\xE0 \u0111\xE3 t\u1ED3n t\u1EA1i t\u1EEB nh\u1EEFng ng\xE0y \u0111\u1EA7u\
+  \ c\u1EE7a l\u1EADp tr\xECnh."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

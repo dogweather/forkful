@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:13:04.143132-07:00
-description: "Como: Comece lan\xE7ando o REPL."
-lastmod: '2024-03-13T22:44:46.198359-06:00'
+description: "Como: O REPL \xE9 chave para a filosofia de desenvolvimento interativo\
+  \ da fam\xEDlia Lisp, e o Clojure, um dialeto moderno de Lisp, faz grande uso desta\u2026"
+lastmod: '2024-04-05T22:50:59.463145-06:00'
 model: gpt-4-0125-preview
-summary: "Comece lan\xE7ando o REPL."
+summary: "O REPL \xE9 chave para a filosofia de desenvolvimento interativo da fam\xED\
+  lia Lisp, e o Clojure, um dialeto moderno de Lisp, faz grande uso desta ferramenta."
 title: Usando um shell interativo (REPL)
 weight: 34
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:18.107817-07:00
-description: 'How to: "Comment faire :" Sortie.'
-lastmod: '2024-04-05T21:53:59.126658-06:00'
+description: "How to: \"Comment faire :\" Historiquement, la recherche et le remplacement\
+  \ de texte viennent du besoin d'\xE9diter des documents num\xE9ris\xE9s. Dans les\
+  \ premiers\u2026"
+lastmod: '2024-04-05T22:51:11.646683-06:00'
 model: gpt-4-1106-preview
-summary: '"Comment faire :" Sortie.'
+summary: "\"Comment faire :\" Historiquement, la recherche et le remplacement de texte\
+  \ viennent du besoin d'\xE9diter des documents num\xE9ris\xE9s."
 title: Recherche et remplacement de texte
 weight: 10
 ---

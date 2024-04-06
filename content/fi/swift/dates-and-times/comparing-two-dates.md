@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:07.465187-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-04-05T21:53:58.498129-06:00'
+description: "How to: (Kuinka tehd\xE4:) Historiallisesti p\xE4iv\xE4m\xE4\xE4rien\
+  \ vertailu k\xE4vi hankalaksi johtuen eri kalentereista ja aikavy\xF6hykkeist\xE4\
+  . Swiftiss\xE4 `Date` k\xE4sitt\xE4\xE4\u2026"
+lastmod: '2024-04-05T22:51:11.067427-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4:) Historiallisesti p\xE4iv\xE4m\xE4\xE4rien vertailu k\xE4\
+  vi hankalaksi johtuen eri kalentereista ja aikavy\xF6hykkeist\xE4."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:23.643823-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EA7u ra."
-lastmod: '2024-04-05T21:53:38.253516-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Ban \u0111\u1EA7u, vi\u1EC7c g\u1EE1 l\u1ED7\
+  i c\xF3 ngh\u0129a l\xE0 lo\u1EA1i b\u1ECF c\xE1c l\u1ED7i c\u01A1 h\u1ECDc th\u1EAD\
+  t s\u1EF1 l\xE0m gi\xE1n \u0111o\u1EA1n c\xE1c m\xE1y t\xEDnh \u0111\u1EA7u ti\xEA\
+  n. Ng\xE0y nay, n\xF3 li\xEAn quan \u0111\u1EBFn vi\u1EC7c kh\u1EAFc\u2026"
+lastmod: '2024-04-05T22:50:51.200811-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Ban \u0111\u1EA7u, vi\u1EC7c g\u1EE1 l\u1ED7i c\xF3 ngh\u0129a l\xE0 lo\u1EA1\
+  i b\u1ECF c\xE1c l\u1ED7i c\u01A1 h\u1ECDc th\u1EADt s\u1EF1 l\xE0m gi\xE1n \u0111\
+  o\u1EA1n c\xE1c m\xE1y t\xEDnh \u0111\u1EA7u ti\xEAn."
 title: "In \u1EA5n th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:41:41.348490-07:00
-description: 'Hvordan: Sample output.'
-lastmod: '2024-04-05T21:53:42.045954-06:00'
+description: "Hvordan: Fjerne tegn som matcher et m\xF8nster \u2013 det er ikke nytt.\
+  \ Regex, eller regul\xE6re uttrykk, ble introdusert p\xE5 1950-tallet. N\xE5 brukes\
+  \ det i mange\u2026"
+lastmod: '2024-04-05T22:50:55.091574-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Fjerne tegn som matcher et m\xF8nster \u2013 det er ikke nytt."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

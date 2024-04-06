@@ -1,9 +1,17 @@
 ---
 date: 2024-01-20 17:52:10.142316-07:00
-description: 'How to: | Kuinka: Esimerkkituloste.'
-lastmod: '2024-04-05T22:38:57.354411-06:00'
+description: "How to: | Kuinka: Varhaiset ohjelmoijat alkoivat tulostaa viestej\xE4\
+  \ koodistaan seuratakseen sen k\xE4ytt\xE4ytymist\xE4 ennen virheenj\xE4ljitysty\xF6\
+  kalujen\u2026"
+lastmod: '2024-04-05T22:51:10.895075-06:00'
 model: gpt-4-1106-preview
-summary: '| Kuinka: Esimerkkituloste.'
+summary: "| Kuinka: Varhaiset ohjelmoijat alkoivat tulostaa viestej\xE4 koodistaan\
+  \ seuratakseen sen k\xE4ytt\xE4ytymist\xE4 ennen virheenj\xE4ljitysty\xF6kalujen\
+  \ yleistymist\xE4. Vaihtoehtoja on monia: lokeihin kirjaaminen, j\xE4rjestelm\xE4\
+  valvojan ty\xF6kalut tai kehittyneemm\xE4t debuggausty\xF6kalut. Bash-komentorivill\xE4\
+  \ `echo` on yksinkertainen mutta tehokas tapa v\xE4litt\xE4\xE4 debug-tietoja. Sen\
+  \ lis\xE4ksi k\xE4yt\xF6ss\xE4 voi olla `-x` vaihtoehto, joka tulostaa jokaisen\
+  \ komennon ja sen argumentit ennen suoritusta."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

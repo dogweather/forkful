@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:02:45.784615-07:00
-description: "Como Fazer: Sa\xEDda de exemplo."
-lastmod: '2024-04-05T21:53:47.271640-06:00'
+description: "Como Fazer: Autentica\xE7\xE3o b\xE1sica HTTP \xE9 um m\xE9todo antigo\
+  \ para enviar credenciais. Ela embala o usu\xE1rio e senha em Base64, mas n\xE3\
+  o \xE9 cifrada, ent\xE3o \xE9\u2026"
+lastmod: '2024-04-05T22:51:00.161910-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Autentica\xE7\xE3o b\xE1sica HTTP \xE9 um m\xE9todo antigo para enviar credenciais."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

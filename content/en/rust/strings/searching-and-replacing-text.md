@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:58:41.958690-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:35.572802-06:00'
+description: "How to: Searching and replacing text has been around since early text\
+  \ editors emerged. Tools like sed in Unix made batch text processing common practice.\u2026"
+lastmod: '2024-04-05T22:50:48.431098-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Searching and replacing text has been around since early text editors emerged.
 title: Searching and replacing text
 weight: 10
 ---

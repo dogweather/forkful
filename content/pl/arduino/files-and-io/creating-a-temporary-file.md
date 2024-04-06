@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:39:35.514667-07:00
-description: "How to: (Jak to zrobi\u0107:)."
-lastmod: '2024-04-05T21:53:37.116120-06:00'
+description: "How to: (Zag\u0142\u0119biaj\u0105c si\u0119:) Tworzenie tymczasowych\
+  \ plik\xF3w w Arduino zwykle wi\u0105\u017Ce si\u0119 z u\u017Cyciem kart SD jako\
+  \ magazynu tymczasowego. Historia zaczyna si\u0119,\u2026"
+lastmod: '2024-04-05T22:50:50.023414-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Zag\u0142\u0119biaj\u0105c si\u0119:) Tworzenie tymczasowych plik\xF3w\
+  \ w Arduino zwykle wi\u0105\u017Ce si\u0119 z u\u017Cyciem kart SD jako magazynu\
+  \ tymczasowego."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

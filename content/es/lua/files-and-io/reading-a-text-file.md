@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:54:39.715323-07:00
-description: "C\xF3mo hacerlo: Output de muestra."
-lastmod: '2024-04-05T21:54:00.566255-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, el manejo de archivos en programaci\xF3\
+  n es esencial, ya que permite que los programas sean din\xE1micos y flexibles. Leer\u2026"
+lastmod: '2024-04-05T22:51:12.951922-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Hist\xF3ricamente, el manejo de archivos en programaci\xF3n es esencial,\
+  \ ya que permite que los programas sean din\xE1micos y flexibles."
 title: Lectura de un archivo de texto
 weight: 22
 ---

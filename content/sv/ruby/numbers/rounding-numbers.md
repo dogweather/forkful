@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 03:46:37.786309-07:00
-description: "Hur man g\xF6r: Exempel p\xE5 utskrift."
-lastmod: '2024-04-05T21:53:39.764122-06:00'
+description: "Hur man g\xF6r: Att avrunda tal \xE4r inte nytt\u2014m\xE4nniskor har\
+  \ gjort det i \xE5rhundraden f\xF6r att g\xF6ra ber\xE4kningar enklare eller f\xF6\
+  r att arbeta inom begr\xE4nsningarna\u2026"
+lastmod: '2024-04-05T22:50:52.739379-06:00'
 model: gpt-4-0125-preview
-summary: "Exempel p\xE5 utskrift."
+summary: "Att avrunda tal \xE4r inte nytt\u2014m\xE4nniskor har gjort det i \xE5rhundraden\
+  \ f\xF6r att g\xF6ra ber\xE4kningar enklare eller f\xF6r att arbeta inom begr\xE4\
+  nsningarna av deras verktyg."
 title: Avrundning av tal
 weight: 13
 ---

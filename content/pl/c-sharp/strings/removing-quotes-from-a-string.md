@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 03:38:44.452190-07:00
-description: "Jak to zrobi\u0107: Wynik."
-lastmod: '2024-04-05T21:53:36.832167-06:00'
+description: "Jak to zrobi\u0107: Koncepcja usuwania cudzys\u0142ow\xF3w nie jest\
+  \ nowa ani szczeg\xF3lnie skomplikowana, ale jest kluczowa, poniewa\u017C znaki\
+  \ cudzys\u0142owu s\u0105 cz\u0119sto u\u017Cywane\u2026"
+lastmod: '2024-04-05T22:50:49.715115-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Koncepcja usuwania cudzys\u0142ow\xF3w nie jest nowa ani szczeg\xF3lnie\
+  \ skomplikowana, ale jest kluczowa, poniewa\u017C znaki cudzys\u0142owu s\u0105\
+  \ cz\u0119sto u\u017Cywane do delimitowania string\xF3w."
 title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---

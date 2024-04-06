@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:46.712294-07:00
-description: 'Kuinka: Sample output.'
-lastmod: '2024-04-05T21:53:57.872346-06:00'
+description: "Kuinka: Perusautentikaatio HTTP:ss\xE4 on vanha menetelm\xE4, jossa\
+  \ k\xE4ytt\xE4j\xE4tunnus ja salasana l\xE4hetet\xE4\xE4n Base64-koodattuina. Turvallisempi\
+  \ vaihtoehto moderniin\u2026"
+lastmod: '2024-04-05T22:51:10.465152-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Perusautentikaatio HTTP:ss\xE4 on vanha menetelm\xE4, jossa k\xE4ytt\xE4\
+  j\xE4tunnus ja salasana l\xE4hetet\xE4\xE4n Base64-koodattuina."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

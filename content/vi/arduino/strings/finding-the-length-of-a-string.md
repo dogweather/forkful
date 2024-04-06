@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:23.580348-07:00
-description: "L\xE0m th\u1EBF n\xE0o: K\u1EBFt qu\u1EA3 M\u1EABu."
-lastmod: '2024-04-05T21:53:38.341063-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Ng\xE0y x\u01B0a, c\xE1c l\u1EADp tr\xECnh vi\xEA\
+  n C s\u1EED d\u1EE5ng h\xE0m `strlen()` t\u1EEB `<string.h>`, \u0111\u1EBFm c\xE1\
+  c k\xFD t\u1EF1 cho \u0111\u1EBFn khi g\u1EB7p k\xFD t\u1EF1 k\u1EBFt th\xFAc chu\u1ED7\
+  i (null-terminator).\u2026"
+lastmod: '2024-04-05T22:50:51.290458-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Ng\xE0y x\u01B0a, c\xE1c l\u1EADp tr\xECnh vi\xEAn C s\u1EED d\u1EE5ng h\xE0\
+  m `strlen()` t\u1EEB `<string.h>`, \u0111\u1EBFm c\xE1c k\xFD t\u1EF1 cho \u0111\
+  \u1EBFn khi g\u1EB7p k\xFD t\u1EF1 k\u1EBFt th\xFAc chu\u1ED7i (null-terminator)."
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---

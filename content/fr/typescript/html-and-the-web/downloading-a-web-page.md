@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:44:47.888949-07:00
-description: 'Comment faire : Exemple de sortie .'
-lastmod: '2024-04-05T21:53:58.999002-06:00'
+description: "Comment faire : Historiquement, les pages web \xE9taient t\xE9l\xE9\
+  charg\xE9es en utilisant XMLHttpRequest, mais ce standard a \xE9t\xE9 remplac\xE9\
+  \ par l'API Fetch plus\u2026"
+lastmod: '2024-04-05T22:51:11.528140-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, les pages web \xE9taient t\xE9l\xE9charg\xE9es en utilisant\
+  \ XMLHttpRequest, mais ce standard a \xE9t\xE9 remplac\xE9 par l'API Fetch plus\
+  \ moderne, qui est bas\xE9e sur les promesses."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

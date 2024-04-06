@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:03:56.067560-07:00
-description: 'How to: Beispiel-Ausgabe.'
-lastmod: '2024-04-05T21:53:55.899240-06:00'
+description: "How to: Lua entstand in den 1990ern in Brasilien und zielte darauf ab,\
+  \ eine effiziente Sprache f\xFCr die Programmierung allt\xE4glicher Aufgaben zu\
+  \ sein. Es\u2026"
+lastmod: '2024-04-05T22:51:08.568300-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Lua entstand in den 1990ern in Brasilien und zielte darauf ab, eine effiziente\
+  \ Sprache f\xFCr die Programmierung allt\xE4glicher Aufgaben zu sein."
 title: Einen neuen Projekt starten
 weight: 1
 ---

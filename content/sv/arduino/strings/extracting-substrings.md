@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:44:56.110167-07:00
-description: "How to: (Hur man g\xF6r:) Sample Output."
-lastmod: '2024-04-05T21:53:39.494545-06:00'
+description: "How to: (Hur man g\xF6r:) Att extrahera substr\xE4ngar har funnits med\
+  \ sedan tidiga programmeringsspr\xE5k. Det \xE4r en grundl\xE4ggande operation som\
+  \ m\xE5nga program\u2026"
+lastmod: '2024-04-05T22:50:52.464335-06:00'
 model: gpt-4-1106-preview
-summary: "(Hur man g\xF6r:) Sample Output."
+summary: "(Hur man g\xF6r:) Att extrahera substr\xE4ngar har funnits med sedan tidiga\
+  \ programmeringsspr\xE5k."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

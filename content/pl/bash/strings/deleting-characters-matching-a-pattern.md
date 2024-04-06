@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:41:47.344450-07:00
-description: "How to: (Jak to zrobi\u0107?) ."
-lastmod: '2024-04-05T21:53:36.995040-06:00'
+description: "How to: (Jak to zrobi\u0107?) Bash wykorzystuje wyra\u017Cenia regularne\
+  \ (regex), pot\u0119\u017Cne narz\u0119dzie, kt\xF3re zapocz\u0105tkowano ju\u017C\
+  \ w latach 50-tych. Za pomoc\u0105 regex\u2026"
+lastmod: '2024-04-05T22:50:49.890392-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107?) Bash wykorzystuje wyra\u017Cenia regularne (regex),\
+  \ pot\u0119\u017Cne narz\u0119dzie, kt\xF3re zapocz\u0105tkowano ju\u017C w latach\
+  \ 50-tych."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

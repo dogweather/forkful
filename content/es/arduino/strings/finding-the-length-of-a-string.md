@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:44.369600-07:00
-description: "How to: (C\xF3mo hacerlo:) Salida."
-lastmod: '2024-04-05T21:54:00.672407-06:00'
+description: "How to: (C\xF3mo hacerlo:) Antiguamente se usaban arreglos de caracteres\
+  \ en C, terminados con un car\xE1cter nulo `'\\0'`, para calcular la longitud con\u2026"
+lastmod: '2024-04-05T22:51:13.048573-06:00'
 model: gpt-4-1106-preview
-summary: "(C\xF3mo hacerlo:) Salida."
+summary: "(C\xF3mo hacerlo:) Antiguamente se usaban arreglos de caracteres en C, terminados\
+  \ con un car\xE1cter nulo `'\\0'`, para calcular la longitud con funciones como\
+  \ `strlen()`."
 title: Calculando la longitud de una cadena
 weight: 7
 ---

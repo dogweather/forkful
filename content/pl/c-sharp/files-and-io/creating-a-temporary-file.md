@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:40:21.159985-07:00
-description: "Jak to zrobi\u0107: Output."
-lastmod: '2024-04-05T21:53:36.861813-06:00'
+description: "Jak to zrobi\u0107: Tymczasowe pliki w C# s\u0105 stworzone za pomoc\u0105\
+  \ API .NET. Historia tej funkcjonalno\u015Bci si\u0119ga wczesnych dni programowania,\
+  \ gdzie zarz\u0105dzanie\u2026"
+lastmod: '2024-04-05T22:50:49.748904-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Tymczasowe pliki w C# s\u0105 stworzone za pomoc\u0105 API .NET."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

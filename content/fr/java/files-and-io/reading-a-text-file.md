@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:54:19.446497-07:00
-description: 'How to: Sortie attendue .'
-lastmod: '2024-04-05T21:53:59.157800-06:00'
+description: "How to: Lire des fichiers en Java est une pratique courante depuis les\
+  \ premi\xE8res versions. Autrefois, `BufferedReader` et `FileReader` \xE9taient\
+  \ souvent\u2026"
+lastmod: '2024-04-05T22:51:11.677952-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Lire des fichiers en Java est une pratique courante depuis les premi\xE8\
+  res versions."
 title: Lecture d'un fichier texte
 weight: 22
 ---

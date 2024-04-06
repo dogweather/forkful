@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:48:12.878062-07:00
-description: "Hvordan gj\xF8re det: ."
-lastmod: '2024-04-05T21:53:41.501460-06:00'
+description: "Hvordan gj\xF8re det: Lengden p\xE5 en streng i TypeScript hentes ganske\
+  \ enkelt ved \xE5 bruke `.length`-egenskapen, som arves fra JavaScript. Historisk\
+  \ sett, har\u2026"
+lastmod: '2024-04-05T22:50:54.532612-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Lengden p\xE5 en streng i TypeScript hentes ganske enkelt ved \xE5 bruke\
+  \ `.length`-egenskapen, som arves fra JavaScript."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

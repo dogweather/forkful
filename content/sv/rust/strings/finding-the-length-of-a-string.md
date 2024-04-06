@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:48:17.820823-07:00
-description: "S\xE5 h\xE4r g\xF6r du: Sample output."
-lastmod: '2024-04-05T21:53:39.017461-06:00'
+description: "S\xE5 h\xE4r g\xF6r du: Fr\xE5n b\xF6rjan hade Rust olika metoder f\xF6\
+  r att hantera str\xE4ngl\xE4ngder, men med tiden har standarden blivit `.len()`\
+  \ funktionen. Kom ih\xE5g att\u2026"
+lastmod: '2024-04-05T22:50:51.977606-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Fr\xE5n b\xF6rjan hade Rust olika metoder f\xF6r att hantera str\xE4ngl\xE4\
+  ngder, men med tiden har standarden blivit `.len()` funktionen."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

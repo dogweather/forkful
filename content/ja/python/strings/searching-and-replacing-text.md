@@ -1,10 +1,13 @@
 ---
 date: 2024-01-20 17:58:29.177150-07:00
-description: "How to: (\u65B9\u6CD5\uFF1A) Let\u2019s see it in action."
+description: "How to: (\u65B9\u6CD5\uFF1A) Searching and replacing text has a long\
+  \ history in computing, dating back to early text editors. Python provides simple\
+  \ methods like\u2026"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:42.436052-06:00'
+lastmod: '2024-04-05T22:50:55.486123-06:00'
 model: gpt-4-1106-preview
-summary: "(\u65B9\u6CD5\uFF1A) Let\u2019s see it in action."
+summary: "(\u65B9\u6CD5\uFF1A) Searching and replacing text has a long history in\
+  \ computing, dating back to early text editors."
 title: "\u30C6\u30AD\u30B9\u30C8\u306E\u691C\u7D22\u3068\u7F6E\u63DB"
 weight: 10
 ---

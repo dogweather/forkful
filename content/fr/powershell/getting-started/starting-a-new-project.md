@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:04:00.011521-07:00
-description: 'How to: (Comment faire :) .'
-lastmod: '2024-04-05T21:53:59.500914-06:00'
+description: "How to: (Comment faire :) Historiquement, les projets \xE9taient moins\
+  \ isol\xE9s, causant des conflits entre diff\xE9rentes applications. PowerShell,\
+  \ en tant que\u2026"
+lastmod: '2024-04-05T22:51:11.984112-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Comment faire :) Historiquement, les projets \xE9taient moins isol\xE9\
+  s, causant des conflits entre diff\xE9rentes applications."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

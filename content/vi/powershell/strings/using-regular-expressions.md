@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:46.166345-07:00
-description: "L\xE0m th\u1EBF n\xE0o: K\u1EBFt qu\u1EA3."
-lastmod: '2024-04-05T21:53:38.286279-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Regex \u0111\xE3 tr\u1EDF th\xE0nh m\u1ED9t\
+  \ ph\u1EA7n kh\xF4ng th\u1EC3 thi\u1EBFu trong l\u1EADp tr\xECnh k\u1EC3 t\u1EEB\
+  \ nh\u1EEFng n\u0103m 1950. Trong khi PowerShell c\xF3 c\xE1c cmdlets t\xEDch h\u1EE3\
+  p s\u1EB5n nh\u01B0\u2026"
+lastmod: '2024-04-05T22:50:51.234624-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Regex \u0111\xE3 tr\u1EDF th\xE0nh m\u1ED9t ph\u1EA7n kh\xF4ng th\u1EC3\
+  \ thi\u1EBFu trong l\u1EADp tr\xECnh k\u1EC3 t\u1EEB nh\u1EEFng n\u0103m 1950."
 title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---

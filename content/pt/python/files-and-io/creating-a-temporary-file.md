@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:41:09.754270-07:00
-description: "How to: (Como Fazer:) Sa\xEDda de Exemplo."
-lastmod: '2024-04-05T21:53:46.495724-06:00'
+description: "How to: (Como Fazer:) Trabalhar com arquivos tempor\xE1rios n\xE3o \xE9\
+  \ uma novidade na programa\xE7\xE3o. No passado, isso muitas vezes exigia gerenciar\
+  \ manualmente a\u2026"
+lastmod: '2024-04-05T22:50:59.439234-06:00'
 model: gpt-4-1106-preview
-summary: "(Como Fazer:) Sa\xEDda de Exemplo."
+summary: "(Como Fazer:) Trabalhar com arquivos tempor\xE1rios n\xE3o \xE9 uma novidade\
+  \ na programa\xE7\xE3o."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

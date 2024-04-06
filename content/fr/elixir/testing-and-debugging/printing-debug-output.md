@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:52:15.302983-07:00
-description: 'Comment faire : Sortie .'
-lastmod: '2024-04-05T21:53:58.909197-06:00'
+description: "Comment faire : Historiquement, `IO.puts` et `IO.inspect` sont les moyens\
+  \ de base pour imprimer le debug en Elixir, un langage qui tire ses racines\u2026"
+lastmod: '2024-04-05T22:51:11.446170-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, `IO.puts` et `IO.inspect` sont les moyens de base pour imprimer\
+  \ le debug en Elixir, un langage qui tire ses racines d'Erlang - c\xE9l\xE8bre pour\
+  \ sa robustesse."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

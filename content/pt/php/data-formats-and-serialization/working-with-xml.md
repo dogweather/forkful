@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:34:01.870210-07:00
-description: 'Como Fazer: Lendo XML com SimpleXML.'
-lastmod: '2024-03-13T22:44:46.691855-06:00'
+description: "Como Fazer: XML, ou Linguagem de Marca\xE7\xE3o Extens\xEDvel, tem sido\
+  \ um pilar na serializa\xE7\xE3o de dados desde a sua recomenda\xE7\xE3o pela W3C\
+  \ em 1998. \xC9 verboso,\u2026"
+lastmod: '2024-04-05T22:50:59.941405-06:00'
 model: gpt-4-0125-preview
-summary: Lendo XML com SimpleXML.
+summary: "XML, ou Linguagem de Marca\xE7\xE3o Extens\xEDvel, tem sido um pilar na\
+  \ serializa\xE7\xE3o de dados desde a sua recomenda\xE7\xE3o pela W3C em 1998."
 title: Trabalhando com XML
 weight: 40
 ---

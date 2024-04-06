@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:01:00.400318-07:00
-description: "Como Fazer: Sa\xEDda Exemplar."
-lastmod: '2024-04-05T21:53:47.187500-06:00'
+description: "Como Fazer: A autentica\xE7\xE3o b\xE1sica HTTP \xE9 um m\xE9todo antigo,\
+  \ mas ainda em uso para proteger web services. Baseia-se na codifica\xE7\xE3o das\
+  \ credenciais com\u2026"
+lastmod: '2024-04-05T22:51:00.083043-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "A autentica\xE7\xE3o b\xE1sica HTTP \xE9 um m\xE9todo antigo, mas ainda\
+  \ em uso para proteger web services."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

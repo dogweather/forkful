@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:39.486162-07:00
-description: "C\xF3mo: Salida esperada."
-lastmod: '2024-04-05T21:54:00.560869-06:00'
+description: "C\xF3mo: En Lua, las fechas son segundos desde el \"Epoch\" (1 de enero\
+  \ de 1970). Adem\xE1s de `os.time`, puedes usar `os.date` para obtener m\xE1s detalles\
+  \ o\u2026"
+lastmod: '2024-04-05T22:51:12.947052-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: En Lua, las fechas son segundos desde el "Epoch" (1 de enero de 1970).
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

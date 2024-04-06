@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:47:39.098598-07:00
-description: "How to: Merkkijonon pituuden saat n\xE4in."
-lastmod: '2024-03-13T22:44:56.688966-06:00'
+description: "How to: Lua k\xE4ytt\xE4\xE4 `#` operaattoria merkkijonon pituuden hakuun.\
+  \ Historiallisesti, t\xE4m\xE4 valinta on tehty sen yksinkertaisuuden ja tehokkuuden\
+  \ vuoksi.\u2026"
+lastmod: '2024-04-05T22:51:10.841225-06:00'
 model: gpt-4-1106-preview
-summary: "Merkkijonon pituuden saat n\xE4in."
+summary: "Lua k\xE4ytt\xE4\xE4 `#` operaattoria merkkijonon pituuden hakuun."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

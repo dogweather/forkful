@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:39.440956-07:00
-description: 'How to: (Comment faire :) .'
-lastmod: '2024-04-05T21:53:59.811528-06:00'
+description: "How to: (Comment faire :) Historiquement, l'extraction de sous-cha\xEE\
+  nes est un concept h\xE9rit\xE9 du traitement de texte en programmation. En Ruby,\
+  \ c'est\u2026"
+lastmod: '2024-04-05T22:51:12.265503-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Comment faire :) Historiquement, l'extraction de sous-cha\xEEnes est un\
+  \ concept h\xE9rit\xE9 du traitement de texte en programmation."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

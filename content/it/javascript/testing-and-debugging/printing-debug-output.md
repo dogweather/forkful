@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:52:47.622809-07:00
-description: 'How to: (Come fare:) Output.'
-lastmod: '2024-04-05T21:53:44.563648-06:00'
+description: "How to: (Come fare:) Historically, debugging was done by meticulously\
+  \ sifting through code and using cumbersome methods like print statements. With\u2026"
+lastmod: '2024-04-05T22:50:57.601333-06:00'
 model: gpt-4-1106-preview
-summary: (Come fare:) Output.
+summary: (Come fare:) Historically, debugging was done by meticulously sifting through
+  code and using cumbersome methods like print statements.
 title: Stampa dell'output di debug
 weight: 33
 ---

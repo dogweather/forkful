@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:55:34.368422-07:00
-description: "How to: (Jak to zrobi\u0107?)."
-lastmod: '2024-04-05T21:53:36.857988-06:00'
+description: "How to: (Pog\u0142\u0119biona wiedza) Argumenty linii komend by\u0142\
+  y wykorzystywane od czas\xF3w pierwszych komputer\xF3w. Pozwala\u0142y one na proste\
+  \ i szybkie przekazywanie\u2026"
+lastmod: '2024-04-05T22:50:49.744522-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Pog\u0142\u0119biona wiedza) Argumenty linii komend by\u0142y wykorzystywane\
+  \ od czas\xF3w pierwszych komputer\xF3w."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

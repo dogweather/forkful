@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:45:52.690580-07:00
-description: "How to: Output b\u0119dzie wygl\u0105da\u0107 tak."
-lastmod: '2024-04-05T21:53:36.874005-06:00'
+description: ''
+lastmod: '2024-04-05T22:50:49.762958-06:00'
 model: gpt-4-1106-preview
-summary: "Output b\u0119dzie wygl\u0105da\u0107 tak."
+summary: ''
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

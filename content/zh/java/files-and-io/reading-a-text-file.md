@@ -1,11 +1,19 @@
 ---
 date: 2024-01-20 17:54:30.630734-07:00
-description: "How to: (\u5982\u4F55\u64CD\u4F5C) \u8F93\u51FA\u6837\u4F8B (Sample\
-  \ Output)."
+description: "How to: (\u5982\u4F55\u64CD\u4F5C) \u5386\u53F2\u4E0A\uFF0C\u6700\u521D\
+  \u7684Java\u7248\u672C\u4F7F\u7528`FileInputStream`\u548C`BufferedReader`\u8FDB\u884C\
+  \u6587\u4EF6\u8BFB\u53D6\u3002\u968F\u7740Java\u7684\u8FDB\u5316\uFF0C`java.nio`\u5305\
+  \u63D0\u4F9B\u4E86\u66F4\u9AD8\u6548\u3001\u66F4\u7B80\u6D01\u7684API\uFF0C\u5982\
+  `Files`\u7C7B\u3002 \u66FF\u4EE3\u65B9\u6CD5\u5305\u62EC`Scanner`\u7C7B\u548C\u7B2C\
+  \u4E09\u65B9\u5E93\u5982Apache Commons\u2026"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:47.963346-06:00'
+lastmod: '2024-04-05T22:51:00.850913-06:00'
 model: gpt-4-1106-preview
-summary: "(\u5982\u4F55\u64CD\u4F5C) \u8F93\u51FA\u6837\u4F8B (Sample Output)."
+summary: "(\u5982\u4F55\u64CD\u4F5C) \u5386\u53F2\u4E0A\uFF0C\u6700\u521D\u7684Java\u7248\
+  \u672C\u4F7F\u7528`FileInputStream`\u548C`BufferedReader`\u8FDB\u884C\u6587\u4EF6\
+  \u8BFB\u53D6\u3002\u968F\u7740Java\u7684\u8FDB\u5316\uFF0C`java.nio`\u5305\u63D0\
+  \u4F9B\u4E86\u66F4\u9AD8\u6548\u3001\u66F4\u7B80\u6D01\u7684API\uFF0C\u5982`Files`\u7C7B\
+  \u3002"
 title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
 weight: 22
 ---

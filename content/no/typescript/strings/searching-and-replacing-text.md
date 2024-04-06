@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:50.456573-07:00
-description: "Hvordan gj\xF8re det: ."
-lastmod: '2024-04-05T21:53:41.496462-06:00'
+description: "Hvordan gj\xF8re det: S\xF8k og erstatt-funksjonaliteten har r\xF8tter\
+  \ i tidlig tekstbehandling, som `sed` i Unix. I JavaScript og TypeScript bruker\
+  \ vi\u2026"
+lastmod: '2024-04-05T22:50:54.527331-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "S\xF8k og erstatt-funksjonaliteten har r\xF8tter i tidlig tekstbehandling,\
+  \ som `sed` i Unix."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:02:20.979987-07:00
-description: "Como Fazer: Sa\xEDda esperada."
-lastmod: '2024-04-05T21:53:47.455749-06:00'
+description: "Como Fazer: A autentica\xE7\xE3o b\xE1sica HTTP existe desde os prim\xF3\
+  rdios da web. \xC9 uma forma direta de controle de acesso, mas n\xE3o \xE9 segura\
+  \ por padr\xE3o pois as\u2026"
+lastmod: '2024-04-05T22:51:00.333002-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "A autentica\xE7\xE3o b\xE1sica HTTP existe desde os prim\xF3rdios da web."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

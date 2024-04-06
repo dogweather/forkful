@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:28:31.254804-07:00
-description: "C\xF3mo hacerlo: **Resultado:**."
-lastmod: '2024-04-05T21:54:00.693814-06:00'
+description: "C\xF3mo hacerlo: En el contexto hist\xF3rico, calcular fechas es una\
+  \ necesidad humana antigua relacionada con la agricultura, la navegaci\xF3n y la\
+  \ astronom\xEDa. En\u2026"
+lastmod: '2024-04-05T22:51:13.068996-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "En el contexto hist\xF3rico, calcular fechas es una necesidad humana antigua\
+  \ relacionada con la agricultura, la navegaci\xF3n y la astronom\xEDa."
 title: "C\xE1lculo de una fecha en el futuro o el pasado"
 weight: 26
 ---

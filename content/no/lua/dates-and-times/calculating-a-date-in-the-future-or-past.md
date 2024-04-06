@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:27.050877-07:00
-description: 'Hvordan: Sample output.'
-lastmod: '2024-04-05T21:53:41.906299-06:00'
+description: "Hvordan: F\xF8r `os.time()` ble alminnelig i programmeringsspr\xE5k,\
+  \ var dato-beregninger tungvinte og feilutsatte. Alternativer inkluderer bruk av\
+  \ tredjeparts\u2026"
+lastmod: '2024-04-05T22:50:54.946041-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "F\xF8r `os.time()` ble alminnelig i programmeringsspr\xE5k, var dato-beregninger\
+  \ tungvinte og feilutsatte."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

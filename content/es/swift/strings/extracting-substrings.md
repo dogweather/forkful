@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:46:42.829111-07:00
-description: "C\xF3mo hacerlo: Ejemplo de salida."
-lastmod: '2024-04-05T21:54:00.755165-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, Swift ha evolucionado para hacer\
+  \ el manejo de cadenas m\xE1s seguras y eficientes, causando que los m\xE9todos\
+  \ para extraer\u2026"
+lastmod: '2024-04-05T22:51:13.125937-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Hist\xF3ricamente, Swift ha evolucionado para hacer el manejo de cadenas\
+  \ m\xE1s seguras y eficientes, causando que los m\xE9todos para extraer subcadenas\
+  \ hayan cambiado con el tiempo, haciendo uso intensivo de `Index`."
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

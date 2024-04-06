@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:23.491440-07:00
-description: 'How to: (Come fare:) Output.'
-lastmod: '2024-04-05T21:53:44.112743-06:00'
+description: "How to: (Come fare:) In Elm, concatenare le stringhe \xE8 semplice come\
+  \ usare l'operatore `++`. Nato da linguaggi funzionali come Haskell, Elm promuove\
+  \ un\u2026"
+lastmod: '2024-04-05T22:50:57.167648-06:00'
 model: gpt-4-1106-preview
-summary: (Come fare:) Output.
+summary: "(Come fare:) In Elm, concatenare le stringhe \xE8 semplice come usare l'operatore\
+  \ `++`."
 title: Concatenazione di stringhe
 weight: 3
 ---

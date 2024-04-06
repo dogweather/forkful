@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 15:30:45.707879-07:00
-description: "How to: (Miten tehd\xE4\xE4n:)."
-lastmod: '2024-04-05T21:53:57.738866-06:00'
+description: "How to: (Syv\xE4sukellus:) Alunperin HTML:n j\xE4sent\xE4misen tarve\
+  \ tuli siit\xE4, ett\xE4 internetin sis\xE4ll\xF6st\xE4 haluttiin hy\xF6ty\xE4 automaattisesti.\
+  \ Vaihtoehtoina\u2026"
+lastmod: '2024-04-05T22:51:10.340224-06:00'
 model: unknown
-summary: ''
+summary: "(Syv\xE4sukellus:) Alunperin HTML:n j\xE4sent\xE4misen tarve tuli siit\xE4\
+  , ett\xE4 internetin sis\xE4ll\xF6st\xE4 haluttiin hy\xF6ty\xE4 automaattisesti."
 title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---

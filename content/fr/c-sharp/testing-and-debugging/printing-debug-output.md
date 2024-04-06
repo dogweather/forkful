@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:52:29.187512-07:00
-description: 'How to: (Comment faire :) **Sortie :**.'
-lastmod: '2024-04-05T21:53:59.276053-06:00'
+description: "How to: (Comment faire :) Historiquement, le d\xE9bogage se faisait\
+  \ avec des LED ou des impressions sur papier. Aujourd'hui, `Console.WriteLine` est\
+  \ la\u2026"
+lastmod: '2024-04-05T22:51:11.784251-06:00'
 model: gpt-4-1106-preview
-summary: (Comment faire :) **Sortie :**.
+summary: "(Comment faire :) Historiquement, le d\xE9bogage se faisait avec des LED\
+  \ ou des impressions sur papier."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

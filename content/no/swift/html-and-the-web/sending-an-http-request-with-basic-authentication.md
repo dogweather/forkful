@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:52.083730-07:00
-description: 'Hvordan: Sample output.'
-lastmod: '2024-04-05T21:53:42.101919-06:00'
+description: "Hvordan: F\xF8r HTTPS og mer komplekse autentiseringsmetoder ble standard,\
+  \ ble grunnleggende autentisering mye brukt for \xE5 verifisere brukere over internett\u2026"
+lastmod: '2024-04-05T22:50:55.148466-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "F\xF8r HTTPS og mer komplekse autentiseringsmetoder ble standard, ble grunnleggende\
+  \ autentisering mye brukt for \xE5 verifisere brukere over internett ved hjelp av\
+  \ Base64-koding for \xE5 sende brukernavn og passord."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:00:01.951548-07:00
-description: 'So geht''s: Sample Output.'
-lastmod: '2024-04-05T21:53:56.151284-06:00'
+description: "So geht's: Fr\xFCher wurde XMLHttpRequest f\xFCr HTTP-Requests verwendet,\
+  \ aber `fetch` ist neuer, verspricht basiert, und einfacher. Es gibt auch Libraries\
+  \ wie\u2026"
+lastmod: '2024-04-05T22:51:08.801470-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Fr\xFCher wurde XMLHttpRequest f\xFCr HTTP-Requests verwendet, aber `fetch`\
+  \ ist neuer, verspricht basiert, und einfacher."
 title: Einen HTTP-Request senden
 weight: 44
 ---

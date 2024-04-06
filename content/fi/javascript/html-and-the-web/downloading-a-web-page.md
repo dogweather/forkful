@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:44:10.401386-07:00
-description: "How to: (Kuinka tehd\xE4:) Output."
-lastmod: '2024-04-05T21:53:58.527315-06:00'
+description: "How to: (Kuinka tehd\xE4:) Aikojen alussa tavallisimmin k\xE4ytettiin\
+  \ XMLHttpRequest-objekti verkkosivujen lataamiseen JavaScriptill\xE4. Fetch API\
+  \ on nyky\xE4\xE4n\u2026"
+lastmod: '2024-04-05T22:51:11.095768-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) Output."
+summary: "(Kuinka tehd\xE4:) Aikojen alussa tavallisimmin k\xE4ytettiin XMLHttpRequest-objekti\
+  \ verkkosivujen lataamiseen JavaScriptill\xE4."
 title: Verkkosivun lataaminen
 weight: 42
 ---

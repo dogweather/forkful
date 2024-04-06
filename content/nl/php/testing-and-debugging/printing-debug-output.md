@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:27.262041-07:00
-description: 'Hoe te: Voorbeeld Output.'
-lastmod: '2024-04-05T21:53:50.921462-06:00'
+description: "Hoe te: Debug-output is niet veel veranderd: het is er al sinds de vroege\
+  \ dagen toen oude programmeurs debugden met printf(). PHP heeft dit omarmd met\u2026"
+lastmod: '2024-04-05T22:51:03.714768-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: Debug-output is niet veel veranderd.
 title: Debug-output afdrukken
 weight: 33
 ---

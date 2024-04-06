@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:47.455822-07:00
-description: "How to: (\u042F\u043A \u0440\u043E\u0431\u0438\u0442\u0438:) ."
-lastmod: '2024-04-05T21:53:49.972112-06:00'
+description: "How to: (\u042F\u043A \u0440\u043E\u0431\u0438\u0442\u0438:) Back in\
+  \ the day, text operations were cumbersome in programming languages, but Swift made\
+  \ them a breeze. Swift's String class has\u2026"
+lastmod: '2024-04-05T22:51:02.820721-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\u042F\u043A \u0440\u043E\u0431\u0438\u0442\u0438:) Back in the day, text\
+  \ operations were cumbersome in programming languages, but Swift made them a breeze."
 title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u043D\
   \u0430 \u0442\u0435\u043A\u0441\u0442\u0443"
 weight: 10

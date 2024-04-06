@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:01:29.900699-07:00
-description: "Hur man g\xF6r: Output exempel."
-lastmod: '2024-04-05T21:53:38.852933-06:00'
+description: "Hur man g\xF6r: F\xF6r l\xE4nge sedan, innan HTTPS blev standard, var\
+  \ grundl\xE4ggande autentisering \xF6ver HTTP mer vanligt. Det \xE4r en enkel mekanism\
+  \ d\xE4r anv\xE4ndarnamn\u2026"
+lastmod: '2024-04-05T22:50:51.808612-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "F\xF6r l\xE4nge sedan, innan HTTPS blev standard, var grundl\xE4ggande autentisering\
+  \ \xF6ver HTTP mer vanligt."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

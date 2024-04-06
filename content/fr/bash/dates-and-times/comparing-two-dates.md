@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:32:07.796866-07:00
-description: 'Comment faire : Sortie attendue .'
-lastmod: '2024-04-05T21:53:59.467748-06:00'
+description: "Comment faire : Historiquement, comparer des dates en Bash \xE9tait\
+  \ un peu laborieux avant l'introduction de certaines fonctionnalit\xE9s de `date`\
+  \ et des\u2026"
+lastmod: '2024-04-05T22:51:11.953454-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, comparer des dates en Bash \xE9tait un peu laborieux avant\
+  \ l'introduction de certaines fonctionnalit\xE9s de `date` et des calculs arithm\xE9\
+  tiques."
 title: Comparer deux dates
 weight: 27
 ---

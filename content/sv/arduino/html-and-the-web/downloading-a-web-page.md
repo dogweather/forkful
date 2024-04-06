@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:43:32.772197-07:00
-description: "G\xF6r s\xE5 h\xE4r: Utskrift."
-lastmod: '2024-04-05T21:53:39.503896-06:00'
+description: "G\xF6r s\xE5 h\xE4r: Tidigare anv\xE4nde Arduino Ethernet Shield f\xF6\
+  r n\xE4tverksuppkoppling, men nu \xE4r Wi-Fi-moduler som ESP8266 och ESP32 popul\xE4\
+  ra. De \xE4r\u2026"
+lastmod: '2024-04-05T22:50:52.475644-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Tidigare anv\xE4nde Arduino Ethernet Shield f\xF6r n\xE4tverksuppkoppling,\
+  \ men nu \xE4r Wi-Fi-moduler som ESP8266 och ESP32 popul\xE4ra."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

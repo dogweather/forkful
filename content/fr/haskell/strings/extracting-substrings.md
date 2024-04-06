@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:45:56.302157-07:00
-description: 'Comment faire : Sortie attendue.'
-lastmod: '2024-04-05T21:53:59.306645-06:00'
+description: "Comment faire : Historiquement, Haskell manipule des cha\xEEnes avec\
+  \ des listes, mais `Data.Text` est devenu standard, pour l'efficacit\xE9. L'alternative,\u2026"
+lastmod: '2024-04-05T22:51:11.811458-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, Haskell manipule des cha\xEEnes avec des listes, mais `Data.Text`\
+  \ est devenu standard, pour l'efficacit\xE9."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

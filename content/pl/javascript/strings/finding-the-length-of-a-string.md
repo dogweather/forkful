@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:47:51.342833-07:00
-description: "How to: (Jak to zrobi\u0107?) ."
-lastmod: '2024-04-05T21:53:37.214536-06:00'
+description: "How to: (Jak to zrobi\u0107?) D\u0142ugo\u015B\u0107 \u0142a\u0144cucha\
+  \ znak\xF3w w JavaScript to w\u0142asno\u015B\u0107 `.length`, dost\u0119pna od\
+  \ pocz\u0105tku istnienia j\u0119zyka. W przesz\u0142o\u015Bci alternatywne\u2026"
+lastmod: '2024-04-05T22:50:50.127859-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107?) D\u0142ugo\u015B\u0107 \u0142a\u0144cucha znak\xF3\
+  w w JavaScript to w\u0142asno\u015B\u0107 `.length`, dost\u0119pna od pocz\u0105\
+  tku istnienia j\u0119zyka."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

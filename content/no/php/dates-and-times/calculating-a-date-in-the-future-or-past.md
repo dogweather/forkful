@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:37.721663-07:00
-description: 'Hvordan: Eksempel utdata.'
-lastmod: '2024-04-05T21:53:41.866695-06:00'
+description: "Hvordan: Det \xE5 regne ut datoer har v\xE6rt en del av programmering\
+  \ siden starten, da alt fra regneark til almanakker er avhengig av presis dato-h\xE5\
+  ndtering. I\u2026"
+lastmod: '2024-04-05T22:50:54.903858-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Det \xE5 regne ut datoer har v\xE6rt en del av programmering siden starten,\
+  \ da alt fra regneark til almanakker er avhengig av presis dato-h\xE5ndtering."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

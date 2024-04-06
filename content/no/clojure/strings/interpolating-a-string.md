@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:50:38.780409-07:00
-description: "Hvordan gj\xF8re det: ."
-lastmod: '2024-04-05T21:53:41.367459-06:00'
+description: "Hvordan gj\xF8re det: I tidligere programmeringsspr\xE5k som C, ble\
+  \ strenginterpolering ofte gjort med printf-familien av funksjoner. Clojure, skj\xF8\
+  nt, er et\u2026"
+lastmod: '2024-04-05T22:50:54.397315-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "I tidligere programmeringsspr\xE5k som C, ble strenginterpolering ofte gjort\
+  \ med printf-familien av funksjoner."
 title: Interpolering av en streng
 weight: 8
 ---

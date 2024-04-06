@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:32.873417-07:00
-description: "C\xF3mo hacerlo: Salida esperada."
-lastmod: '2024-04-05T21:54:00.433363-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, comparar fechas ha sido una necesidad\
+  \ b\xE1sica en programaci\xF3n, crucial para tareas como ordenar registros o validar\u2026"
+lastmod: '2024-04-05T22:51:12.829714-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Hist\xF3ricamente, comparar fechas ha sido una necesidad b\xE1sica en programaci\xF3\
+  n, crucial para tareas como ordenar registros o validar vencimientos."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

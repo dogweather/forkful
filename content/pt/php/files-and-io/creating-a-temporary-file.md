@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:40:45.610333-07:00
-description: "Como Fazer: Sa\xEDda de exemplo."
-lastmod: '2024-04-05T21:53:47.031806-06:00'
+description: "Como Fazer: Arquivos tempor\xE1rios no PHP s\xE3o como notas adesivas\
+  \ na programa\xE7\xE3o. Desde os prim\xF3rdios, quando discos tinham espa\xE7o limitado,\
+  \ era essencial\u2026"
+lastmod: '2024-04-05T22:50:59.936481-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Arquivos tempor\xE1rios no PHP s\xE3o como notas adesivas na programa\xE7\
+  \xE3o."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

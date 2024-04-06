@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:01:11.226042-07:00
-description: 'Comment faire : Exemple de sortie .'
-lastmod: '2024-04-05T21:53:58.862091-06:00'
+description: "Comment faire : L'authentification basique HTTP a \xE9t\xE9 une m\xE9\
+  thode standard depuis les d\xE9buts du web pour prot\xE9ger les acc\xE8s. Cependant,\
+  \ sa simplicit\xE9\u2026"
+lastmod: '2024-04-05T22:51:11.403502-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "L'authentification basique HTTP a \xE9t\xE9 une m\xE9thode standard depuis\
+  \ les d\xE9buts du web pour prot\xE9ger les acc\xE8s."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

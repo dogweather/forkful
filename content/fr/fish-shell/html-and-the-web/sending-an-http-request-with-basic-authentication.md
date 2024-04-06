@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:01:43.000486-07:00
-description: 'Comment faire : Exemple de sortie .'
-lastmod: '2024-04-05T21:53:59.724311-06:00'
+description: "Comment faire : L'authentification de base HTTP a \xE9t\xE9 con\xE7\
+  ue dans les premiers jours du web et reste un m\xE9canisme simple mais moins s\xE9\
+  curis\xE9. Elle est\u2026"
+lastmod: '2024-04-05T22:51:12.184412-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "L'authentification de base HTTP a \xE9t\xE9 con\xE7ue dans les premiers\
+  \ jours du web et reste un m\xE9canisme simple mais moins s\xE9curis\xE9."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

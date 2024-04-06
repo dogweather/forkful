@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:50:39.852104-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-04-05T21:53:58.557024-06:00'
+description: "How to: (Kuinka tehd\xE4:) Fish Shell tekee interpoloinnin selke\xE4\
+  ksi eik\xE4 vaadi lainausmerkkien kanssa jongl\xF6\xF6raamista kuten joissakin muissa\
+  \ kuorissa.\u2026"
+lastmod: '2024-04-05T22:51:11.124694-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4:) Fish Shell tekee interpoloinnin selke\xE4ksi eik\xE4\
+  \ vaadi lainausmerkkien kanssa jongl\xF6\xF6raamista kuten joissakin muissa kuorissa."
 title: Merkkijonon interpolointi
 weight: 8
 ---

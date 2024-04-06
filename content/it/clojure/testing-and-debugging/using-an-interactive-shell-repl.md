@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:12:51.678926-07:00
-description: 'Come fare: Inizia lanciando REPL.'
-lastmod: '2024-03-13T22:44:43.043779-06:00'
+description: "Come fare: Il REPL \xE8 chiave per la filosofia di sviluppo interattivo\
+  \ della famiglia Lisp, e Clojure, un dialetto moderno di Lisp, sfrutta molto bene\u2026"
+lastmod: '2024-04-05T22:50:56.896050-06:00'
 model: gpt-4-0125-preview
-summary: Inizia lanciando REPL.
+summary: "Il REPL \xE8 chiave per la filosofia di sviluppo interattivo della famiglia\
+  \ Lisp, e Clojure, un dialetto moderno di Lisp, sfrutta molto bene questo strumento."
 title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---

@@ -2,10 +2,18 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:06:10.763693-07:00
-description: "L\xE0m th\u1EBF n\xE0o: K\u1EBFt qu\u1EA3."
-lastmod: '2024-04-05T21:53:38.033498-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Kh\xE1i ni\u1EC7m v\u1EC1 vi\u1EC7c lo\u1EA1\
+  i b\u1ECF d\u1EA5u ngo\u1EB7c kh\xF4ng ph\u1EA3i l\xE0 m\u1EDBi m\u1EBB ho\u1EB7\
+  c \u0111\u1EB7c bi\u1EC7t ph\u1EE9c t\u1EA1p, nh\u01B0ng n\xF3 r\u1EA5t quan tr\u1ECD\
+  ng b\u1EDFi v\xEC d\u1EA5u ngo\u1EB7c th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED\
+  \ d\u1EE5ng\u2026"
+lastmod: '2024-04-05T22:50:50.974361-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Kh\xE1i ni\u1EC7m v\u1EC1 vi\u1EC7c lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7\
+  c kh\xF4ng ph\u1EA3i l\xE0 m\u1EDBi m\u1EBB ho\u1EB7c \u0111\u1EB7c bi\u1EC7t ph\u1EE9\
+  c t\u1EA1p, nh\u01B0ng n\xF3 r\u1EA5t quan tr\u1ECDng b\u1EDFi v\xEC d\u1EA5u ngo\u1EB7\
+  c th\u01B0\u1EDDng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3 gi\u1EDBi\
+  \ h\u1EA1n chu\u1ED7i."
 title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:38.475753-07:00
-description: "C\xF3mo hacerlo: Salida de muestra."
-lastmod: '2024-04-05T21:54:00.205939-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, el tratamiento de fechas y horas\
+  \ ha sido complicado debido a diferencias en zonas horarias y formatos. En Rust,\
+  \ la\u2026"
+lastmod: '2024-04-05T22:51:12.621925-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Hist\xF3ricamente, el tratamiento de fechas y horas ha sido complicado debido\
+  \ a diferencias en zonas horarias y formatos."
 title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---

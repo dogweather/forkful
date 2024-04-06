@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:44.713444-07:00
-description: "C\xF3mo: Salida de muestra."
-lastmod: '2024-04-05T21:54:00.149656-06:00'
+description: "C\xF3mo: La autenticaci\xF3n b\xE1sica es un m\xE9todo antiguo de HTTP\
+  \ para controlar el acceso. No es la opci\xF3n m\xE1s segura, ya que las credenciales\
+  \ pueden ser\u2026"
+lastmod: '2024-04-05T22:51:12.570915-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "La autenticaci\xF3n b\xE1sica es un m\xE9todo antiguo de HTTP para controlar\
+  \ el acceso."
 title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---

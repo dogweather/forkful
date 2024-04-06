@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:01:46.944705-07:00
-description: "How to: (Kuinka tehd\xE4:) Sample output."
-lastmod: '2024-04-05T21:53:58.011563-06:00'
+description: "How to: (Kuinka tehd\xE4:) Perusautentikaatio on internetin varhainen\
+  \ turvallisuusmekanismi, joka edelleen suojelee resursseja. Muita menetelmi\xE4\
+  \ ovat OAuth\u2026"
+lastmod: '2024-04-05T22:51:10.595839-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) Sample output."
+summary: "(Kuinka tehd\xE4:) Perusautentikaatio on internetin varhainen turvallisuusmekanismi,\
+  \ joka edelleen suojelee resursseja."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

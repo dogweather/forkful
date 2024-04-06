@@ -2,10 +2,17 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:33.796697-07:00
-description: "L\xE0m th\u1EBF n\xE0o: K\u1EBFt qu\u1EA3 M\u1EABu."
-lastmod: '2024-04-05T21:53:38.329530-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: XML, ho\u1EB7c Ng\xF4n ng\u1EEF \u0110\xE1nh\
+  \ d\u1EA5u M\u1EDF r\u1ED9ng, \u0111\xE3 t\u1ED3n t\u1EA1i t\u1EEB cu\u1ED1i nh\u1EEF\
+  ng n\u0103m '90 v\xE0 v\u1EABn l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1ng \u0111\u01B0\
+  \u1EE3c s\u1EED d\u1EE5ng r\u1ED9ng r\xE3i cho d\u1EEF li\u1EC7u c\u1EA5u tr\xFA\
+  c.\u2026"
+lastmod: '2024-04-05T22:50:51.278713-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "XML, ho\u1EB7c Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u M\u1EDF r\u1ED9ng,\
+  \ \u0111\xE3 t\u1ED3n t\u1EA1i t\u1EEB cu\u1ED1i nh\u1EEFng n\u0103m '90 v\xE0 v\u1EAB\
+  n l\xE0 m\u1ED9t \u0111\u1ECBnh d\u1EA1ng \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng\
+  \ r\u1ED9ng r\xE3i cho d\u1EEF li\u1EC7u c\u1EA5u tr\xFAc."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

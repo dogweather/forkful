@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:52:36.467653-07:00
-description: "Jak to zrobi\u0107: Wyniki."
-lastmod: '2024-04-05T21:53:36.486328-06:00'
+description: "Jak to zrobi\u0107: Wydruk debugowy pojawi\u0142 si\u0119 w programowaniu\
+  \ ju\u017C dawno temu \u2013 by\u0142 jednym z najprostszych metod \u015Bledzenia\
+  \ b\u0142\u0119d\xF3w i dzia\u0142ania program\xF3w.\u2026"
+lastmod: '2024-04-05T22:50:49.351804-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Wydruk debugowy pojawi\u0142 si\u0119 w programowaniu ju\u017C dawno temu\
+  \ \u2013 by\u0142 jednym z najprostszych metod \u015Bledzenia b\u0142\u0119d\xF3\
+  w i dzia\u0142ania program\xF3w."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

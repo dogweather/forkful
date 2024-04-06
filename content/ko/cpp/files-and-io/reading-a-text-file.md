@@ -1,10 +1,18 @@
 ---
 date: 2024-01-20 17:53:55.773382-07:00
-description: "How to: (\uBC29\uBC95) Sample Output."
+description: "How to: (\uBC29\uBC95) \uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB294\
+  \ \uD504\uB85C\uADF8\uB798\uBC0D \uCD08\uAE30\uBD80\uD130 \uC911\uC694\uD55C \uBD80\
+  \uBD84\uC774\uC5C8\uC2B5\uB2C8\uB2E4. C++\uC5D0\uC11C\uB294 `<fstream>` \uD5E4\uB354\
+  \uC5D0 \uC815\uC758\uB41C `ifstream` \uD074\uB798\uC2A4\uB97C \uC0AC\uC6A9\uD574\
+  \ \uD30C\uC77C \uC77D\uAE30\uB97C \uC218\uD589\uD569\uB2C8\uB2E4. \uB300\uC548\uC73C\
+  \uB85C `FILE*` \uD3EC\uC778\uD130\uC640 `fopen`, `fgets` \uB4F1\uC758 C \uC2A4\uD0C0\
+  \uC77C\u2026"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:57.319273-06:00'
+lastmod: '2024-04-05T22:51:09.939301-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\uBC29\uBC95) \uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30\uB294 \uD504\
+  \uB85C\uADF8\uB798\uBC0D \uCD08\uAE30\uBD80\uD130 \uC911\uC694\uD55C \uBD80\uBD84\
+  \uC774\uC5C8\uC2B5\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 weight: 22
 ---

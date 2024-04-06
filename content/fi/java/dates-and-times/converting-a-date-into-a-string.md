@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:36:38.613492-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-04-05T21:53:58.022783-06:00'
+description: "How to: (Kuinka tehd\xE4:) Aiemmin Java k\xE4ytti `SimpleDateFormat`\
+  \ luokkaa, mutta se tuli monimutkaiseksi ja se ei ollut s\xE4ieturvallinen. Java\
+  \ 8 toi paikalle\u2026"
+lastmod: '2024-04-05T22:51:10.606983-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4:) Aiemmin Java k\xE4ytti `SimpleDateFormat` luokkaa, mutta\
+  \ se tuli monimutkaiseksi ja se ei ollut s\xE4ieturvallinen."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

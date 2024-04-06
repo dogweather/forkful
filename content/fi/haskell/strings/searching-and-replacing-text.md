@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:58:13.914510-07:00
-description: 'How to: Esimerkkitulostus.'
-lastmod: '2024-04-05T21:53:58.168880-06:00'
+description: "How to: Haskellissa tekstink\xE4sittely on funktionaalista. Se tarkoittaa,\
+  \ ett\xE4 tekstin etsiminen ja korvaaminen tapahtuu ilman muuttuvia tiloja.\u2026"
+lastmod: '2024-04-05T22:51:10.754823-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Haskellissa tekstink\xE4sittely on funktionaalista."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

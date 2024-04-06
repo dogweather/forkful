@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:55:42.021560-07:00
-description: "Hvordan: Kj\xF8r programmet slik."
-lastmod: '2024-04-05T21:53:41.785652-06:00'
+description: "Hvordan: F\xF8r i tiden, da GUIer var sjeldne, var kommandolinjeinteraksjon\
+  \ essensiell. Det er fortsatt kritisk for skripting, automatisering og bruken i\u2026"
+lastmod: '2024-04-05T22:50:54.820871-06:00'
 model: gpt-4-1106-preview
-summary: "Kj\xF8r programmet slik."
+summary: "F\xF8r i tiden, da GUIer var sjeldne, var kommandolinjeinteraksjon essensiell."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

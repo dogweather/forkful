@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:06.966605-07:00
-description: "C\xF3mo Hacerlo: Salida de muestra."
-lastmod: '2024-04-05T21:54:00.779401-06:00'
+description: "C\xF3mo Hacerlo: Hist\xF3ricamente, calcular fechas ha sido un desaf\xED\
+  o debido a los diferentes calendarios y las zonas horarias. Swift utiliza `Calendar`\
+  \ para\u2026"
+lastmod: '2024-04-05T22:51:13.147327-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Hist\xF3ricamente, calcular fechas ha sido un desaf\xEDo debido a los diferentes\
+  \ calendarios y las zonas horarias."
 title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---

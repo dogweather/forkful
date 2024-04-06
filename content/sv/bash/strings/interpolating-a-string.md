@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:50:21.085085-07:00
-description: "How to: (S\xE5 h\xE4r g\xF6r du:) ."
-lastmod: '2024-04-05T21:53:39.406292-06:00'
+description: "How to: (S\xE5 h\xE4r g\xF6r du:) Str\xE4nginterpolering \xE4r ingen\
+  \ nyhet i programmering. Det har anv\xE4nts i olika spr\xE5k, som Perl och PHP,\
+  \ l\xE5ngt innan Bash\u2026"
+lastmod: '2024-04-05T22:50:52.371970-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(S\xE5 h\xE4r g\xF6r du:) Str\xE4nginterpolering \xE4r ingen nyhet i programmering."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

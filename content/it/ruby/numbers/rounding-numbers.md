@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 03:47:38.120938-07:00
-description: 'Come fare: Output di esempio.'
-lastmod: '2024-04-05T21:53:44.689741-06:00'
+description: "Come fare: L'arrotondamento dei numeri non \xE8 una novit\xE0\u2014\
+  gli umani lo fanno da secoli per facilitare i calcoli o per lavorare entro i limiti\
+  \ dei loro\u2026"
+lastmod: '2024-04-05T22:50:57.719748-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "L'arrotondamento dei numeri non \xE8 una novit\xE0\u2014gli umani lo fanno\
+  \ da secoli per facilitare i calcoli o per lavorare entro i limiti dei loro strumenti."
 title: Arrotondamento dei numeri
 weight: 13
 ---

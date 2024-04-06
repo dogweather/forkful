@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:43:02.203599-07:00
-description: "Slik gj\xF8r du det: Resultat."
-lastmod: '2024-04-05T21:53:41.536857-06:00'
+description: "Slik gj\xF8r du det: Historisk sett har bearbeiding av tekststrenger\
+  \ v\xE6rt kritisk i mange programmeringsspr\xE5k, med ulike metoder for m\xF8nstermatching\
+  \ og\u2026"
+lastmod: '2024-04-05T22:50:54.568996-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historisk sett har bearbeiding av tekststrenger v\xE6rt kritisk i mange\
+  \ programmeringsspr\xE5k, med ulike metoder for m\xF8nstermatching og tekstmanipulering."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:34:09.263746-07:00
-description: 'Hvordan: Lese XML med SimpleXML.'
-lastmod: '2024-03-13T22:44:40.910675-06:00'
+description: "Hvordan: XML, eller eXtensible Markup Language, har v\xE6rt en hovedsak\
+  \ i data serialisering siden W3Cs anbefaling i 1998. Det er omstendelig,\u2026"
+lastmod: '2024-04-05T22:50:54.914897-06:00'
 model: gpt-4-0125-preview
-summary: Lese XML med SimpleXML.
+summary: "XML, eller eXtensible Markup Language, har v\xE6rt en hovedsak i data serialisering\
+  \ siden W3Cs anbefaling i 1998."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

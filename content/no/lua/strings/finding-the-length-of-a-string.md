@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:48:10.943435-07:00
-description: 'How to: (Hvordan:) .'
-lastmod: '2024-04-05T21:53:41.885677-06:00'
+description: "How to: (Hvordan:) I Lua, finner vi lengden p\xE5 en streng enten ved\
+  \ \xE5 bruke nummertegnet `#` eller `string.len` funksjonen. Begge gir samme resultat.\
+  \ Lua\u2026"
+lastmod: '2024-04-05T22:50:54.923857-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Hvordan:) I Lua, finner vi lengden p\xE5 en streng enten ved \xE5 bruke\
+  \ nummertegnet `#` eller `string.len` funksjonen."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

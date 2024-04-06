@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:50:59.943159-07:00
-description: "Hvordan gj\xF8re det: ."
-lastmod: '2024-04-05T21:53:42.129538-06:00'
+description: "Hvordan gj\xF8re det: I gamle JavaScript brukte vi '+' for \xE5 sette\
+  \ sammen strenger og variabler. Etter ES6 (ECMAScript 2015) innf\xF8rte vi template\
+  \ literals,\u2026"
+lastmod: '2024-04-05T22:50:55.175992-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "I gamle JavaScript brukte vi '+' for \xE5 sette sammen strenger og variabler."
 title: Interpolering av en streng
 weight: 8
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:57:45.540465-07:00
-description: "Hur g\xF6r man: Sample Output."
-lastmod: '2024-04-05T21:53:39.148694-06:00'
+description: "Hur g\xF6r man: Historiskt sett har behovet av att s\xF6ka och ers\xE4\
+  tta text funnits sedan de f\xF6rsta texteditorerna skapades. I Elm, String-modulets\
+  \ funktioner\u2026"
+lastmod: '2024-04-05T22:50:52.112100-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiskt sett har behovet av att s\xF6ka och ers\xE4tta text funnits sedan\
+  \ de f\xF6rsta texteditorerna skapades."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

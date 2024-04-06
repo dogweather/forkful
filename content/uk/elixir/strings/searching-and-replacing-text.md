@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:57:48.897118-07:00
 description: "\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438\
-  : Output."
-lastmod: '2024-04-05T21:53:48.945830-06:00'
+  : Originally, searching and replacing text was a feature in text editors, evolving\
+  \ as a handy tool for programming. Elixir's\u2026"
+lastmod: '2024-04-05T22:51:01.856389-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Originally, searching and replacing text was a feature in text editors, evolving
+  as a handy tool for programming.
 title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u043D\
   \u0430 \u0442\u0435\u043A\u0441\u0442\u0443"
 weight: 10

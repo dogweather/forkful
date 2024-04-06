@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:06.758108-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:39.263489-06:00'
+description: "How to: Att j\xE4mf\xF6ra tv\xE5 datum i C# var inte alltid lika enkelt.\
+  \ P\xE5 .NET:s tidigare dagar beh\xF6vde man kanske g\xF6ra fler steg och ber\xE4\
+  kningar f\xF6r hand. Med\u2026"
+lastmod: '2024-04-05T22:50:52.224779-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Att j\xE4mf\xF6ra tv\xE5 datum i C# var inte alltid lika enkelt."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

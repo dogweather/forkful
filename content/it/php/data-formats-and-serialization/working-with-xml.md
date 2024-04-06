@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:34:17.939098-07:00
-description: 'Come fare: Leggere XML con SimpleXML.'
-lastmod: '2024-03-13T22:44:43.541492-06:00'
+description: "Come fare: XML, o eXtensible Markup Language, \xE8 un pilastro nella\
+  \ serializzazione dei dati sin dalla sua raccomandazione W3C nel 1998. \xC8 verboso,\u2026"
+lastmod: '2024-04-05T22:50:57.350572-06:00'
 model: gpt-4-0125-preview
-summary: Leggere XML con SimpleXML.
+summary: "XML, o eXtensible Markup Language, \xE8 un pilastro nella serializzazione\
+  \ dei dati sin dalla sua raccomandazione W3C nel 1998."
 title: Lavorare con XML
 weight: 40
 ---

@@ -1,12 +1,18 @@
 ---
 date: 2024-01-20 17:54:56.363348-07:00
-description: "How to: (\u5982\u4F55\u64CD\u4F5C) \u8F93\u51FA\u53D6\u51B3\u4E8E\"\
-  example.txt\"\u7684\u5185\u5BB9\u3002"
+description: "How to: (\u5982\u4F55\u64CD\u4F5C) \u4EE5\u524D\uFF0C\u6211\u4EEC\u53EF\
+  \u80FD\u4F7F\u7528`fopen()`, `fgets()`, \u548C`fclose()`\u5B9E\u73B0\u6587\u4EF6\
+  \u8BFB\u53D6\u3002\u73B0\u5728\uFF0C\u9664\u4E86`file_get_contents()`\u548C`file()`\uFF0C\
+  \u8FD8\u53EF\u4EE5\u7528`SplFileObject`\uFF0C\u5B83\u63D0\u4F9B\u4E86\u9762\u5411\
+  \u5BF9\u8C61\u7684\u6587\u4EF6\u64CD\u4F5C\u65B9\u6CD5\u3002\u2026"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:48.190059-06:00'
+lastmod: '2024-04-05T22:51:01.091580-06:00'
 model: gpt-4-1106-preview
-summary: "(\u5982\u4F55\u64CD\u4F5C) \u8F93\u51FA\u53D6\u51B3\u4E8E\"example.txt\"\
-  \u7684\u5185\u5BB9\u3002"
+summary: "(\u5982\u4F55\u64CD\u4F5C) \u4EE5\u524D\uFF0C\u6211\u4EEC\u53EF\u80FD\u4F7F\
+  \u7528`fopen()`, `fgets()`, \u548C`fclose()`\u5B9E\u73B0\u6587\u4EF6\u8BFB\u53D6\
+  \u3002\u73B0\u5728\uFF0C\u9664\u4E86`file_get_contents()`\u548C`file()`\uFF0C\u8FD8\
+  \u53EF\u4EE5\u7528`SplFileObject`\uFF0C\u5B83\u63D0\u4F9B\u4E86\u9762\u5411\u5BF9\
+  \u8C61\u7684\u6587\u4EF6\u64CD\u4F5C\u65B9\u6CD5\u3002"
 title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
 weight: 22
 ---

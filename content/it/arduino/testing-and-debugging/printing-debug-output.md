@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:51:49.286378-07:00
-description: 'How to: (Come fare:) Output.'
-lastmod: '2024-04-05T21:53:44.445722-06:00'
+description: "How to: (Come fare:) La stampa di debug risale agli albori dell'informatica.\
+  \ In alternativa, si possono usare LED o display per fornire feedback visivo.\u2026"
+lastmod: '2024-04-05T22:50:57.488626-06:00'
 model: gpt-4-1106-preview
-summary: (Come fare:) Output.
+summary: (Come fare:) La stampa di debug risale agli albori dell'informatica.
 title: Stampa dell'output di debug
 weight: 33
 ---

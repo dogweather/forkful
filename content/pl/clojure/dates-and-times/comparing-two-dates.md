@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:32:30.043659-07:00
-description: "Jak to zrobi\u0107: Wyj\u015Bcie."
-lastmod: '2024-04-05T21:53:36.453690-06:00'
+description: "Jak to zrobi\u0107: Por\xF3wnywanie dat w Clojure cz\u0119sto wykonuje\
+  \ si\u0119 z u\u017Cyciem biblioteki `clj-time`, kt\xF3ra bazuje na Joda-Time -\
+  \ bibliotece dla Javy do\u2026"
+lastmod: '2024-04-05T22:50:49.317116-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Por\xF3wnywanie dat w Clojure cz\u0119sto wykonuje si\u0119 z u\u017Cyciem\
+  \ biblioteki `clj-time`, kt\xF3ra bazuje na Joda-Time - bibliotece dla Javy do zarz\u0105\
+  dzania czasem przed wprowadzeniem `java.time` w Java 8."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

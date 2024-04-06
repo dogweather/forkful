@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:06.327422-07:00
-description: 'Come fare: Sample output.'
-lastmod: '2024-04-05T21:53:44.436383-06:00'
+description: "Come fare: La concatenazione di stringhe \xE8 un'operazione fondamentale\
+  \ in programmazione, presente sin dagli albori dei linguaggi di programmazione.\
+  \ In\u2026"
+lastmod: '2024-04-05T22:50:57.478761-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "La concatenazione di stringhe \xE8 un'operazione fondamentale in programmazione,\
+  \ presente sin dagli albori dei linguaggi di programmazione."
 title: Concatenazione di stringhe
 weight: 3
 ---

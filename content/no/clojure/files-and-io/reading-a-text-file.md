@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:54.728538-07:00
-description: 'How to: Les en enkel tekstfil.'
-lastmod: '2024-03-13T22:44:40.418910-06:00'
+description: "How to: Lesing av filer har v\xE6rt en grunnleggende del av programmering\
+  \ siden tidlige datamaskiner. I Clojure, som er en JVM-spr\xE5k, benyttes Java sin\
+  \ I/O\u2026"
+lastmod: '2024-04-05T22:50:54.429496-06:00'
 model: gpt-4-1106-preview
-summary: Les en enkel tekstfil.
+summary: "Lesing av filer har v\xE6rt en grunnleggende del av programmering siden\
+  \ tidlige datamaskiner."
 title: Lese en tekstfil
 weight: 22
 ---

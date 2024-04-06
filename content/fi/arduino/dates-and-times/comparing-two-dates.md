@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:32:27.534742-07:00
-description: 'How to: (Miten toimia:) Tuloste.'
-lastmod: '2024-04-05T21:53:58.412646-06:00'
+description: "How to: (Miten toimia:) P\xE4iv\xE4m\xE4\xE4rien vertailuun Arduino-ymp\xE4\
+  rist\xF6ss\xE4 k\xE4ytet\xE4\xE4n usein RTC-kirjastoja, kuten `RTClib`, joka kommunikoi\
+  \ reaaliaikakellojen,\u2026"
+lastmod: '2024-04-05T22:51:10.985188-06:00'
 model: gpt-4-1106-preview
-summary: (Miten toimia:) Tuloste.
+summary: "(Miten toimia:) P\xE4iv\xE4m\xE4\xE4rien vertailuun Arduino-ymp\xE4rist\xF6\
+  ss\xE4 k\xE4ytet\xE4\xE4n usein RTC-kirjastoja, kuten `RTClib`, joka kommunikoi\
+  \ reaaliaikakellojen, kuten DS3231, kanssa."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

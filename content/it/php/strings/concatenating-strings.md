@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:25.977007-07:00
-description: How to (Come Fare) .
-lastmod: '2024-04-05T22:38:43.001788-06:00'
+description: "How to (Come Fare) La concatenazione di stringhe in PHP esiste da quando\
+  \ \xE8 stato creato il linguaggio nel 1995. Alternativamente, si pu\xF2 utilizzare\u2026"
+lastmod: '2024-04-05T22:50:57.320431-06:00'
 model: gpt-4-1106-preview
-summary: How to (Come Fare) .
+summary: "Alternativamente, si pu\xF2 utilizzare l'interpunzione delle variabili all'interno\
+  \ di stringhe racchiuse in virgolette doppie, ma \xE8 consigliabile per variabili\
+  \ semplici e non per espressioni complesse."
 title: Concatenazione di stringhe
 weight: 3
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:55:10.157345-07:00
-description: "How to: (\"Hur?\") Exempel p\xE5 resultat."
-lastmod: '2024-04-05T21:53:39.480661-06:00'
+description: "How to: (\"Hur?\") N\xE4r det handlar om historiken b\xF6rjade PowerShell,\
+  \ k\xE4nd som Windows PowerShell f\xF6re version 6, anv\xE4ndas f\xF6r att automatisera\
+  \ uppgifter och\u2026"
+lastmod: '2024-04-05T22:50:52.449264-06:00'
 model: gpt-4-1106-preview
-summary: "(\"Hur?\") Exempel p\xE5 resultat."
+summary: "(\"Hur?\") N\xE4r det handlar om historiken b\xF6rjade PowerShell, k\xE4\
+  nd som Windows PowerShell f\xF6re version 6, anv\xE4ndas f\xF6r att automatisera\
+  \ uppgifter och konfigurera systeminst\xE4llningar."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

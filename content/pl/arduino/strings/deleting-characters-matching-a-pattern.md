@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:41:32.040173-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:37.081596-06:00'
+description: "How to: (Jak to zrobi\u0107:) Usuwanie okre\u015Blonych znak\xF3w nie\
+  \ jest nowo\u015Bci\u0105. Funkcje podobne do `deleteMatchingChars` istniej\u0105\
+  \ w wielu j\u0119zykach programowania i\u2026"
+lastmod: '2024-04-05T22:50:49.986720-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Usuwanie okre\u015Blonych znak\xF3w nie jest nowo\u015B\
+  ci\u0105."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

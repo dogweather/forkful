@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:22.918258-07:00
-description: "How to: (Jak to zrobi\u0107:) Wynik."
-lastmod: '2024-04-05T21:53:37.039363-06:00'
+description: "How to: (Jak to zrobi\u0107:) Interpolacja napis\xF3w nie zawsze by\u0142\
+  a dost\u0119pna w j\u0119zykach programowania. W PowerShell pojawi\u0142a si\u0119\
+  \ jako cz\u0119\u015B\u0107 'expandable\u2026"
+lastmod: '2024-04-05T22:50:49.939618-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107:) Wynik."
+summary: "(Jak to zrobi\u0107:) Interpolacja napis\xF3w nie zawsze by\u0142a dost\u0119\
+  pna w j\u0119zykach programowania."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

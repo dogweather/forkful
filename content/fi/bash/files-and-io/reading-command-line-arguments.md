@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:55:32.343899-07:00
-description: "How to: K\xE4yt\xE4 skripti\xE4 n\xE4in."
-lastmod: '2024-04-05T21:53:58.329038-06:00'
+description: "How to: K\xE4ytt\xF6j\xE4rjestelm\xE4t ovat hyv\xE4ksyneet komentorivin\
+  \ argumentit jo vuosikymmenten ajan ohjelmien tuunaamiseen. Komentotulkin sis\xE4\
+  iset muuttujat `$0`,\u2026"
+lastmod: '2024-04-05T22:51:10.906881-06:00'
 model: gpt-4-1106-preview
-summary: "K\xE4yt\xE4 skripti\xE4 n\xE4in."
+summary: "K\xE4ytt\xF6j\xE4rjestelm\xE4t ovat hyv\xE4ksyneet komentorivin argumentit\
+  \ jo vuosikymmenten ajan ohjelmien tuunaamiseen."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

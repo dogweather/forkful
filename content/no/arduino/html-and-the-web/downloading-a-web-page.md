@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:43:29.550898-07:00
-description: "Hvordan gj\xF8r man det: Sample Output."
-lastmod: '2024-04-05T21:53:42.019442-06:00'
+description: "Hvordan gj\xF8r man det: Historisk har Arduino-enheter v\xE6rt begrenset\
+  \ til h\xE5ndtering av sensorer og aktuatorer uten nettforbindelse. Med introduksjonen\
+  \ av\u2026"
+lastmod: '2024-04-05T22:50:55.063806-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historisk har Arduino-enheter v\xE6rt begrenset til h\xE5ndtering av sensorer\
+  \ og aktuatorer uten nettforbindelse."
 title: Nedlasting av en nettside
 weight: 42
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:18.746700-07:00
-description: 'How to: Output di esempio.'
-lastmod: '2024-04-05T21:53:44.321138-06:00'
+description: "How to: Le richieste HTTP con autenticazione di base sono una pratica\
+  \ standard dalla nascita del web. Questo metodo \xE8 semplice ma meno sicuro rispetto\
+  \ a\u2026"
+lastmod: '2024-04-05T22:50:57.367475-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Le richieste HTTP con autenticazione di base sono una pratica standard dalla
+  nascita del web.
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

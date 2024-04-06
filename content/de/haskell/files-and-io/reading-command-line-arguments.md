@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:56:02.681646-07:00
-description: "How to: Ausf\xFChren im Terminal."
-lastmod: '2024-04-05T21:53:55.830759-06:00'
+description: "How to: Haskell, seit den sp\xE4ten 80ern entwickelt, bietet \xFCber\
+  \ das Modul `System.Environment` eine elegante Art, Kommandozeilenargumente zu lesen.\u2026"
+lastmod: '2024-04-05T22:51:08.503159-06:00'
 model: gpt-4-1106-preview
-summary: "Ausf\xFChren im Terminal."
+summary: "Haskell, seit den sp\xE4ten 80ern entwickelt, bietet \xFCber das Modul `System.Environment`\
+  \ eine elegante Art, Kommandozeilenargumente zu lesen."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:34:39.631595-07:00
-description: 'How to: Die Ausgabe.'
-lastmod: '2024-04-05T21:53:56.124335-06:00'
+description: "How to: Schon mit fr\xFChen Programmiersprachen gab es die Notwendigkeit,\
+  \ Zeit und Daten zu vergleichen. In Swift ist das besonders leicht, dank des\u2026"
+lastmod: '2024-04-05T22:51:08.776197-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Schon mit fr\xFChen Programmiersprachen gab es die Notwendigkeit, Zeit und\
+  \ Daten zu vergleichen."
 title: Vergleich von zwei Daten
 weight: 27
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:36:58.548786-07:00
-description: "How to: \"N\xE4in Tehd\xE4\xE4n:\"."
-lastmod: '2024-04-05T21:53:58.065770-06:00'
+description: "How to: \"Sukellus Syvemm\xE4lle:\" Elmiss\xE4 p\xE4iv\xE4m\xE4\xE4\
+  rien k\xE4sittelyn historia on yksinkertainen, koska Elm on nuori kieli. P\xE4iv\xE4\
+  m\xE4\xE4r\xE4n esitt\xE4minen merkkijonona\u2026"
+lastmod: '2024-04-05T22:51:10.659486-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\"Sukellus Syvemm\xE4lle:\" Elmiss\xE4 p\xE4iv\xE4m\xE4\xE4rien k\xE4sittelyn\
+  \ historia on yksinkertainen, koska Elm on nuori kieli."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

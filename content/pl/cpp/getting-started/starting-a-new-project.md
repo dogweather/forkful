@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:03:10.356180-07:00
-description: "How to: (Jak to zrobi\u0107:) Sample output."
-lastmod: '2024-04-05T21:53:37.139875-06:00'
+description: "How to: (Jak to zrobi\u0107:) Uruchomienie nowego programu w C++ historycznie\
+  \ rzecz bior\u0105c kiedy\u015B wymaga\u0142o wi\u0119cej kodu. Wczesne kompilatory\
+  \ i systemy mog\u0142y\u2026"
+lastmod: '2024-04-05T22:50:50.048627-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107:) Sample output."
+summary: "(Jak to zrobi\u0107:) Uruchomienie nowego programu w C++ historycznie rzecz\
+  \ bior\u0105c kiedy\u015B wymaga\u0142o wi\u0119cej kodu."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

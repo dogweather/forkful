@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:29.301278-07:00
-description: "Como Fazer: Sa\xEDda de exemplo."
-lastmod: '2024-04-05T21:53:47.327254-06:00'
+description: "Como Fazer: Historicamente, a gest\xE3o de datas em JavaScript foi algo\
+  \ complicado devido \xE0s diferen\xE7as de fuso hor\xE1rio e ao tratamento ineficiente\
+  \ do objeto\u2026"
+lastmod: '2024-04-05T22:51:00.213420-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historicamente, a gest\xE3o de datas em JavaScript foi algo complicado devido\
+  \ \xE0s diferen\xE7as de fuso hor\xE1rio e ao tratamento ineficiente do objeto `Date`."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

@@ -1,8 +1,8 @@
 ---
 date: 2024-01-20 18:03:00.703224-07:00
-description: "How to: (\u5982\u4F55\u5F00\u59CB\uFF1A) \u5728Unix-\u2026"
+description: ''
 isCJKLanguage: true
-lastmod: '2024-04-05T22:38:47.119175-06:00'
+lastmod: '2024-04-05T22:51:01.171919-06:00'
 model: gpt-4-1106-preview
 summary: "(\u5982\u4F55\u5F00\u59CB\uFF1A) \u5728Unix-like\u7CFB\u7EDF\u4E2D\uFF0C\
   \u5F88\u65E9\u5C31\u4F7F\u7528\u76EE\u5F55\u6765\u7EC4\u7EC7\u6587\u4EF6\u3002Bash\u4F5C\

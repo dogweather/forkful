@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:56:07.402580-07:00
-description: "How to: \"Miten tehd\xE4\xE4n:\"."
-lastmod: '2024-04-05T21:53:58.026549-06:00'
+description: "How to: \"Sukellus syvemm\xE4lle:\" Kun Java-ohjelma k\xE4ynnistet\xE4\
+  \xE4n, `main`-metodin `args`-taulukko t\xE4ytet\xE4\xE4n k\xE4ytt\xE4j\xE4n antamilla\
+  \ komennonriviargumenteilla.\u2026"
+lastmod: '2024-04-05T22:51:10.621536-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\"Sukellus syvemm\xE4lle:\" Kun Java-ohjelma k\xE4ynnistet\xE4\xE4n, `main`-metodin\
+  \ `args`-taulukko t\xE4ytet\xE4\xE4n k\xE4ytt\xE4j\xE4n antamilla komennonriviargumenteilla."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

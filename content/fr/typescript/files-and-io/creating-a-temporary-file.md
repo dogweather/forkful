@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:41:26.586975-07:00
-description: 'Comment faire : Sortie attendue .'
-lastmod: '2024-04-05T21:53:59.021205-06:00'
+description: "Comment faire : Historiquement, les fichiers temporaires ont leur origine\
+  \ dans les syst\xE8mes d\u2019exploitation Unix pour g\xE9rer l'espace disque efficacement.\u2026"
+lastmod: '2024-04-05T22:51:11.548594-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, les fichiers temporaires ont leur origine dans les syst\xE8\
+  mes d\u2019exploitation Unix pour g\xE9rer l'espace disque efficacement."
 title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---

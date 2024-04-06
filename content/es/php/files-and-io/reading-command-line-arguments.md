@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:56:33.727719-07:00
-description: "C\xF3mo Hacerlo: Ejecuta tu script as\xED."
-lastmod: '2024-04-05T21:54:00.521343-06:00'
+description: "C\xF3mo Hacerlo: Desde las primeras versiones de PHP, la l\xEDnea de\
+  \ comandos ha sido un amigo leal. Aunque muchos lo usan para desarrollo web, PHP\
+  \ tambi\xE9n es\u2026"
+lastmod: '2024-04-05T22:51:12.910158-06:00'
 model: gpt-4-1106-preview
-summary: "Ejecuta tu script as\xED."
+summary: "Desde las primeras versiones de PHP, la l\xEDnea de comandos ha sido un\
+  \ amigo leal."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:35:48.610543-07:00
-description: 'How to: Mit TypeScript geht das so.'
-lastmod: '2024-03-13T22:44:53.623558-06:00'
+description: "How to: In den fr\xFChen Tagen von JavaScript war `+` der Weg, um Strings\
+  \ zu verketten. Mit ES6 kamen Template Strings, die mit Backticks `` ` `` geschrieben\u2026"
+lastmod: '2024-04-05T22:51:08.195485-06:00'
 model: gpt-4-1106-preview
-summary: Mit TypeScript geht das so.
+summary: "In den fr\xFChen Tagen von JavaScript war `+` der Weg, um Strings zu verketten."
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:43:29.348322-07:00
-description: "Comment faire : Sortie \xE9chantillon ."
-lastmod: '2024-04-05T21:53:59.543843-06:00'
+description: "Comment faire : Historiquement, les Arduinos \xE9taient utilis\xE9s\
+  \ pour des projets locaux. Avec l\u2019av\xE8nement d'Arduino \xE9quip\xE9s de WiFi\
+  \ comme l'ESP8266 ou\u2026"
+lastmod: '2024-04-05T22:51:12.023710-06:00'
 model: gpt-4-1106-preview
-summary: "Sortie \xE9chantillon ."
+summary: "Historiquement, les Arduinos \xE9taient utilis\xE9s pour des projets locaux."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

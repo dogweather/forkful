@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:55.340757-07:00
-description: "Slik gj\xF8r du: **Utdataeksempel:**."
-lastmod: '2024-04-05T21:53:42.078373-06:00'
+description: "Slik gj\xF8r du: \xC5 lese filer i C++ g\xE5r langt tilbake og har endret\
+  \ seg lite med \xE5rene. Alternativer til `std::ifstream` inkluderer `FILE` fra\
+  \ C\u2026"
+lastmod: '2024-04-05T22:50:55.124772-06:00'
 model: gpt-4-1106-preview
-summary: '**Utdataeksempel:**.'
+summary: "\xC5 lese filer i C++ g\xE5r langt tilbake og har endret seg lite med \xE5\
+  rene."
 title: Lese en tekstfil
 weight: 22
 ---

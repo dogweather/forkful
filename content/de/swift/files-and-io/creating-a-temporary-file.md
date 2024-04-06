@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:41:11.075675-07:00
-description: 'Wie geht das?: Output.'
-lastmod: '2024-04-05T21:53:56.131065-06:00'
+description: "Wie geht das?: Tempor\xE4re Dateien haben seit den fr\xFChesten Tagen\
+  \ der Programmierung ihren Platz. Sie erzeugen eine geringere Last auf dem\u2026"
+lastmod: '2024-04-05T22:51:08.782764-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Tempor\xE4re Dateien haben seit den fr\xFChesten Tagen der Programmierung\
+  \ ihren Platz."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

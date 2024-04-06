@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:38:52.220637-07:00
-description: "Hur man g\xF6r: **K\xF6rningsresultat:**."
-lastmod: '2024-04-05T21:53:39.107983-06:00'
+description: "Hur man g\xF6r: Historiskt har olika spr\xE5k och kulturer haft olika\
+  \ regler f\xF6r versalisering. I Java hanteras konverteringen till gemener genom\u2026"
+lastmod: '2024-04-05T22:50:52.070923-06:00'
 model: gpt-4-1106-preview
-summary: "**K\xF6rningsresultat:**."
+summary: "Historiskt har olika spr\xE5k och kulturer haft olika regler f\xF6r versalisering."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

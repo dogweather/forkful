@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:24.127698-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:36.980203-06:00'
+description: "How to: (Jak to zrobi\u0107:) Konwersja daty na ci\u0105g znak\xF3w\
+  \ w Lua jest prosta dzi\u0119ki wbudowanemu modu\u0142owi `os`. Historia tej funkcjonalno\u015B\
+  ci si\u0119ga pocz\u0105tk\xF3w\u2026"
+lastmod: '2024-04-05T22:50:49.874121-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Konwersja daty na ci\u0105g znak\xF3w w Lua jest prosta\
+  \ dzi\u0119ki wbudowanemu modu\u0142owi `os`."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

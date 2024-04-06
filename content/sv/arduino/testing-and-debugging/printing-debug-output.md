@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:51:50.975147-07:00
-description: "Hur g\xF6r man: Exempelutskrift."
-lastmod: '2024-04-05T21:53:39.506616-06:00'
+description: "Hur g\xF6r man: Seriell utskrift \xE4r ingen nyhet. Elektronikutvecklare\
+  \ har anv\xE4nt n\xE5gon form av debugutskrift sedan tidigt 1900-tal f\xF6r att\
+  \ fels\xF6ka sina\u2026"
+lastmod: '2024-04-05T22:50:52.479885-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Seriell utskrift \xE4r ingen nyhet."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

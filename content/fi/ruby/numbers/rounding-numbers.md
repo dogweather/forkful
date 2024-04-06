@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 03:46:40.954767-07:00
-description: 'Miten: Esimerkkitulo.'
-lastmod: '2024-04-05T21:53:58.663483-06:00'
+description: "Miten: Lukujen py\xF6rist\xE4minen ei ole uutta \u2014 ihmisi\xE4 on\
+  \ tehty sen vuosisatojen ajan tehd\xE4kseen laskelmista helpompia tai toimiakseen\
+  \ ty\xF6kalujensa rajoissa.\u2026"
+lastmod: '2024-04-05T22:51:11.222885-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Lukujen py\xF6rist\xE4minen ei ole uutta \u2014 ihmisi\xE4 on tehty sen\
+  \ vuosisatojen ajan tehd\xE4kseen laskelmista helpompia tai toimiakseen ty\xF6kalujensa\
+  \ rajoissa."
 title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---

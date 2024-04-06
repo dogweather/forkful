@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:09.626968-07:00
-description: 'Hoe: Voorbeelduitvoer.'
-lastmod: '2024-04-05T21:53:51.340790-06:00'
+description: "Hoe: Het afronden van getallen is niet nieuw\u2014mensen doen dit al\
+  \ eeuwen om berekeningen eenvoudiger te maken of om binnen de beperkingen van hun\u2026"
+lastmod: '2024-04-05T22:51:04.109485-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Het afronden van getallen is niet nieuw\u2014mensen doen dit al eeuwen om\
+  \ berekeningen eenvoudiger te maken of om binnen de beperkingen van hun gereedschappen\
+  \ te werken."
 title: Afronden van getallen
 weight: 13
 ---

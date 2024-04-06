@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:53:37.182179-07:00
-description: 'How to: (Wie?) Sample Output.'
-lastmod: '2024-04-05T21:53:55.510414-06:00'
+description: "How to: (Wie?) Fr\xFCher schrieben wir Ausgaben in Log-Dateien. Heute\
+  \ verwenden wir oft die Konsole. Mit `console.log` bekommst du einfache Nachrichten.\u2026"
+lastmod: '2024-04-05T22:51:08.206751-06:00'
 model: gpt-4-1106-preview
-summary: (Wie?) Sample Output.
+summary: "(Wie?) Fr\xFCher schrieben wir Ausgaben in Log-Dateien."
 title: Debug-Ausgaben drucken
 weight: 33
 ---

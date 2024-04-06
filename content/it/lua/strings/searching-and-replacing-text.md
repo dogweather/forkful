@@ -1,9 +1,9 @@
 ---
 date: 2024-01-20 17:58:16.785664-07:00
-description: 'How to: In italiano: ".'
-lastmod: '2024-04-05T21:53:44.307482-06:00'
+description: 'How to: Esempio di codice in Lua per cercare e sostituire testo.'
+lastmod: '2024-04-05T22:50:57.354024-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Esempio di codice in Lua per cercare e sostituire testo.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

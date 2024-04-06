@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:40.069239-07:00
-description: 'Comment faire : Exemple de sortie .'
-lastmod: '2024-04-05T21:53:59.633381-06:00'
+description: "Comment faire : Historiquement, l'authentification de base HTTP - invent\xE9\
+  e au d\xE9but des ann\xE9es 90 - fait partie int\xE9grante des standards d\u2019\
+  Internet. Des\u2026"
+lastmod: '2024-04-05T22:51:12.103858-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, l'authentification de base HTTP - invent\xE9e au d\xE9but\
+  \ des ann\xE9es 90 - fait partie int\xE9grante des standards d\u2019Internet."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

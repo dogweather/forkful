@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 03:38:04.993894-07:00
-description: 'Comment faire : Sortie .'
-lastmod: '2024-04-05T21:53:59.260472-06:00'
+description: "Comment faire : Le concept de suppression des guillemets n'est ni nouveau\
+  \ ni particuli\xE8rement complexe, mais il est crucial car les guillemets sont\u2026"
+lastmod: '2024-04-05T22:51:11.770370-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Le concept de suppression des guillemets n'est ni nouveau ni particuli\xE8\
+  rement complexe, mais il est crucial car les guillemets sont souvent utilis\xE9\
+  s pour d\xE9limiter les cha\xEEnes."
 title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---

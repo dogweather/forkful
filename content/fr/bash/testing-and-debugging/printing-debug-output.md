@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:52:04.685758-07:00
-description: 'How to: (Comment faire:) Sortie .'
-lastmod: '2024-04-05T21:53:59.457612-06:00'
+description: "How to: (Comment faire:) Dans les premiers jours de l'informatique,\
+  \ l'impression de d\xE9bogage \xE9tait surtout dirig\xE9e vers des imprimantes.\
+  \ Maintenant, on\u2026"
+lastmod: '2024-04-05T22:51:11.944734-06:00'
 model: gpt-4-1106-preview
-summary: (Comment faire:) Sortie .
+summary: "(Comment faire:) Dans les premiers jours de l'informatique, l'impression\
+  \ de d\xE9bogage \xE9tait surtout dirig\xE9e vers des imprimantes."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-19
-description: "How to: (\"Jak to zrobi\u0107:\")."
-lastmod: '2024-04-05T21:53:36.903459-06:00'
+description: "How to: (\"Wnikliwe Rozwa\u017Cania:\") Historia: 'writeFile' pochodzi\
+  \ z modu\u0142u System.IO, kt\xF3ry jest cz\u0119\u015Bci\u0105 Haskell od wczesnych\
+  \ wersji. Alternatywy: Mo\u017Cna\u2026"
+lastmod: '2024-04-05T22:50:49.793606-06:00'
 model: unknown
-summary: ''
+summary: "(\"Wnikliwe Rozwa\u017Cania:\") Historia."
 title: Zapisywanie pliku tekstowego
 weight: 24
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:53:58.185761-07:00
-description: "How to: \"N\xE4in teet:\"."
-lastmod: '2024-04-05T21:53:58.460764-06:00'
+description: "How to: \"Sukellus Syvemm\xE4lle\": C++ on tukenut tekstitiedostojen\
+  \ k\xE4sittely\xE4 alusta asti. `<fstream>`-kirjastoa on k\xE4ytetty tiedostojen\
+  \ k\xE4sittelyyn jo\u2026"
+lastmod: '2024-04-05T22:51:11.032484-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\"Sukellus Syvemm\xE4lle\"."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

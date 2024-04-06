@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:35:17.283503-07:00
-description: "How to: (\"Jak to zrobi\u0107:\") ."
-lastmod: '2024-04-05T21:53:36.960914-06:00'
+description: "How to: (\"Jak to zrobi\u0107:\") \u0141\u0105czenie napis\xF3w jest\
+  \ fundamentem wi\u0119kszo\u015Bci j\u0119zyk\xF3w programowania i bywa cz\u0119\
+  sto wykorzystywane w Lua. Historycznie, operacje\u2026"
+lastmod: '2024-04-05T22:50:49.854214-06:00'
 model: gpt-4-1106-preview
-summary: "(\"Jak to zrobi\u0107:\") ."
+summary: "(\"Jak to zrobi\u0107:\") \u0141\u0105czenie napis\xF3w jest fundamentem\
+  \ wi\u0119kszo\u015Bci j\u0119zyk\xF3w programowania i bywa cz\u0119sto wykorzystywane\
+  \ w Lua."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

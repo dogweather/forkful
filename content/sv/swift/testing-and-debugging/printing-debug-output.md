@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:53:22.509731-07:00
-description: "Hur g\xF6r man: Exempel p\xE5 utskrift."
-lastmod: '2024-04-05T21:53:39.590884-06:00'
+description: "Hur g\xF6r man: Printing i Swift \xE4r enkel men har utvecklats. Tidigare\
+  \ programmeringsspr\xE5k anv\xE4nde ofta kommandor som `printf`. Swift introducerade\
+  \ `print`\u2026"
+lastmod: '2024-04-05T22:50:52.564682-06:00'
 model: gpt-4-1106-preview
-summary: "Exempel p\xE5 utskrift."
+summary: "Printing i Swift \xE4r enkel men har utvecklats."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

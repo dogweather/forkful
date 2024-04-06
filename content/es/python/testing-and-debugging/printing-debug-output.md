@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:19.376439-07:00
-description: "C\xF3mo: Ejemplo de salida."
-lastmod: '2024-04-05T21:53:59.972235-06:00'
+description: "C\xF3mo: Hist\xF3ricamente, imprimir para depuraci\xF3n ha sido una\
+  \ de las t\xE9cnicas m\xE1s r\xE1pidas y f\xE1ciles para inspeccionar c\xF3digo.\
+  \ No requiere herramientas\u2026"
+lastmod: '2024-04-05T22:51:12.410947-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Hist\xF3ricamente, imprimir para depuraci\xF3n ha sido una de las t\xE9\
+  cnicas m\xE1s r\xE1pidas y f\xE1ciles para inspeccionar c\xF3digo."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

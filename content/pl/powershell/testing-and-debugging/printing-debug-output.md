@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:19.158196-07:00
-description: "How to: (Jak to zrobi\u0107:) Wynik."
-lastmod: '2024-04-05T21:53:37.056932-06:00'
+description: "How to: (Jak to zrobi\u0107:) Historia mechanizm\xF3w debugowania si\u0119\
+  ga pocz\u0105tk\xF3w programowania. Pierwotnie debugowanie by\u0142o procesem manualnym.\
+  \ PowerShell od\u2026"
+lastmod: '2024-04-05T22:50:49.958891-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107:) Wynik."
+summary: "(Jak to zrobi\u0107:) Historia mechanizm\xF3w debugowania si\u0119ga pocz\u0105\
+  tk\xF3w programowania."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:55:37.743351-07:00
-description: 'Hoe: Toekomstige datums berekenen.'
-lastmod: '2024-03-13T22:44:50.823505-06:00'
+description: "Hoe: In C#, zijn `DateTime` en `TimeSpan` de basis voor datum- en tijdoperaties.\
+  \ `DateTime` vertegenwoordigt een moment in tijd, doorgaans uitgedrukt als\u2026"
+lastmod: '2024-04-05T22:51:03.645158-06:00'
 model: gpt-4-0125-preview
-summary: Toekomstige datums berekenen.
+summary: In C#, zijn `DateTime` en `TimeSpan` de basis voor datum- en tijdoperaties.
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

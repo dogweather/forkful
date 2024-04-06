@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:00:23.507324-07:00
-description: 'How to: (Wie man''s macht:) .'
-lastmod: '2024-04-05T21:53:55.331486-06:00'
+description: "How to: (Wie man's macht:) HTTP-Anfragen sind seit den fr\xFChen 90er\
+  \ Jahren Teil des Internets \u2013 entscheidend f\xFCr die Kommunikation zwischen\
+  \ Client und\u2026"
+lastmod: '2024-04-05T22:51:08.040235-06:00'
 model: gpt-4-1106-preview
-summary: (Wie man's macht:) .
+summary: "(Wie man's macht:) HTTP-Anfragen sind seit den fr\xFChen 90er Jahren Teil\
+  \ des Internets \u2013 entscheidend f\xFCr die Kommunikation zwischen Client und\
+  \ Server."
 title: Einen HTTP-Request senden
 weight: 44
 ---

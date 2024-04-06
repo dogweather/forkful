@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:38:05.288209-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:36.470352-06:00'
+description: "How to: (Jak to zrobi\u0107:) W Elixirze, tak jak i w wielu innych j\u0119\
+  zykach programowania, operacja konwersji na ma\u0142e litery jest standardowym narz\u0119\
+  dziem.\u2026"
+lastmod: '2024-04-05T22:50:49.335529-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) W Elixirze, tak jak i w wielu innych j\u0119zykach\
+  \ programowania, operacja konwersji na ma\u0142e litery jest standardowym narz\u0119\
+  dziem."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:04.199468-07:00
-description: "Como Fazer: **Sa\xEDda:**."
-lastmod: '2024-04-05T21:53:46.869965-06:00'
+description: "Como Fazer: Interpola\xE7\xE3o de strings n\xE3o \xE9 exclusiva de Kotlin\
+  \ e existe em v\xE1rias linguagens modernas. Historicamente, construir strings din\xE2\
+  micas envolvia\u2026"
+lastmod: '2024-04-05T22:50:59.786719-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Interpola\xE7\xE3o de strings n\xE3o \xE9 exclusiva de Kotlin e existe em\
+  \ v\xE1rias linguagens modernas."
 title: Interpolando uma string
 weight: 8
 ---

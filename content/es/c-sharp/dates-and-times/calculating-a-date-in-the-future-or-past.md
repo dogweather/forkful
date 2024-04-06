@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:28:37.396858-07:00
-description: "C\xF3mo hacerlo: Resultado."
-lastmod: '2024-04-05T21:54:00.434084-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, la gesti\xF3n de fechas ha sido\
+  \ complicada debido a diferentes calendarios y husos horarios. En C#, `DateTime`\
+  \ simplifica las\u2026"
+lastmod: '2024-04-05T22:51:12.830804-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Hist\xF3ricamente, la gesti\xF3n de fechas ha sido complicada debido a diferentes\
+  \ calendarios y husos horarios."
 title: "C\xE1lculo de una fecha en el futuro o el pasado"
 weight: 26
 ---

@@ -1,9 +1,15 @@
 ---
 date: 2024-01-20 17:45:24.292687-07:00
-description: 'How to: (Comment faire : ) .'
-lastmod: '2024-04-05T22:38:57.946381-06:00'
+description: "How to: (Comment faire : ) Historiquement, extraire des sous-cha\xEE\
+  nes est important pour la manipulation de texte (pensez au C avec `strncpy`), mais\u2026"
+lastmod: '2024-04-05T22:51:11.432764-06:00'
 model: gpt-4-1106-preview
-summary: '(Comment faire : ) .'
+summary: "(Comment faire : ) Historiquement, extraire des sous-cha\xEEnes est important\
+  \ pour la manipulation de texte (pensez au C avec `strncpy`), mais Elixir, n\xE9\
+  \ en 2011, rend le processus plus facile et plus s\xFBr sans pointer de manipulation\
+  \ directe. Alternativement, on peut utiliser des r\xE9gex avec `Regex.scan/2`, mais\
+  \ c'est plus lourd. La cl\xE9 est `String`, un module avec des fonctions optimis\xE9\
+  es qui s'occupent de l'UTF-8 automatiquement, donc pas de souci pour l'encodage."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

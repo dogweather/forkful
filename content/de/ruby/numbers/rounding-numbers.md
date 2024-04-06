@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 03:46:56.837698-07:00
-description: 'Wie: Beispielausgabe.'
-lastmod: '2024-04-05T21:53:56.290267-06:00'
+description: "Wie: Das Runden von Zahlen ist nicht neu \u2013 Menschen tun dies seit\
+  \ Jahrhunderten, um Berechnungen zu vereinfachen oder um innerhalb der Grenzen ihrer\u2026"
+lastmod: '2024-04-05T22:51:08.928984-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Das Runden von Zahlen ist nicht neu \u2013 Menschen tun dies seit Jahrhunderten,\
+  \ um Berechnungen zu vereinfachen oder um innerhalb der Grenzen ihrer Werkzeuge\
+  \ zu arbeiten."
 title: Zahlen runden
 weight: 13
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:11.947785-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:35.758089-06:00'
+description: "How to: Historically, Java provided `Date` and `Calendar` classes but\
+  \ they weren't very user-friendly. Kotlin uses similar classes under the hood but\u2026"
+lastmod: '2024-04-05T22:50:48.616053-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Historically, Java provided `Date` and `Calendar` classes but they weren't
+  very user-friendly.
 title: Comparing two dates
 weight: 27
 ---

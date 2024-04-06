@@ -1,9 +1,14 @@
 ---
 date: 2024-01-20 17:42:02.027346-07:00
-description: "C\xF3mo Hacerlo: Salida."
-lastmod: '2024-04-05T21:54:00.835702-06:00'
+description: "C\xF3mo Hacerlo: Eliminar caracteres seg\xFAn un patr\xF3n no es algo\
+  \ exclusivo de Fish Shell; es un concepto usado en much\xEDsimas herramientas de\
+  \ programaci\xF3n y\u2026"
+lastmod: '2024-04-05T22:51:13.198057-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Eliminar caracteres seg\xFAn un patr\xF3n no es algo exclusivo de Fish Shell;\
+  \ es un concepto usado en much\xEDsimas herramientas de programaci\xF3n y procesamiento\
+  \ de texto, con ra\xEDces en las expresiones regulares que surgieron en los a\xF1\
+  os 50."
 title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---

@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:15.627684-07:00
-description: 'Hoe te: Voorbeelduitvoer.'
-lastmod: '2024-04-05T21:53:50.572846-06:00'
+description: "Hoe te: Er was eens, voordat OAuth en JWTs de scene overnamen, was basisauth\
+  \ de go-to. Het is nog steeds handig voor interne gereedschappen of Proof of\u2026"
+lastmod: '2024-04-05T22:51:03.388496-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: Er was eens, voordat OAuth en JWTs de scene overnamen, was basisauth de go-to.
 title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---

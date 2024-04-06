@@ -1,10 +1,18 @@
 ---
 date: 2024-01-20 17:32:45.813411-07:00
-description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) ."
+description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) Elm\uC5D0\uC11C \uB0A0\
+  \uC9DC \uBE44\uAD50\uB294 `Time.Posix` \uD0C0\uC785\uC744 \uD1B5\uD574 \uC774\uB8E8\
+  \uC5B4\uC9D1\uB2C8\uB2E4, \uC774\uB294 1970\uB144 1\uC6D4 1\uC77C \uC790\uC815 UTC\
+  \ \uC774\uD6C4 \uBC00\uB9AC\uCD08\uB85C \uD45C\uD604\uB429\uB2C8\uB2E4. `Time.millisToPosix`\
+  \ \uD568\uC218\uB294 \uBC00\uB9AC\uCD08\uB97C `Posix` \uD0C0\uC785\uC73C\uB85C \uBCC0\
+  \uD658\uD569\uB2C8\uB2E4.\u2026"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:56.878900-06:00'
+lastmod: '2024-04-05T22:51:09.489812-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) Elm\uC5D0\uC11C \uB0A0\uC9DC \uBE44\
+  \uAD50\uB294 `Time.Posix` \uD0C0\uC785\uC744 \uD1B5\uD574 \uC774\uB8E8\uC5B4\uC9D1\
+  \uB2C8\uB2E4, \uC774\uB294 1970\uB144 1\uC6D4 1\uC77C \uC790\uC815 UTC \uC774\uD6C4\
+  \ \uBC00\uB9AC\uCD08\uB85C \uD45C\uD604\uB429\uB2C8\uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 weight: 27
 ---

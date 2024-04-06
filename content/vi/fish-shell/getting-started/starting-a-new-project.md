@@ -2,10 +2,17 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:37.705860-07:00
-description: "L\xE0m th\u1EBF n\xE0o: K\u1EBFt qu\u1EA3 m\u1EABu."
-lastmod: '2024-04-05T21:53:38.553978-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t d\u1EF1\
+  \ \xE1n m\u1EDBi c\xF3 m\u1ED9t l\u1ECBch s\u1EED d\xE0i, tr\u1EDF n\xEAn ti\xEA\
+  u chu\u1EA9n h\xF3a h\u01A1n v\u1EDBi s\u1EF1 ph\xE1t tri\u1EC3n c\u1EE7a c\xE1\
+  c h\u1EC7 th\u1ED1ng ki\u1EC3m so\xE1t phi\xEAn b\u1EA3n hi\u1EC7n \u0111\u1EA1\
+  i\u2026"
+lastmod: '2024-04-05T22:50:51.508359-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Vi\u1EC7c thi\u1EBFt l\u1EADp m\u1ED9t d\u1EF1 \xE1n m\u1EDBi c\xF3 m\u1ED9\
+  t l\u1ECBch s\u1EED d\xE0i, tr\u1EDF n\xEAn ti\xEAu chu\u1EA9n h\xF3a h\u01A1n v\u1EDB\
+  i s\u1EF1 ph\xE1t tri\u1EC3n c\u1EE7a c\xE1c h\u1EC7 th\u1ED1ng ki\u1EC3m so\xE1\
+  t phi\xEAn b\u1EA3n hi\u1EC7n \u0111\u1EA1i nh\u01B0 Git."
 title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:34:20.036693-07:00
-description: "Hvordan: Eksempel p\xE5 utdata."
-lastmod: '2024-04-05T21:53:42.002576-06:00'
+description: "Hvordan: XML, eller det utvidbare merkespr\xE5ket, har eksistert siden\
+  \ slutten av 90-tallet og forblir et mye brukt format for strukturerte data. PowerShell\u2026"
+lastmod: '2024-04-05T22:50:55.046259-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "XML, eller det utvidbare merkespr\xE5ket, har eksistert siden slutten av\
+  \ 90-tallet og forblir et mye brukt format for strukturerte data."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

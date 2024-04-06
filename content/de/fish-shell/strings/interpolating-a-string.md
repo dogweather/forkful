@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:50:49.970956-07:00
-description: 'How to: Fish Shell macht''s leicht.'
-lastmod: '2024-03-13T22:44:54.294314-06:00'
+description: "How to: In den fr\xFChen Unix-Tagen: `sh` und `bash` benutzten die Syntax\
+  \ `\"$variable\"`. Fish ist moderner und eliminiert oft den Bedarf f\xFCr\u2026"
+lastmod: '2024-04-05T22:51:08.831091-06:00'
 model: gpt-4-1106-preview
-summary: Fish Shell macht's leicht.
+summary: "In den fr\xFChen Unix-Tagen."
 title: Zeichenketten interpolieren
 weight: 8
 ---

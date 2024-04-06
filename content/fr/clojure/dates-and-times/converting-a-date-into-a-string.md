@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:36:13.234403-07:00
-description: 'Comment faire : Sortie.'
-lastmod: '2024-04-05T21:53:58.874509-06:00'
+description: "Comment faire : Historiquement, Clojure, une variante moderne de Lisp,\
+  \ g\xE8re les dates via la biblioth\xE8que Java Joda-Time. Depuis Java 8, `java.time`,\
+  \ un\u2026"
+lastmod: '2024-04-05T22:51:11.414475-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, Clojure, une variante moderne de Lisp, g\xE8re les dates\
+  \ via la biblioth\xE8que Java Joda-Time."
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

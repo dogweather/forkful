@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:33:34.944699-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
-  \u0438:) Sample Output."
-lastmod: '2024-04-05T21:53:49.673236-06:00'
+  \u0438:) Lua doesn't have built-in date comparison functions. Instead, you compare\
+  \ timestamps. Historically, timestamps represent seconds\u2026"
+lastmod: '2024-04-05T22:51:02.562333-06:00'
 model: gpt-4-1106-preview
 summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
-  \ Sample Output."
+  \ Lua doesn't have built-in date comparison functions."
 title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
   \u0445 \u0434\u0430\u0442"
 weight: 27

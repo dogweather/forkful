@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:35.844550-07:00
-description: "Hur man g\xF6r: Output."
-lastmod: '2024-04-05T21:53:39.758311-06:00'
+description: "Hur man g\xF6r: Historiskt s\xE4tt har substr\xE4ngextraktion alltid\
+  \ varit en central del av str\xE4nghantering i programmeringsspr\xE5k. I tidiga\
+  \ Ruby-versioner\u2026"
+lastmod: '2024-04-05T22:50:52.733142-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiskt s\xE4tt har substr\xE4ngextraktion alltid varit en central del\
+  \ av str\xE4nghantering i programmeringsspr\xE5k."
 title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---

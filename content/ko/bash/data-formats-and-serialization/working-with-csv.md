@@ -2,11 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:18:51.431508-07:00
-description: "\uBC29\uBC95: **CSV \uD30C\uC77C\uC744 \uC904 \uB2E8\uC704\uB85C \uC77D\
-  \uAE30**."
-lastmod: '2024-03-13T22:44:55.514487-06:00'
+description: ''
+lastmod: '2024-04-05T22:51:09.796552-06:00'
 model: gpt-4-0125-preview
-summary: "**CSV \uD30C\uC77C\uC744 \uC904 \uB2E8\uC704\uB85C \uC77D\uAE30**."
+summary: ''
 title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
 weight: 37
 ---

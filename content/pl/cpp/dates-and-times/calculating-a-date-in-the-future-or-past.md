@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:28:33.161906-07:00
-description: "Jak to zrobi\u0107? Sample Output."
-lastmod: '2024-04-05T22:37:44.474591-06:00'
+description: "Jak to zrobi\u0107? W C++, obliczanie daty w przesz\u0142o\u015Bci lub\
+  \ przysz\u0142o\u015Bci jest \u0142atwiejsze z bibliotek\u0105 `<chrono>`, wprowadzon\u0105\
+  \ w C++11. Wcze\u015Bniej, programi\u015Bci\u2026"
+lastmod: '2024-04-05T22:50:50.061906-06:00'
 model: gpt-4-1106-preview
-summary: "Jak to zrobi\u0107? Sample Output."
+summary: "W C++, obliczanie daty w przesz\u0142o\u015Bci lub przysz\u0142o\u015Bci\
+  \ jest \u0142atwiejsze z bibliotek\u0105 `<chrono>`, wprowadzon\u0105 w C++11."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:40:51.161685-07:00
-description: "Hur man g\xF6r: Resultat."
-lastmod: '2024-04-05T21:53:39.397094-06:00'
+description: "Hur man g\xF6r: I \xE4ldre versioner av vissa operativsystem skapade\
+  \ `os.tmpname()` enbart ett namn, inte sj\xE4lva filen. Nu skapar de flesta tempor\xE4\
+  ra filer\u2026"
+lastmod: '2024-04-05T22:50:52.362434-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "I \xE4ldre versioner av vissa operativsystem skapade `os.tmpname()` enbart\
+  \ ett namn, inte sj\xE4lva filen."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

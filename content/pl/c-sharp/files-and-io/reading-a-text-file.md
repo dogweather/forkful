@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:54:19.969488-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:36.859888-06:00'
+description: "How to: (Jak to zrobi\u0107:) Czytanie plik\xF3w tekstowych w C# ma\
+  \ swoje korzenie w wcze\u015Bniejszych j\u0119zykach i modelach IO. Klasa `System.IO.File`\
+  \ pojawi\u0142a si\u0119 w\u2026"
+lastmod: '2024-04-05T22:50:49.746745-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Czytanie plik\xF3w tekstowych w C# ma swoje korzenie\
+  \ w wcze\u015Bniejszych j\u0119zykach i modelach IO."
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

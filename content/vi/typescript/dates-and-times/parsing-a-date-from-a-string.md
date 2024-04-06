@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:42.665806-07:00
-description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EA7u ra m\u1EABu cho c\u1EA3 hai."
-lastmod: '2024-04-05T21:53:37.745913-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB\
+  \ chu\u1ED7i lu\xF4n l\xE0 m\u1ED9t \u0111i\u1EC3m \u0111au trong JavaScript, ng\xF4\
+  n ng\u1EEF c\u01A1 b\u1EA3n c\u1EE7a TypeScript. Vi\u1EC7c ph\xE2n t\xEDch c\xFA\
+  \ ph\xE1p kh\xF4ng ch\xEDnh x\xE1c\u2026"
+lastmod: '2024-04-05T22:50:50.675251-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1EA7u ra m\u1EABu cho c\u1EA3 hai."
+summary: "Ph\xE2n t\xEDch c\xFA ph\xE1p ng\xE0y t\u1EEB chu\u1ED7i lu\xF4n l\xE0 m\u1ED9\
+  t \u0111i\u1EC3m \u0111au trong JavaScript, ng\xF4n ng\u1EEF c\u01A1 b\u1EA3n c\u1EE7\
+  a TypeScript."
 title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---

@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:42.288157-07:00
-description: "L\xE0m th\u1EBF n\xE0o: K\u1EBFt qu\u1EA3 m\u1EABu."
-lastmod: '2024-04-05T21:53:38.087074-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Haskell l\xE0 m\u1ED9t ng\xF4n ng\u1EEF ch\u1EE9\
+  c n\u0103ng thu\u1EA7n t\xFAy n\u01A1i m\xE0 c\xE1c chu\u1ED7i \u0111\u01B0\u1EE3\
+  c bi\u1EC3u di\u1EC5n nh\u01B0 danh s\xE1ch c\xE1c k\xFD t\u1EF1. H\xE0m `length`,\
+  \ m\u1ED9t ph\u1EA7n c\u1EE7a Prelude (th\u01B0\u2026"
+lastmod: '2024-04-05T22:50:51.029778-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Haskell l\xE0 m\u1ED9t ng\xF4n ng\u1EEF ch\u1EE9c n\u0103ng thu\u1EA7n t\xFA\
+  y n\u01A1i m\xE0 c\xE1c chu\u1ED7i \u0111\u01B0\u1EE3c bi\u1EC3u di\u1EC5n nh\u01B0\
+  \ danh s\xE1ch c\xE1c k\xFD t\u1EF1."
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---

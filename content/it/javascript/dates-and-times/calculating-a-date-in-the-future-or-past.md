@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:14.364798-07:00
-description: 'How to: Calcolare una data futura.'
-lastmod: '2024-03-13T22:44:43.826016-06:00'
+description: "How to: Calcolare date nel futuro o nel passato \xE8 una necessit\xE0\
+  \ comune in informatica. L'oggetto `Date` in JavaScript esiste da quando il linguaggio\
+  \ \xE8\u2026"
+lastmod: '2024-04-05T22:50:57.611930-06:00'
 model: gpt-4-1106-preview
-summary: Calcolare una data futura.
+summary: "Calcolare date nel futuro o nel passato \xE8 una necessit\xE0 comune in\
+  \ informatica."
 title: Calcolo di una data futura o passata
 weight: 26
 ---

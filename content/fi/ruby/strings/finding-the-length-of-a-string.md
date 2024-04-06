@@ -1,9 +1,20 @@
 ---
 date: 2024-01-20 17:48:51.167761-07:00
-description: "How to: - N\xE4in teet: Tulostus."
-lastmod: '2024-04-05T22:38:57.691893-06:00'
+description: "How to: - N\xE4in teet: Merkkijonon pituuden l\xF6yt\xE4minen on perusoperaatio\
+  \ ohjelmoinnissa, ja sit\xE4 on k\xE4ytetty alusta asti. Rubyssa `length` ja `size`\
+  \ metodit\u2026"
+lastmod: '2024-04-05T22:51:11.218976-06:00'
 model: gpt-4-1106-preview
-summary: "- N\xE4in teet: Tulostus."
+summary: "- N\xE4in teet: Merkkijonon pituuden l\xF6yt\xE4minen on perusoperaatio\
+  \ ohjelmoinnissa, ja sit\xE4 on k\xE4ytetty alusta asti. Rubyssa `length` ja `size`\
+  \ metodit ovat synonyymeja; molemmat palauttavat merkkijonon pituuden. Metodien\
+  \ toteutus on tehokas, koska Ruby sis\xE4isesti yll\xE4pit\xE4\xE4 pituustietoa\
+  \ merkkijonojen hallinnassa. Historiallisesti joissakin kieliss\xE4 pituuden selvitt\xE4\
+  minen on vaatinut merkkijonon l\xE4pik\xE4ynti\xE4, kunnes kohdataan lopetusmerkki.\
+  \ Rubyssa t\xE4m\xE4 operaatio on nopea ja yksinkertainen kutsua, optimoitu osa\
+  \ kielt\xE4. Vaihtoehtoisesti, jos merkkijono sis\xE4lt\xE4\xE4 Unicode-merkkej\xE4\
+  , jotka voivat viev\xE4t enemm\xE4n kuin yhden tavun, voimme k\xE4ytt\xE4\xE4 `chars`\
+  \ ja `length` yhdistelm\xE4\xE4 saadaksemme \"oikean\" merkkien m\xE4\xE4r\xE4n."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

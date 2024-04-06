@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:31:01.920677-07:00
-description: 'How to: Sample Output.'
-lastmod: '2024-04-05T21:53:55.828921-06:00'
+description: "How to: In Haskell berechnen wir Daten mit der Bibliothek 'Data.Time'.\
+  \ Sie ist robust und dabei weit verbreitet. Historisch gesehen war das Rechnen mit\u2026"
+lastmod: '2024-04-05T22:51:08.501137-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: In Haskell berechnen wir Daten mit der Bibliothek 'Data.Time'.
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

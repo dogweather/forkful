@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:49.102790-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-04-05T21:53:58.397487-06:00'
+description: "How to: (Kuinka tehd\xE4:) HTTP-pyynt\xF6jen l\xE4hett\xE4minen on webin\
+  \ perustoimintoja, joka dates back to the early days of the internet. Alternatives\
+  \ include\u2026"
+lastmod: '2024-04-05T22:51:10.971102-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4:) HTTP-pyynt\xF6jen l\xE4hett\xE4minen on webin perustoimintoja,\
+  \ joka dates back to the early days of the internet."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

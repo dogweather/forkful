@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:48:19.638615-07:00
-description: "How to (Hur man g\xF6r) ."
-lastmod: '2024-04-05T22:37:46.159559-06:00'
+description: "How to (Hur man g\xF6r) L\xE4ngden p\xE5 en str\xE4ng i Python hittas\
+  \ med den inbyggda `len()`-funktionen, vilket \xE4r snabbt och enkelt. Historiskt\
+  \ har l\xE4ngden p\xE5 en\u2026"
+lastmod: '2024-04-05T22:50:51.756408-06:00'
 model: gpt-4-1106-preview
-summary: "How to (Hur man g\xF6r) ."
+summary: "Historiskt har l\xE4ngden p\xE5 en str\xE4ng varit viktig d\xE5 det var\
+  \ n\xF6dv\xE4ndigt att veta f\xF6r att undvika att \xF6verskrida buffertgr\xE4nser\
+  \ i spr\xE5k som C."
 title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---

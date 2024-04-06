@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:31:59.655976-07:00
-description: 'How to: Sample Output.'
-lastmod: '2024-04-05T21:53:35.558888-06:00'
+description: "How to: Historically, managing dates in JavaScript\u2014and by extension\
+  \ TypeScript\u2014has been tricky due to the quirks of the Date object and timezones.\u2026"
+lastmod: '2024-04-05T22:50:48.417304-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historically, managing dates in JavaScript\u2014and by extension TypeScript\u2014\
+  has been tricky due to the quirks of the Date object and timezones."
 title: Calculating a date in the future or past
 weight: 26
 ---

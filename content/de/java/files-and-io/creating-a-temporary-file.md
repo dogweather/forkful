@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:40:21.827520-07:00
-description: 'How to: Sample Output.'
-lastmod: '2024-04-05T21:53:55.664890-06:00'
+description: "How to: Bevor die `java.nio`-Paketfamilie eingef\xFChrt wurde, war das\
+  \ Erstellen tempor\xE4rer Dateien weniger intuitiv. Man nutzte `File.createTempFile`,\
+  \ aber\u2026"
+lastmod: '2024-04-05T22:51:08.349970-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Bevor die `java.nio`-Paketfamilie eingef\xFChrt wurde, war das Erstellen\
+  \ tempor\xE4rer Dateien weniger intuitiv."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

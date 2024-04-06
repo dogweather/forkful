@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:36:21.778918-07:00
-description: How To (Comment faire ?) .
-lastmod: '2024-04-05T22:38:58.665080-06:00'
+description: "How To (Comment faire ?) Avant C++11, le traitement des dates et des\
+  \ cha\xEEnes \xE9tait moins standardis\xE9. Avec `<ctime>`, on a une interface h\xE9\
+  rit\xE9e du C. Les\u2026"
+lastmod: '2024-04-05T22:51:12.076149-06:00'
 model: gpt-4-1106-preview
-summary: How To (Comment faire ?) .
+summary: "Avec `<ctime>`, on a une interface h\xE9rit\xE9e du C."
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

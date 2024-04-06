@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:32:41.767956-07:00
-description: "Hur man g\xF6r: S\xE5 h\xE4r tolkar du XML."
-lastmod: '2024-03-13T22:44:38.317767-06:00'
+description: "Hur man g\xF6r: XML st\xE5r f\xF6r eXtensible Markup Language, ett dataformat\
+  \ som har funnits sedan slutet av 90-talet. Det definierar en upps\xE4ttning regler\
+  \ f\xF6r\u2026"
+lastmod: '2024-04-05T22:50:52.631520-06:00'
 model: gpt-4-0125-preview
-summary: "S\xE5 h\xE4r tolkar du XML."
+summary: "XML st\xE5r f\xF6r eXtensible Markup Language, ett dataformat som har funnits\
+  \ sedan slutet av 90-talet."
 title: Att arbeta med XML
 weight: 40
 ---

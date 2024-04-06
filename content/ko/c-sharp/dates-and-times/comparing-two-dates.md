@@ -1,10 +1,18 @@
 ---
 date: 2024-01-20 17:32:26.116571-07:00
-description: "How to: (\uBC29\uBC95) Sample Output."
+description: "How to: (\uBC29\uBC95) \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30 \uC804\uC5D0\
+  \uB294 \uC2DC\uAC04\uB300\uB098 `DateTimeKind` \uC124\uC815 \uB4F1\uC744 \uC720\uB150\
+  \uD558\uC138\uC694. `DateTime.Compare`\uB294 \uAC04\uB2E8\uD558\uACE0 \uC9C1\uAD00\
+  \uC801\uC778 \uAE30\uBCF8 \uC81C\uACF5 \uBA54\uC11C\uB4DC\uC785\uB2C8\uB2E4. \uD558\
+  \uC9C0\uB9CC \uC5EC\uB7EC\uBD84 \uC790\uC2E0\uC758 \uC694\uAD6C \uC0AC\uD56D\uC5D0\
+  \ \uB530\uB978 \uBCC4\uB3C4\uC758 \uB3D9\uC791\uC744 \uAD6C\uD604\uD558\uACE0 \uC2F6\
+  \uB2E4\uBA74 `TimeSpan` \uAC1D\uCCB4\u2026"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:56.975481-06:00'
+lastmod: '2024-04-05T22:51:09.588152-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\uBC29\uBC95) \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30 \uC804\uC5D0\uB294\
+  \ \uC2DC\uAC04\uB300\uB098 `DateTimeKind` \uC124\uC815 \uB4F1\uC744 \uC720\uB150\
+  \uD558\uC138\uC694."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 weight: 27
 ---

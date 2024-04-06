@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:23.461090-07:00
-description: "C\xF3mo hacerlo: Ejemplo de salida."
-lastmod: '2024-04-05T21:54:00.821369-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, lidiar con fechas en JavaScript\
+  \ pod\xEDa ser complicado debido a la manipulaci\xF3n manual de milisegundos y zonas\
+  \ horarias. Esto\u2026"
+lastmod: '2024-04-05T22:51:13.185048-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Hist\xF3ricamente, lidiar con fechas en JavaScript pod\xEDa ser complicado\
+  \ debido a la manipulaci\xF3n manual de milisegundos y zonas horarias."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

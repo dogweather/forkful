@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:41:35.902827-07:00
-description: 'How to: Beispiel-Ausgabe.'
-lastmod: '2024-04-05T21:53:56.004882-06:00'
+description: "How to: Bevor `System.IO.Path]::GetTempFileName()` in .NET kam, erstellten\
+  \ Entwickler oft manuell tempor\xE4re Dateien, indem sie zuf\xE4llige Namen generierten\u2026"
+lastmod: '2024-04-05T22:51:08.665940-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Bevor `System.IO.Path]::GetTempFileName()` in .NET kam, erstellten Entwickler\
+  \ oft manuell tempor\xE4re Dateien, indem sie zuf\xE4llige Namen generierten und\
+  \ Konflikte handhabten."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

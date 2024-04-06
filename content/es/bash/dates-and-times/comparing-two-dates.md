@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:15.292828-07:00
-description: "C\xF3mo: Salida posible."
-lastmod: '2024-04-05T21:54:00.604706-06:00'
+description: "C\xF3mo: Bash usa GNU `date` para manipular y comparar fechas. Antes\
+  \ de Bash versi\xF3n 4, comparar fechas era un dolor: ten\xEDas que convertir fechas\
+  \ a segundos\u2026"
+lastmod: '2024-04-05T22:51:12.986651-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Bash usa GNU `date` para manipular y comparar fechas.
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

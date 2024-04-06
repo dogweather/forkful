@@ -1,9 +1,18 @@
 ---
 date: 2024-01-20 17:52:44.037535-07:00
-description: 'How to: (Comment faire : ) .'
-lastmod: '2024-04-05T22:38:58.286685-06:00'
+description: "How to: (Comment faire : ) Historiquement, les impressions de d\xE9\
+  bogage sont le moyen le plus simple et le plus direct de comprendre le flux d'ex\xE9\
+  cution du\u2026"
+lastmod: '2024-04-05T22:51:11.743902-06:00'
 model: gpt-4-1106-preview
-summary: '(Comment faire : ) .'
+summary: "(Comment faire : ) Historiquement, les impressions de d\xE9bogage sont le\
+  \ moyen le plus simple et le plus direct de comprendre le flux d'ex\xE9cution du\
+  \ code. Alternativement, les IDE modernes offrent des outils de d\xE9bogage avanc\xE9\
+  s avec des points d'arr\xEAt et une inspection des variables en temps r\xE9el. En\
+  \ ce qui concerne Kotlin et l'impl\xE9mentation, `println()` est souvent utilis\xE9\
+  \ pour le d\xE9bogage rapide, mais il est \xE9galement possible d'utiliser des frameworks\
+  \ de journalisation comme Log4j ou SLF4J pour une gestion plus robuste et nuanc\xE9\
+  e."
 title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---

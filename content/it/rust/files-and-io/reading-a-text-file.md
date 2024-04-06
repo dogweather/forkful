@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:55:26.857450-07:00
-description: 'How to: (Come fare:) *Output*.'
-lastmod: '2024-04-05T21:53:44.005980-06:00'
+description: "How to: (Come fare:) Rust offre diverse strutture e moduli per la lettura\
+  \ dei file di testo. `std::fs::File` e `std::io::prelude::*` sono quelli basilari.\u2026"
+lastmod: '2024-04-05T22:50:57.066890-06:00'
 model: gpt-4-1106-preview
-summary: (Come fare:) *Output*.
+summary: (Come fare:) Rust offre diverse strutture e moduli per la lettura dei file
+  di testo.
 title: Lettura di un file di testo
 weight: 22
 ---

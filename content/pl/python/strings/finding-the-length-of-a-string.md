@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:48:11.871397-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:36.388869-06:00'
+description: "How to: (Jak to zrobi\u0107:) Funkcja `len()` w Pythonie wykorzystuje\
+  \ metod\u0119 `__len__()` zaimplementowan\u0105 przez r\xF3\u017Cne typy danych.\
+  \ Nie jest to tylko liczba\u2026"
+lastmod: '2024-04-05T22:50:49.248335-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Funkcja `len()` w Pythonie wykorzystuje metod\u0119\
+  \ `__len__()` zaimplementowan\u0105 przez r\xF3\u017Cne typy danych."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

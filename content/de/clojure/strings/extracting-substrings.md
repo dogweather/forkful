@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:45:30.285772-07:00
-description: 'How to: "So geht''s:".'
-lastmod: '2024-04-05T21:53:55.366873-06:00'
+description: "How to: \"Tiefergehendes\" Das Extrahieren von Substrings findet seit\
+  \ den fr\xFChesten Tagen der Programmierung statt. Alternativen in anderen Sprachen\
+  \ sind\u2026"
+lastmod: '2024-04-05T22:51:08.073890-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\"Tiefergehendes\" Das Extrahieren von Substrings findet seit den fr\xFC\
+  hesten Tagen der Programmierung statt."
 title: Teilstrings extrahieren
 weight: 6
 ---

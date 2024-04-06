@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:53:03.682497-07:00
-description: 'How to: Sample Output.'
-lastmod: '2024-04-05T21:53:35.865539-06:00'
+description: "How to: Debug output hasn't changed much: it's been there since the\
+  \ early days when ancient programmers debugged with printf(). PHP embraced this\
+  \ with\u2026"
+lastmod: '2024-04-05T22:50:48.723457-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Debug output hasn't changed much.
 title: Printing debug output
 weight: 33
 ---

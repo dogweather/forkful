@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:33:23.914324-07:00
-description: 'How to: (Come Fare:) .'
-lastmod: '2024-04-05T21:53:44.293273-06:00'
+description: "How to: (Come Fare:) Comparare date risale ai primi giorni del programming.\
+  \ PHP ha incorporato oggetti DateTime dal PHP 5.2.0. Prima, si usavano funzioni\u2026"
+lastmod: '2024-04-05T22:50:57.338891-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: (Come Fare:) Comparare date risale ai primi giorni del programming.
 title: Confronto tra due date
 weight: 27
 ---

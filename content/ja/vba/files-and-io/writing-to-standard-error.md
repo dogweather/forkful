@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:10:00.553250-07:00
-description: "\u65B9\u6CD5\uFF1A Visual Basic for\u2026"
-lastmod: '2024-04-05T22:38:41.462762-06:00'
+description: ''
+lastmod: '2024-04-05T22:50:55.857942-06:00'
 model: gpt-4-0125-preview
 summary: "\u65B9\u6CD5\uFF1A VBA\u3067\u306F\u3001\u4ED6\u306E\u3044\u304F\u3064\u304B\
   \u306E\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u8A00\u8A9E\u306E\u3088\u3046\u306B\

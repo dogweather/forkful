@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:34:12.387290-07:00
-description: 'Come fare: Esempio di Output.'
-lastmod: '2024-04-05T21:53:44.427023-06:00'
+description: "Come fare: XML, o linguaggio di markup estensibile, esiste dagli anni\
+  \ '90 ed \xE8 ancora un formato ampiamente utilizzato per dati strutturati. PowerShell\u2026"
+lastmod: '2024-04-05T22:50:57.468598-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "XML, o linguaggio di markup estensibile, esiste dagli anni '90 ed \xE8 ancora\
+  \ un formato ampiamente utilizzato per dati strutturati."
 title: Lavorare con XML
 weight: 40
 ---

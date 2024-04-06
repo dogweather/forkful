@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:54:31.156112-07:00
-description: "Hur g\xF6r man: Sample output."
-lastmod: '2024-04-05T21:53:39.648066-06:00'
+description: "Hur g\xF6r man: Historiskt sett har filhantering alltid varit en grundl\xE4\
+  ggande del av programmering. I b\xF6rjan av datortiden var textfiler det prim\xE4\
+  ra s\xE4ttet\u2026"
+lastmod: '2024-04-05T22:50:52.624163-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiskt sett har filhantering alltid varit en grundl\xE4ggande del av\
+  \ programmering."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

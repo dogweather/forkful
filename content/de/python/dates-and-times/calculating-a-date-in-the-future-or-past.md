@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:31:51.146303-07:00
-description: 'Wie geht das: Beispielausgabe.'
-lastmod: '2024-04-05T21:53:55.347663-06:00'
+description: "Wie geht das: Das Konzept, Daten im Voraus zu berechnen, ist nichts\
+  \ Neues. Kalender und Astronomie nutzen es seit Jahrtausenden. In der Programmierung\u2026"
+lastmod: '2024-04-05T22:51:08.056546-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Das Konzept, Daten im Voraus zu berechnen, ist nichts Neues.
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

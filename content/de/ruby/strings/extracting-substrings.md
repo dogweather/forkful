@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:43.797135-07:00
-description: 'Anleitung: Erwartete Ausgabe.'
-lastmod: '2024-04-05T21:53:56.283895-06:00'
+description: "Anleitung: Bevor Programmiersprachen moderne Strings und Hilfsmethoden\
+  \ boten, mussten Programmierer manuell Zeichen durchlaufen und kopieren. Heute bieten\u2026"
+lastmod: '2024-04-05T22:51:08.923335-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Bevor Programmiersprachen moderne Strings und Hilfsmethoden boten, mussten
+  Programmierer manuell Zeichen durchlaufen und kopieren.
 title: Teilstrings extrahieren
 weight: 6
 ---

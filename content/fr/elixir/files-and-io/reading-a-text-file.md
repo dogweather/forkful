@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:53.809833-07:00
-description: 'Comment faire : Output.'
-lastmod: '2024-04-05T21:53:58.924810-06:00'
+description: "Comment faire : Historiquement, la lecture de fichiers est l'une des\
+  \ op\xE9rations de base en programmation. Elixir, avec son h\xE9ritage d'Erlang,\
+  \ met l'accent\u2026"
+lastmod: '2024-04-05T22:51:11.460628-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, la lecture de fichiers est l'une des op\xE9rations de base\
+  \ en programmation."
 title: Lecture d'un fichier texte
 weight: 22
 ---

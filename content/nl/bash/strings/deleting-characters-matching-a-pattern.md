@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:32.528387-07:00
-description: 'Hoe te: Output: `Hallo, Wereld!`.'
-lastmod: '2024-04-05T22:38:49.830513-06:00'
+description: ''
+lastmod: '2024-04-05T22:51:03.775586-06:00'
 model: gpt-4-0125-preview
-summary: 'Output: `Hallo, Wereld!`.'
+summary: ''
 title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---

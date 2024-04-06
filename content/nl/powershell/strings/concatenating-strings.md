@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:55.734342-07:00
-description: 'Hoe: Laten we er meteen induiken.'
-lastmod: '2024-03-13T22:44:51.018586-06:00'
+description: "Hoe: Historisch gezien was het concatenatie van strings een beetje ruw\
+  \ aan de randen in eerdere programmeertalen - denk eraan alsof je zinnen aan elkaar\u2026"
+lastmod: '2024-04-05T22:51:03.822013-06:00'
 model: gpt-4-0125-preview
-summary: Laten we er meteen induiken.
+summary: Historisch gezien was het concatenatie van strings een beetje ruw aan de
+  randen in eerdere programmeertalen - denk eraan alsof je zinnen aan elkaar plakt
+  met tape.
 title: Samenvoegen van strings
 weight: 3
 ---

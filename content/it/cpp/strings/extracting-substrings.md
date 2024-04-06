@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:45:24.400898-07:00
-description: 'How to: (Come fare:) .'
-lastmod: '2024-04-05T21:53:44.473101-06:00'
+description: "How to: (Come fare:) Estrarre sottosequenze \xE8 un'operazione comune\
+  \ nella programmazione sin dall'inizio. Nel C++, questo si fa con\u2026"
+lastmod: '2024-04-05T22:50:57.515222-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Come fare:) Estrarre sottosequenze \xE8 un'operazione comune nella programmazione\
+  \ sin dall'inizio."
 title: Estrazione di sottostringhe
 weight: 6
 ---

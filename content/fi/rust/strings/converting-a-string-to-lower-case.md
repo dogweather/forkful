@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:39:48.492908-07:00
-description: "How to: \"Kuinka tehd\xE4:\"."
-lastmod: '2024-04-05T21:53:57.903118-06:00'
+description: "How to: \"Sukellus syvyyksiin\" Rustin to_lowercase-funktio muuttaa\
+  \ merkkijonot pieniksi kirjaimiksi Unicode-standardin mukaisesti. Se ottaa huomioon\
+  \ eri\u2026"
+lastmod: '2024-04-05T22:51:10.494230-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: '"Sukellus syvyyksiin" Rustin to_lowercase-funktio muuttaa merkkijonot pieniksi
+  kirjaimiksi Unicode-standardin mukaisesti.'
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

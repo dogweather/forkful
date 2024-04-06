@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:18.087049-07:00
-description: "C\xF3mo: Salida esperada."
-lastmod: '2024-04-05T21:54:00.716265-06:00'
+description: "C\xF3mo: Concatenar strings es una tarea com\xFAn desde los albores\
+  \ de la programaci\xF3n. Originalmente, los lenguajes como C requer\xEDan manipulaciones\
+  \ manuales de\u2026"
+lastmod: '2024-04-05T22:51:13.089469-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Concatenar strings es una tarea com\xFAn desde los albores de la programaci\xF3\
+  n."
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

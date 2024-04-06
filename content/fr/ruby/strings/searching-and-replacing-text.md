@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:46.268553-07:00
-description: 'How to: (Comment faire:) .'
-lastmod: '2024-04-05T21:53:59.807811-06:00'
+description: "How to: (Comment faire:) Chercher et remplacer est une op\xE9ration\
+  \ vieille comme le monde informatique. En Ruby, `#gsub!` et `#sub!` sont les m\xE9\
+  thodes les\u2026"
+lastmod: '2024-04-05T22:51:12.261182-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Comment faire:) Chercher et remplacer est une op\xE9ration vieille comme\
+  \ le monde informatique."
 title: Recherche et remplacement de texte
 weight: 10
 ---

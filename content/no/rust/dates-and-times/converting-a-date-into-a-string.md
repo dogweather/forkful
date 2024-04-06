@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:40.399193-07:00
-description: "Slik gj\xF8r du: Output."
-lastmod: '2024-04-05T21:53:41.564485-06:00'
+description: "Slik gj\xF8r du: F\xF8r biblioteker som `chrono` og innebygde funksjoner,\
+  \ m\xE5tte Rust-programmerere h\xE5ndtere datoer manuelt, ofte ved \xE5 lage egne\
+  \ funksjoner for\u2026"
+lastmod: '2024-04-05T22:50:54.595956-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "F\xF8r biblioteker som `chrono` og innebygde funksjoner, m\xE5tte Rust-programmerere\
+  \ h\xE5ndtere datoer manuelt, ofte ved \xE5 lage egne funksjoner for format og validering."
 title: Konvertere en dato til en streng
 weight: 28
 ---

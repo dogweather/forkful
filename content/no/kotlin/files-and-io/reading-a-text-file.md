@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:54:34.879289-07:00
-description: 'Hvordan: **Utskrift:**.'
-lastmod: '2024-04-05T21:53:41.745659-06:00'
+description: "Hvordan: F\xF8r Kotlin og moderne spr\xE5k, som Python eller Ruby, gjorde\
+  \ filoperasjoner enkle, hadde Java og C programmerere en mer komplisert oppgave.\
+  \ Med\u2026"
+lastmod: '2024-04-05T22:50:54.778735-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "F\xF8r Kotlin og moderne spr\xE5k, som Python eller Ruby, gjorde filoperasjoner\
+  \ enkle, hadde Java og C programmerere en mer komplisert oppgave."
 title: Lese en tekstfil
 weight: 22
 ---

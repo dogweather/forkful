@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:50:36.726573-07:00
-description: 'Miten: Tuloste tulisi olla.'
-lastmod: '2024-04-05T21:53:58.429047-06:00'
+description: "Miten: Merkkijonon interpolointi on ollut ohjelmoinnissa k\xE4yt\xF6\
+  ss\xE4 jo vuosikymmeni\xE4. Esimerkiksi C:ss\xE4 yhdisteltiin tekstej\xE4 printf-funktion\
+  \ avulla, mutta\u2026"
+lastmod: '2024-04-05T22:51:11.001226-06:00'
 model: gpt-4-1106-preview
-summary: Tuloste tulisi olla.
+summary: "Merkkijonon interpolointi on ollut ohjelmoinnissa k\xE4yt\xF6ss\xE4 jo vuosikymmeni\xE4\
+  ."
 title: Merkkijonon interpolointi
 weight: 8
 ---

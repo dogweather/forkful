@@ -1,10 +1,18 @@
 ---
 date: 2024-01-20 17:41:02.444360-07:00
-description: "How to: (\uC5B4\uB5BB\uAC8C:) \uC0D8\uD50C \uCD9C\uB825."
+description: "How to: (\uC5B4\uB5BB\uAC8C:) \uC784\uC2DC \uD30C\uC77C\uC740 \uC708\
+  \uB3C4\uC5D0\uC11C 'Temp' \uD3F4\uB354\uB97C \uC0AC\uC6A9\uD574 \uB9CC\uB4E4\uC5B4\
+  \uC838\uC694. \uC77C\uBC18\uC801\uC73C\uB85C 'C:\\Users\\<UserName>\\AppData\\Local\\\
+  Temp' \uACBD\uB85C\uC5D0 \uC788\uC8E0. \uC774\uAC83\uB4E4\uC740 \uC2DC\uC2A4\uD15C\
+  \ \uC7AC\uBD80\uD305\uC774\uB098 \uD504\uB85C\uADF8\uB7A8 \uC885\uB8CC \uC2DC \uC790\
+  \uB3D9\uC73C\uB85C \uC0AD\uC81C\uB420 \uC218 \uC788\uC5B4\uC694. \uC5ED\uC0AC\uC801\
+  \uC73C\uB85C, \uC784\uC2DC\u2026"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:57.225459-06:00'
+lastmod: '2024-04-05T22:51:09.843156-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\uC5B4\uB5BB\uAC8C:) \uC784\uC2DC \uD30C\uC77C\uC740 \uC708\uB3C4\uC5D0\
+  \uC11C 'Temp' \uD3F4\uB354\uB97C \uC0AC\uC6A9\uD574 \uB9CC\uB4E4\uC5B4\uC838\uC694\
+  ."
 title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
 weight: 21
 ---

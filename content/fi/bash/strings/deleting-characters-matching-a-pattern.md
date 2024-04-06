@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:41:55.771843-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-04-05T21:53:58.296367-06:00'
+description: "How to: (Kuinka tehd\xE4:) Ensimm\xE4iset Unix-tekstink\xE4sittelyty\xF6\
+  kalut kehitettiin 1970-luvulla. Ty\xF6kalut kuten `tr` (translate), `sed` (stream\
+  \ editor) ja\u2026"
+lastmod: '2024-04-05T22:51:10.876270-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4:) Ensimm\xE4iset Unix-tekstink\xE4sittelyty\xF6kalut kehitettiin\
+  \ 1970-luvulla."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

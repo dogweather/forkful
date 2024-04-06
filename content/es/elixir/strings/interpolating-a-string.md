@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:50:51.573034-07:00
-description: "C\xF3mo hacerlo: Salida."
-lastmod: '2024-04-05T21:54:00.042582-06:00'
+description: "C\xF3mo hacerlo: Elixir, un lenguaje construido sobre la Erlang VM (BEAM),\
+  \ ha simplificado la vida de los programadores con su elegante interpolaci\xF3n\
+  \ de\u2026"
+lastmod: '2024-04-05T22:51:12.475577-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Elixir, un lenguaje construido sobre la Erlang VM (BEAM), ha simplificado\
+  \ la vida de los programadores con su elegante interpolaci\xF3n de cadenas desde\
+  \ su primera versi\xF3n lanzada en 2011."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

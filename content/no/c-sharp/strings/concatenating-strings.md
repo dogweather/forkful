@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:15.048974-07:00
-description: "How to: (Slik gj\xF8r du det:) ."
-lastmod: '2024-04-05T21:53:41.762862-06:00'
+description: "How to: (Slik gj\xF8r du det:) I C#'s historie har flere metoder for\
+  \ \xE5 sammenkoble strenger dukket opp. '+'-operatoren er grei, men kan bli tungvint\
+  \ med\u2026"
+lastmod: '2024-04-05T22:50:54.796875-06:00'
 model: gpt-4-1106-preview
-summary: "(Slik gj\xF8r du det:) ."
+summary: "(Slik gj\xF8r du det:) I C#'s historie har flere metoder for \xE5 sammenkoble\
+  \ strenger dukket opp."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:17.450478-07:00
-description: 'How to: (Hvordan:) Output.'
-lastmod: '2024-04-05T21:53:41.966221-06:00'
+description: "How to: (Hvordan:) Substrings har v\xE6rt del av tekstbehandling i programmering\
+  \ s\xE5 lenge vi har h\xE5ndtert tekstdata. `Substring`-metoden finnes i mange\u2026"
+lastmod: '2024-04-05T22:50:55.008264-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Hvordan:) Substrings har v\xE6rt del av tekstbehandling i programmering\
+  \ s\xE5 lenge vi har h\xE5ndtert tekstdata."
 title: Uthenting av delstrenger
 weight: 6
 ---

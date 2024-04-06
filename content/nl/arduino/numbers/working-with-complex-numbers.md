@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:53.634124-07:00
-description: 'Hoe te: Voorbeelduitvoer.'
-lastmod: '2024-04-05T21:53:51.080906-06:00'
+description: "Hoe te: Oorspronkelijk werden complexe getallen met scepsis ontvangen,\
+  \ maar ze zijn centraal komen te staan in diverse wetenschappelijke velden.\u2026"
+lastmod: '2024-04-05T22:51:03.866432-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: Oorspronkelijk werden complexe getallen met scepsis ontvangen, maar ze zijn
+  centraal komen te staan in diverse wetenschappelijke velden.
 title: Werken met complexe getallen
 weight: 14
 ---

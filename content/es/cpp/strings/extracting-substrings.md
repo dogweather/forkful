@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:45:17.840882-07:00
-description: "C\xF3mo hacerlo: Salida."
-lastmod: '2024-04-05T21:54:00.713468-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, extraer subcadenas ha sido esencial\
+  \ desde los primeros d\xEDas de la programaci\xF3n. C++ lo ha simplificado con la\
+  \ clase\u2026"
+lastmod: '2024-04-05T22:51:13.086709-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Hist\xF3ricamente, extraer subcadenas ha sido esencial desde los primeros\
+  \ d\xEDas de la programaci\xF3n."
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:35:46.730033-07:00
-description: 'How to: Verkettung mit `+`.'
-lastmod: '2024-04-05T21:53:55.544259-06:00'
+description: "How to: Stringverkettung gibt's, seit es Programmiersprachen gibt. In\
+  \ Rust gibt es mehrere Wege, Strings zu verketten, weil es verschiedene\u2026"
+lastmod: '2024-04-05T22:51:08.237843-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Stringverkettung gibt's, seit es Programmiersprachen gibt.
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

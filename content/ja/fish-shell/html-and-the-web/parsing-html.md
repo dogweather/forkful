@@ -2,10 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:12:25.168509-07:00
-description: "\u3069\u306E\u3088\u3046\u306B\uFF1A HTML\u30B3\u30F3\u30C6\u30F3\u30C4\
-  \u3092\u53D6\u5F97\u3057\u3001\u30EA\u30F3\u30AF\u3092\u542B\u3080\u884C\u3092\u62BD\
-  \u51FA\u3059\u308B."
-lastmod: '2024-04-05T22:38:42.219952-06:00'
+description: ''
+lastmod: '2024-04-05T22:50:56.599794-06:00'
 model: gpt-4-0125-preview
 summary: "\u3069\u306E\u3088\u3046\u306B\uFF1A \u4E3B\u306B\u3001Fish\u30B7\u30A7\u30EB\
   \u306F\u76F4\u63A5HTML\u306E\u30D1\u30FC\u30B9\u3092\u610F\u56F3\u3057\u3066\u8A2D\

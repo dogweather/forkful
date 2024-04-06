@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:37.058369-07:00
-description: "L\xE0m th\u1EBF n\xE0o: **\u0110\u1ECDc m\u1ED9t t\u1EC7p CSV:**."
-lastmod: '2024-03-13T22:44:37.370521-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: CSV \u0111\xE3 t\u1ED3n t\u1EA1i t\u1EEB nh\u1EEF\
+  ng ng\xE0y \u0111\u1EA7u c\u1EE7a ng\xE0nh tin h\u1ECDc, mang l\u1EA1i m\u1ED9t\
+  \ c\xE1ch \u0111\u01A1n gi\u1EA3n \u0111\u1EC3 di chuy\u1EC3n d\u1EEF li\u1EC7u\
+  \ b\u1EA3ng gi\u1EEFa c\xE1c ch\u01B0\u01A1ng tr\xECnh v\xE0 h\u1EC7 th\u1ED1ng.\u2026"
+lastmod: '2024-04-05T22:50:51.645427-06:00'
 model: gpt-4-0125-preview
-summary: "**\u0110\u1ECDc m\u1ED9t t\u1EC7p CSV:**."
+summary: "CSV \u0111\xE3 t\u1ED3n t\u1EA1i t\u1EEB nh\u1EEFng ng\xE0y \u0111\u1EA7\
+  u c\u1EE7a ng\xE0nh tin h\u1ECDc, mang l\u1EA1i m\u1ED9t c\xE1ch \u0111\u01A1n gi\u1EA3\
+  n \u0111\u1EC3 di chuy\u1EC3n d\u1EEF li\u1EC7u b\u1EA3ng gi\u1EEFa c\xE1c ch\u01B0\
+  \u01A1ng tr\xECnh v\xE0 h\u1EC7 th\u1ED1ng."
 title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---

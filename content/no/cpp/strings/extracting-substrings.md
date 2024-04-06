@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:45:23.087575-07:00
-description: 'How to: (Hvordan:) .'
-lastmod: '2024-04-05T21:53:42.050557-06:00'
+description: "How to: (Hvordan:) \xC5 trekke ut understrenger er ikke nytt; det har\
+  \ eksistert siden de tidligste programmeringsspr\xE5kene. C++ tilbyr flere m\xE5\
+  ter \xE5 gj\xF8re\u2026"
+lastmod: '2024-04-05T22:50:55.095979-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Hvordan:) \xC5 trekke ut understrenger er ikke nytt; det har eksistert\
+  \ siden de tidligste programmeringsspr\xE5kene."
 title: Uthenting av delstrenger
 weight: 6
 ---

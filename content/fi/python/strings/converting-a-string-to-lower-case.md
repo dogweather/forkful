@@ -1,9 +1,20 @@
 ---
 date: 2024-01-20 17:39:18.249088-07:00
-description: 'How to: - Miten: Tulostuu.'
-lastmod: '2024-04-05T21:53:57.687536-06:00'
+description: "How to: - Miten: Merkkijonojen muuntaminen pieniksi kirjaimiksi on ollut\
+  \ osa ohjelmointikieli\xE4 jo pitk\xE4\xE4n. Algoritmi itsess\xE4\xE4n on yksinkertainen:\
+  \ jokainen\u2026"
+lastmod: '2024-04-05T22:51:10.291859-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Miten: Merkkijonojen muuntaminen pieniksi kirjaimiksi on ollut osa ohjelmointikieli\xE4\
+  \ jo pitk\xE4\xE4n. Algoritmi itsess\xE4\xE4n on yksinkertainen: jokainen suuri\
+  \ kirjain korvataan vastaavalla pienell\xE4 kirjaimella. Pythonin `lower()`-metodi\
+  \ tekee t\xE4m\xE4n kaikille merkeille, joilla on pieni kirjain vastine Unicode-standardissa.\
+  \ Vaihtoehtoina on k\xE4ytt\xE4\xE4 `casefold()`-metodia, joka on aggressiivisempi\
+  \ ja ottaa huomioon enemm\xE4n kielellisi\xE4 erityistapauksia, kuten saksan \xDF\
+  -kirjaimen. Toteutusyksityiskohtia tutkiessa on hyv\xE4 pit\xE4\xE4 mieless\xE4\
+  , ett\xE4 joissakin kieliss\xE4 muunnokset pieniksi kirjaimiksi eiv\xE4t ole niin\
+  \ suoraviivaisia ja voivat vaatia erityist\xE4 k\xE4sittely\xE4 Unicode-normalisointien\
+  \ my\xF6t\xE4."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:45:00.865969-07:00
-description: "Hur man g\xF6r: Exempelutdata."
-lastmod: '2024-04-05T21:53:38.983185-06:00'
+description: "Hur man g\xF6r: Att h\xE4mta webbsidor \xE4r en vanlig uppgift som kan\
+  \ utf\xF6ras med olika verktyg och bibliotek. Historiskt har verktyg som `curl`\
+  \ och `wget`\u2026"
+lastmod: '2024-04-05T22:50:51.939988-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Att h\xE4mta webbsidor \xE4r en vanlig uppgift som kan utf\xF6ras med olika\
+  \ verktyg och bibliotek."
 title: "H\xE4mta en webbsida"
 weight: 42
 ---

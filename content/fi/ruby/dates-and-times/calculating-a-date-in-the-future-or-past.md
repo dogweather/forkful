@@ -1,9 +1,17 @@
 ---
 date: 2024-01-20 17:31:50.173067-07:00
-description: "How to: \"Kuinka tehd\xE4:\"."
-lastmod: '2024-04-05T21:53:58.682603-06:00'
+description: "How to: \"Syv\xE4sukellus\": Ajan laskeminen ei ole uusi tarve; sit\xE4\
+  \ on tehty vuosisatoja. Rubyssa ajan laskeminen on tehty helpoksi Date- ja Time-luokilla.\u2026"
+lastmod: '2024-04-05T22:51:11.241582-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\"Syv\xE4sukellus\": Ajan laskeminen ei ole uusi tarve; sit\xE4 on tehty\
+  \ vuosisatoja. Rubyssa ajan laskeminen on tehty helpoksi Date- ja Time-luokilla.\
+  \ Vaihtoehtoisia tapoja sis\xE4lt\xE4v\xE4t k\xE4ytt\xE4misen time-lis\xE4kirjastossa\
+  \ olevia Time-olioita tai kolmannen osapuolen kirjastoja, kuten 'active_support'\
+  \ Rails-kehyksest\xE4, joka tarjoaa metodeja kuten `3.days.from_now`. Rubyssa p\xE4\
+  iv\xE4m\xE4\xE4r\xE4\xE4 yritet\xE4\xE4n k\xE4sitell\xE4 universaalisti huomioiden\
+  \ aikavy\xF6hykkeet ja karkausvuodet. Implisiittisesti oletuksena on kansainv\xE4\
+  linen Gregoriaaninen kalenteri."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

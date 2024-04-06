@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:03:14.094776-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:36.174610-06:00'
+description: "How to: The practice of setting up a new project has a long lineage,\
+  \ becoming more standardized with the rise of modern version control like Git. While\u2026"
+lastmod: '2024-04-05T22:50:49.035222-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: The practice of setting up a new project has a long lineage, becoming more
+  standardized with the rise of modern version control like Git.
 title: Starting a new project
 weight: 1
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:03:26.347536-07:00
-description: 'How to - Comment faire : .'
-lastmod: '2024-04-05T21:53:59.725043-06:00'
+description: "How to - Comment faire : Historiquement, la gestion de nouveaux projets\
+  \ \xE9tait manuelle, mais des outils comme `git` et des shells comme `Fish` ont\u2026"
+lastmod: '2024-04-05T22:51:12.185422-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, la gestion de nouveaux projets \xE9tait manuelle, mais des\
+  \ outils comme `git` et des shells comme `Fish` ont simplifi\xE9 ce processus."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

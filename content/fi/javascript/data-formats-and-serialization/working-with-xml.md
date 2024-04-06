@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:32:50.043810-07:00
-description: "Kuinka: N\xE4in j\xE4sent\xE4t XML:\xE4\xE4."
-lastmod: '2024-03-13T22:44:56.974203-06:00'
+description: "Kuinka: XML on lyhennys sanoista eXtensible Markup Language, tiedostoformaatti,\
+  \ joka on ollut olemassa 90-luvun lopulta l\xE4htien. Se m\xE4\xE4rittelee joukon\u2026"
+lastmod: '2024-04-05T22:51:11.120591-06:00'
 model: gpt-4-0125-preview
-summary: "N\xE4in j\xE4sent\xE4t XML:\xE4\xE4."
+summary: "XML on lyhennys sanoista eXtensible Markup Language, tiedostoformaatti,\
+  \ joka on ollut olemassa 90-luvun lopulta l\xE4htien."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

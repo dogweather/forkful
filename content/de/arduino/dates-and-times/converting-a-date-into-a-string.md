@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:35:56.069444-07:00
-description: 'How to: Beispielausgabe.'
-lastmod: '2024-04-05T21:53:56.039088-06:00'
+description: "How to: Umwandlung von Datums- und Zeitinformationen in Strings wird\
+  \ seit den Anf\xE4ngen der Computerprogrammierung eingesetzt. Fr\xFCher wurden spezielle\u2026"
+lastmod: '2024-04-05T22:51:08.697526-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Umwandlung von Datums- und Zeitinformationen in Strings wird seit den Anf\xE4\
+  ngen der Computerprogrammierung eingesetzt."
 title: Datum in einen String umwandeln
 weight: 28
 ---

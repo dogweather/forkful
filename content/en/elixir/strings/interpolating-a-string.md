@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:50:37.743188-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:35.456096-06:00'
+description: "How to: In the early days, you'd glue strings together with `+` or `,`.\
+  \ It was a pain. Languages then started to use interpolation for a cleaner, more\u2026"
+lastmod: '2024-04-05T22:50:48.313233-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: In the early days, you'd glue strings together with `+` or `,`.
 title: Interpolating a string
 weight: 8
 ---

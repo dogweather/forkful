@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:36:34.698187-07:00
-description: "Como Fazer: Sa\xEDda de exemplo."
-lastmod: '2024-04-05T21:53:46.576940-06:00'
+description: "Como Fazer: Convers\xE3o de datas para strings n\xE3o \xE9 novidade.\
+  \ Em Elixir, a capacidade de manipular datas veio ap\xF3s algumas vers\xF5es, sendo\
+  \ refinada ao longo\u2026"
+lastmod: '2024-04-05T22:50:59.513774-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Convers\xE3o de datas para strings n\xE3o \xE9 novidade."
 title: Convertendo uma data em uma string
 weight: 28
 ---

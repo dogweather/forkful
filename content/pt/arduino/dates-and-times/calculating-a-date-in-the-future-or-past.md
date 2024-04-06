@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:00.414105-07:00
-description: "Como Fazer: **Sa\xEDda:**."
-lastmod: '2024-04-05T21:53:47.199999-06:00'
+description: "Como Fazer: Calcular datas futuras ou passadas \xE9 uma pr\xE1tica antiga,\
+  \ que remonta a calend\xE1rios e astronomia. No Arduino, isso tornou-se simples\
+  \ com a\u2026"
+lastmod: '2024-04-05T22:51:00.094540-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Calcular datas futuras ou passadas \xE9 uma pr\xE1tica antiga, que remonta\
+  \ a calend\xE1rios e astronomia."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

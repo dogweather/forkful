@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:52:16.922826-07:00
-description: "C\xF3mo hacerlo: Aqu\xED un ejemplo r\xE1pido."
-lastmod: '2024-03-13T22:44:59.377844-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, imprimir mensajes en consola ha\
+  \ sido una manera directa de entender qu\xE9 est\xE1 sucediendo en el c\xF3digo\
+  \ sin herramientas\u2026"
+lastmod: '2024-04-05T22:51:13.099558-06:00'
 model: gpt-4-1106-preview
-summary: "Aqu\xED un ejemplo r\xE1pido."
+summary: "Hist\xF3ricamente, imprimir mensajes en consola ha sido una manera directa\
+  \ de entender qu\xE9 est\xE1 sucediendo en el c\xF3digo sin herramientas sofisticadas\
+  \ de depuraci\xF3n."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

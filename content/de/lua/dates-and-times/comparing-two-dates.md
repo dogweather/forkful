@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:39.091355-07:00
-description: 'Anleitung: Beispielausgabe.'
-lastmod: '2024-04-05T21:53:55.910451-06:00'
+description: "Anleitung: Fr\xFCher, als Computer noch in Kinderjahren steckten, gab\
+  \ es unterschiedlichste Methoden, um Daten zu vergleichen \u2013 oft komplexe, eigene\u2026"
+lastmod: '2024-04-05T22:51:08.578715-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Fr\xFCher, als Computer noch in Kinderjahren steckten, gab es unterschiedlichste\
+  \ Methoden, um Daten zu vergleichen \u2013 oft komplexe, eigene Implementierungen."
 title: Vergleich von zwei Daten
 weight: 27
 ---

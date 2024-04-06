@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:00:55.288046-07:00
-description: "How to (Jak to zrobi\u0107): Sample output."
-lastmod: '2024-04-05T21:53:37.178080-06:00'
+description: "How to (Jak to zrobi\u0107): W dawnych czasach, wysy\u0142anie \u017C\
+  \u0105dania HTTP wymaga\u0142o linijk\xF3w w terminalu z `curl` albo komplikacji\
+  \ z `sockets`. Teraz, Swift\u2026"
+lastmod: '2024-04-05T22:50:50.089362-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "W dawnych czasach, wysy\u0142anie \u017C\u0105dania HTTP wymaga\u0142o linijk\xF3\
+  w w terminalu z `curl` albo komplikacji z `sockets`."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

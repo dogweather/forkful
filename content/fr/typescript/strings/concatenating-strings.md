@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:36.428529-07:00
-description: "How to: Concat\xE9ner avec le signe `+` ."
-lastmod: '2024-04-05T21:53:58.992314-06:00'
+description: "How to: Historiquement, la concat\xE9nation de cha\xEEnes \xE9tait r\xE9\
+  alis\xE9e principalement avec l'op\xE9rateur `+`. Mais cela pouvait devenir lourd\
+  \ avec l'ajout de\u2026"
+lastmod: '2024-04-05T22:51:11.521576-06:00'
 model: gpt-4-1106-preview
-summary: "Concat\xE9ner avec le signe `+` ."
+summary: "Historiquement, la concat\xE9nation de cha\xEEnes \xE9tait r\xE9alis\xE9\
+  e principalement avec l'op\xE9rateur `+`."
 title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---

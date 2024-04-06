@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:41:19.129102-07:00
-description: "How to: (Hur man g\xF6r:) ."
-lastmod: '2024-04-05T21:53:39.607955-06:00'
+description: "How to: (Hur man g\xF6r:) I Unix-baserade system, som macOS d\xE4r Swift\
+  \ ofta anv\xE4nds, \xE4r tempor\xE4ra filer inte n\xE5got nytt. Faktum \xE4r att\
+  \ `/tmp` katalogen har\u2026"
+lastmod: '2024-04-05T22:50:52.582414-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Hur man g\xF6r:) I Unix-baserade system, som macOS d\xE4r Swift ofta anv\xE4\
+  nds, \xE4r tempor\xE4ra filer inte n\xE5got nytt."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:23.093696-07:00
-description: 'Hvordan: Eksempelutdata.'
-lastmod: '2024-04-05T21:53:41.893980-06:00'
+description: "Hvordan: F\xF8r SSL/TLS ble utbredt, var grunnleggende autentisering\
+  \ over HTTP vanlig for \xE5 beskytte ressurser. Til tross for svakhetene fortsatt\
+  \ brukt,\u2026"
+lastmod: '2024-04-05T22:50:54.933181-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "F\xF8r SSL/TLS ble utbredt, var grunnleggende autentisering over HTTP vanlig\
+  \ for \xE5 beskytte ressurser."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

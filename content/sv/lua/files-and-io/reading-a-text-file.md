@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:54:46.014268-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:39.395181-06:00'
+description: "How to: F\xF6rr i tiden \xF6ppnade och l\xE4ste vi filer med mer primitiva\
+  \ metoder. I moderna spr\xE5k som Lua \xE4r `io`-biblioteket standard f\xF6r filhantering.\u2026"
+lastmod: '2024-04-05T22:50:52.359823-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "F\xF6rr i tiden \xF6ppnade och l\xE4ste vi filer med mer primitiva metoder."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

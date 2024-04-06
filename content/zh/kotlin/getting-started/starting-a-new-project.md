@@ -1,8 +1,8 @@
 ---
 date: 2024-01-20 18:03:48.729941-07:00
-description: "How to: \u600E\u6837\u505A\uFF1F Kotlin\u2026"
+description: ''
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:48.037898-06:00'
+lastmod: '2024-04-05T22:51:00.929011-06:00'
 model: gpt-4-1106-preview
 summary: "\u600E\u6837\u505A\uFF1F Kotlin \u7531JetBrains\u521B\u5EFA\uFF0C\u9996\u6B21\
   \u4EAE\u76F8\u662F\u57282011\u5E74\u3002\u53D7Java\u8BED\u8A00\u548C\u5176\u4ED6\

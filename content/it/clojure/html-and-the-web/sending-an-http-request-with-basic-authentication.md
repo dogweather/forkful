@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:01:17.444016-07:00
-description: 'Come fare: Sample output.'
-lastmod: '2024-04-05T21:53:43.824498-06:00'
+description: "Come fare: L\u2019autenticazione HTTP di base \xE8 un metodo antico\
+  \ ma semplice, incluso nello standard HTTP. Sostituita da soluzioni pi\xF9 moderne\
+  \ come OAuth,\u2026"
+lastmod: '2024-04-05T22:50:56.893950-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "L\u2019autenticazione HTTP di base \xE8 un metodo antico ma semplice, incluso\
+  \ nello standard HTTP."
 title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:00:53.527748-07:00
-description: 'How to: (Come Fare:) Esempio di output.'
-lastmod: '2024-04-05T21:53:43.946555-06:00'
+description: "How to: (Come Fare:) Le richieste HTTP sono la base della comunicazione\
+  \ su internet sin dagli anni '90. Il protocollo HTTP ha abilitato il web a crescere\u2026"
+lastmod: '2024-04-05T22:50:57.009862-06:00'
 model: gpt-4-1106-preview
-summary: (Come Fare:) Esempio di output.
+summary: (Come Fare:) Le richieste HTTP sono la base della comunicazione su internet
+  sin dagli anni '90.
 title: Inviare una richiesta http
 weight: 44
 ---

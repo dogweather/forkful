@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:32:16.945534-07:00
-description: Wie geht das? Sample Output.
-lastmod: '2024-04-05T22:38:55.013896-06:00'
+description: "Wie geht das? Der Vergleich von zwei Daten auf Arduino basiert nicht\
+  \ auf eingebauten Funktionen der Programmiersprache, sondern auf der `TimeLib.h`,\
+  \ einer\u2026"
+lastmod: '2024-04-05T22:51:08.698599-06:00'
 model: gpt-4-1106-preview
-summary: Wie geht das? Sample Output.
+summary: "Der Vergleich von zwei Daten auf Arduino basiert nicht auf eingebauten Funktionen\
+  \ der Programmiersprache, sondern auf der `TimeLib.h`, einer Bibliothek, die komplexe\
+  \ Zeitberechnungen erm\xF6glicht."
 title: Vergleich von zwei Daten
 weight: 27
 ---

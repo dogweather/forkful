@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:36:19.672607-07:00
-description: "How to (Jak to zrobi\u0107): ."
-lastmod: '2024-04-05T21:53:36.494964-06:00'
+description: "How to (Jak to zrobi\u0107): Historia obs\u0142ugi dat w j\u0119zykach\
+  \ programowania zawsze by\u0142a powi\u0105zana z konieczno\u015Bci\u0105 \u0142\
+  atwej wymiany i prezentacji danych. W\u2026"
+lastmod: '2024-04-05T22:50:49.361623-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historia obs\u0142ugi dat w j\u0119zykach programowania zawsze by\u0142\
+  a powi\u0105zana z konieczno\u015Bci\u0105 \u0142atwej wymiany i prezentacji danych."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

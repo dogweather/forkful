@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:42:27.769607-07:00
-description: "How to: (Kuinka tehd\xE4:) Sample output."
-lastmod: '2024-04-05T21:53:58.082707-06:00'
+description: "How to: (Kuinka tehd\xE4:) Alun perin merkkijonojen kaavojen k\xE4sittely\
+  \ kehitettiin osaksi suurempia, tekstink\xE4sittelyyn tarkoitettuja ohjelmia, kuten\
+  \ sed ja\u2026"
+lastmod: '2024-04-05T22:51:10.674832-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) Sample output."
+summary: "(Kuinka tehd\xE4:) Alun perin merkkijonojen kaavojen k\xE4sittely kehitettiin\
+  \ osaksi suurempia, tekstink\xE4sittelyyn tarkoitettuja ohjelmia, kuten sed ja awk\
+  \ UNIX-j\xE4rjestelmiss\xE4."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:36:30.516509-07:00
-description: 'How to: Beispiel-Ausgabe.'
-lastmod: '2024-04-05T21:53:55.827118-06:00'
+description: "How to: Umwandeln von Datum zu String, das klingt simpel, hat aber seine\
+  \ T\xFCcken. In Haskell ist `Data.Time` die zentrale Bibliothek f\xFCr Datum und\
+  \ Zeit.\u2026"
+lastmod: '2024-04-05T22:51:08.499031-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Umwandeln von Datum zu String, das klingt simpel, hat aber seine T\xFCcken."
 title: Datum in einen String umwandeln
 weight: 28
 ---

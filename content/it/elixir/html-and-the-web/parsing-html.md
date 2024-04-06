@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 15:31:09.248361-07:00
-description: 'How to: (Come fare:) Output campione.'
-lastmod: '2024-04-05T21:53:43.862789-06:00'
+description: "How to: (Come fare:) La storia del parsing HTML \xE8 legata all'evoluzione\
+  \ del web. All'inizio, l'HTML era semplice e si poteva gestire con espressioni\u2026"
+lastmod: '2024-04-05T22:50:56.930503-06:00'
 model: unknown
-summary: (Come fare:) Output campione.
+summary: "(Come fare:) La storia del parsing HTML \xE8 legata all'evoluzione del web."
 title: Analisi dell'HTML
 weight: 43
 ---

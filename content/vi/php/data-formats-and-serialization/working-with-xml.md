@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:43.777140-07:00
-description: "C\xE1ch th\u1EE9c: \u0110\u1ECDc XML v\u1EDBi SimpleXML."
-lastmod: '2024-03-13T22:44:36.799501-06:00'
+description: "C\xE1ch th\u1EE9c: XML, hay Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u M\u1EDF\
+  \ r\u1ED9ng, \u0111\xE3 tr\u1EDF th\xE0nh m\u1ED9t ph\u1EA7n quan tr\u1ECDng trong\
+  \ vi\u1EC7c tu\u1EA7n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u k\u1EC3 t\u1EEB khi \u0111\
+  \u01B0\u1EE3c W3C \u0111\u1EC1 xu\u1EA5t v\xE0o n\u0103m 1998. N\xF3\u2026"
+lastmod: '2024-04-05T22:50:51.121739-06:00'
 model: gpt-4-0125-preview
-summary: "\u0110\u1ECDc XML v\u1EDBi SimpleXML."
+summary: "XML, hay Ng\xF4n ng\u1EEF \u0110\xE1nh d\u1EA5u M\u1EDF r\u1ED9ng, \u0111\
+  \xE3 tr\u1EDF th\xE0nh m\u1ED9t ph\u1EA7n quan tr\u1ECDng trong vi\u1EC7c tu\u1EA7\
+  n t\u1EF1 h\xF3a d\u1EEF li\u1EC7u k\u1EC3 t\u1EEB khi \u0111\u01B0\u1EE3c W3C \u0111\
+  \u1EC1 xu\u1EA5t v\xE0o n\u0103m 1998."
 title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---

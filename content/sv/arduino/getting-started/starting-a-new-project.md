@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:45.085294-07:00
-description: "Hur man g\xF6r: Sample Output."
-lastmod: '2024-04-05T21:53:39.505832-06:00'
+description: "Hur man g\xF6r: Att starta ett projekt med Arduino inneb\xE4r vanligtvis\
+  \ att arbeta med Arduino IDE eller Arduino Create och anv\xE4nda Wiring-baserat\
+  \ spr\xE5k. Det\u2026"
+lastmod: '2024-04-05T22:50:52.478424-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Att starta ett projekt med Arduino inneb\xE4r vanligtvis att arbeta med\
+  \ Arduino IDE eller Arduino Create och anv\xE4nda Wiring-baserat spr\xE5k."
 title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---

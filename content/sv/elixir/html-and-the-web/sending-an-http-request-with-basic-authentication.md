@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:01:47.128414-07:00
-description: "Steg f\xF6r steg Exempel output."
-lastmod: '2024-04-05T22:37:46.252332-06:00'
+description: "Steg f\xF6r steg Basautentisering \xE4r ett av de \xE4ldsta s\xE4tten\
+  \ att skydda webbresurser, introducerat med HTTP 1.0. Trots att det \xE4r enkelt\
+  \ \xE4r det inte det\u2026"
+lastmod: '2024-04-05T22:50:51.852858-06:00'
 model: gpt-4-1106-preview
-summary: "Steg f\xF6r steg Exempel output."
+summary: "Trots att det \xE4r enkelt \xE4r det inte det s\xE4kraste \u2014 l\xF6senorden\
+  \ \xE4r endast bas64-kodade, inte krypterade."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

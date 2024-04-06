@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:37.668811-07:00
-description: 'Hoe te: **JSON Parseren:**.'
-lastmod: '2024-04-05T21:53:50.594544-06:00'
+description: "Hoe te: JSON is begonnen vanuit JavaScript maar is nu taalonafhankelijk;\
+  \ het is de go-to geworden voor gegevensuitwisseling, XML vervangend vanwege zijn\u2026"
+lastmod: '2024-04-05T22:51:03.409935-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: JSON is begonnen vanuit JavaScript maar is nu taalonafhankelijk; het is de
+  go-to geworden voor gegevensuitwisseling, XML vervangend vanwege zijn eenvoud.
 title: Werken met JSON
 weight: 38
 ---

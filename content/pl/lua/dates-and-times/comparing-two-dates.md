@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:27.241791-07:00
-description: "How to: Przyk\u0142adowy output."
-lastmod: '2024-04-05T21:53:36.980906-06:00'
+description: "How to: Historia Lua si\u0119ga pocz\u0105tku lat 90. i od tego czasu\
+  \ spos\xF3b por\xF3wnywania dat ewoluowa\u0142. Mo\u017Cemy por\xF3wnywa\u0107 czasy\
+  \ UNIX u\u017Cywaj\u0105c `os.time()`, kt\xF3ra\u2026"
+lastmod: '2024-04-05T22:50:49.875276-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historia Lua si\u0119ga pocz\u0105tku lat 90."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

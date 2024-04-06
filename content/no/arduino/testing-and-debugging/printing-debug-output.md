@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:51:54.266485-07:00
-description: "Slik gj\xF8r du: Eksempel p\xE5 output."
-lastmod: '2024-04-05T21:53:42.022021-06:00'
+description: "Slik gj\xF8r du: F\xF8r \"Serial\" ble standard, var feils\xF8king vanskeligere,\
+  \ og lysdioder eller fysiske instrumenter ble brukt for \xE5 indikere status.\u2026"
+lastmod: '2024-04-05T22:50:55.066486-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "F\xF8r \"Serial\" ble standard, var feils\xF8king vanskeligere, og lysdioder\
+  \ eller fysiske instrumenter ble brukt for \xE5 indikere status."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

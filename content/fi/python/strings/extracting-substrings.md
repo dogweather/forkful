@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:20.956633-07:00
-description: "How to: (Kuinka tehd\xE4:) Output."
-lastmod: '2024-04-05T21:53:57.689201-06:00'
+description: "How to: (Kuinka tehd\xE4:) Substring extraction has been a part of programming\
+  \ since the early days of string manipulation. Python's slice notation is\u2026"
+lastmod: '2024-04-05T22:51:10.293975-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) Output."
+summary: "(Kuinka tehd\xE4:) Substring extraction has been a part of programming since\
+  \ the early days of string manipulation."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

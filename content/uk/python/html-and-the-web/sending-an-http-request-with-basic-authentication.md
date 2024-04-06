@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 18:02:33.773894-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
-  \u0438:) Sample Output."
-lastmod: '2024-04-05T21:53:48.846334-06:00'
+  \u0438:) Basic authentication isn't new; it's been around since the early days of\
+  \ the web. It's simple: encode your username and password\u2026"
+lastmod: '2024-04-05T22:51:01.759141-06:00'
 model: gpt-4-1106-preview
 summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
-  \ Sample Output."
+  \ Basic authentication isn't new; it's been around since the early days of the web."
 title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437\u0430\
   \u043F\u0438\u0442\u0443 \u0437 \u0431\u0430\u0437\u043E\u0432\u043E\u044E \u0430\
   \u0432\u0442\u0435\u043D\u0442\u0438\u0444\u0456\u043A\u0430\u0446\u0456\u0454\u044E"

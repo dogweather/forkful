@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:36:49.107608-07:00
-description: "Hur man g\xF6r: Exempel p\xE5 utmatning."
-lastmod: '2024-04-05T21:53:39.499201-06:00'
+description: "Hur man g\xF6r: Ursprungligen m\xF6ttes komplexa tal av skepsis, men\
+  \ de har blivit centrala inom olika vetenskapliga f\xE4lt. Historiskt sett erk\xE4\
+  ndes de f\xF6r att\u2026"
+lastmod: '2024-04-05T22:50:52.469926-06:00'
 model: gpt-4-0125-preview
-summary: "Exempel p\xE5 utmatning."
+summary: "Ursprungligen m\xF6ttes komplexa tal av skepsis, men de har blivit centrala\
+  \ inom olika vetenskapliga f\xE4lt."
 title: Att arbeta med komplexa tal
 weight: 14
 ---

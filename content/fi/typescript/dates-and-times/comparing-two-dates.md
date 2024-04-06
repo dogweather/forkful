@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:06.542770-07:00
-description: "How to: (Kuinka tehd\xE4:) Tulostus."
-lastmod: '2024-04-05T21:53:57.884563-06:00'
+description: "How to: (Kuinka tehd\xE4:) Vertaillaan p\xE4iv\xE4m\xE4\xE4ri\xE4, useimmiten\
+  \ niit\xE4 k\xE4sitell\xE4\xE4n millisekunteina Unix-epochista (1. tammikuuta 1970)\
+  \ alkaen. `Date`-olio\u2026"
+lastmod: '2024-04-05T22:51:10.477597-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) Tulostus."
+summary: "(Kuinka tehd\xE4:) Vertaillaan p\xE4iv\xE4m\xE4\xE4ri\xE4, useimmiten niit\xE4\
+  \ k\xE4sitell\xE4\xE4n millisekunteina Unix-epochista (1."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

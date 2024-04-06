@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 18:00:22.559097-07:00
-description: "C\xF3mo hacerlo: **Salida de muestra:**."
-lastmod: '2024-04-05T21:54:00.503012-06:00'
+description: "C\xF3mo hacerlo: Enviar solicitudes HTTP es una caracter\xEDstica universal\
+  \ de la web. Originalmente, PHP usaba funciones como `fopen()` y `file_get_contents()`\u2026"
+lastmod: '2024-04-05T22:51:12.893131-06:00'
 model: gpt-4-1106-preview
-summary: '**Salida de muestra:**.'
+summary: "Enviar solicitudes HTTP es una caracter\xEDstica universal de la web."
 title: Enviando una solicitud http
 weight: 44
 ---

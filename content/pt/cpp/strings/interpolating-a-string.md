@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:50:29.997778-07:00
-description: "Como Fazer: Sa\xEDda esperada."
-lastmod: '2024-04-05T21:53:47.216224-06:00'
+description: "Como Fazer: Antes do C++20, a interpola\xE7\xE3o de strings em C++ envolvia\
+  \ a concatena\xE7\xE3o manual usando o operador `+` ou a fun\xE7\xE3o `append`,\
+  \ ou usando streams\u2026"
+lastmod: '2024-04-05T22:51:00.109757-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Antes do C++20, a interpola\xE7\xE3o de strings em C++ envolvia a concatena\xE7\
+  \xE3o manual usando o operador `+` ou a fun\xE7\xE3o `append`, ou usando streams\
+  \ de entrada/sa\xEDda."
 title: Interpolando uma string
 weight: 8
 ---

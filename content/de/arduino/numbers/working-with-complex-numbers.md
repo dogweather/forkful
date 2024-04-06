@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:36:51.380777-07:00
-description: 'Wie: Beispielausgabe.'
-lastmod: '2024-04-05T21:53:56.023036-06:00'
+description: "Wie: Urspr\xFCnglich wurden komplexe Zahlen mit Skepsis betrachtet,\
+  \ aber sie sind zentral in verschiedenen wissenschaftlichen Feldern geworden. Historisch\u2026"
+lastmod: '2024-04-05T22:51:08.682474-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Urspr\xFCnglich wurden komplexe Zahlen mit Skepsis betrachtet, aber sie\
+  \ sind zentral in verschiedenen wissenschaftlichen Feldern geworden."
 title: Umgang mit komplexen Zahlen
 weight: 14
 ---

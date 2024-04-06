@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:34.118245-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: K\u1EBFt qu\u1EA3 m\u1EABu."
-lastmod: '2024-04-05T21:53:38.012821-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Tr\u01B0\u1EDBc \u0111\xE2y, Java cung\
+  \ c\u1EA5p c\xE1c l\u1EDBp `Date` v\xE0 `Calendar` nh\u01B0ng ch\xFAng kh\xF4ng\
+  \ th\xE2n thi\u1EC7n v\u1EDBi ng\u01B0\u1EDDi s\u1EED d\u1EE5ng. Kotlin s\u1EED\
+  \ d\u1EE5ng c\xE1c l\u1EDBp t\u01B0\u01A1ng t\u1EF1 ph\xEDa\u2026"
+lastmod: '2024-04-05T22:50:50.952414-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Tr\u01B0\u1EDBc \u0111\xE2y, Java cung c\u1EA5p c\xE1c l\u1EDBp `Date` v\xE0\
+  \ `Calendar` nh\u01B0ng ch\xFAng kh\xF4ng th\xE2n thi\u1EC7n v\u1EDBi ng\u01B0\u1EDD\
+  i s\u1EED d\u1EE5ng."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

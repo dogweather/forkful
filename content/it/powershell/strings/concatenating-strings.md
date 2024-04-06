@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:41.130191-07:00
-description: 'How to: (Come fare:) .'
-lastmod: '2024-04-05T21:53:44.394779-06:00'
+description: "How to: (Come fare:) Nelle prime versioni di PowerShell, concatenare\
+  \ stringhe era spesso fatto esclusivamente con l'operatore `+`. Tuttavia, questo\
+  \ pu\xF2\u2026"
+lastmod: '2024-04-05T22:50:57.437520-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: (Come fare:) Nelle prime versioni di PowerShell, concatenare stringhe era
+  spesso fatto esclusivamente con l'operatore `+`.
 title: Concatenazione di stringhe
 weight: 3
 ---

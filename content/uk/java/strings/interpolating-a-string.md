@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:51:18.282491-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
-  \u0438:) ."
-lastmod: '2024-04-05T21:53:49.275858-06:00'
+  \u0438:) Historically, Java wasn't big on string interpolation. We used concatenation\
+  \ (`+`) or `String.format()` for dynamic strings. Java\u2026"
+lastmod: '2024-04-05T22:51:02.178268-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
+  \ Historically, Java wasn't big on string interpolation."
 title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\
   \u044F\u0434\u043A\u0456\u0432"
 weight: 8

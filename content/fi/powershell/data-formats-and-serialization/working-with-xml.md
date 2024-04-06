@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:34:24.945957-07:00
-description: 'Miten: Esimerkkituloste.'
-lastmod: '2024-04-05T21:53:58.382892-06:00'
+description: "Miten: XML, eli Laajennettava Merkint\xE4kieli, on ollut olemassa 90-luvun\
+  \ lopusta l\xE4htien ja on edelleen laajalti k\xE4ytetty muoto j\xE4sennetyille\
+  \ tiedoille.\u2026"
+lastmod: '2024-04-05T22:51:10.957404-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "XML, eli Laajennettava Merkint\xE4kieli, on ollut olemassa 90-luvun lopusta\
+  \ l\xE4htien ja on edelleen laajalti k\xE4ytetty muoto j\xE4sennetyille tiedoille."
 title: "XML:n k\xE4sittely"
 weight: 40
 ---

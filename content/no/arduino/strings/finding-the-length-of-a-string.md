@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:46:42.154501-07:00
-description: "Hvordan gj\xF8res det: Utdata."
-lastmod: '2024-04-05T21:53:42.011420-06:00'
+description: "Hvordan gj\xF8res det: I tidlige dager av computing, var strenglengde\
+  \ viktig for minneh\xE5ndtering. Arduino bruker `String`-objektet som innkapsler\
+  \ mange\u2026"
+lastmod: '2024-04-05T22:50:55.055095-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "I tidlige dager av computing, var strenglengde viktig for minneh\xE5ndtering."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

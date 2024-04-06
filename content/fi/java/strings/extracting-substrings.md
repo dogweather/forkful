@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:45:57.639063-07:00
-description: "How to: (Kuinka tehd\xE4\xE4n:) ."
-lastmod: '2024-04-05T21:53:58.000541-06:00'
+description: "How to: (Kuinka tehd\xE4\xE4n:) Substringien konsepti on vanha, juontuen\
+  \ ajoista kun ohjelmistoja kirjoitettiin nauhoille. Java tarjoaa `substring()` metodin\u2026"
+lastmod: '2024-04-05T22:51:10.585204-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4\xE4n:) Substringien konsepti on vanha, juontuen ajoista\
+  \ kun ohjelmistoja kirjoitettiin nauhoille."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:45.281460-07:00
-description: "How to: Sortie pr\xE9vue ."
-lastmod: '2024-04-05T21:53:59.513682-06:00'
+description: "How to: En PowerShell, la comparaison de dates est une pratique courante,\
+  \ une extension naturelle du framework .NET, dont les objets `DateTime` sont\u2026"
+lastmod: '2024-04-05T22:51:11.995491-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "En PowerShell, la comparaison de dates est une pratique courante, une extension\
+  \ naturelle du framework .NET, dont les objets `DateTime` sont utilis\xE9s pour\
+  \ repr\xE9senter les moments dans le temps."
 title: Comparer deux dates
 weight: 27
 ---

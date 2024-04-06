@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:40:33.541058-07:00
-description: 'How to: Exempelutdata.'
-lastmod: '2024-04-05T21:53:39.270160-06:00'
+description: "How to: Att skapa tempor\xE4ra filer \xE4r ingen ny grej \u2013 programmerare\
+  \ har gjort detta sedan urminnes tider f\xF6r att hantera utklipp, mellanlagring\
+  \ av data\u2026"
+lastmod: '2024-04-05T22:50:52.232484-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Att skapa tempor\xE4ra filer \xE4r ingen ny grej \u2013 programmerare har\
+  \ gjort detta sedan urminnes tider f\xF6r att hantera utklipp, mellanlagring av\
+  \ data eller sessioner."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

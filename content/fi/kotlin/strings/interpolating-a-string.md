@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:51:06.115435-07:00
-description: "How to (Kuinka tehd\xE4): ."
-lastmod: '2024-04-05T21:53:58.084499-06:00'
+description: "How to (Kuinka tehd\xE4): String-interpolaatio on saanut inspiraation\
+  \ muiden ohjelmointikielten vastaavista ominaisuuksista. Esimerkiksi Pythonin\u2026"
+lastmod: '2024-04-05T22:51:10.676985-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: String-interpolaatio on saanut inspiraation muiden ohjelmointikielten vastaavista
+  ominaisuuksista.
 title: Merkkijonon interpolointi
 weight: 8
 ---

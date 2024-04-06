@@ -1,9 +1,17 @@
 ---
 date: 2024-01-20 18:03:31.491218-07:00
-description: "How to: - N\xE4in teet: ."
-lastmod: '2024-04-05T21:53:58.573932-06:00'
+description: "How to: - N\xE4in teet: Fish Shell, eli \"friendly interactive shell\"\
+  , on vuonna 2005 syntynyt komentotulkki, joka keskittyi k\xE4ytt\xE4j\xE4yst\xE4\
+  v\xE4llisyyteen ja\u2026"
+lastmod: '2024-04-05T22:51:11.140176-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- N\xE4in teet: Fish Shell, eli \"friendly interactive shell\", on vuonna\
+  \ 2005 syntynyt komentotulkki, joka keskittyi k\xE4ytt\xE4j\xE4yst\xE4v\xE4llisyyteen\
+  \ ja helppoon skriptattavuuteen. Vaihtoehtoja ovat Bash, Zsh ja monet muut, mutta\
+  \ Fish erottuu paremmalla automaattisella t\xE4ydennyksell\xE4 ja selke\xE4mm\xE4\
+  ll\xE4 syntaksilla. Uuden projektin aloittaminen Fish Shelliss\xE4 ei paljoa eroa\
+  \ muiden shellien k\xE4yt\xF6st\xE4, mutta Fishin skriptaus ja mukauttaminen voivat\
+  \ olla sujuvampia."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

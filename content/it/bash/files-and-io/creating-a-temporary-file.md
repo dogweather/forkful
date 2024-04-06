@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:39:27.124025-07:00
-description: 'How to: Creare un file temporaneo.'
-lastmod: '2024-03-13T22:44:43.618931-06:00'
+description: "How to: Una volta, si usava `mktemp` per avere nomi file sicuri nella\
+  \ directory `/tmp`. Se non usi `mktemp`, rischi conflitti di nomi o problemi di\u2026"
+lastmod: '2024-04-05T22:50:57.424373-06:00'
 model: gpt-4-1106-preview
-summary: Creare un file temporaneo.
+summary: Una volta, si usava `mktemp` per avere nomi file sicuri nella directory `/tmp`.
 title: Creazione di un file temporaneo
 weight: 21
 ---

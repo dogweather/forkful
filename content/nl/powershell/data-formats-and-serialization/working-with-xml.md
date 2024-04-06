@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:57.407788-07:00
-description: 'Hoe: Voorbeelduitvoer.'
-lastmod: '2024-04-05T21:53:51.068589-06:00'
+description: "Hoe: XML, of eXtensible Markup Language, bestaat al sinds eind jaren\
+  \ '90 en blijft een veelgebruikt formaat voor gestructureerde gegevens. PowerShell\u2026"
+lastmod: '2024-04-05T22:51:03.854541-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: XML, of eXtensible Markup Language, bestaat al sinds eind jaren '90 en blijft
+  een veelgebruikt formaat voor gestructureerde gegevens.
 title: Werken met XML
 weight: 40
 ---

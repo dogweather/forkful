@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:59:58.335257-07:00
-description: 'Hvordan: Eksempelutdata.'
-lastmod: '2024-04-05T21:53:41.810014-06:00'
+description: "Hvordan: I de gode gamle dager, kommuniserte programmer oftest lokalt.\
+  \ Internettets vekst har endret dette. \xC5 sende en HTTP-foresp\xF8rsel har blitt\u2026"
+lastmod: '2024-04-05T22:50:54.845434-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: I de gode gamle dager, kommuniserte programmer oftest lokalt.
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

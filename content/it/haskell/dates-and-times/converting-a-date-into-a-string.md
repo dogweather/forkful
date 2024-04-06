@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:36:48.723872-07:00
-description: 'How to: (Come fare:) Output.'
-lastmod: '2024-04-05T21:53:44.253479-06:00'
+description: "How to: (Come fare:) Haskell gestisce date e tempo tramite il modulo\
+  \ `Data.Time`. Questo \xE8 diventato lo standard dopo che la community ha riconosciuto\
+  \ il\u2026"
+lastmod: '2024-04-05T22:50:57.300315-06:00'
 model: gpt-4-1106-preview
-summary: (Come fare:) Output.
+summary: (Come fare:) Haskell gestisce date e tempo tramite il modulo `Data.Time`.
 title: Conversione di una data in una stringa
 weight: 28
 ---

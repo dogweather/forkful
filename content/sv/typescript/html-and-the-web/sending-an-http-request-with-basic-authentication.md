@@ -1,9 +1,14 @@
 ---
 date: 2024-01-20 18:03:00.738582-07:00
-description: "Steg f\xF6r steg: Eventuell utdata."
-lastmod: '2024-04-05T21:53:38.983940-06:00'
+description: "Steg f\xF6r steg: Basic Authentication \xE4r en gammal metod, definierad\
+  \ i HTTP/1.0 och sen uppdaterad i RFC 7617, som kr\xE4ver att anv\xE4ndarnamn och\
+  \ l\xF6senord\u2026"
+lastmod: '2024-04-05T22:50:51.941231-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Basic Authentication \xE4r en gammal metod, definierad i HTTP/1.0 och sen\
+  \ uppdaterad i RFC 7617, som kr\xE4ver att anv\xE4ndarnamn och l\xF6senord skickas\
+  \ med varje f\xF6rfr\xE5gan, vilket \xE4r mindre s\xE4kert j\xE4mf\xF6rt med moderna\
+  \ metoder som OAuth 2.0."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

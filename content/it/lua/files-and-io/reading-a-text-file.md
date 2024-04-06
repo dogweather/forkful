@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:54:36.376075-07:00
-description: 'How to: (Come Fare) .'
-lastmod: '2024-04-05T21:53:44.337683-06:00'
+description: "How to: (Come Fare) Prima delle recenti versioni di Lua, lavorare con\
+  \ i file poteva essere pi\xF9 complicato. La funzione `io.open` semplifica enormemente\
+  \ la\u2026"
+lastmod: '2024-04-05T22:50:57.383634-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Come Fare) Prima delle recenti versioni di Lua, lavorare con i file poteva\
+  \ essere pi\xF9 complicato."
 title: Lettura di un file di testo
 weight: 22
 ---

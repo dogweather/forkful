@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:09:37.469562-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: K\u1EBFt qu\u1EA3 m\u1EABu."
-lastmod: '2024-04-05T21:53:37.734008-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\xE3 c\xF3 m\u1ED9t th\u1EDDi gian,\
+  \ tr\u01B0\u1EDBc khi OAuth v\xE0 JWTs chi\u1EBFm l\u0129nh c\u1EA3nh quan, x\xE1\
+  c th\u1EF1c c\u01A1 b\u1EA3n l\xE0 l\u1EF1a ch\u1ECDn h\xE0ng \u0111\u1EA7u. N\xF3\
+  \ v\u1EABn c\xF2n ti\u1EC7n l\u1EE3i cho c\xE1c c\xF4ng\u2026"
+lastmod: '2024-04-05T22:50:50.662239-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "\u0110\xE3 c\xF3 m\u1ED9t th\u1EDDi gian, tr\u01B0\u1EDBc khi OAuth v\xE0\
+  \ JWTs chi\u1EBFm l\u0129nh c\u1EA3nh quan, x\xE1c th\u1EF1c c\u01A1 b\u1EA3n l\xE0\
+  \ l\u1EF1a ch\u1ECDn h\xE0ng \u0111\u1EA7u."
 title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3\
   n"
 weight: 45

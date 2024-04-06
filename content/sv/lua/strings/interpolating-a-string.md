@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:34.331300-07:00
-description: "Hur g\xF6r man: Output."
-lastmod: '2024-04-05T21:53:39.365025-06:00'
+description: "Hur g\xF6r man: F\xF6re `string.format`, skedde konkatenering av str\xE4\
+  ngar och variabler manuellt, exempelvis: `local h\xE4lsning = \"Hej, \" .. anv\xE4\
+  ndarnamn .. \"! Du\u2026"
+lastmod: '2024-04-05T22:50:52.327632-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "F\xF6re `string.format`, skedde konkatenering av str\xE4ngar och variabler\
+  \ manuellt, exempelvis."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:55.844354-07:00
-description: "How to: (\u042F\u043A \u0440\u043E\u0431\u0438\u0442\u0438:) ."
-lastmod: '2024-04-05T21:53:49.464767-06:00'
+description: "How to: (\u042F\u043A \u0440\u043E\u0431\u0438\u0442\u0438:) In C#,\
+  \ strings are immutable and represented by the `System.String` class. The `Length`\
+  \ property is integral to this class and\u2026"
+lastmod: '2024-04-05T22:51:02.362512-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\u042F\u043A \u0440\u043E\u0431\u0438\u0442\u0438:) In C#, strings are\
+  \ immutable and represented by the `System.String` class."
 title: "\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u043E\u0432\
   \u0436\u0438\u043D\u0438 \u0440\u044F\u0434\u043A\u0430"
 weight: 7

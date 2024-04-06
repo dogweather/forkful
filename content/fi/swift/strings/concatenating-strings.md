@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:41.161529-07:00
-description: "How to: (Miten tehd\xE4\xE4n:) ."
-lastmod: '2024-04-05T21:53:58.478304-06:00'
+description: "How to: (Miten tehd\xE4\xE4n:) Merkkijonojen yhdistely on vanha k\xE4\
+  yt\xE4nt\xF6, ja kieless\xE4 kuin kieless\xE4 l\xF6ytyy siihen keinot. Ennen Swifti\xE4\
+  \ Objective-C:ss\xE4 joutui\u2026"
+lastmod: '2024-04-05T22:51:11.048809-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Miten tehd\xE4\xE4n:) Merkkijonojen yhdistely on vanha k\xE4yt\xE4nt\xF6\
+  , ja kieless\xE4 kuin kieless\xE4 l\xF6ytyy siihen keinot."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

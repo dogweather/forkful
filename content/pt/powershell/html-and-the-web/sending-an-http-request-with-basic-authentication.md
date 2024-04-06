@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:02:26.935957-07:00
-description: "Como Fazer: Sa\xEDda de amostra (exemplo)."
-lastmod: '2024-04-05T21:53:47.143565-06:00'
+description: "Como Fazer: Enviar solicita\xE7\xF5es HTTP com autentica\xE7\xE3o b\xE1\
+  sica remonta aos primeiros dias da web, uma forma simples, mas n\xE3o a mais segura,\
+  \ de controle de\u2026"
+lastmod: '2024-04-05T22:51:00.041705-06:00'
 model: gpt-4-1106-preview
-summary: "Sa\xEDda de amostra (exemplo)."
+summary: "Enviar solicita\xE7\xF5es HTTP com autentica\xE7\xE3o b\xE1sica remonta\
+  \ aos primeiros dias da web, uma forma simples, mas n\xE3o a mais segura, de controle\
+  \ de acesso."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

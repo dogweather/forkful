@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:48:35.732035-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-04-05T21:53:57.864062-06:00'
+description: "How to: (Kuinka tehd\xE4:) TypeScript perustuu JavaScriptiin, miss\xE4\
+  \ joka merkkijonolla on `.length`-ominaisuus, josta saa suoraan sen pituuden.\u2026"
+lastmod: '2024-04-05T22:51:10.456955-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4:) TypeScript perustuu JavaScriptiin, miss\xE4 joka merkkijonolla\
+  \ on `.length`-ominaisuus, josta saa suoraan sen pituuden."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

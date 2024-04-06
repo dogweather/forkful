@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:40:41.462216-07:00
-description: "Hur man g\xF6r: Output."
-lastmod: '2024-04-05T21:53:39.140057-06:00'
+description: "Hur man g\xF6r: Tempor\xE4ra filer har funnits l\xE4nge och var ett\
+  \ tidigt s\xE4tt att undvika att anv\xE4nda f\xF6r mycket huvudminne. I Java kan\
+  \ `java.io`- och\u2026"
+lastmod: '2024-04-05T22:50:52.103143-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Tempor\xE4ra filer har funnits l\xE4nge och var ett tidigt s\xE4tt att undvika\
+  \ att anv\xE4nda f\xF6r mycket huvudminne."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

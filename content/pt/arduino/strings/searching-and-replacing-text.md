@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:57:10.180624-07:00
-description: "Como Fazer: Sa\xEDda esperada."
-lastmod: '2024-04-05T21:53:47.172787-06:00'
+description: "Como Fazer: Procurar e substituir texto \xE9 uma necessidade antiga\
+  \ - pense em editores de texto dos anos 60 que j\xE1 tinham essa fun\xE7\xE3o. No\
+  \ mundo do Arduino,\u2026"
+lastmod: '2024-04-05T22:51:00.068406-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Procurar e substituir texto \xE9 uma necessidade antiga - pense em editores\
+  \ de texto dos anos 60 que j\xE1 tinham essa fun\xE7\xE3o."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

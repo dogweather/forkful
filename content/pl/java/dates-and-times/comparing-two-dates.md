@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:14.811439-07:00
-description: "Jak to zrobi\u0107? Wynik."
-lastmod: '2024-04-05T22:37:43.989752-06:00'
+description: "Jak to zrobi\u0107? Por\xF3wnywanie dat si\u0119ga pocz\u0105tk\xF3\
+  w informatyki. W Javie do Java 8 korzystano g\u0142\xF3wnie z `java.util.Date` i\
+  \ `java.util.Calendar`, ale by\u0142y\u2026"
+lastmod: '2024-04-05T22:50:49.601584-06:00'
 model: gpt-4-1106-preview
-summary: "Jak to zrobi\u0107? Wynik."
+summary: "Por\xF3wnywanie dat si\u0119ga pocz\u0105tk\xF3w informatyki."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

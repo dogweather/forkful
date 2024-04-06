@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:59:57.357203-07:00
-description: 'Hoe: Voorbeelduitvoer.'
-lastmod: '2024-04-05T21:53:51.077507-06:00'
+description: "Hoe: Vroeger gebruikten C-programmeurs de `strlen()` functie uit `<string.h>`,\
+  \ tellend tot een null-terminator. In de wereld van Arduino maakt de\u2026"
+lastmod: '2024-04-05T22:51:03.863230-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: Vroeger gebruikten C-programmeurs de `strlen()` functie uit `<string.h>`,
+  tellend tot een null-terminator.
 title: De lengte van een string vinden
 weight: 7
 ---

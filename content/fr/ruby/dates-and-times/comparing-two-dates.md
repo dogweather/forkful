@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:50.793272-07:00
-description: 'How to: (Comment faire:) .'
-lastmod: '2024-04-05T21:53:59.834997-06:00'
+description: "How to: (Comment faire:) Comparer des dates n'est pas nouveau. Depuis\
+  \ les ann\xE9es 60, les syst\xE8mes informatiques calculent l'\xE9cart entre des\
+  \ dates pour des\u2026"
+lastmod: '2024-04-05T22:51:12.287955-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: (Comment faire:) Comparer des dates n'est pas nouveau.
 title: Comparer deux dates
 weight: 27
 ---

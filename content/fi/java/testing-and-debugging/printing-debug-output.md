@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:00.540390-07:00
-description: "How to: (Kuinka tehd\xE4:) Sample output."
-lastmod: '2024-04-05T21:53:58.014309-06:00'
+description: "How to: (Kuinka tehd\xE4:) Alkujaan, konsoliin tulostaminen oli yksi\
+  \ harvoista tavoista saada v\xE4lit\xF6nt\xE4 palautetta ohjelman suorituksesta.\
+  \ Lukuisat\u2026"
+lastmod: '2024-04-05T22:51:10.598689-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) Sample output."
+summary: "(Kuinka tehd\xE4:) Alkujaan, konsoliin tulostaminen oli yksi harvoista tavoista\
+  \ saada v\xE4lit\xF6nt\xE4 palautetta ohjelman suorituksesta."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

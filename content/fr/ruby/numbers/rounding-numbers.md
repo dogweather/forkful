@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 03:47:34.893404-07:00
-description: 'Comment faire : Exemple de sortie .'
-lastmod: '2024-04-05T21:53:59.817549-06:00'
+description: "Comment faire : Arrondir les nombres n'est pas nouveau \u2014 les humains\
+  \ le font depuis des si\xE8cles pour faciliter les calculs ou pour travailler dans\
+  \ les\u2026"
+lastmod: '2024-04-05T22:51:12.271295-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Arrondir les nombres n'est pas nouveau \u2014 les humains le font depuis\
+  \ des si\xE8cles pour faciliter les calculs ou pour travailler dans les limites\
+  \ de leurs outils."
 title: Arrondir les nombres
 weight: 13
 ---

@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:38.088282-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: K\u1EBFt qu\u1EA3."
-lastmod: '2024-04-05T21:53:37.987420-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Trong nh\u1EEFng ng\xE0y \u0111\u1EA7u\
+  \ c\u1EE7a ng\xE0nh c\xF4ng ngh\u1EC7 th\xF4ng tin, chu\u1ED7i \u0111\u01B0\u1EE3\
+  c x\u1EED l\xFD kh\xE1c nhau, th\u01B0\u1EDDng l\xE0 v\u1EDBi c\xE1c m\u1EA3ng k\u1EBF\
+  t th\xFAc b\u1EB1ng gi\xE1 tr\u1ECB null trong\u2026"
+lastmod: '2024-04-05T22:50:50.925700-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Trong nh\u1EEFng ng\xE0y \u0111\u1EA7u c\u1EE7a ng\xE0nh c\xF4ng ngh\u1EC7\
+  \ th\xF4ng tin, chu\u1ED7i \u0111\u01B0\u1EE3c x\u1EED l\xFD kh\xE1c nhau, th\u01B0\
+  \u1EDDng l\xE0 v\u1EDBi c\xE1c m\u1EA3ng k\u1EBFt th\xFAc b\u1EB1ng gi\xE1 tr\u1ECB\
+  \ null trong nh\u1EEFng ng\xF4n ng\u1EEF nh\u01B0 C."
 title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---

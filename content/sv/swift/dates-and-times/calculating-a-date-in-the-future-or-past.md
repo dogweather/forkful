@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:09.106086-07:00
-description: "S\xE5 h\xE4r g\xF6r du: Sample Output."
-lastmod: '2024-04-05T21:53:39.601969-06:00'
+description: "S\xE5 h\xE4r g\xF6r du: I b\xF6rjan av dataprogrammering var datumhantering\
+  \ ett komplext problem p\xE5 grund av olika tidszoner och datumformat. Swift anv\xE4\
+  nder `Date`\u2026"
+lastmod: '2024-04-05T22:50:52.576339-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "I b\xF6rjan av dataprogrammering var datumhantering ett komplext problem\
+  \ p\xE5 grund av olika tidszoner och datumformat."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

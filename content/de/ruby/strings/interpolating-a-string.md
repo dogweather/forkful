@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:51:37.573979-07:00
-description: 'How to: (Wie geht das:) .'
-lastmod: '2024-04-05T21:53:56.280915-06:00'
+description: "How to: (Wie geht das:) Die String-Interpolation in Ruby existiert seit\
+  \ den ersten Versionen und ist eine verbreitete Methode, um Strings zu bearbeiten.\u2026"
+lastmod: '2024-04-05T22:51:08.919226-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: (Wie geht das:) Die String-Interpolation in Ruby existiert seit den ersten
+  Versionen und ist eine verbreitete Methode, um Strings zu bearbeiten.
 title: Zeichenketten interpolieren
 weight: 8
 ---

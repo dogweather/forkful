@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:39:46.700926-07:00
-description: 'How to: **Ausgabe:**.'
-lastmod: '2024-04-05T21:53:56.089848-06:00'
+description: "How to: Fr\xFChe Betriebssysteme boten einfache Methoden, tempor\xE4\
+  re Files zu handhaben. Heutige C++-Standards nutzen Funktionen wie `tmpfile()` oder\
+  \ Streams,\u2026"
+lastmod: '2024-04-05T22:51:08.744990-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Fr\xFChe Betriebssysteme boten einfache Methoden, tempor\xE4re Files zu\
+  \ handhaben."
 title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---

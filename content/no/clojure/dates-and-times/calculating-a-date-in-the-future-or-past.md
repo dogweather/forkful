@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:30:43.527734-07:00
-description: "Hvordan Gj\xF8re Det: ."
-lastmod: '2024-04-05T21:53:41.394932-06:00'
+description: "Hvordan Gj\xF8re Det: Beregner av datoer har v\xE6rt nyttig siden starten\
+  \ av programmering. P\xE5 den tiden var det vanlig \xE5 gj\xF8re alt fra grunnen\
+  \ av. N\xE5 har vi\u2026"
+lastmod: '2024-04-05T22:50:54.425694-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Beregner av datoer har v\xE6rt nyttig siden starten av programmering."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:35:42.391730-07:00
-description: 'How to: Let''s get straight to it.'
-lastmod: '2024-03-13T22:45:00.274885-06:00'
+description: "How to: Historically, concatenating strings was a bit rough around the\
+  \ edges in earlier programming languages - think of it like using tape to stick\u2026"
+lastmod: '2024-04-05T22:50:48.828284-06:00'
 model: gpt-4-1106-preview
-summary: Let's get straight to it.
+summary: Historically, concatenating strings was a bit rough around the edges in earlier
+  programming languages - think of it like using tape to stick sentences together.
 title: Concatenating strings
 weight: 3
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:35:40.731035-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:36.572131-06:00'
+description: "How to: (Jak to zrobi\u0107:) Historically, JavaScript developers used\
+  \ the '+' operator for string concatenation. With the introduction of ES6 (a significant\u2026"
+lastmod: '2024-04-05T22:50:49.434138-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Historically, JavaScript developers used the '+' operator\
+  \ for string concatenation."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:55:28.350388-07:00
-description: "Jak to zrobi\u0107: Uruchomienie skryptu."
-lastmod: '2024-04-05T21:53:37.026861-06:00'
+description: "Jak to zrobi\u0107: Kiedy\u015B pisali\u015Bmy skrypty bez mo\u017C\
+  liwo\u015Bci \u0142atwego przekazywania opcji. Teraz, z argumentami, mo\u017Cemy\
+  \ tworzy\u0107 bardziej elastyczne i\u2026"
+lastmod: '2024-04-05T22:50:49.926380-06:00'
 model: gpt-4-1106-preview
-summary: Uruchomienie skryptu.
+summary: "Kiedy\u015B pisali\u015Bmy skrypty bez mo\u017Cliwo\u015Bci \u0142atwego\
+  \ przekazywania opcji."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

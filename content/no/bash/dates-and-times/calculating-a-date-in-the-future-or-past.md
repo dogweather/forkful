@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:28:30.144085-07:00
-description: "Hvordan gj\xF8r man det: ."
-lastmod: '2024-04-05T21:53:41.949733-06:00'
+description: "Hvordan gj\xF8r man det: Dato-beregning i Bash bruker kommandoen `date`,\
+  \ som er standard p\xE5 de fleste UNIX-systemer. Tidligere l\xF8ste programmerere\u2026"
+lastmod: '2024-04-05T22:50:54.990517-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Dato-beregning i Bash bruker kommandoen `date`, som er standard p\xE5 de\
+  \ fleste UNIX-systemer."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

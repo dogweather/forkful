@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:58:16.296907-07:00
-description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EA7u ra."
-lastmod: '2024-04-05T21:53:37.768415-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Tr\u01B0\u1EDBc ph\u01B0\u01A1ng th\u1EE9c `.to_lowercase()`,\
+  \ b\u1EA1n c\xF3 th\u1EC3 \u0111\xE3 th\u1EA5y ng\u01B0\u1EDDi d\xF9ng Rust s\u1EED\
+  \ d\u1EE5ng `.to_ascii_lowercase()` cho c\xF9ng m\u1ED9t nhi\u1EC7m v\u1EE5, nh\u01B0\
+  ng n\xF3 ch\u1EC9\u2026"
+lastmod: '2024-04-05T22:50:50.701885-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Tr\u01B0\u1EDBc ph\u01B0\u01A1ng th\u1EE9c `.to_lowercase()`, b\u1EA1n c\xF3\
+  \ th\u1EC3 \u0111\xE3 th\u1EA5y ng\u01B0\u1EDDi d\xF9ng Rust s\u1EED d\u1EE5ng `.to_ascii_lowercase()`\
+  \ cho c\xF9ng m\u1ED9t nhi\u1EC7m v\u1EE5, nh\u01B0ng n\xF3 ch\u1EC9 \u1EA3nh h\u01B0\
+  \u1EDFng \u0111\u1EBFn c\xE1c k\xFD t\u1EF1 ASCII."
 title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---

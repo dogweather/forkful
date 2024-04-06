@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:34:22.401599-07:00
-description: 'Comment faire : Exemple de sortie .'
-lastmod: '2024-04-05T21:53:59.526204-06:00'
+description: "Comment faire : XML, ou eXtensible Markup Language, existe depuis la\
+  \ fin des ann\xE9es 90 et reste un format largement utilis\xE9 pour les donn\xE9\
+  es structur\xE9es.\u2026"
+lastmod: '2024-04-05T22:51:12.007074-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "XML, ou eXtensible Markup Language, existe depuis la fin des ann\xE9es 90\
+  \ et reste un format largement utilis\xE9 pour les donn\xE9es structur\xE9es."
 title: Travailler avec XML
 weight: 40
 ---

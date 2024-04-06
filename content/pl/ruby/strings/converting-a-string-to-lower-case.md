@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:39:11.663863-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:37.349874-06:00'
+description: "How to: (Jak to zrobi\u0107:) Ruby od zawsze dba o to, by operacje na\
+  \ stringach by\u0142y proste i intuicyjne. Metoda `.downcase` istnieje w Ruby od\
+  \ pocz\u0105tku jej\u2026"
+lastmod: '2024-04-05T22:50:50.268351-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Ruby od zawsze dba o to, by operacje na stringach\
+  \ by\u0142y proste i intuicyjne."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

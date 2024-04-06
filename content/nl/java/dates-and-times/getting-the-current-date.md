@@ -2,10 +2,10 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:14.737043-07:00
-description: 'Hoe: **Voorbeelduitvoer:**.'
-lastmod: '2024-04-05T21:53:50.716737-06:00'
+description: ''
+lastmod: '2024-04-05T22:51:03.523472-06:00'
 model: gpt-4-0125-preview
-summary: '**Voorbeelduitvoer:**.'
+summary: ''
 title: Het huidige datum ophalen
 weight: 29
 ---

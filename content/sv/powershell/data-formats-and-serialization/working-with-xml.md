@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:34:20.739203-07:00
-description: "Hur man g\xF6r: Exempel p\xE5 utdata."
-lastmod: '2024-04-05T21:53:39.487724-06:00'
+description: "Hur man g\xF6r: XML eller eXtensible Markup Language har funnits sedan\
+  \ slutet av 90-talet och \xE4r fortfarande ett brett anv\xE4nt format f\xF6r strukturerade\
+  \ data.\u2026"
+lastmod: '2024-04-05T22:50:52.456914-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "XML eller eXtensible Markup Language har funnits sedan slutet av 90-talet\
+  \ och \xE4r fortfarande ett brett anv\xE4nt format f\xF6r strukturerade data."
 title: Att arbeta med XML
 weight: 40
 ---

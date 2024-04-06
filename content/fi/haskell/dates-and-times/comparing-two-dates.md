@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:29.857620-07:00
-description: 'How to: Esimerkin tulostus.'
-lastmod: '2024-04-05T21:53:58.197507-06:00'
+description: "How to: Haskellissa p\xE4iv\xE4m\xE4\xE4rien vertailu hy\xF6dynt\xE4\
+  \xE4 `Data.Time`-kirjastoa, joka on osa laajempaa `time`-pakettia. P\xE4iv\xE4m\xE4\
+  \xE4r\xE4t esitet\xE4\xE4n `UTCTime`-tyypin\u2026"
+lastmod: '2024-04-05T22:51:10.781397-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Haskellissa p\xE4iv\xE4m\xE4\xE4rien vertailu hy\xF6dynt\xE4\xE4 `Data.Time`-kirjastoa,\
+  \ joka on osa laajempaa `time`-pakettia."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

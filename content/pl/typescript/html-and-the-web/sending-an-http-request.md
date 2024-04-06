@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:00:46.493299-07:00
-description: "How to: (Jak to zrobi\u0107:) Sample output."
-lastmod: '2024-04-05T21:53:36.577051-06:00'
+description: "How to: (Jak to zrobi\u0107:) Wysy\u0142anie \u017C\u0105da\u0144 HTTP\
+  \ ma d\u0142ug\u0105 histori\u0119, ukorzenion\u0105 w pocz\u0105tkach internetu,\
+  \ kiedy to Tim Berners-Lee wynalaz\u0142 HTTP. Alternatywnie\u2026"
+lastmod: '2024-04-05T22:50:49.439112-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107:) Sample output."
+summary: "(Jak to zrobi\u0107:) Wysy\u0142anie \u017C\u0105da\u0144 HTTP ma d\u0142\
+  ug\u0105 histori\u0119, ukorzenion\u0105 w pocz\u0105tkach internetu, kiedy to Tim\
+  \ Berners-Lee wynalaz\u0142 HTTP."
 title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---

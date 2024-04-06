@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:45:20.998984-07:00
-description: 'How to: (Comment faire :) .'
-lastmod: '2024-04-05T21:53:59.578672-06:00'
+description: "How to: (Comment faire :) Historiquement, l'extraction de sous-cha\xEE\
+  nes est une brique fondamentale de la manipulation de texte, pr\xE9sente d\xE8s\
+  \ les premiers\u2026"
+lastmod: '2024-04-05T22:51:12.054470-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Comment faire :) Historiquement, l'extraction de sous-cha\xEEnes est une\
+  \ brique fondamentale de la manipulation de texte, pr\xE9sente d\xE8s les premiers\
+  \ langages de programmation."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

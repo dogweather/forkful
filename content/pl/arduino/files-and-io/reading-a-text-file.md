@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:53:41.607760-07:00
-description: "How to: (Jak to zrobi\u0107:) Sample output."
-lastmod: '2024-04-05T21:53:37.114059-06:00'
+description: "How to: (Jak to zrobi\u0107:) Czytanie plik\xF3w tekstowych z karty\
+  \ SD w Arduino zacz\u0119\u0142o si\u0119, gdy modu\u0142y SD sta\u0142y si\u0119\
+  \ dost\u0119pne. Biblioteka SD u\u017Cywa protoko\u0142u SPI\u2026"
+lastmod: '2024-04-05T22:50:50.021026-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107:) Sample output."
+summary: "(Jak to zrobi\u0107:) Czytanie plik\xF3w tekstowych z karty SD w Arduino\
+  \ zacz\u0119\u0142o si\u0119, gdy modu\u0142y SD sta\u0142y si\u0119 dost\u0119\
+  pne."
 title: Odczytywanie pliku tekstowego
 weight: 22
 ---

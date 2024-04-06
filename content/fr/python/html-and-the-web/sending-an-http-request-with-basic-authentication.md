@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:02:27.847200-07:00
-description: "Comment faire : Sortie \xE9chantillon."
-lastmod: '2024-04-05T21:53:58.817623-06:00'
+description: "Comment faire : Historiquement, l'authentification de base HTTP a \xE9\
+  t\xE9 l'un des premiers m\xE9canismes pour s\xE9curiser l'acc\xE8s aux donn\xE9\
+  es via des requ\xEAtes\u2026"
+lastmod: '2024-04-05T22:51:11.361661-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, l'authentification de base HTTP a \xE9t\xE9 l'un des premiers\
+  \ m\xE9canismes pour s\xE9curiser l'acc\xE8s aux donn\xE9es via des requ\xEAtes\
+  \ HTTP."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

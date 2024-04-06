@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:03:05.413806-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:36.843704-06:00'
+description: "How to: (Jak to zrobi\u0107:) Historia narz\u0119dzi tworzenia projekt\xF3\
+  w w C# si\u0119ga IDE Microsoft Visual Studio, kt\xF3re zrewolucjonizowa\u0142o\
+  \ spos\xF3b, w jaki deweloperzy\u2026"
+lastmod: '2024-04-05T22:50:49.728196-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Historia narz\u0119dzi tworzenia projekt\xF3w w C#\
+  \ si\u0119ga IDE Microsoft Visual Studio, kt\xF3re zrewolucjonizowa\u0142o spos\xF3\
+  b, w jaki deweloperzy rozpoczynaj\u0105 prace."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

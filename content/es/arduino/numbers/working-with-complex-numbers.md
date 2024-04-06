@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:36:35.120892-07:00
-description: "C\xF3mo hacerlo: Salida de muestra."
-lastmod: '2024-04-05T21:54:00.675318-06:00'
+description: "C\xF3mo hacerlo: Originalmente, los n\xFAmeros complejos fueron recibidos\
+  \ con escepticismo, pero se han convertido en piezas centrales en varios campos\u2026"
+lastmod: '2024-04-05T22:51:13.051801-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Originalmente, los n\xFAmeros complejos fueron recibidos con escepticismo,\
+  \ pero se han convertido en piezas centrales en varios campos cient\xEDficos."
 title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:50:42.385195-07:00
-description: "How to: \"Jak to zrobi\u0107:\"."
-lastmod: '2024-04-05T21:53:37.252441-06:00'
+description: "How to: \"Zag\u0142\u0119bienie si\u0119\" Interpolacja napis\xF3w nie\
+  \ jest czym\u015B nowym; obecna jest w wi\u0119kszo\u015Bci j\u0119zyk\xF3w skryptowych\
+  \ i programowania. W Fish Shell,\u2026"
+lastmod: '2024-04-05T22:50:50.168695-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\"Zag\u0142\u0119bienie si\u0119\" Interpolacja napis\xF3w nie jest czym\u015B\
+  \ nowym; obecna jest w wi\u0119kszo\u015Bci j\u0119zyk\xF3w skryptowych i programowania."
 title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:00:13.264394-07:00
-description: "How to: (C\xF3mo hacerlo:) Output."
-lastmod: '2024-04-05T21:53:59.966266-06:00'
+description: "How to: (C\xF3mo hacerlo:) El concepto de enviar solicitudes HTTP comenz\xF3\
+  \ poco despu\xE9s de la creaci\xF3n de la web. Alternativas a `requests` incluyen\
+  \ las\u2026"
+lastmod: '2024-04-05T22:51:12.403970-06:00'
 model: gpt-4-1106-preview
-summary: "(C\xF3mo hacerlo:) Output."
+summary: "(C\xF3mo hacerlo:) El concepto de enviar solicitudes HTTP comenz\xF3 poco\
+  \ despu\xE9s de la creaci\xF3n de la web."
 title: Enviando una solicitud http
 weight: 44
 ---

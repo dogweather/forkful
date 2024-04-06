@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:42.845353-07:00
-description: "How to: \"Kuinka tehd\xE4:\"."
-lastmod: '2024-04-05T21:53:57.928926-06:00'
+description: "How to: \"Sukellus syvemm\xE4lle\" P\xE4iv\xE4m\xE4\xE4rien vertailu\
+  \ on hyvin yleinen toiminto ohjelmien historiassa. `chrono`-kirjasto Rustissa tekee\
+  \ vertailun k\xE4tev\xE4ksi,\u2026"
+lastmod: '2024-04-05T22:51:10.519294-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\"Sukellus syvemm\xE4lle\" P\xE4iv\xE4m\xE4\xE4rien vertailu on hyvin yleinen\
+  \ toiminto ohjelmien historiassa."
 title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---

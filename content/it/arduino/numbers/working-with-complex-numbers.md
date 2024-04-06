@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:36:58.626099-07:00
-description: 'Come fare: Output di esempio.'
-lastmod: '2024-04-05T21:53:44.438391-06:00'
+description: "Come fare: In origine, i numeri complessi furono accolti con scetticismo,\
+  \ ma sono diventati centrali in vari campi scientifici. Storicamente, sono stati\u2026"
+lastmod: '2024-04-05T22:50:57.481074-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: In origine, i numeri complessi furono accolti con scetticismo, ma sono diventati
+  centrali in vari campi scientifici.
 title: Lavorare con i numeri complessi
 weight: 14
 ---

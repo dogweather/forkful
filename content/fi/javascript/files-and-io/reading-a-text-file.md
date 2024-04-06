@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:54:56.986985-07:00
-description: "How to: (Kuinka tehd\xE4:) Sample output."
-lastmod: '2024-04-05T21:53:58.546090-06:00'
+description: "How to: (Kuinka tehd\xE4:) Historiallisesti tiedostojen lukeminen on\
+  \ ollut osa ohjelmoinnin perusty\xF6kalupakkia. Node.js toi t\xE4m\xE4n mahdollisuuden\
+  \ JavaScriptin\u2026"
+lastmod: '2024-04-05T22:51:11.113849-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) Sample output."
+summary: "(Kuinka tehd\xE4:) Historiallisesti tiedostojen lukeminen on ollut osa ohjelmoinnin\
+  \ perusty\xF6kalupakkia."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

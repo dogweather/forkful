@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:01:57.132684-07:00
-description: 'So geht''s: Sample Output.'
-lastmod: '2024-04-05T21:53:55.646278-06:00'
+description: "So geht's: Vor der weiten Verbreitung von OAuth und anderen Authentifizierungsmethoden\
+  \ war die Basic Authentication ein Standardverfahren zum Schutz von\u2026"
+lastmod: '2024-04-05T22:51:08.330840-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Vor der weiten Verbreitung von OAuth und anderen Authentifizierungsmethoden
+  war die Basic Authentication ein Standardverfahren zum Schutz von Webressourcen.
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

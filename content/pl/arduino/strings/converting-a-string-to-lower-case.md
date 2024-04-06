@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:37:48.703655-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:37.084502-06:00'
+description: "How to: (Jak to zrobi\u0107:) Historia funkcji zmiany na ma\u0142e litery\
+  \ si\u0119ga pocz\u0105tk\xF3w programowania, gdy zauwa\u017Cono potrzeb\u0119 normalizacji\
+  \ tekst\xF3w do por\xF3wna\u0144 czy\u2026"
+lastmod: '2024-04-05T22:50:49.989939-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Historia funkcji zmiany na ma\u0142e litery si\u0119\
+  ga pocz\u0105tk\xF3w programowania, gdy zauwa\u017Cono potrzeb\u0119 normalizacji\
+  \ tekst\xF3w do por\xF3wna\u0144 czy wyszukiwa\u0144."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

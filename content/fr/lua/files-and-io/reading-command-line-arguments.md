@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:56:23.737941-07:00
-description: 'How to: (Comment faire ?) .'
-lastmod: '2024-04-05T21:53:59.424892-06:00'
+description: "How to: (Comment faire ?) Historiquement, Lua n'a pas toujours \xE9\
+  t\xE9 coh\xE9rent dans la fa\xE7on de lire les arguments de ligne de commande ;\
+  \ c'est en Lua 5.1\u2026"
+lastmod: '2024-04-05T22:51:11.914597-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Comment faire ?) Historiquement, Lua n'a pas toujours \xE9t\xE9 coh\xE9\
+  rent dans la fa\xE7on de lire les arguments de ligne de commande ; c'est en Lua\
+  \ 5.1 que `arg` a \xE9t\xE9 standardis\xE9."
 title: Lecture des arguments de ligne de commande
 weight: 23
 ---

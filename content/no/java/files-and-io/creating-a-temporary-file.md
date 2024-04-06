@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:41:02.550722-07:00
-description: 'Hvordan: Sample output.'
-lastmod: '2024-04-05T21:53:41.665810-06:00'
+description: "Hvordan: Oppretting av midlertidige filer i Java er ikke nytt. Det har\
+  \ v\xE6rt en del av Java siden de f\xF8rste versjonene, men m\xE5ten det h\xE5ndteres\
+  \ p\xE5 har\u2026"
+lastmod: '2024-04-05T22:50:54.697506-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Oppretting av midlertidige filer i Java er ikke nytt.
 title: Opprette en midlertidig fil
 weight: 21
 ---

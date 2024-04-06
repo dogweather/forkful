@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:43:33.042835-07:00
-description: "How to: Miten se tehd\xE4\xE4n."
-lastmod: '2024-04-05T21:53:58.399732-06:00'
+description: "How to: Sukellus syvemm\xE4lle: Historiallisesti Arduinot eiv\xE4t olleet\
+  \ yhteydess\xE4 internetiin. ESP8266-moduulin tai Ethernet-shieldin kaltaiset laajennukset\u2026"
+lastmod: '2024-04-05T22:51:10.973358-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Sukellus syvemm\xE4lle."
 title: Verkkosivun lataaminen
 weight: 42
 ---

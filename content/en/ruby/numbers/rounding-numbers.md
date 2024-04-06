@@ -1,9 +1,12 @@
 ---
 date: 2024-01-25 03:00:01.692945-07:00
-description: 'How to: Sample Output.'
-lastmod: '2024-04-05T21:53:36.251627-06:00'
+description: "How to: Rounding numbers isn't new\u2014humans have been doing it for\
+  \ centuries to make calculations easier or to work within the limits of their tools.\
+  \ In\u2026"
+lastmod: '2024-04-05T22:50:49.111491-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Rounding numbers isn't new\u2014humans have been doing it for centuries\
+  \ to make calculations easier or to work within the limits of their tools."
 title: Rounding numbers
 weight: 13
 ---

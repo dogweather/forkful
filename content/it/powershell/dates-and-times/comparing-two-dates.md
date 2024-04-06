@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:33:51.252850-07:00
-description: 'How to: (Come fare:) Output di esempio.'
-lastmod: '2024-04-05T21:53:44.415938-06:00'
+description: "How to: (Come fare:) Il confronto di date in PowerShell \xE8 diretto,\
+  \ grazie agli operatori di confronto (-lt, -gt, -eq) e all\u2019overload degli operatori\
+  \ per\u2026"
+lastmod: '2024-04-05T22:50:57.457274-06:00'
 model: gpt-4-1106-preview
-summary: (Come fare:) Output di esempio.
+summary: "(Come fare:) Il confronto di date in PowerShell \xE8 diretto, grazie agli\
+  \ operatori di confronto (-lt, -gt, -eq) e all\u2019overload degli operatori per\
+  \ gli oggetti di tipo `DateTime`."
 title: Confronto tra due date
 weight: 27
 ---

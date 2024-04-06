@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:39:11.716170-07:00
-description: 'So geht''s: Beispiel mit Umlauten.'
-lastmod: '2024-04-05T21:53:55.844464-06:00'
+description: "So geht's: Das Umwandeln einer Zeichenkette (String) in Kleinbuchstaben\
+  \ gibt es seit den ersten Versionen von PHP. Historisch betrachtet war `strtolower`\u2026"
+lastmod: '2024-04-05T22:51:08.515956-06:00'
 model: gpt-4-1106-preview
-summary: Beispiel mit Umlauten.
+summary: Das Umwandeln einer Zeichenkette (String) in Kleinbuchstaben gibt es seit
+  den ersten Versionen von PHP.
 title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---

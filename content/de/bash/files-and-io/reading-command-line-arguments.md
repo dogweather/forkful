@@ -1,9 +1,19 @@
 ---
 date: 2024-01-20 17:55:17.336418-07:00
-description: "Wie geht das? Ausf\xFChren des Skripts."
-lastmod: '2024-04-05T22:38:54.929782-06:00'
+description: "Wie geht das? Die `$1`, `$2`... Variablen sind Positionalparameter,\
+  \ die Bash direkt zur Verf\xFCgung stellt. `$@` ist eine spezielle Variable, die\
+  \ alle\u2026"
+lastmod: '2024-04-05T22:51:08.621911-06:00'
 model: gpt-4-1106-preview
-summary: "Wie geht das? Ausf\xFChren des Skripts."
+summary: "Wie geht das? Die `$1`, `$2`... Variablen sind Positionalparameter, die\
+  \ Bash direkt zur Verf\xFCgung stellt. `$@` ist eine spezielle Variable, die alle\
+  \ Argumente als Liste enth\xE4lt. `$#` gibt die Anzahl der \xFCbergebenen Argumente\
+  \ an. In den fr\xFChen Unix-Tagen wurden Skriptargumente f\xFCr die Anpassung an\
+  \ verschiedene Kontexte und Aufgaben verwendet. Heute sind sie genauso relevant,\
+  \ da sie die Skripte vielseitig und interaktiv machen. Alternativen umfassen `getopts`\
+  \ und `getopt` f\xFCr komplexere Szenarien mit benannten Argumenten und Optionen.\
+  \ Im Kern erm\xF6glicht Bash, dass Argumente unterschiedlichen Positionen zugeordnet\
+  \ und separat oder zusammen abgefragt werden k\xF6nnen."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

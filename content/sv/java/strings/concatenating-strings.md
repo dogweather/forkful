@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:55.061704-07:00
-description: "How to (Hur man g\xF6r) ."
-lastmod: '2024-04-05T22:37:46.472125-06:00'
+description: "How to (Hur man g\xF6r) Konkatenation av str\xE4ngar har varit en del\
+  \ av Java sedan starten. I tidiga versioner var \"+\" operat\xF6ren oftast anv\xE4\
+  nd, vilket kunde\u2026"
+lastmod: '2024-04-05T22:50:52.075786-06:00'
 model: gpt-4-1106-preview
-summary: "How to (Hur man g\xF6r) ."
+summary: "I tidiga versioner var \"+\" operat\xF6ren oftast anv\xE4nd, vilket kunde\
+  \ vara kostsamt f\xF6r minnet."
 title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---

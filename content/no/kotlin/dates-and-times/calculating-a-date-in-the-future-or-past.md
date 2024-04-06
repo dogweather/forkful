@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:34.551703-07:00
-description: "Slik gj\xF8r du: Sample output."
-lastmod: '2024-04-05T21:53:41.742081-06:00'
+description: "Slik gj\xF8r du: I gamle dager m\xE5tte programmerere regne ut datoforandringer\
+  \ manuelt, med mange fallgruver som skudd\xE5r og varierende m\xE5nedslengder. Java\
+  \ 8\u2026"
+lastmod: '2024-04-05T22:50:54.774831-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "I gamle dager m\xE5tte programmerere regne ut datoforandringer manuelt,\
+  \ med mange fallgruver som skudd\xE5r og varierende m\xE5nedslengder."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

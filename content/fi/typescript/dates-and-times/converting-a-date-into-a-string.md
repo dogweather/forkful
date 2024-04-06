@@ -1,9 +1,22 @@
 ---
 date: 2024-01-20 17:38:05.623499-07:00
-description: "How to: \"Kuinka tehd\xE4 se:\"."
-lastmod: '2024-04-05T21:53:57.883733-06:00'
+description: "How to: \"Syv\xE4sukellus\": P\xE4iv\xE4m\xE4\xE4rien muunto merkkijonoksi\
+  \ on ollut tarpeen, kun tiedot on haluttu esitt\xE4\xE4 k\xE4ytt\xE4j\xE4lle ymm\xE4\
+  rrett\xE4v\xE4ss\xE4 muodossa tai\u2026"
+lastmod: '2024-04-05T22:51:10.476188-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\"Syv\xE4sukellus\": P\xE4iv\xE4m\xE4\xE4rien muunto merkkijonoksi on ollut\
+  \ tarpeen, kun tiedot on haluttu esitt\xE4\xE4 k\xE4ytt\xE4j\xE4lle ymm\xE4rrett\xE4\
+  v\xE4ss\xE4 muodossa tai l\xE4hetett\xE4ess\xE4 p\xE4iv\xE4m\xE4\xE4ri\xE4 eri j\xE4\
+  rjestelmien v\xE4lill\xE4. JavaScriptin `Date`-olio tarjoaa perustan, jonka p\xE4\
+  \xE4lle TypeScript rakentuu. Vaihtoehtoina ovat mm. kirjastot kuten Moment.js tai\
+  \ Date-fns, jotka tarjoavat lis\xE4ominaisuuksia ja formaatteja. TypeScriptiss\xE4\
+  \ k\xE4ytet\xE4\xE4n yleens\xE4 JavaScriptin `Date`-oliota, koska TypeScript on\
+  \ JavaScriptin superset ja kirjoitusten tyypitys tuo lis\xE4turvaa. Kun k\xE4yt\xE4\
+  t `toLocaleString`-metodia, saat muunnettua p\xE4iv\xE4m\xE4\xE4r\xE4n helposti\
+  \ alueelliseen esitysmuotoon. Muuttujia voit muuttaa antamalla erilaisia argumentteja,\
+  \ kuten `locales` ja `options`. `toISOString` puolestaan luo yleisesti k\xE4ytetyn,\
+  \ standardin UTC-aikaan perustuvan merkkijonon."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

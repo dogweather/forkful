@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:33:38.274788-07:00
-description: "C\xF3mo hacerlo: Leer XML con SimpleXML."
-lastmod: '2024-03-13T22:44:59.184781-06:00'
+description: "C\xF3mo hacerlo: XML, o lenguaje de marcado extensible, ha sido un pilar\
+  \ en la serializaci\xF3n de datos desde su recomendaci\xF3n por el W3C en 1998.\
+  \ Es\u2026"
+lastmod: '2024-04-05T22:51:12.918774-06:00'
 model: gpt-4-0125-preview
-summary: Leer XML con SimpleXML.
+summary: "XML, o lenguaje de marcado extensible, ha sido un pilar en la serializaci\xF3\
+  n de datos desde su recomendaci\xF3n por el W3C en 1998."
 title: Trabajando con XML
 weight: 40
 ---

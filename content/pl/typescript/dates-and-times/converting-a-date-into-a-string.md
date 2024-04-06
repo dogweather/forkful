@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:37:36.027522-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:36.591242-06:00'
+description: "How to: (Jak to zrobi\u0107:) Wczesne systemy komputerowe, przez ograniczenia\
+  \ pami\u0119ci i moc obliczeniow\u0105, u\u017Cywa\u0142y r\xF3\u017Cnych sposob\xF3\
+  w reprezentacji czasu \u2013\u2026"
+lastmod: '2024-04-05T22:50:49.454858-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Wczesne systemy komputerowe, przez ograniczenia pami\u0119\
+  ci i moc obliczeniow\u0105, u\u017Cywa\u0142y r\xF3\u017Cnych sposob\xF3w reprezentacji\
+  \ czasu \u2013 najcz\u0119\u015Bciej jako liczby ca\u0142kowite."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

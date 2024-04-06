@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:01:57.632330-07:00
-description: 'Comment faire : Sample output.'
-lastmod: '2024-04-05T21:53:59.677321-06:00'
+description: "Comment faire : Historiquement, l'authentification de base \xE9tait\
+  \ une m\xE9thode simple pour s\xE9curiser l'acc\xE8s aux pages web. Aujourd'hui,\
+  \ des m\xE9thodes plus\u2026"
+lastmod: '2024-04-05T22:51:12.142829-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, l'authentification de base \xE9tait une m\xE9thode simple\
+  \ pour s\xE9curiser l'acc\xE8s aux pages web."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

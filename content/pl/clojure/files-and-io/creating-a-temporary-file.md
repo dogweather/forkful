@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:40:10.029389-07:00
-description: "Jak to zrobi\u0107: Przyk\u0142adowe wyj\u015Bcie."
-lastmod: '2024-04-05T21:53:36.460323-06:00'
+description: "Jak to zrobi\u0107: W starszych wersjach j\u0119zyk\xF3w programowania,\
+  \ tworzenie pliku tymczasowego by\u0142o mniej bezpo\u015Brednie, wymagaj\u0105\
+  c manualnego zarz\u0105dzania\u2026"
+lastmod: '2024-04-05T22:50:49.324265-06:00'
 model: gpt-4-1106-preview
-summary: "Przyk\u0142adowe wyj\u015Bcie."
+summary: "W starszych wersjach j\u0119zyk\xF3w programowania, tworzenie pliku tymczasowego\
+  \ by\u0142o mniej bezpo\u015Brednie, wymagaj\u0105c manualnego zarz\u0105dzania\
+  \ \u015Bcie\u017Ckami i uprawnieniami."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

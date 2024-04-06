@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:43:32.606114-07:00
-description: "How to: (\u042F\u043A \u0437\u0440\u043E\u0431\u0438\u0442\u0438:) Output."
-lastmod: '2024-04-05T21:53:49.871682-06:00'
+description: "How to: (\u042F\u043A \u0437\u0440\u043E\u0431\u0438\u0442\u0438:) Back\
+  \ in the early 2000s, when microcontrollers started gaining internet access, downloading\
+  \ a webpage was a complex task. Now, with\u2026"
+lastmod: '2024-04-05T22:51:02.722086-06:00'
 model: gpt-4-1106-preview
-summary: "(\u042F\u043A \u0437\u0440\u043E\u0431\u0438\u0442\u0438:) Output."
+summary: "(\u042F\u043A \u0437\u0440\u043E\u0431\u0438\u0442\u0438:) Back in the early\
+  \ 2000s, when microcontrollers started gaining internet access, downloading a webpage\
+  \ was a complex task."
 title: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F \u0432\
   \u0435\u0431-\u0441\u0442\u043E\u0440\u0456\u043D\u043A\u0438"
 weight: 42

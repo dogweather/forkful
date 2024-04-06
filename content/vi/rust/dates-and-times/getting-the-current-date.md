@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:45.011623-07:00
-description: "**C\xE1ch th\u1EF1c hi\u1EC7n:** \u0110\u1EA7u ra."
-lastmod: '2024-04-05T21:53:37.795893-06:00'
+description: "**C\xE1ch th\u1EF1c hi\u1EC7n:** Rust, m\u1ED9t ng\xF4n ng\u1EEF h\u1EC7\
+  \ th\u1ED1ng t\u1EADp trung v\xE0o an to\xE0n v\xE0 hi\u1EC7u su\u1EA5t, kh\xF4\
+  ng \u0111\u01B0\u1EE3c trang b\u1ECB c\xE1c ch\u1EE9c n\u0103ng ng\xE0y v\xE0 gi\u1EDD\
+  \ trong th\u01B0 vi\u1EC7n chu\u1EA9n c\u1EE7a\u2026"
+lastmod: '2024-04-05T22:50:50.732437-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Thay v\xE0o \u0111\xF3, c\u1ED9ng \u0111\u1ED3ng x\xE2y d\u1EF1ng c\xE1\
+  c crate\u2014thu\u1EADt ng\u1EEF c\u1EE7a Rust cho th\u01B0 vi\u1EC7n ho\u1EB7c\
+  \ g\xF3i."
 title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---

@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 17:57:15.553103-07:00
-description: "How to: (\uBC29\uBC95) Sample Output."
+description: "How to: (\uBC29\uBC95) C++\uC740 STL(Standard Template Library)\uC758\
+  \ `std::string` \uD074\uB798\uC2A4\uB97C \uC0AC\uC6A9\uD558\uC5EC \uBB38\uC790\uC5F4\
+  \uC744 \uAD00\uB9AC\uD569\uB2C8\uB2E4. \uACFC\uAC70 C \uC2A4\uD0C0\uC77C\uC758 \uBB38\
+  \uC790 \uBC30\uC5F4\uC744 \uC0AC\uC6A9\uD55C \uB4A4 `std::string`\uC73C\uB85C \uC62E\
+  \uACA8\uAC14\uC2B5\uB2C8\uB2E4. \uADDC\uCE59\uAE30\uBC18 \uD14D\uC2A4\uD2B8 \uBCC0\
+  \uACBD\uC5D0\uB294\u2026"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:57.284678-06:00'
+lastmod: '2024-04-05T22:51:09.903097-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\uBC29\uBC95) C++\uC740 STL(Standard Template Library)\uC758 `std::string`\
+  \ \uD074\uB798\uC2A4\uB97C \uC0AC\uC6A9\uD558\uC5EC \uBB38\uC790\uC5F4\uC744 \uAD00\
+  \uB9AC\uD569\uB2C8\uB2E4."
 title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 weight: 10
 ---

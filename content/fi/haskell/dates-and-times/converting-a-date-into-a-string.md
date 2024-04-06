@@ -1,9 +1,25 @@
 ---
 date: 2024-01-20 17:36:59.458854-07:00
-description: "How to: - Kuinka tehd\xE4: Output."
-lastmod: '2024-04-05T22:38:57.234032-06:00'
+description: "How to: - Kuinka tehd\xE4: P\xE4iv\xE4m\xE4\xE4r\xE4t merkkijonoina\
+  \ ovat olleet k\xE4yt\xF6ss\xE4 tietokoneiden alkuaikojen j\xE4lkeen, jolloin ihmiset\
+  \ alkoivat tarvita tapoja\u2026"
+lastmod: '2024-04-05T22:51:10.779770-06:00'
 model: gpt-4-1106-preview
-summary: "- Kuinka tehd\xE4: Output."
+summary: "- Kuinka tehd\xE4: P\xE4iv\xE4m\xE4\xE4r\xE4t merkkijonoina ovat olleet\
+  \ k\xE4yt\xF6ss\xE4 tietokoneiden alkuaikojen j\xE4lkeen, jolloin ihmiset alkoivat\
+  \ tarvita tapoja luettavasti tallentaa ja esitt\xE4\xE4 ajanhetki\xE4. Historiallisesti\
+  \ C ja C++ ovat vaikuttaneet muiden kielien p\xE4iv\xE4m\xE4\xE4r\xE4k\xE4sittelyyn.\
+  \ Haskell k\xE4ytt\xE4\xE4 `Data.Time` kirjastoa p\xE4iv\xE4m\xE4\xE4r\xE4n k\xE4\
+  sittelyyn. `formatTime` funktio mahdollistaa p\xE4iv\xE4m\xE4\xE4r\xE4n muuntamisen\
+  \ monenlaisiin formaatteihin. Muotoilujono, esim. `\"%Y-%m-%d\"`, m\xE4\xE4rittelee\
+  \ tulosteen muodon. `defaultTimeLocale` m\xE4\xE4r\xE4\xE4 kulttuurikohtaiset asetukset,\
+  \ kuten viikonp\xE4ivien ja kuukausien nimet. Vaihtoehtoisesti, Haskell tarjoaa\
+  \ my\xF6s `time` kirjaston, joka sis\xE4lt\xE4\xE4 vanhemmat funktiot, kuten `show`\
+  \ ajan esitt\xE4miseen, mutta ne ovat v\xE4hemm\xE4n joustavia. Suoritusyksityiskohdat\
+  \ liittyv\xE4t siihen, miten Haskell k\xE4sittelee aikaan liittyvi\xE4 tietotyyppej\xE4\
+  \ ja kuinka `formatTime` funktio purkaa muotoilujonon muuntaakseen p\xE4iv\xE4m\xE4\
+  \xE4r\xE4arvon merkkijonoksi. Joustavuuden ja kansainv\xE4listymisen my\xF6t\xE4\
+  \ on tullut tarve tukea erilaisia kalentereita ja kulttuurisidonnaisia aikamuotoja."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-25 03:39:37.908801-07:00
-description: 'How to: Reading XML with SimpleXML.'
-lastmod: '2024-03-13T22:45:00.189434-06:00'
+description: "How to: XML, or eXtensible Markup Language, has been a staple in data\
+  \ serialization since its W3C recommendation in 1998. It's verbose, human-readable,\u2026"
+lastmod: '2024-04-05T22:50:48.743249-06:00'
 model: gpt-4-1106-preview
-summary: Reading XML with SimpleXML.
+summary: XML, or eXtensible Markup Language, has been a staple in data serialization
+  since its W3C recommendation in 1998.
 title: Working with XML
 weight: 40
 ---

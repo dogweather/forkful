@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:53:27.558675-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
-  \u0438:) ."
-lastmod: '2024-04-05T21:53:49.098321-06:00'
+  \u0438:) Historically, print statements were a primary way to troubleshoot code.\
+  \ In TypeScript, `console.log` is the go-to. It\u2019s simple\u2026"
+lastmod: '2024-04-05T22:51:02.005966-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
+  \ Historically, print statements were a primary way to troubleshoot code."
 title: "\u0412\u0438\u0432\u0435\u0434\u0435\u043D\u043D\u044F \u043D\u0430\u043B\u0430\
   \u0433\u043E\u0434\u0436\u0443\u0432\u0430\u043B\u044C\u043D\u043E\u0457 \u0456\u043D\
   \u0444\u043E\u0440\u043C\u0430\u0446\u0456\u0457"

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:57:59.228887-07:00
-description: "How to (Kuinka tehd\xE4): ."
-lastmod: '2024-04-05T21:53:58.125358-06:00'
+description: "How to (Kuinka tehd\xE4): Tekstinkorjailu on vanha juttu, alkaen paperilta\
+  \ kyn\xE4ll\xE4 tehdyst\xE4 korjaamisesta aina tietokoneiden tekstink\xE4sittelyohjelmiin.\u2026"
+lastmod: '2024-04-05T22:51:10.715172-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Tekstinkorjailu on vanha juttu, alkaen paperilta kyn\xE4ll\xE4 tehdyst\xE4\
+  \ korjaamisesta aina tietokoneiden tekstink\xE4sittelyohjelmiin."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

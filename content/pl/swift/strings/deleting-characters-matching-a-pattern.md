@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:43:19.379717-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:37.165408-06:00'
+description: "How to: (Jak to zrobi\u0107:) Usuni\u0119cie znak\xF3w pasuj\u0105cych\
+  \ do okre\u015Blonego wzorca jest technik\u0105 regulowan\u0105 przez wyra\u017C\
+  enia regularne (regex), kt\xF3re narodzi\u0142y si\u0119\u2026"
+lastmod: '2024-04-05T22:50:50.075601-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Usuni\u0119cie znak\xF3w pasuj\u0105cych do okre\u015B\
+  lonego wzorca jest technik\u0105 regulowan\u0105 przez wyra\u017Cenia regularne\
+  \ (regex), kt\xF3re narodzi\u0142y si\u0119 w latach 50."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

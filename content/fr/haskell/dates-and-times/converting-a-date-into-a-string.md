@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:36:43.360644-07:00
-description: 'Comment faire : Sortie possible .'
-lastmod: '2024-04-05T21:53:59.330832-06:00'
+description: "Comment faire : Haskell utilise le package `time` pour g\xE9rer les\
+  \ dates. Historiquement, `Data.Time` est le module standard pour travailler avec\
+  \ le temps\u2026"
+lastmod: '2024-04-05T22:51:11.832732-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Haskell utilise le package `time` pour g\xE9rer les dates."
 title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:52:07.375478-07:00
-description: "Como Fazer: Sa\xEDda de exemplo."
-lastmod: '2024-04-05T21:53:47.233091-06:00'
+description: "Como Fazer: Antigamente, a depura\xE7\xE3o era feita atrav\xE9s de simples\
+  \ declara\xE7\xF5es de impress\xE3o. Hoje existem ferramentas de depura\xE7\xE3\
+  o dedicadas, mas imprimir\u2026"
+lastmod: '2024-04-05T22:51:00.125435-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Antigamente, a depura\xE7\xE3o era feita atrav\xE9s de simples declara\xE7\
+  \xF5es de impress\xE3o."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

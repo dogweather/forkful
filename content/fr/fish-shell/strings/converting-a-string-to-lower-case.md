@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:38:33.834595-07:00
-description: 'How to: (Comment faire :) .'
-lastmod: '2024-04-05T21:53:59.708745-06:00'
+description: "How to: (Comment faire :) Historiquement, la gestion des majuscules\
+  \ et des minuscules a \xE9t\xE9 importante pour la compatibilit\xE9 et le tri. La\
+  \ commande `tr`\u2026"
+lastmod: '2024-04-05T22:51:12.170544-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Comment faire :) Historiquement, la gestion des majuscules et des minuscules\
+  \ a \xE9t\xE9 importante pour la compatibilit\xE9 et le tri."
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

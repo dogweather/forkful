@@ -1,10 +1,13 @@
 ---
 date: 2024-01-20 17:35:58.889866-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
-  \u0438:) ."
-lastmod: '2024-04-05T21:53:49.085075-06:00'
+  \u0438:) In the early days, concatenating strings was often tedious, especially\
+  \ in languages without built-in support. JavaScript, and\u2026"
+lastmod: '2024-04-05T22:51:01.992533-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
+  \ In the early days, concatenating strings was often tedious, especially in languages\
+  \ without built-in support."
 title: "\u041E\u0431'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0440\u044F\u0434\
   \u043A\u0456\u0432"
 weight: 3

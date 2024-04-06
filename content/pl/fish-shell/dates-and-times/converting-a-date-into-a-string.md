@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:36:37.551587-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:37.280291-06:00'
+description: "How to: (Jak to zrobi\u0107:) Wczesne systemy komputerowe cz\u0119sto\
+  \ korzysta\u0142y z r\xF3\u017Cnych format\xF3w daty, by pasowa\u0142y do ogranicze\u0144\
+  \ sprz\u0119towych i optymalizacji.\u2026"
+lastmod: '2024-04-05T22:50:50.198605-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Wczesne systemy komputerowe cz\u0119sto korzysta\u0142\
+  y z r\xF3\u017Cnych format\xF3w daty, by pasowa\u0142y do ogranicze\u0144 sprz\u0119\
+  towych i optymalizacji."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

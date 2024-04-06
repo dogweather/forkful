@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:32:43.302178-07:00
-description: 'Come fare: Ecco come analizzare XML.'
-lastmod: '2024-03-13T22:44:43.838157-06:00'
+description: "Come fare: XML \xE8 l'acronimo di eXtensible Markup Language, un formato\
+  \ di dati presente fin dalla fine degli anni '90. Definisce un insieme di regole\
+  \ per\u2026"
+lastmod: '2024-04-05T22:50:57.622693-06:00'
 model: gpt-4-0125-preview
-summary: Ecco come analizzare XML.
+summary: "XML \xE8 l'acronimo di eXtensible Markup Language, un formato di dati presente\
+  \ fin dalla fine degli anni '90."
 title: Lavorare con XML
 weight: 40
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-25 03:39:52.099678-07:00
-description: 'How to: Here''s how to parse XML.'
-lastmod: '2024-03-13T22:45:00.456065-06:00'
+description: "How to: XML is short for eXtensible Markup Language, a data format that's\
+  \ been around since the late 90s. It defines a set of rules for encoding documents\u2026"
+lastmod: '2024-04-05T22:50:49.015523-06:00'
 model: gpt-4-1106-preview
-summary: Here's how to parse XML.
+summary: XML is short for eXtensible Markup Language, a data format that's been around
+  since the late 90s.
 title: Working with XML
 weight: 40
 ---

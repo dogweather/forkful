@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:44.025105-07:00
-description: "Hur g\xF6r man?: Sample output."
-lastmod: '2024-04-05T21:53:39.390411-06:00'
+description: "Hur g\xF6r man?: I historiskt perspektiv har datumhanteing varit komplex\
+  \ p\xE5 grund av olika kalendersystem. Lua standardiserar detta med bibliotek som\u2026"
+lastmod: '2024-04-05T22:50:52.354322-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "I historiskt perspektiv har datumhanteing varit komplex p\xE5 grund av olika\
+  \ kalendersystem."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

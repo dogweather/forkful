@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:36:57.556542-07:00
-description: "How to: (Jak to zrobi\u0107?)."
-lastmod: '2024-04-05T21:53:36.728117-06:00'
+description: "How to: (Zag\u0142\u0119biaj\u0105c si\u0119) Przekszta\u0142canie dat\
+  \ na \u0142a\u0144cuchy znak\xF3w jest konieczne od pocz\u0105tk\xF3w programowania.\
+  \ W Javie, u\u017Cywali\u015Bmy `SimpleDateFormat` od Javy\u2026"
+lastmod: '2024-04-05T22:50:49.600219-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Zag\u0142\u0119biaj\u0105c si\u0119) Przekszta\u0142canie dat na \u0142\
+  a\u0144cuchy znak\xF3w jest konieczne od pocz\u0105tk\xF3w programowania."
 title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---

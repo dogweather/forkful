@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:54:52.973469-07:00
-description: "Hur g\xF6r man: F\xF6rv\xE4ntat resultat."
-lastmod: '2024-04-05T21:53:39.311892-06:00'
+description: "Hur g\xF6r man: Haskell's IO-system kan verka f\xF6rvirrande f\xF6r\
+  \ nyb\xF6rjare, men det \xE4r en reflektion av det funktionella paradigmets rena\
+  \ hantering av effekter.\u2026"
+lastmod: '2024-04-05T22:50:52.274260-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Haskell's IO-system kan verka f\xF6rvirrande f\xF6r nyb\xF6rjare, men det\
+  \ \xE4r en reflektion av det funktionella paradigmets rena hantering av effekter."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

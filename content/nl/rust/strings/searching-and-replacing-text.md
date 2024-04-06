@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:08.041509-07:00
-description: 'Hoe: Voorbeelduitvoer.'
-lastmod: '2024-04-05T21:53:50.600477-06:00'
+description: "Hoe: Zoeken en vervangen van tekst is er al sinds de eerste teksteditors\
+  \ verschenen. Hulpmiddelen zoals sed in Unix maakten batch-tekstverwerking\u2026"
+lastmod: '2024-04-05T22:51:03.416047-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: Zoeken en vervangen van tekst is er al sinds de eerste teksteditors verschenen.
 title: Tekst zoeken en vervangen
 weight: 10
 ---

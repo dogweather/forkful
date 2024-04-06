@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:44.821523-07:00
-description: "Hur g\xF6r man: Exempelutskrift."
-lastmod: '2024-04-05T21:53:39.783120-06:00'
+description: "Hur g\xF6r man: I Ruby \xE4r Datum-klassen den fr\xE4msta mekanismen\
+  \ f\xF6r att hantera datum. Det ing\xE5r i standardbiblioteket och l\xE4gger mycket\
+  \ flexibilitet till\u2026"
+lastmod: '2024-04-05T22:50:52.758139-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "I Ruby \xE4r Datum-klassen den fr\xE4msta mekanismen f\xF6r att hantera\
+  \ datum."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

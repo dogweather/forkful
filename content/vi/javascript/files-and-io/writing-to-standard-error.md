@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:14:06.246726-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: \u0110\u1EA7u ra m\u1EABu."
-lastmod: '2024-04-05T21:53:38.519667-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Theo l\u1ECBch s\u1EED, c\xE1c h\u1EC7\
+  \ th\u1ED1ng gi\u1ED1ng Unix ph\xE2n bi\u1EC7t gi\u1EEFa \u0111\u1EA7u ra chu\u1EA9\
+  n v\xE0 l\u1ED7i chu\u1EA9n \u0111\u1EC3 cho ph\xE9p x\u1EED l\xFD ri\xEAng bi\u1EC7\
+  t c\xE1c tin nh\u1EAFn b\xECnh th\u01B0\u1EDDng v\xE0\u2026"
+lastmod: '2024-04-05T22:50:51.473573-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Theo l\u1ECBch s\u1EED, c\xE1c h\u1EC7 th\u1ED1ng gi\u1ED1ng Unix ph\xE2\
+  n bi\u1EC7t gi\u1EEFa \u0111\u1EA7u ra chu\u1EA9n v\xE0 l\u1ED7i chu\u1EA9n \u0111\
+  \u1EC3 cho ph\xE9p x\u1EED l\xFD ri\xEAng bi\u1EC7t c\xE1c tin nh\u1EAFn b\xECnh\
+  \ th\u01B0\u1EDDng v\xE0 tin nh\u1EAFn l\u1ED7i."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

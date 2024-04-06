@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:56:49.590353-07:00
-description: "Hvordan: **Eksempel p\xE5 kj\xF8ring:**."
-lastmod: '2024-04-05T21:53:41.354725-06:00'
+description: "Hvordan: \xC5 lese kommandolinjeargumenter er en praksis s\xE5 gammel\
+  \ som kommandolinjen selv. Det dateres tilbake til tider med terminal-baserte\u2026"
+lastmod: '2024-04-05T22:50:54.383486-06:00'
 model: gpt-4-1106-preview
-summary: "**Eksempel p\xE5 kj\xF8ring:**."
+summary: "\xC5 lese kommandolinjeargumenter er en praksis s\xE5 gammel som kommandolinjen\
+  \ selv."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

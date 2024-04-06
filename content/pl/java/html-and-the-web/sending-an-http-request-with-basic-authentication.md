@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:15.229784-07:00
-description: "Jak to zrobi\u0107: Wynik."
-lastmod: '2024-04-05T21:53:36.716730-06:00'
+description: "Jak to zrobi\u0107: HTTP Basic Authentication jest prostym mechanizmem\
+  \ kontroli dost\u0119pu do zasob\xF3w sieciowych. Wprowadzony w 1996 roku w HTTP/1.0,\
+  \ do dzi\u015B jest\u2026"
+lastmod: '2024-04-05T22:50:49.587927-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "HTTP Basic Authentication jest prostym mechanizmem kontroli dost\u0119pu\
+  \ do zasob\xF3w sieciowych."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

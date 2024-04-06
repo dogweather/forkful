@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:36:57.122993-07:00
-description: 'How to: (Come Fare:) .'
-lastmod: '2024-04-05T21:53:44.172620-06:00'
+description: "How to: (Come Fare:) Convertire date in stringhe \xE8 un bisogno comune\
+  \ sviluppato nei primi anni dell'informatica, quando si \xE8 reso necessario archiviare\
+  \ o\u2026"
+lastmod: '2024-04-05T22:50:57.223784-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Come Fare:) Convertire date in stringhe \xE8 un bisogno comune sviluppato\
+  \ nei primi anni dell'informatica, quando si \xE8 reso necessario archiviare o comunicare\
+  \ informazioni temporali tra sistemi."
 title: Conversione di una data in una stringa
 weight: 28
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:54.639722-07:00
-description: "How to / Comment faire : R\xE9sultat ."
-lastmod: '2024-04-05T21:53:59.737482-06:00'
+description: "How to / Comment faire : Historiquement, les syst\xE8mes Unix mesurent\
+  \ le temps en secondes depuis l'\xE9poque Unix: le 1er janvier 1970. Cette m\xE9\
+  thode est\u2026"
+lastmod: '2024-04-05T22:51:12.196834-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, les syst\xE8mes Unix mesurent le temps en secondes depuis\
+  \ l'\xE9poque Unix."
 title: Comparer deux dates
 weight: 27
 ---

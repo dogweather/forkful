@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:54:20.714393-07:00
-description: 'How to: Odotettu tuloste.'
-lastmod: '2024-04-05T21:53:58.202500-06:00'
+description: "How to: Tekstitiedostojen k\xE4sittely on oleellista monille sovelluksille.\
+  \ Historiassa tiedostonk\xE4sittelyyn k\xE4ytettiin alhaisen tason IO-operaatioita\
+  \ C:ss\xE4.\u2026"
+lastmod: '2024-04-05T22:51:10.786339-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Tekstitiedostojen k\xE4sittely on oleellista monille sovelluksille."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

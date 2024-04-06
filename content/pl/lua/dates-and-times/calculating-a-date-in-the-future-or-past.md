@@ -1,9 +1,14 @@
 ---
 date: 2024-01-20 17:31:58.714171-07:00
-description: "Jak to zrobi\u0107: Sample output."
-lastmod: '2024-04-05T21:53:36.981631-06:00'
+description: "Jak to zrobi\u0107: Kariera daty w przysz\u0142o\u015Bci lub przesz\u0142\
+  o\u015Bci si\u0119ga jeszcze czas\xF3w przed informatyk\u0105, ale wraz z nadej\u015B\
+  ciem komputer\xF3w i potrzeb\u0105 zarz\u0105dzania\u2026"
+lastmod: '2024-04-05T22:50:49.876445-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Kariera daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci si\u0119\
+  ga jeszcze czas\xF3w przed informatyk\u0105, ale wraz z nadej\u015Bciem komputer\xF3\
+  w i potrzeb\u0105 zarz\u0105dzania czasem, szybko sta\u0142a si\u0119 jedn\u0105\
+  \ z podstawowych funkcji programistycznych."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

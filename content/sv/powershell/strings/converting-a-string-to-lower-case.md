@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:39:02.398702-07:00
-description: "Hur g\xF6r man: Resultat."
-lastmod: '2024-04-05T21:53:39.448492-06:00'
+description: "Hur g\xF6r man: P\xE5 de tidiga dagarna av databehandling blev det snabbt\
+  \ tydligt att j\xE4mf\xF6relser och sorteringar beh\xF6vde standardisering. D\xE4\
+  rf\xF6r skapades\u2026"
+lastmod: '2024-04-05T22:50:52.416995-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "P\xE5 de tidiga dagarna av databehandling blev det snabbt tydligt att j\xE4\
+  mf\xF6relser och sorteringar beh\xF6vde standardisering."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

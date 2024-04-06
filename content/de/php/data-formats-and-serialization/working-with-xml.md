@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:33:36.498239-07:00
-description: 'Wie geht das: XML mit SimpleXML lesen.'
-lastmod: '2024-03-13T22:44:53.997400-06:00'
+description: "Wie geht das: XML oder eXtensible Markup Language ist seit seiner W3C-Empfehlung\
+  \ im Jahr 1998 ein Grundpfeiler in der Daten-Serialisierung. Es ist\u2026"
+lastmod: '2024-04-05T22:51:08.550408-06:00'
 model: gpt-4-0125-preview
-summary: XML mit SimpleXML lesen.
+summary: XML oder eXtensible Markup Language ist seit seiner W3C-Empfehlung im Jahr
+  1998 ein Grundpfeiler in der Daten-Serialisierung.
 title: Arbeiten mit XML
 weight: 40
 ---

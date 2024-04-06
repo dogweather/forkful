@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:43:34.478613-07:00
-description: "How to: (Como fazer:) Sa\xEDda (Exemplo)."
-lastmod: '2024-04-05T21:53:46.926621-06:00'
+description: "How to: (Como fazer:) Antes, us\xE1vamos `WebClient` ou `HttpWebRequest`\
+  \ para baixar p\xE1ginas web. Com o tempo, `HttpClient` surgiu como uma escolha\
+  \ mais\u2026"
+lastmod: '2024-04-05T22:50:59.839175-06:00'
 model: gpt-4-1106-preview
-summary: "(Como fazer:) Sa\xEDda (Exemplo)."
+summary: "(Como fazer:) Antes, us\xE1vamos `WebClient` ou `HttpWebRequest` para baixar\
+  \ p\xE1ginas web."
 title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---

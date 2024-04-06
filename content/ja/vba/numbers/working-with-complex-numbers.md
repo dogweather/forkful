@@ -2,8 +2,11 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:08:16.922177-07:00
-description: "\u65B9\u6CD5: Visual Basic for\u2026"
-lastmod: '2024-03-13T22:44:41.875122-06:00'
+description: "\u65B9\u6CD5: VBA\u306B\u306F\u8907\u7D20\u6570\u306E\u305F\u3081\u306E\
+  \u7D44\u307F\u8FBC\u307F\u30B5\u30DD\u30FC\u30C8\u304C\u542B\u307E\u308C\u3066\u304A\
+  \u3089\u305A\u3001\u8907\u7D20\u6570\u30AF\u30E9\u30B9(`complex`)\u3092\u6301\u3064\
+  Python\u3084Standard Template\u2026"
+lastmod: '2024-04-05T22:50:55.822698-06:00'
 model: gpt-4-0125-preview
 summary: "Visual Basic for Applications\uFF08VBA\uFF09\u3067\u306E\u8907\u7D20\u6570\
   \u306E\u6271\u3044\u306F\u3001\u30CD\u30A4\u30C6\u30A3\u30D6\u30B5\u30DD\u30FC\u30C8\

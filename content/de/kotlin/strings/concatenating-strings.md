@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:58.019054-07:00
-description: 'How to: (Wie macht man das:) .'
-lastmod: '2024-04-05T21:53:55.723143-06:00'
+description: "How to: (Wie macht man das:) Historisch gesehen, war String-Konkatenation\
+  \ immer ein Teil der Programmierung, da der Umgang mit Text zentral ist. Fr\xFC\
+  her,\u2026"
+lastmod: '2024-04-05T22:51:08.402561-06:00'
 model: gpt-4-1106-preview
-summary: (Wie macht man das:) .
+summary: (Wie macht man das:) Historisch gesehen, war String-Konkatenation immer ein
+  Teil der Programmierung, da der Umgang mit Text zentral ist.
 title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:02:37.978815-07:00
-description: 'Kuinka: Sample output.'
-lastmod: '2024-04-05T21:53:58.401450-06:00'
+description: "Kuinka: Arduino-projektin aloittaminen on olennainen taito, joka on\
+  \ periytynyt jo 2000-luvun alusta, jolloin Arduino lanseerattiin opetusv\xE4lineeksi\u2026"
+lastmod: '2024-04-05T22:51:10.975155-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Arduino-projektin aloittaminen on olennainen taito, joka on periytynyt jo\
+  \ 2000-luvun alusta, jolloin Arduino lanseerattiin opetusv\xE4lineeksi opiskelijoille."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

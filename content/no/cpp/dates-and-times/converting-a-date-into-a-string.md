@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:36:29.708905-07:00
-description: 'Hvordan: Sample output.'
-lastmod: '2024-04-05T21:53:42.073227-06:00'
+description: "Hvordan: Konvertering av datoer til tekststrenger er en gammel praksis\
+  \ som strekker seg tilbake til starten av programmering. I C++ ble dette tradisjonelt\u2026"
+lastmod: '2024-04-05T22:50:55.118914-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Konvertering av datoer til tekststrenger er en gammel praksis som strekker
+  seg tilbake til starten av programmering.
 title: Konvertere en dato til en streng
 weight: 28
 ---

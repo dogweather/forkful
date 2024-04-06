@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:31.370053-07:00
-description: "How to: (Jak to zrobi\u0107:) Output."
-lastmod: '2024-04-05T21:53:36.400523-06:00'
+description: "How to: (Jak to zrobi\u0107:) W latach 90., kiedy IDE by\u0142y mniej\
+  \ rozbudowane, print-debugging to by\u0142 chleb powszedni. Dzi\u0119ki prostej\
+  \ implementacji, jest nadal\u2026"
+lastmod: '2024-04-05T22:50:49.260524-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107:) Output."
+summary: "(Jak to zrobi\u0107:) W latach 90., kiedy IDE by\u0142y mniej rozbudowane,\
+  \ print-debugging to by\u0142 chleb powszedni."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

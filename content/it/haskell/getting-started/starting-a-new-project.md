@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:03:41.789285-07:00
-description: 'How to: Output di esempio.'
-lastmod: '2024-04-05T21:53:44.243383-06:00'
+description: "How to: Haskell \xE8 stata sviluppata negli anni '80 come un linguaggio\
+  \ di programmazione funzionale puro. Lo stack, introdotto pi\xF9 tardi, \xE8 uno\
+  \ strumento\u2026"
+lastmod: '2024-04-05T22:50:57.290594-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Haskell \xE8 stata sviluppata negli anni '80 come un linguaggio di programmazione\
+  \ funzionale puro."
 title: Avvio di un nuovo progetto
 weight: 1
 ---

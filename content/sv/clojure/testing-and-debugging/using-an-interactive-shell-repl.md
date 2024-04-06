@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:12:58.950669-07:00
-description: "Hur man g\xF6r: B\xF6rja med att starta REPL."
-lastmod: '2024-03-13T22:44:37.527014-06:00'
+description: "Hur man g\xF6r: REPL \xE4r central f\xF6r Lisps familjens interaktiva\
+  \ utvecklingsfilosofi, och Clojure, en modern Lisp-dialekt, g\xF6r stor nytta av\
+  \ detta verktyg.\u2026"
+lastmod: '2024-04-05T22:50:51.811336-06:00'
 model: gpt-4-0125-preview
-summary: "B\xF6rja med att starta REPL."
+summary: "REPL \xE4r central f\xF6r Lisps familjens interaktiva utvecklingsfilosofi,\
+  \ och Clojure, en modern Lisp-dialekt, g\xF6r stor nytta av detta verktyg."
 title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:37.382514-07:00
-description: 'How to: Resultat: `Hello, Norway!`.'
-lastmod: '2024-04-05T22:37:49.355590-06:00'
+description: "How to: S\xF8k og erstatt har v\xE6rt en hj\xF8rnestein i programmering\
+  \ siden tidlige teksteditorer som vi brukte p\xE5 70-tallet. Alternativer som `sed`\
+  \ i\u2026"
+lastmod: '2024-04-05T22:50:55.004421-06:00'
 model: gpt-4-1106-preview
-summary: 'Resultat: `Hello, Norway!`.'
+summary: "S\xF8k og erstatt har v\xE6rt en hj\xF8rnestein i programmering siden tidlige\
+  \ teksteditorer som vi brukte p\xE5 70-tallet."
 title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---

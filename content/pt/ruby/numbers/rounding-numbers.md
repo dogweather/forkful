@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 03:46:46.704963-07:00
-description: "Como Fazer: Sa\xEDda de Amostra."
-lastmod: '2024-04-05T21:53:47.449219-06:00'
+description: "Como Fazer: Arredondar n\xFAmeros n\xE3o \xE9 uma novidade \u2014 os\
+  \ humanos t\xEAm feito isso por s\xE9culos para facilitar c\xE1lculos ou para trabalhar\
+  \ dentro dos limites de\u2026"
+lastmod: '2024-04-05T22:51:00.326594-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Arredondar n\xFAmeros n\xE3o \xE9 uma novidade \u2014 os humanos t\xEAm\
+  \ feito isso por s\xE9culos para facilitar c\xE1lculos ou para trabalhar dentro\
+  \ dos limites de suas ferramentas."
 title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---

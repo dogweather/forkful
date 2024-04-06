@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:36:43.690529-07:00
-description: 'Como fazer: Sample output.'
-lastmod: '2024-04-05T21:53:46.982386-06:00'
+description: "Como fazer: Converter datas em strings est\xE1 diretamente associado\
+  \ aos primeiros dias da computa\xE7\xE3o quando a manipula\xE7\xE3o e armazenamento\
+  \ de datas era\u2026"
+lastmod: '2024-04-05T22:50:59.891860-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Converter datas em strings est\xE1 diretamente associado aos primeiros dias\
+  \ da computa\xE7\xE3o quando a manipula\xE7\xE3o e armazenamento de datas era complicado\
+  \ devido ao formato bin\xE1rio."
 title: Convertendo uma data em uma string
 weight: 28
 ---

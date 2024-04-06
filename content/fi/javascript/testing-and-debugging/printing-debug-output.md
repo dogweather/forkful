@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:18.113790-07:00
-description: "How to: (Kuinka tehd\xE4:) Tuloste."
-lastmod: '2024-04-05T21:53:58.530676-06:00'
+description: "How to: (Kuinka tehd\xE4:) Alkujaan, debuggaus tarkoitti kirjaimellisesti\
+  \ \xF6t\xF6k\xF6iden poistamista tietokoneen sis\xE4lt\xE4 \u2013 oikeasti! 1940-luvulla\
+  \ Grace Hopper\u2026"
+lastmod: '2024-04-05T22:51:11.099241-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) Tuloste."
+summary: "(Kuinka tehd\xE4:) Alkujaan, debuggaus tarkoitti kirjaimellisesti \xF6t\xF6\
+  k\xF6iden poistamista tietokoneen sis\xE4lt\xE4 \u2013 oikeasti!."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

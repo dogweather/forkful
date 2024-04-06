@@ -1,9 +1,20 @@
 ---
 date: 2024-01-20 17:53:33.494522-07:00
-description: "How to: - N\xE4in teet: ."
-lastmod: '2024-04-05T21:53:58.672452-06:00'
+description: "How to: - N\xE4in teet: Aikoinaan koodarin ty\xF6kalupakissa `puts`\
+  \ ja `p` olivat peruskeinoja n\xE4hd\xE4, mit\xE4 koodissa tapahtuu. Verrattuna\
+  \ moderniin\u2026"
+lastmod: '2024-04-05T22:51:11.231378-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- N\xE4in teet: Aikoinaan koodarin ty\xF6kalupakissa `puts` ja `p` olivat\
+  \ peruskeinoja n\xE4hd\xE4, mit\xE4 koodissa tapahtuu. Verrattuna moderniin debuggereihin,\
+  \ kuten `byebug` tai `pry`, n\xE4m\xE4 ovat primitiivisi\xE4, mutta toisinaan ne\
+  \ ovat nopein tapa saada yleiskuva ongelmasta. `puts` tulostaa muuttujat ja lausekkeet\
+  \ muunnettuna merkkijonoiksi, kun taas `p` k\xE4ytt\xE4\xE4 `inspect`-metodia, joka\
+  \ antaa yksityiskohtaisempaa tietoa objektista. K\xE4yt\xE4 `puts`ia kun tarvitset\
+  \ siistit, ihmisen luettavat tulostukset ja `p`:t\xE4 kun tarvitset teknisemp\xE4\
+  \xE4 dataa. Ruby on sis\xE4isesti optimoitu k\xE4sittelem\xE4\xE4n suoria tulostuksia\
+  \ hyvin, joten debug-tulostuksen k\xE4ytt\xF6 ei yleens\xE4 hidasta ohjelmaa merkitt\xE4\
+  v\xE4sti kehitysvaiheessa."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

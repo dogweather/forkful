@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:30:58.557754-07:00
-description: "So geht's: Ausgabe k\xF6nnte sein."
-lastmod: '2024-04-05T21:53:56.040565-06:00'
+description: "So geht's: In der Fr\xFChzeit der Programmierung waren Datum-Berechnungen\
+  \ kompliziert, man brauchte Algorithmen f\xFCr jeden Kalendertyp. Heute vereinfachen\u2026"
+lastmod: '2024-04-05T22:51:08.699660-06:00'
 model: gpt-4-1106-preview
-summary: "Ausgabe k\xF6nnte sein."
+summary: "In der Fr\xFChzeit der Programmierung waren Datum-Berechnungen kompliziert,\
+  \ man brauchte Algorithmen f\xFCr jeden Kalendertyp."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

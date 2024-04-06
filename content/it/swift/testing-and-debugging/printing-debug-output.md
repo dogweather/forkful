@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:53:30.308462-07:00
-description: 'How to: (Come fare:) Risultato.'
-lastmod: '2024-04-05T21:53:44.524142-06:00'
+description: "How to: (Come fare:) Prima di Swift c'era Objective-C, ma non offre\
+  \ un comando diretto come `print()`. Si usava `NSLog()`, pi\xF9 verboso e con informazioni\u2026"
+lastmod: '2024-04-05T22:50:57.564804-06:00'
 model: gpt-4-1106-preview
-summary: (Come fare:) Risultato.
+summary: (Come fare:) Prima di Swift c'era Objective-C, ma non offre un comando diretto
+  come `print()`.
 title: Stampa dell'output di debug
 weight: 33
 ---

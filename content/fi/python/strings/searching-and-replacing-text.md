@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:57.101609-07:00
-description: "How to: (Kuinka tehd\xE4:) Output."
-lastmod: '2024-04-05T21:53:57.685640-06:00'
+description: "How to: (Kuinka tehd\xE4:) Historiallisesti hakemisen ja korvaamisen\
+  \ konsepti on per\xE4isin tekstink\xE4sittelyn alkuajoista. Se on ollut oleellinen\
+  \ osa\u2026"
+lastmod: '2024-04-05T22:51:10.288482-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) Output."
+summary: "(Kuinka tehd\xE4:) Historiallisesti hakemisen ja korvaamisen konsepti on\
+  \ per\xE4isin tekstink\xE4sittelyn alkuajoista."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

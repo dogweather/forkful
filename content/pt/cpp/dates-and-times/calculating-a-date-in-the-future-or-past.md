@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:30:54.641149-07:00
-description: "Como Fazer: Exemplo de sa\xEDda."
-lastmod: '2024-04-05T21:53:47.243518-06:00'
+description: "Como Fazer: Calcular datas n\xE3o \xE9 algo novo \u2013 tem sido fundamental\
+  \ desde que come\xE7amos a medir o tempo. Em C++, n\xF3s j\xE1 vimos a `<ctime>`\
+  \ e a `<chrono>`\u2026"
+lastmod: '2024-04-05T22:51:00.135922-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Calcular datas n\xE3o \xE9 algo novo \u2013 tem sido fundamental desde que\
+  \ come\xE7amos a medir o tempo."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

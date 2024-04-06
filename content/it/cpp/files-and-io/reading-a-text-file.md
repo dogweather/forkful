@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:52.444741-07:00
-description: 'How to: (Come fare:) Output.'
-lastmod: '2024-04-05T21:53:44.499678-06:00'
+description: "How to: (Come fare:) Leggere file di testo \xE8 fondamentale sin dagli\
+  \ albori della programmazione. In C++, `ifstream` \xE8 parte della libreria standard\
+  \ e sta\u2026"
+lastmod: '2024-04-05T22:50:57.540631-06:00'
 model: gpt-4-1106-preview
-summary: (Come fare:) Output.
+summary: "(Come fare:) Leggere file di testo \xE8 fondamentale sin dagli albori della\
+  \ programmazione."
 title: Lettura di un file di testo
 weight: 22
 ---

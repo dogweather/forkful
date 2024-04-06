@@ -2,8 +2,12 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 21:51:56.152340-07:00
-description: "\u65B9\u6CD5 VBA\u3067\u306F\u3001Microsoft Scripting\u2026"
-lastmod: '2024-04-05T22:38:41.467219-06:00'
+description: "\u65B9\u6CD5 \u3053\u3053\u3067\u793A\u3057\u305F\u65B9\u6CD5\u306F\u3001\
+  Microsoft Scripting Runtime\u306E\u4E00\u90E8\u3067\u3042\u308B`FileSystemObject`\uFF08\
+  FSO\uFF09\u3092\u4F7F\u7528\u3057\u3066\u3044\u307E\u3059\u3002FSO\u306F\u3001\u30D5\
+  \u30A1\u30A4\u30EB\u30B7\u30B9\u30C6\u30E0\u306E\u64CD\u4F5C\u3092\u53EF\u80FD\u306B\
+  \u3059\u308B\u5F37\u529B\u306A\u30C4\u30FC\u30EB\u3067\u3001Visual Basic Scripting\u2026"
+lastmod: '2024-04-05T22:50:55.863092-06:00'
 model: gpt-4-0125-preview
 summary: "\u307E\u305A\u3001VBA\u74B0\u5883\u3067Microsoft Scripting Runtime\u30EA\
   \u30D5\u30A1\u30EC\u30F3\u30B9\u304C\u6709\u52B9\u5316\u3055\u308C\u3066\u3044\u308B\

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:45:35.679302-07:00
-description: "Como Fazer: Sa\xEDda esperada."
-lastmod: '2024-04-05T21:53:46.828120-06:00'
+description: "Como Fazer: A extra\xE7\xE3o de substrings n\xE3o \xE9 algo novo; vem\
+  \ desde os tempos das primeiras linguagens de programa\xE7\xE3o. Em Elm, utilizamos\
+  \ fun\xE7\xF5es como\u2026"
+lastmod: '2024-04-05T22:50:59.748285-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "A extra\xE7\xE3o de substrings n\xE3o \xE9 algo novo; vem desde os tempos\
+  \ das primeiras linguagens de programa\xE7\xE3o."
 title: Extraindo substrings
 weight: 6
 ---

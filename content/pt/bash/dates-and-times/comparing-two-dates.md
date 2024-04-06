@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:19.235868-07:00
-description: "Como Fazer: Sa\xEDda esperada."
-lastmod: '2024-04-05T21:53:47.112230-06:00'
+description: "Como Fazer: Comparar datas \xE9 um problema cl\xE1ssico em programa\xE7\
+  \xE3o, existindo desde que os primeiros calend\xE1rios foram incorporados aos sistemas.\u2026"
+lastmod: '2024-04-05T22:51:00.011645-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Comparar datas \xE9 um problema cl\xE1ssico em programa\xE7\xE3o, existindo\
+  \ desde que os primeiros calend\xE1rios foram incorporados aos sistemas."
 title: Comparando duas datas
 weight: 27
 ---

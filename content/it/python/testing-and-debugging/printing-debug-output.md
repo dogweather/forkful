@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:53:02.474623-07:00
-description: 'How to: (Come Fare:) .'
-lastmod: '2024-04-05T21:53:43.787766-06:00'
+description: "How to: (Come Fare:) L'output di debug \xE8 come il biglietto d'ingresso\
+  \ al mondo del coding: ce n'\xE8 per tutti i gusti, da `print()` al logging.\u2026"
+lastmod: '2024-04-05T22:50:56.857992-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Come Fare:) L'output di debug \xE8 come il biglietto d'ingresso al mondo\
+  \ del coding."
 title: Stampa dell'output di debug
 weight: 33
 ---

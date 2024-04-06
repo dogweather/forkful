@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:59:12.370760-07:00
-description: "C\xF3mo hacerlo: Output."
-lastmod: '2024-04-05T21:54:00.418160-06:00'
+description: "C\xF3mo hacerlo: En los a\xF1os 90, el HTTP se convirti\xF3 en el protocolo\
+  \ est\xE1ndar para la web. Desde entonces, el env\xEDo de solicitudes HTTP ha sido\
+  \ fundamental\u2026"
+lastmod: '2024-04-05T22:51:12.815127-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "En los a\xF1os 90, el HTTP se convirti\xF3 en el protocolo est\xE1ndar para\
+  \ la web."
 title: Enviando una solicitud http
 weight: 44
 ---

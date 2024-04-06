@@ -1,9 +1,18 @@
 ---
 date: 2024-01-20 17:56:23.713537-07:00
-description: 'How to: - Come fare: .'
-lastmod: '2024-04-05T21:53:44.296205-06:00'
+description: "How to: - Come fare: La lettura degli argomenti dalla linea di comando\
+  \ \xE8 una pratica vecchia quanto la programmazione stessa. PHP, nato come linguaggio\u2026"
+lastmod: '2024-04-05T22:50:57.342102-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Come fare: La lettura degli argomenti dalla linea di comando \xE8 una\
+  \ pratica vecchia quanto la programmazione stessa. PHP, nato come linguaggio per\
+  \ il web, ha esteso le sue capacit\xE0 alla CLI nella versione 4.3.0. I due superglobali\
+  \ `$argc` (argument count) e `$argv` (argument values) sono il cuore di questa funzionalit\xE0\
+  . `$argc` conta gli argomenti, mentre `$argv` \xE8 un array che li contiene. Ricorda\
+  \ che `$argv[0]` \xE8 sempre il nome dello script. Esistono alternative come `getopt()`\
+  \ per opzioni pi\xF9 complesse, ma `$argc` e `$argv` sono perfetti per la semplicit\xE0\
+  . Sotto il cofano, PHP utilizza le stesse strutture dati disponibili nel C, il che\
+  \ garantisce rapidit\xE0 ed efficienza."
 title: Lettura degli argomenti della riga di comando
 weight: 23
 ---

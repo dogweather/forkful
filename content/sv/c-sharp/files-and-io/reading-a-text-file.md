@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:54:12.313032-07:00
-description: "Hur g\xF6r man: Sample Output."
-lastmod: '2024-04-05T21:53:39.268301-06:00'
+description: "Hur g\xF6r man: L\xE4sning av textfiler \xE4r grundl\xE4ggande och har\
+  \ inte \xE4ndrats mycket i grunden sedan de tidiga programmeringsdagarna. Men i\
+  \ C# finns olika\u2026"
+lastmod: '2024-04-05T22:50:52.230233-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "L\xE4sning av textfiler \xE4r grundl\xE4ggande och har inte \xE4ndrats mycket\
+  \ i grunden sedan de tidiga programmeringsdagarna."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

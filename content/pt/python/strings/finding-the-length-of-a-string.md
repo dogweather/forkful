@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:48:08.401637-07:00
-description: "Como Fazer: Vamos ao c\xF3digo!."
-lastmod: '2024-04-05T21:53:46.466713-06:00'
+description: "Como Fazer: A fun\xE7\xE3o `len()` \xE9 incorporada na linguagem Python\
+  \ e existe desde as primeiras vers\xF5es. Ela \xE9 uma forma r\xE1pida e eficiente\
+  \ de contar quantos\u2026"
+lastmod: '2024-04-05T22:50:59.410761-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "A fun\xE7\xE3o `len()` \xE9 incorporada na linguagem Python e existe desde\
+  \ as primeiras vers\xF5es."
 title: Descobrindo o comprimento de uma string
 weight: 7
 ---

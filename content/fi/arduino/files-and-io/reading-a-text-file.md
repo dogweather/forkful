@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:36.089833-07:00
-description: "How to: (Kuinka tehd\xE4:) *Tulostus:*."
-lastmod: '2024-04-05T21:53:58.417862-06:00'
+description: "How to: (Kuinka tehd\xE4:) Alun perin tekstiedostojen luku oli vaikeampaa,\
+  \ vaatien monimutkaista bittioperaatioiden k\xE4sittely\xE4. SD-kirjaston k\xE4\
+  ytt\xF6\xF6notto\u2026"
+lastmod: '2024-04-05T22:51:10.990364-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) *Tulostus:*."
+summary: "(Kuinka tehd\xE4:) Alun perin tekstiedostojen luku oli vaikeampaa, vaatien\
+  \ monimutkaista bittioperaatioiden k\xE4sittely\xE4."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

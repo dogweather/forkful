@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:31.716754-07:00
-description: 'Hoe: XML lezen met SimpleXML.'
-lastmod: '2024-03-13T22:44:50.919865-06:00'
+description: "Hoe: XML, of EXtensible Markup Language, is sinds de W3C-aanbeveling\
+  \ in 1998 een vast onderdeel geweest in de serialisatie van gegevens. Het is uitvoerig,\u2026"
+lastmod: '2024-04-05T22:51:03.733959-06:00'
 model: gpt-4-0125-preview
-summary: XML lezen met SimpleXML.
+summary: XML, of EXtensible Markup Language, is sinds de W3C-aanbeveling in 1998 een
+  vast onderdeel geweest in de serialisatie van gegevens.
 title: Werken met XML
 weight: 40
 ---

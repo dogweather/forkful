@@ -1,9 +1,11 @@
 ---
 date: 2024-01-25 03:39:46.745957-07:00
-description: 'How to: Sample Output.'
-lastmod: '2024-04-05T21:53:36.003451-06:00'
+description: "How to: XML, or eXtensible Markup Language, has been around since the\
+  \ late '90s and remains a widely-used format for structured data. PowerShell\u2026"
+lastmod: '2024-04-05T22:50:48.860584-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: XML, or eXtensible Markup Language, has been around since the late '90s and
+  remains a widely-used format for structured data.
 title: Working with XML
 weight: 40
 ---

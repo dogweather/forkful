@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:38:37.299020-07:00
-description: "Jak to zrobi\u0107: Wyj\u015Bcie."
-lastmod: '2024-04-05T21:53:36.704175-06:00'
+description: "Jak to zrobi\u0107: Metoda `toLowerCase()` w Java posiada d\u0142ug\u0105\
+  \ histori\u0119 i jest cz\u0119\u015Bci\u0105 standardowej biblioteki od pocz\u0105\
+  tk\xF3w j\u0119zyka. Opiera si\u0119 ona na regu\u0142ach\u2026"
+lastmod: '2024-04-05T22:50:49.574570-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Metoda `toLowerCase()` w Java posiada d\u0142ug\u0105 histori\u0119 i jest\
+  \ cz\u0119\u015Bci\u0105 standardowej biblioteki od pocz\u0105tk\xF3w j\u0119zyka."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:47:39.861783-07:00
-description: How to (Wie geht das) .
-lastmod: '2024-04-05T22:38:54.861581-06:00'
+description: "How to (Wie geht das) In Lua, weist der `#` Operator schnell die L\xE4\
+  nge eines Strings zu. Dies ist effizient, da Lua intern die L\xE4nge von Strings\u2026"
+lastmod: '2024-04-05T22:51:08.559488-06:00'
 model: gpt-4-1106-preview
-summary: How to (Wie geht das) .
+summary: "Dies ist effizient, da Lua intern die L\xE4nge von Strings speichert."
 title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---

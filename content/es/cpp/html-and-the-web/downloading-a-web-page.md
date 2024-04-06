@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:43:28.420987-07:00
-description: "C\xF3mo hacerlo: Salida de muestra."
-lastmod: '2024-04-05T21:54:00.723233-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, para descargar una p\xE1gina web\
+  \ se usaba `libcurl`, una biblioteca de cliente para transferir datos con URL syntax.\
+  \ Hoy sigue\u2026"
+lastmod: '2024-04-05T22:51:13.095892-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Hist\xF3ricamente, para descargar una p\xE1gina web se usaba `libcurl`,\
+  \ una biblioteca de cliente para transferir datos con URL syntax."
 title: "Descargando una p\xE1gina web"
 weight: 42
 ---

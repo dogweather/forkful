@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:35.701221-07:00
-description: "Hur man g\xF6r: Output."
-lastmod: '2024-04-05T21:53:39.447713-06:00'
+description: "Hur man g\xF6r: I PowerShell \xE4r interpolering av str\xE4ngar en del\
+  \ av spr\xE5ket sedan den f\xF6rsta versionen. Alternativ till interpolering \xE4\
+  r att anv\xE4nda plus-\u2026"
+lastmod: '2024-04-05T22:50:52.415882-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "I PowerShell \xE4r interpolering av str\xE4ngar en del av spr\xE5ket sedan\
+  \ den f\xF6rsta versionen."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:24.527509-07:00
-description: 'How to: (Come fare) .'
-lastmod: '2024-04-05T21:53:44.269109-06:00'
+description: "How to: (Come fare) L'interpolazione di stringhe \xE8 presente in PHP\
+  \ fin dalle prime versioni e contribuisce a rendere il codice pi\xF9 leggibile.\
+  \ Prima\u2026"
+lastmod: '2024-04-05T22:50:57.315044-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Come fare) L'interpolazione di stringhe \xE8 presente in PHP fin dalle\
+  \ prime versioni e contribuisce a rendere il codice pi\xF9 leggibile."
 title: Interpolazione di una stringa
 weight: 8
 ---

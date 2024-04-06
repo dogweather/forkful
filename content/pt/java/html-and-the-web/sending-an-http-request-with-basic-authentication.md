@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:11.997467-07:00
-description: "Como fazer: Exemplo de Sa\xEDda."
-lastmod: '2024-04-05T21:53:46.796011-06:00'
+description: "Como fazer: Historicamente, a autentica\xE7\xE3o b\xE1sica \xE9 um m\xE9\
+  todo antiquado por\xE9m ainda em uso devido \xE0 sua simplicidade. Ela envia o nome\
+  \ de usu\xE1rio e senha\u2026"
+lastmod: '2024-04-05T22:50:59.716524-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historicamente, a autentica\xE7\xE3o b\xE1sica \xE9 um m\xE9todo antiquado\
+  \ por\xE9m ainda em uso devido \xE0 sua simplicidade."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

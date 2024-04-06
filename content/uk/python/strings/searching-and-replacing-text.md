@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 17:58:33.175894-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
-  \u0438:) ."
-lastmod: '2024-04-05T21:53:48.827861-06:00'
+  \u0438:) The concept of searching and replacing text is as old as computing itself.\
+  \ Think punch cards where text was 'replaced' by\u2026"
+lastmod: '2024-04-05T22:51:01.739936-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
+  \ The concept of searching and replacing text is as old as computing itself."
 title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u043D\
   \u0430 \u0442\u0435\u043A\u0441\u0442\u0443"
 weight: 10

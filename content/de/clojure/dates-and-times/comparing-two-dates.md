@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:28.099360-07:00
-description: 'So geht''s: Sample Output.'
-lastmod: '2024-04-05T21:53:55.389502-06:00'
+description: "So geht's: Historisch gesehen verwendeten Clojure-Entwickler oft die\
+  \ Java-Datums-API direkt, da Clojure auf der JVM l\xE4uft. Alternativ gibt es die\
+  \ `clj-\u2026"
+lastmod: '2024-04-05T22:51:08.094672-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historisch gesehen verwendeten Clojure-Entwickler oft die Java-Datums-API\
+  \ direkt, da Clojure auf der JVM l\xE4uft."
 title: Vergleich von zwei Daten
 weight: 27
 ---

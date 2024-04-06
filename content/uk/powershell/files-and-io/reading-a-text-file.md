@@ -1,12 +1,11 @@
 ---
 date: 2024-01-20 17:55:05.340339-07:00
-description: "\u042F\u043A \u0440\u043E\u0431\u0438\u0442\u0438: \u0427\u0438\u0442\
-  \u0430\u043D\u043D\u044F \u0432\u0441\u044C\u043E\u0433\u043E \u0444\u0430\u0439\
-  \u043B\u0443 \u043E\u0434\u0440\u0430\u0437\u0443."
-lastmod: '2024-03-13T22:44:49.679450-06:00'
+description: "\u042F\u043A \u0440\u043E\u0431\u0438\u0442\u0438: Reading text files\
+  \ is fundamental in programming. In the DOS era, we had `TYPE` and `MORE` commands.\
+  \ PowerShell, more advanced, introduced\u2026"
+lastmod: '2024-04-05T22:51:02.688354-06:00'
 model: gpt-4-1106-preview
-summary: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0432\u0441\u044C\u043E\u0433\
-  \u043E \u0444\u0430\u0439\u043B\u0443 \u043E\u0434\u0440\u0430\u0437\u0443."
+summary: Reading text files is fundamental in programming.
 title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0442\u0435\u043A\u0441\u0442\u043E\
   \u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0443"
 weight: 22

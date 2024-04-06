@@ -1,9 +1,17 @@
 ---
 date: 2024-01-20 17:48:16.742453-07:00
-description: "How to: Jak to zrobi\u0107."
-lastmod: '2024-04-05T21:53:36.612739-06:00'
+description: "How to: Pog\u0142\u0119biona wiedza: Funkcja `len()` w Rust dostarcza\
+  \ liczb\u0119 bajt\xF3w w ci\u0105gu, co jest szybkie, ale nie dzia\u0142a dobrze\
+  \ z Unicode. Dlatego\u2026"
+lastmod: '2024-04-05T22:50:49.479619-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Pog\u0142\u0119biona wiedza: Funkcja `len()` w Rust dostarcza liczb\u0119\
+  \ bajt\xF3w w ci\u0105gu, co jest szybkie, ale nie dzia\u0142a dobrze z Unicode.\
+  \ Dlatego `chars().count()` to lepsza metoda, gdy pracujemy z Unicode -- liczy znaki,\
+  \ nie bajty. Kiedy\u015B w C, liczenie d\u0142ugo\u015Bci \u0142a\u0144cucha polega\u0142\
+  o na iterowaniu do znaku ko\u0144ca (NULL terminator). W Rust, d\u0142ugo\u015B\u0107\
+  \ \u0142a\u0144cucha w bajtach jest znana natychmiast dzi\u0119ki zapami\u0119tanej\
+  \ wielko\u015Bci, ale z Unicode to nie wystarcza."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:33:55.434949-07:00
-description: 'How to: Let''s compare some dates.'
-lastmod: '2024-03-13T22:44:59.869803-06:00'
+description: "How to: Back in the day, dates were a haystack of formats and mangled\
+  \ calculations. With JavaScript (and TypeScript by extension), the `Date` object\u2026"
+lastmod: '2024-04-05T22:50:48.415760-06:00'
 model: gpt-4-1106-preview
-summary: Let's compare some dates.
+summary: Back in the day, dates were a haystack of formats and mangled calculations.
 title: Comparing two dates
 weight: 27
 ---

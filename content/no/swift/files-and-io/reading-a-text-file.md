@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:55:16.688800-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:42.118846-06:00'
+description: "How to: \xC5 lese tekstfiler er like gammelt som personlige datamaskiner.\
+  \ Tidligere brukte vi kommandolinjen, men n\xE5 har vi GUIs og rike programmeringsspr\xE5\
+  k.\u2026"
+lastmod: '2024-04-05T22:50:55.165329-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\xC5 lese tekstfiler er like gammelt som personlige datamaskiner."
 title: Lese en tekstfil
 weight: 22
 ---

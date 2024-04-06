@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:39:41.315361-07:00
-description: 'How to: Ecco come si fa in Swift.'
-lastmod: '2024-03-13T22:44:43.757630-06:00'
+description: "How to: Convertire il testo in minuscolo ha radici nella necessit\xE0\
+  \ di normalizzare dati testuali. Nelle prime fasi dell'informatica, la distinzione\
+  \ tra\u2026"
+lastmod: '2024-04-05T22:50:57.551415-06:00'
 model: gpt-4-1106-preview
-summary: Ecco come si fa in Swift.
+summary: "Convertire il testo in minuscolo ha radici nella necessit\xE0 di normalizzare\
+  \ dati testuali."
 title: Conversione di una stringa in minuscolo
 weight: 4
 ---

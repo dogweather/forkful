@@ -1,9 +1,18 @@
 ---
 date: 2024-01-20 17:30:52.701163-07:00
-description: 'How to: - Comment faire : .'
-lastmod: '2024-04-05T21:53:59.738207-06:00'
+description: "How to: - Comment faire : L'histoire de la gestion des dates dans les\
+  \ langages de programmation est pleine de pi\xE8ges, surtout \xE0 cause des fuseaux\
+  \ horaires\u2026"
+lastmod: '2024-04-05T22:51:12.197864-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Comment faire : L'histoire de la gestion des dates dans les langages de\
+  \ programmation est pleine de pi\xE8ges, surtout \xE0 cause des fuseaux horaires\
+  \ et des calendriers diff\xE9rents. En Fish Shell, on utilise souvent `date`, une\
+  \ commande Unix, car elle est puissante et flexible. Attention aux syst\xE8mes o\xF9\
+  \ `date` se comporte diff\xE9remment (comme macOS). Des alternatives? Des langages\
+  \ comme Python ou PHP avec leurs propres biblioth\xE8ques de dates. Pour l'impl\xE9\
+  mentation, on manie avec soin les formats et les calculs pour \xE9viter des erreurs\
+  \ subtiles comme des d\xE9bordements d'heure ou de date."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

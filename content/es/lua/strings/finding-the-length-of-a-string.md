@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:48:02.953625-07:00
-description: "C\xF3mo hacerlo: Salida de muestra."
-lastmod: '2024-04-05T21:54:00.539279-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, el manejo de cadenas ha sido una\
+  \ parte crucial en la programaci\xF3n. Lua proporciona una manera f\xE1cil y directa\
+  \ de encontrar\u2026"
+lastmod: '2024-04-05T22:51:12.927598-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Hist\xF3ricamente, el manejo de cadenas ha sido una parte crucial en la\
+  \ programaci\xF3n."
 title: Calculando la longitud de una cadena
 weight: 7
 ---

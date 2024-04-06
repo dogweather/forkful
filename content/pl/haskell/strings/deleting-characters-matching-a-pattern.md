@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:42:31.299202-07:00
-description: "Jak to zrobi\u0107: Output."
-lastmod: '2024-04-05T21:53:36.869416-06:00'
+description: "Jak to zrobi\u0107: Usuwanie znak\xF3w pojawia si\u0119 w wielu zadaniach\
+  \ programistycznych, od prostego czyszczenia string\xF3w po zapewnienie bezpiecze\u0144\
+  stwa poprzez\u2026"
+lastmod: '2024-04-05T22:50:49.757293-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Usuwanie znak\xF3w pojawia si\u0119 w wielu zadaniach programistycznych,\
+  \ od prostego czyszczenia string\xF3w po zapewnienie bezpiecze\u0144stwa poprzez\
+  \ usuni\u0119cie potencjalnie szkodliwych sekwencji."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

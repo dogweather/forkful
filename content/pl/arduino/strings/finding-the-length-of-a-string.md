@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:38.846670-07:00
-description: "Jak to zrobi\u0107: W Sample Output widzimy."
-lastmod: '2024-04-05T21:53:37.088190-06:00'
+description: "Jak to zrobi\u0107: Kiedy\u015B, w C, do d\u0142ugo\u015Bci string\xF3\
+  w u\u017Cywaliby\u015Bmy `strlen` z biblioteki `string.h`. W Arduino, `String` to\
+  \ klasa u\u0142atwiaj\u0105ca zarz\u0105dzanie\u2026"
+lastmod: '2024-04-05T22:50:49.994172-06:00'
 model: gpt-4-1106-preview
-summary: W Sample Output widzimy.
+summary: "Kiedy\u015B, w C, do d\u0142ugo\u015Bci string\xF3w u\u017Cywaliby\u015B\
+  my `strlen` z biblioteki `string.h`."
 title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---

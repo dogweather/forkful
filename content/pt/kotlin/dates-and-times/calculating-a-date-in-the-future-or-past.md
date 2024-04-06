@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:31.537423-07:00
-description: "Como fazer: Sa\xEDda de exemplo."
-lastmod: '2024-04-05T21:53:46.897317-06:00'
+description: "Como fazer: Antes de termos bibliotecas modernas como `java.time` (introduzida\
+  \ no Java 8), os programadores muitas vezes se batiam com as inconveni\xEAncias\u2026"
+lastmod: '2024-04-05T22:50:59.812403-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Antes de termos bibliotecas modernas como `java.time` (introduzida no Java\
+  \ 8), os programadores muitas vezes se batiam com as inconveni\xEAncias da classe\
+  \ `Date` e `Calendar`."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:48:32.384449-07:00
-description: 'Comment faire : Sortie .'
-lastmod: '2024-04-05T21:53:59.625243-06:00'
+description: "Comment faire : Historiquement, la fa\xE7on de compter les caract\xE8\
+  res pouvait varier avec les anciennes versions de Swift. En effet, avant Swift 2.0,\
+  \ les\u2026"
+lastmod: '2024-04-05T22:51:12.095942-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, la fa\xE7on de compter les caract\xE8res pouvait varier\
+  \ avec les anciennes versions de Swift."
 title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---

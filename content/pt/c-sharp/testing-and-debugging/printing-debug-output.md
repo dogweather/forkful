@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:52:35.339403-07:00
-description: "How to: (Como Fazer:) Sa\xEDda."
-lastmod: '2024-04-05T21:53:46.930528-06:00'
+description: "How to: (Como Fazer:) Historicamente, imprimir sa\xEDda de debug \xE9\
+  \ uma das formas mais diretas de entender o comportamento de um aplicativo - algo\
+  \ primitivo,\u2026"
+lastmod: '2024-04-05T22:50:59.843329-06:00'
 model: gpt-4-1106-preview
-summary: "(Como Fazer:) Sa\xEDda."
+summary: "(Como Fazer:) Historicamente, imprimir sa\xEDda de debug \xE9 uma das formas\
+  \ mais diretas de entender o comportamento de um aplicativo - algo primitivo, mas\
+  \ eficaz."
 title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---

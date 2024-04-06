@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:46:28.573592-07:00
-description: 'How to: (Comment faire :) .'
-lastmod: '2024-04-05T21:53:59.623195-06:00'
+description: "How to: (Comment faire :) Historiquement, l'extraction de sous-cha\xEE\
+  nes en Swift a \xE9volu\xE9 pour simplifier son interface et am\xE9liorer la s\xE9\
+  curit\xE9 de type.\u2026"
+lastmod: '2024-04-05T22:51:12.093755-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Comment faire :) Historiquement, l'extraction de sous-cha\xEEnes en Swift\
+  \ a \xE9volu\xE9 pour simplifier son interface et am\xE9liorer la s\xE9curit\xE9\
+  \ de type."
 title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---

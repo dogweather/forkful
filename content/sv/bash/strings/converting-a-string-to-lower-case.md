@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:48.961237-07:00
-description: "G\xF6r s\xE5 h\xE4r: Exempel p\xE5 output."
-lastmod: '2024-04-05T21:53:39.407001-06:00'
+description: "G\xF6r s\xE5 h\xE4r: Att konvertera till gemener \xE4r inte ett nytt\
+  \ koncept och funnits l\xE4nge i olika programmeringsmilj\xF6er och verktyg. I Bash-programmering\
+  \ har\u2026"
+lastmod: '2024-04-05T22:50:52.373069-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Att konvertera till gemener \xE4r inte ett nytt koncept och funnits l\xE4\
+  nge i olika programmeringsmilj\xF6er och verktyg."
 title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:39:20.967412-07:00
-description: 'Hvordan: En annen nyttig metode.'
-lastmod: '2024-04-05T21:53:42.264292-06:00'
+description: "Hvordan: Konverteringen til sm\xE5 bokstaver har v\xE6rt en del av programmeringsspr\xE5\
+  k i \xE5revis fordi det gir en konsekvent tiln\xE6rming til tekstbehandling. I\u2026"
+lastmod: '2024-04-05T22:50:55.318263-06:00'
 model: gpt-4-1106-preview
-summary: En annen nyttig metode.
+summary: "Konverteringen til sm\xE5 bokstaver har v\xE6rt en del av programmeringsspr\xE5\
+  k i \xE5revis fordi det gir en konsekvent tiln\xE6rming til tekstbehandling."
 title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---

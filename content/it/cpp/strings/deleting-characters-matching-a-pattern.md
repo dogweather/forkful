@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:41:55.748105-07:00
-description: 'How to: ("Come fare:").'
-lastmod: '2024-04-05T21:53:44.469310-06:00'
+description: "How to: (\"Approfondimento\") C++ ha introdotto la libreria `<regex>`\
+  \ con lo standard C++11, migliorandola nel tempo. Alternativamente puoi rimuovere\u2026"
+lastmod: '2024-04-05T22:50:57.511334-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: ("Approfondimento") C++ ha introdotto la libreria `<regex>` con lo standard
+  C++11, migliorandola nel tempo.
 title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---

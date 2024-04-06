@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:47.381956-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-04-05T21:53:57.862252-06:00'
+description: "How to: (Kuinka tehd\xE4:) Alun perin substring-toimintoja tarvittiin\
+  \ tiedon k\xE4sittelyyn: tiedostopoluista nimen erottaminen, k\xE4ytt\xE4j\xE4nimist\xE4\
+  \ domain-erottelu\u2026"
+lastmod: '2024-04-05T22:51:10.455029-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4:) Alun perin substring-toimintoja tarvittiin tiedon k\xE4\
+  sittelyyn."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

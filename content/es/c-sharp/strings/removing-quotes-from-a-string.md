@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 03:38:03.531104-07:00
-description: "C\xF3mo hacerlo: Salida."
-lastmod: '2024-04-05T21:54:00.409962-06:00'
+description: "C\xF3mo hacerlo: El concepto de eliminar comillas no es nuevo ni particularmente\
+  \ complejo, pero es crucial porque las comillas a menudo se usan para\u2026"
+lastmod: '2024-04-05T22:51:12.807059-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: El concepto de eliminar comillas no es nuevo ni particularmente complejo,
+  pero es crucial porque las comillas a menudo se usan para delimitar cadenas.
 title: Eliminando comillas de una cadena
 weight: 9
 ---

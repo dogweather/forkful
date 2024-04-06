@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:05.330262-07:00
-description: "Hvordan gj\xF8re det: ."
-lastmod: '2024-04-05T21:53:42.154141-06:00'
+description: "Hvordan gj\xF8re det: Konvertering av datoer til strenger er ikke nytt;\
+  \ det har eksistert siden tidlige programmeringsspr\xE5k. Historisk sett h\xE5ndterte\
+  \ hvert\u2026"
+lastmod: '2024-04-05T22:50:55.208165-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Konvertering av datoer til strenger er ikke nytt; det har eksistert siden\
+  \ tidlige programmeringsspr\xE5k."
 title: Konvertere en dato til en streng
 weight: 28
 ---

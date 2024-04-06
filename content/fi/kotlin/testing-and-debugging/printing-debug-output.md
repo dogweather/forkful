@@ -1,9 +1,18 @@
 ---
 date: 2024-01-20 17:53:02.470591-07:00
-description: 'How to: Koodiesimerkit ja tulosteet.'
-lastmod: '2024-03-13T22:44:56.533363-06:00'
+description: "How to: Syv\xE4luotaus. Aikaisemmin kehitt\xE4j\xE4t saattoivat k\xE4\
+  ytt\xE4\xE4 log-tiedostoja tai jopa konsolin tulosteita virheenkorjaukseen. Kotlinissa\
+  \ println on\u2026"
+lastmod: '2024-04-05T22:51:10.691497-06:00'
 model: gpt-4-1106-preview
-summary: Koodiesimerkit ja tulosteet.
+summary: "Syv\xE4luotaus. Aikaisemmin kehitt\xE4j\xE4t saattoivat k\xE4ytt\xE4\xE4\
+  \ log-tiedostoja tai jopa konsolin tulosteita virheenkorjaukseen. Kotlinissa println\
+  \ on yksinkertaisin tapa tulostaa, mutta se ei ole ainoa tapa. Logcat Androidissa\
+  \ ja Logger-luokkia JVM-ohjelmissa tarjoavat kontrolloidumman tavan k\xE4sitell\xE4\
+  \ lokiviestej\xE4. Kotlinissa `println` on sidottu Java's `System.out`-, `System.err`-virtaan\
+  \ ja voi heikent\xE4\xE4 suorituskyky\xE4 tuotannossa. Siksi tuotantokoodissa tulisi\
+  \ k\xE4ytt\xE4\xE4 erikoistuneita kirjastoja, kuten SLF4J tai Logback, joissa voit\
+  \ m\xE4\xE4ritt\xE4\xE4 logitason."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:43:04.314656-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-04-05T21:53:58.340173-06:00'
+description: "How to: (Kuinka tehd\xE4:) PowerShell k\xE4ytt\xE4\xE4 .NETin regex-moottoria\
+  \ mallien tunnistamiseen, joka on per\xE4isin 2000-luvun alusta. Vaihtoehtoja kuvioille\u2026"
+lastmod: '2024-04-05T22:51:10.917624-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4:) PowerShell k\xE4ytt\xE4\xE4 .NETin regex-moottoria mallien\
+  \ tunnistamiseen, joka on per\xE4isin 2000-luvun alusta."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

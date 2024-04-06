@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:55:09.181652-07:00
-description: "How to: (Kuinka tehd\xE4:) Sample output."
-lastmod: '2024-04-05T21:53:57.716563-06:00'
+description: "How to: (Kuinka tehd\xE4:) Tiedostoja on luettu siit\xE4 l\xE4htien,\
+  \ kun tietokoneet alkoivat k\xE4ytt\xE4\xE4 ulkoisia tallennusmedioita. Historiallisesti\
+  \ tiedot luettiin\u2026"
+lastmod: '2024-04-05T22:51:10.319684-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) Sample output."
+summary: "(Kuinka tehd\xE4:) Tiedostoja on luettu siit\xE4 l\xE4htien, kun tietokoneet\
+  \ alkoivat k\xE4ytt\xE4\xE4 ulkoisia tallennusmedioita."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

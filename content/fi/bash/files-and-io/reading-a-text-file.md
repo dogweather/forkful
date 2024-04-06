@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:43.015528-07:00
-description: "N\xE4in teet: Esimerkki ulostulosta."
-lastmod: '2024-04-05T21:53:58.330756-06:00'
+description: "N\xE4in teet: Aikanaan tekstitiedostojen luku oli yksinkertaista, koska\
+  \ datan formaatit olivat perustietoja. Nyky\xE4\xE4n on paljon vaihtoehtoja: `cat`,\
+  \ `head`,\u2026"
+lastmod: '2024-04-05T22:51:10.908681-06:00'
 model: gpt-4-1106-preview
-summary: Esimerkki ulostulosta.
+summary: Aikanaan tekstitiedostojen luku oli yksinkertaista, koska datan formaatit
+  olivat perustietoja.
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

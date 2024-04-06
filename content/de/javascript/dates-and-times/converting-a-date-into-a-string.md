@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:37:24.682317-07:00
-description: How to (Wie geht's) .
-lastmod: '2024-04-05T22:38:55.138679-06:00'
+description: "How to (Wie geht's) Urspr\xFCnglich verwendeten Programmierer das `Date`-Objekt\
+  \ im ECMAScript (JavaScript-Standard) f\xFCr Zeitangaben. Im Laufe der Zeit\u2026"
+lastmod: '2024-04-05T22:51:08.814762-06:00'
 model: gpt-4-1106-preview
-summary: How to (Wie geht's) .
+summary: "Im Laufe der Zeit erkannte man den Bedarf f\xFCr verschiedene Darstellungsformen,\
+  \ wie das ISO-Format oder lokalisierte Strings."
 title: Datum in einen String umwandeln
 weight: 28
 ---

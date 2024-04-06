@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:50:43.251886-07:00
-description: How to (Hur till) Output.
-lastmod: '2024-04-05T22:37:46.238980-06:00'
+description: "How to (Hur till) Interpolering av str\xE4ngar \xE4r inget nytt. De\
+  \ flesta programmeringsspr\xE5k har det och i Elixir hanteras det snyggt med #{...}.\
+  \ Alternativ\u2026"
+lastmod: '2024-04-05T22:50:51.839043-06:00'
 model: gpt-4-1106-preview
-summary: How to (Hur till) Output.
+summary: "De flesta programmeringsspr\xE5k har det och i Elixir hanteras det snyggt\
+  \ med #{...}."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

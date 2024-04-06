@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:28:32.635604-07:00
-description: "Como Fazer: Sa\xEDda de exemplo."
-lastmod: '2024-04-05T21:53:46.941180-06:00'
+description: "Como Fazer: Trabalhar com datas \xE9 essencial na programa\xE7\xE3o\
+  \ e C# faz isso bem com a classe `DateTime`. No passado, sistemas diferentes tinham\
+  \ suas pr\xF3prias\u2026"
+lastmod: '2024-04-05T22:50:59.853309-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Trabalhar com datas \xE9 essencial na programa\xE7\xE3o e C# faz isso bem\
+  \ com a classe `DateTime`."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

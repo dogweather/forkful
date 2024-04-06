@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:32:37.842708-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
-  \u0438:) Sample output."
-lastmod: '2024-04-05T21:53:48.983511-06:00'
+  \u0438:) In Elixir, comparing dates wasn't always straightforward. Before version\
+  \ 1.3, we lacked the luxury of the built-in `DateTime`\u2026"
+lastmod: '2024-04-05T22:51:01.894502-06:00'
 model: gpt-4-1106-preview
 summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
-  \ Sample output."
+  \ In Elixir, comparing dates wasn't always straightforward."
 title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u0432\u043E\
   \u0445 \u0434\u0430\u0442"
 weight: 27

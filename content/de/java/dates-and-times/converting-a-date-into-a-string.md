@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:36:51.848668-07:00
-description: 'So geht''s: Beispiel-Ausgabe.'
-lastmod: '2024-04-05T21:53:55.657328-06:00'
+description: "So geht's: Fr\xFCher mussten Java-Entwickler `SimpleDateFormat` aus\
+  \ `java.text` nutzen, das war umst\xE4ndlich und nicht thread-sicher. Seit Java\
+  \ 8 gibt es die\u2026"
+lastmod: '2024-04-05T22:51:08.342519-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Fr\xFCher mussten Java-Entwickler `SimpleDateFormat` aus `java.text` nutzen,\
+  \ das war umst\xE4ndlich und nicht thread-sicher."
 title: Datum in einen String umwandeln
 weight: 28
 ---

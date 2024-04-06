@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:34.661909-07:00
-description: 'Hoe te: Voorbeelduitvoer.'
-lastmod: '2024-04-05T21:53:51.061574-06:00'
+description: "Hoe te: Historisch gezien heeft het scheiden van stdout en stderr Unix-roots,\
+  \ waardoor gebruikers uitvoer apart kunnen omleiden. PowerShell, dat dit\u2026"
+lastmod: '2024-04-05T22:51:03.847374-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: Historisch gezien heeft het scheiden van stdout en stderr Unix-roots, waardoor
+  gebruikers uitvoer apart kunnen omleiden.
 title: Schrijven naar standaardfout
 weight: 25
 ---

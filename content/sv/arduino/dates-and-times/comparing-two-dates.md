@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:11.403089-07:00
-description: "Hur g\xF6r man: Exempelutmatning."
-lastmod: '2024-04-05T21:53:39.516264-06:00'
+description: "Hur g\xF6r man: Att j\xE4mf\xF6ra datum \xE4r ett \xE4mne s\xE5 gammalt\
+  \ som programmering sj\xE4lv. Innan bibliotek som RTClib fanns, var datumhantering\
+  \ komplex och\u2026"
+lastmod: '2024-04-05T22:50:52.489738-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Att j\xE4mf\xF6ra datum \xE4r ett \xE4mne s\xE5 gammalt som programmering\
+  \ sj\xE4lv."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

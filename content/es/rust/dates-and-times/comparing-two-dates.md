@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:33:54.215567-07:00
-description: "C\xF3mo hacerlo: Salida esperada."
-lastmod: '2024-04-05T21:54:00.206743-06:00'
+description: "C\xF3mo hacerlo: En Rust, la tarea de comparar fechas se maneja principalmente\
+  \ por la biblioteca `chrono`, que no es parte de la biblioteca est\xE1ndar sino\
+  \ una\u2026"
+lastmod: '2024-04-05T22:51:12.623070-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "En Rust, la tarea de comparar fechas se maneja principalmente por la biblioteca\
+  \ `chrono`, que no es parte de la biblioteca est\xE1ndar sino una adici\xF3n de\
+  \ la comunidad."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:57:44.333418-07:00
-description: "How to: \"Jak to zrobi\u0107:\"."
-lastmod: '2024-04-05T21:53:36.744108-06:00'
+description: "How to: \"Dog\u0142\u0119bna analiza\" Szukanie i zamiana tekstu to\
+  \ jedne z najstarszych poj\u0119\u0107 w informatyce, si\u0119gaj\u0105ce czas\xF3\
+  w edytor\xF3w tekst\xF3w i pocz\u0105tk\xF3w\u2026"
+lastmod: '2024-04-05T22:50:49.618091-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\"Dog\u0142\u0119bna analiza\" Szukanie i zamiana tekstu to jedne z najstarszych\
+  \ poj\u0119\u0107 w informatyce, si\u0119gaj\u0105ce czas\xF3w edytor\xF3w tekst\xF3\
+  w i pocz\u0105tk\xF3w programowania."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

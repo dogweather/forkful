@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:57:11.106535-07:00
-description: "C\xF3mo: Ejemplo de salida."
-lastmod: '2024-04-05T21:54:00.576554-06:00'
+description: "C\xF3mo: Originalmente, `sed` (stream editor) fue parte del proyecto\
+  \ de software de Unix desarrollado en los 70s. Es estupendo para scripts y para\
+  \ trabajar\u2026"
+lastmod: '2024-04-05T22:51:12.961393-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Originalmente, `sed` (stream editor) fue parte del proyecto de software de
+  Unix desarrollado en los 70s.
 title: Buscando y reemplazando texto
 weight: 10
 ---

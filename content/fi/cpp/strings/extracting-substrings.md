@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:45:06.144602-07:00
-description: "How to - Miten tehd\xE4\xE4n ."
-lastmod: '2024-04-05T22:38:57.467135-06:00'
+description: "How to - Miten tehd\xE4\xE4n Substringit ovat osa C++:n standardikirjastoa\
+  \ `std::string` luokan sis\xE4ll\xE4. Historiallisesti, C:n kielest\xE4 periytyv\xE4\
+  \ C++ toi monia\u2026"
+lastmod: '2024-04-05T22:51:11.004032-06:00'
 model: gpt-4-1106-preview
-summary: "How to - Miten tehd\xE4\xE4n ."
+summary: "Historiallisesti, C:n kielest\xE4 periytyv\xE4 C++ toi monia string-k\xE4\
+  sittelyn funktioita, mutta C++ ehdotti `std::string` ja metodeja, kuten `substr`,\
+  \ tarjoten objektiivisen otteen tekstink\xE4sittelyyn."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

@@ -1,9 +1,20 @@
 ---
 date: 2024-01-20 17:34:47.179639-07:00
-description: "How to: P\xE5 norsk: Hvordan gj\xF8re det."
-lastmod: '2024-04-05T22:37:49.565899-06:00'
+description: "How to: P\xE5 norsk: Dypere Dykk I tidlige datasystemer var minne og\
+  \ ressurser knappe, s\xE5 \xE5 konkatere strenger krevde effektivitet. F\xF8r, i\
+  \ spr\xE5k som C,\u2026"
+lastmod: '2024-04-05T22:50:55.230684-06:00'
 model: gpt-4-1106-preview
-summary: "P\xE5 norsk: Hvordan gj\xF8re det."
+summary: "P\xE5 norsk: Dypere Dykk I tidlige datasystemer var minne og ressurser knappe,\
+  \ s\xE5 \xE5 konkatere strenger krevde effektivitet. F\xF8r, i spr\xE5k som C, involverte\
+  \ strengkonkatenering direkte manipulering av minne og pekere \u2014 komplekst og\
+  \ feilutsatt. Fish Shell, sammen med mange moderne skall, gir enklere syntaks for\
+  \ \xE5 sl\xE5 sammen strenger. Alternativt kan man bruke kommandoer som `string`\
+  \ for mer komplekse operasjoner. `string join` sl\xE5r sammen strings med et skilletegn,\
+  \ mens `string replace` og andre sub-kommandoer tilbyr ytterligere funksjonalitet.\
+  \ Teknisk sett n\xE5r du setter sammen strenger i Fish, gj\xF8r du dette i milj\xF8\
+  variabler; dataene lagres i skallets minne. Fish sitt h\xE5ndtering av strings og\
+  \ variabler er generelt mer tilgivende enn eldre skall som Bash."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

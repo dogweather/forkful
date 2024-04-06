@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:41.674504-07:00
-description: "Jak to zrobi\u0107: Wyj\u015Bcie."
-lastmod: '2024-04-05T21:53:36.411363-06:00'
+description: "Jak to zrobi\u0107: Modu\u0142 `datetime` w Pythonie istnieje od dawna\
+  \ i jest jednym z g\u0142\xF3wnych sposob\xF3w na manipulacj\u0119 datami i czasem.\
+  \ Alternatywy to m.in.\u2026"
+lastmod: '2024-04-05T22:50:49.271925-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Modu\u0142 `datetime` w Pythonie istnieje od dawna i jest jednym z g\u0142\
+  \xF3wnych sposob\xF3w na manipulacj\u0119 datami i czasem."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

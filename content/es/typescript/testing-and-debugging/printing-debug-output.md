@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:53:37.094152-07:00
-description: "How to: (C\xF3mo hacerlo:) Salida."
-lastmod: '2024-04-05T21:54:00.152105-06:00'
+description: "How to: (C\xF3mo hacerlo:) Hist\xF3ricamente, `console.log` ha sido\
+  \ la herramienta de facto para la depuraci\xF3n r\xE1pida, un eco de los d\xEDas\
+  \ cuando la impresi\xF3n en\u2026"
+lastmod: '2024-04-05T22:51:12.573592-06:00'
 model: gpt-4-1106-preview
-summary: "(C\xF3mo hacerlo:) Salida."
+summary: "(C\xF3mo hacerlo:) Hist\xF3ricamente, `console.log` ha sido la herramienta\
+  \ de facto para la depuraci\xF3n r\xE1pida, un eco de los d\xEDas cuando la impresi\xF3\
+  n en papel era com\xFAn."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:41:34.253078-07:00
-description: Wie geht das? Ausgabe.
-lastmod: '2024-04-05T22:38:54.896355-06:00'
+description: "Wie geht das? Das L\xF6schen bestimmter Zeichen hat in Unix-\xE4hnlichen\
+  \ Systemen eine lange Tradition. Tools wie `tr`, `sed`, `awk` oder Shell-\u2026"
+lastmod: '2024-04-05T22:51:08.592450-06:00'
 model: gpt-4-1106-preview
-summary: Wie geht das? Ausgabe.
+summary: "Das L\xF6schen bestimmter Zeichen hat in Unix-\xE4hnlichen Systemen eine\
+  \ lange Tradition."
 title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---

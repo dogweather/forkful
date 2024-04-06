@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:44:26.280428-07:00
-description: "\u05D0\u05D9\u05DA \u05DC\u05E2\u05E9\u05D5\u05EA: Sample Output."
-lastmod: '2024-04-05T21:53:40.632859-06:00'
+description: "\u05D0\u05D9\u05DA \u05DC\u05E2\u05E9\u05D5\u05EA: Back in the day,\
+  \ we had to use CURL for downloading web pages, which gave us more control but was\
+  \ verbose. Now, `file_get_contents` is a handy\u2026"
+lastmod: '2024-04-05T22:50:53.631779-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Back in the day, we had to use CURL for downloading web pages, which gave
+  us more control but was verbose.
 title: "\u05D4\u05D5\u05E8\u05D3\u05EA \u05D3\u05E3 \u05D0\u05D9\u05E0\u05D8\u05E8\
   \u05E0\u05D8"
 weight: 42

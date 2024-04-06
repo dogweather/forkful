@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:58:41.697270-07:00
-description: "How to: (Hur g\xF6r man:) ."
-lastmod: '2024-04-05T21:53:39.754781-06:00'
+description: "How to: (Hur g\xF6r man:) S\xF6k och ers\xE4tt har sina r\xF6tter i\
+  \ tidiga textbehandlingsprogram. I Ruby g\xF6rs ofta detta med `String#gsub`, som\
+  \ kan ta enkel str\xE4ng\u2026"
+lastmod: '2024-04-05T22:50:52.729199-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Hur g\xF6r man:) S\xF6k och ers\xE4tt har sina r\xF6tter i tidiga textbehandlingsprogram."
 title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---

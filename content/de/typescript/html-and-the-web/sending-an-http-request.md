@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:00:34.997069-07:00
-description: 'How to: TypeScript mit Axios.'
-lastmod: '2024-03-13T22:44:53.628309-06:00'
+description: "How to: Vor Jahrzehnten starteten HTTP-Anfragen meist nur beim Laden\
+  \ einer Seite. AJAX \xE4nderte das: dynamische Anfragen ohne Neuladen. Heute gibt's\
+  \ viele\u2026"
+lastmod: '2024-04-05T22:51:08.201808-06:00'
 model: gpt-4-1106-preview
-summary: TypeScript mit Axios.
+summary: Vor Jahrzehnten starteten HTTP-Anfragen meist nur beim Laden einer Seite.
 title: Einen HTTP-Request senden
 weight: 44
 ---

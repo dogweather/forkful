@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:01.807548-07:00
-description: 'Hoe te: Voorbeelduitvoer.'
-lastmod: '2024-04-05T21:53:50.586746-06:00'
+description: "Hoe te: Historisch gezien is het beheren van datums in JavaScript\u2014\
+  en bij uitbreiding TypeScript\u2014lastig geweest vanwege de eigenaardigheden van\
+  \ het Date-\u2026"
+lastmod: '2024-04-05T22:51:03.402418-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Historisch gezien is het beheren van datums in JavaScript\u2014en bij uitbreiding\
+  \ TypeScript\u2014lastig geweest vanwege de eigenaardigheden van het Date-object\
+  \ en tijdzones."
 title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---

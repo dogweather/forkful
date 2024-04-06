@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:03:21.068200-07:00
-description: "How to - Kuinka Tehd\xE4: ."
-lastmod: '2024-04-05T21:53:57.741778-06:00'
+description: "How to - Kuinka Tehd\xE4: Clojure-projektien aloittaminen juontaa juurensa\
+  \ Lisp-ohjelmointikieleen, joka on yksi vanhimmista ohjelmointikielist\xE4. Leiningen\u2026"
+lastmod: '2024-04-05T22:51:10.343166-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Clojure-projektien aloittaminen juontaa juurensa Lisp-ohjelmointikieleen,\
+  \ joka on yksi vanhimmista ohjelmointikielist\xE4."
 title: Uuden projektin aloittaminen
 weight: 1
 ---

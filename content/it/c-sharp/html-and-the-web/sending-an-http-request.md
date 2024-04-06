@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:59:08.646234-07:00
-description: 'How to: (Come fare:) Output di esempio.'
-lastmod: '2024-04-05T21:53:44.198966-06:00'
+description: "How to: (Come fare:) Inviare richieste HTTP \xE8 fondamentale da quando\
+  \ il web si \xE8 evoluto da semplici siti statici a applicazioni complesse. Il\u2026"
+lastmod: '2024-04-05T22:50:57.248438-06:00'
 model: gpt-4-1106-preview
-summary: (Come fare:) Output di esempio.
+summary: "(Come fare:) Inviare richieste HTTP \xE8 fondamentale da quando il web si\
+  \ \xE8 evoluto da semplici siti statici a applicazioni complesse."
 title: Inviare una richiesta http
 weight: 44
 ---

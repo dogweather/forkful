@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:37.531758-07:00
-description: 'How to (Como Fazer): .'
-lastmod: '2024-04-05T21:53:47.446639-06:00'
+description: "How to (Como Fazer): Concatenar strings \xE9 uma pr\xE1tica t\xE3o antiga\
+  \ quanto as pr\xF3prias linguagens de programa\xE7\xE3o. Historicamente, a necessidade\
+  \ surgiu porque\u2026"
+lastmod: '2024-04-05T22:51:00.323628-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Concatenar strings \xE9 uma pr\xE1tica t\xE3o antiga quanto as pr\xF3prias\
+  \ linguagens de programa\xE7\xE3o."
 title: Concatenando strings
 weight: 3
 ---

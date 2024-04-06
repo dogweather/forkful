@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:59:20.915027-07:00
-description: 'How to: (Comment faire :) .'
-lastmod: '2024-04-05T21:53:59.181305-06:00'
+description: "How to: (Comment faire :) Historiquement, Elm a rendu les requ\xEAtes\
+  \ HTTP plus s\xFBres en utilisant The Elm Architecture, qui g\xE8re les effets de\
+  \ bord de fa\xE7on\u2026"
+lastmod: '2024-04-05T22:51:11.698741-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Comment faire :) Historiquement, Elm a rendu les requ\xEAtes HTTP plus\
+  \ s\xFBres en utilisant The Elm Architecture, qui g\xE8re les effets de bord de\
+  \ fa\xE7on pr\xE9visible."
 title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---

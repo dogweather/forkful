@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:41.171185-07:00
-description: "L\xE0m th\u1EBF n\xE0o: H\xE3y so s\xE1nh m\u1ED9t s\u1ED1 ng\xE0y."
-lastmod: '2024-03-13T22:44:36.335790-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Tr\u01B0\u1EDBc \u0111\xE2y, ng\xE0y th\xE1\
+  ng l\xE0 m\u1ED9t \u0111\u1ED1ng h\u1ED7n \u0111\u1ED9n v\u1EC1 \u0111\u1ECBnh d\u1EA1\
+  ng v\xE0 c\xE1c t\xEDnh to\xE1n l\u1ED9n x\u1ED9n. V\u1EDBi JavaScript (v\xE0 TypeScript\
+  \ m\u1EDF r\u1ED9ng), \u0111\u1ED1i t\u01B0\u1EE3ng `Date` \u0111\xE3\u2026"
+lastmod: '2024-04-05T22:50:50.679630-06:00'
 model: gpt-4-0125-preview
-summary: "H\xE3y so s\xE1nh m\u1ED9t s\u1ED1 ng\xE0y."
+summary: "Tr\u01B0\u1EDBc \u0111\xE2y, ng\xE0y th\xE1ng l\xE0 m\u1ED9t \u0111\u1ED1\
+  ng h\u1ED7n \u0111\u1ED9n v\u1EC1 \u0111\u1ECBnh d\u1EA1ng v\xE0 c\xE1c t\xEDnh\
+  \ to\xE1n l\u1ED9n x\u1ED9n."
 title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---

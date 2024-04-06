@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:16.195536-07:00
-description: "How to: (Jak to zrobi\u0107:) Output."
-lastmod: '2024-04-05T21:53:37.002434-06:00'
+description: "How to: (Jak to zrobi\u0107:) W latach 70., kiedy Unix zyskiwa\u0142\
+  \ na popularno\u015Bci, sk\u0142adnia string\xF3w by\u0142a podstaw\u0105. Bash,\
+  \ jako potomek shella z Unix, przej\u0105\u0142 te\u2026"
+lastmod: '2024-04-05T22:50:49.899372-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107:) Output."
+summary: "(Jak to zrobi\u0107:) W latach 70., kiedy Unix zyskiwa\u0142 na popularno\u015B\
+  ci, sk\u0142adnia string\xF3w by\u0142a podstaw\u0105."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

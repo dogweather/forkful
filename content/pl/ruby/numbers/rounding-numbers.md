@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 03:47:03.578337-07:00
-description: "Jak to zrobi\u0107: Wynik przyk\u0142adowy."
-lastmod: '2024-04-05T21:53:37.357463-06:00'
+description: "Jak to zrobi\u0107: Zaokr\u0105glanie liczb nie jest czym\u015B nowym\u2014\
+  ludzie robili to od wiek\xF3w, aby u\u0142atwi\u0107 sobie obliczenia lub pracowa\u0107\
+  \ w granicach mo\u017Cliwo\u015Bci swoich\u2026"
+lastmod: '2024-04-05T22:50:50.277054-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Zaokr\u0105glanie liczb nie jest czym\u015B nowym\u2014ludzie robili to\
+  \ od wiek\xF3w, aby u\u0142atwi\u0107 sobie obliczenia lub pracowa\u0107 w granicach\
+  \ mo\u017Cliwo\u015Bci swoich narz\u0119dzi."
 title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---

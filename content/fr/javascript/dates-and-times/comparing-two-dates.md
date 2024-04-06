@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:19.088451-07:00
-description: 'How to: Sortie possible .'
-lastmod: '2024-04-05T21:53:59.690483-06:00'
+description: "How to: Comparer des dates est un principe de base en programmation,\
+  \ essentiel depuis l'introduction des premiers syst\xE8mes informatiques. Il existe\
+  \ des\u2026"
+lastmod: '2024-04-05T22:51:12.154534-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Comparer des dates est un principe de base en programmation, essentiel depuis\
+  \ l'introduction des premiers syst\xE8mes informatiques."
 title: Comparer deux dates
 weight: 27
 ---

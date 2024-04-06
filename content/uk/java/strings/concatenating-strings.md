@@ -1,10 +1,13 @@
 ---
 date: 2024-01-20 17:35:10.967983-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
-  \u0438:) ."
-lastmod: '2024-04-05T21:53:49.282958-06:00'
+  \u0438:) Originally, strings in Java were concatenated using `StringBuilder` or\
+  \ `StringBuffer` for thread-safe operations. These classes\u2026"
+lastmod: '2024-04-05T22:51:02.185462-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
+  \ Originally, strings in Java were concatenated using `StringBuilder` or `StringBuffer`\
+  \ for thread-safe operations."
 title: "\u041E\u0431'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0440\u044F\u0434\
   \u043A\u0456\u0432"
 weight: 3

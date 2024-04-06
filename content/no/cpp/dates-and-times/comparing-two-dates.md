@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:34.049332-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:42.073935-06:00'
+description: "How to: F\xF8r `<chrono>` biblioteket ble introdusert med C++11, brukte\
+  \ C++ programm\xF8rer `<ctime>`. I dag tilbyr `<chrono>` en moderne og type-sikker\u2026"
+lastmod: '2024-04-05T22:50:55.120040-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "F\xF8r `<chrono>` biblioteket ble introdusert med C++11, brukte C++ programm\xF8\
+  rer `<ctime>`."
 title: Sammenlikning av to datoer
 weight: 27
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:42:52.951576-07:00
-description: 'How to: Slette med `delete` og `gsub`.'
-lastmod: '2024-03-13T22:44:41.300370-06:00'
+description: "How to: Sletting av tegn i Ruby har solid st\xF8tte gjennom metoder\
+  \ som `delete` og `gsub`. Metoden `delete` er rett fram - den fjerner konkret angitte\
+  \ tegn.\u2026"
+lastmod: '2024-04-05T22:50:55.315527-06:00'
 model: gpt-4-1106-preview
-summary: Slette med `delete` og `gsub`.
+summary: "Sletting av tegn i Ruby har solid st\xF8tte gjennom metoder som `delete`\
+  \ og `gsub`."
 title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---

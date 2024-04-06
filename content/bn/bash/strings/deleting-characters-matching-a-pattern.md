@@ -2,13 +2,10 @@
 changelog:
 - 2024-03-17, OpenAIModel.GPT_4_TURBO, translated from English
 date: 2024-03-17 17:47:23.703618-06:00
-description: "\u0995\u09BF\u09AD\u09BE\u09AC\u09C7: \u0986\u0989\u099F\u09AA\u09C1\
-  \u099F: `\u09B9\u09CD\u09AF\u09BE\u09B2\u09CB, \u0993\u09AF\u09BC\u09BE\u09B0\u09CD\
-  \u09B2\u09CD\u09A1!`."
-lastmod: '2024-04-05T22:38:51.525878-06:00'
+description: ''
+lastmod: '2024-04-05T22:51:05.382634-06:00'
 model: gpt-4-0125-preview
-summary: "\u0986\u0989\u099F\u09AA\u09C1\u099F: `\u09B9\u09CD\u09AF\u09BE\u09B2\u09CB\
-  , \u0993\u09AF\u09BC\u09BE\u09B0\u09CD\u09B2\u09CD\u09A1!`."
+summary: ''
 title: "\u098F\u0995\u099F\u09BF \u09A8\u09AE\u09C1\u09A8\u09BE \u09AE\u09C7\u09B2\
   \u09C7 \u0985\u0995\u09CD\u09B7\u09B0\u0997\u09C1\u09B2\u09BF \u09AE\u09C1\u099B\
   \u09C7 \u09AB\u09C7\u09B2\u09BE"

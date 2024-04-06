@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:01:57.135003-07:00
-description: "N\xE4in teet: N\xE4yte tulostus."
-lastmod: '2024-04-05T21:53:58.269099-06:00'
+description: "N\xE4in teet: Perusautentikointi on yksi vanhimmista keinoista suojata\
+  \ HTTP-verkkopalveluja. Se on yksinkertainen, mutta ei kovin turvallinen \u2013\
+  \ tieto\u2026"
+lastmod: '2024-04-05T22:51:10.849766-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Perusautentikointi on yksi vanhimmista keinoista suojata HTTP-verkkopalveluja.
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---

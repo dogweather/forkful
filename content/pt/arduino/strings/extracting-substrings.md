@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:44:54.134333-07:00
-description: "Como Fazer: Um exemplo mais din\xE2mico."
-lastmod: '2024-04-05T21:53:47.176482-06:00'
+description: "Como Fazer: Extrair substrings \xE9 um conceito antigo, aparecendo em\
+  \ linguagens mais velhas como C e Java. No Arduino, usamos m\xE9todos da classe\
+  \ String para\u2026"
+lastmod: '2024-04-05T22:51:00.072149-06:00'
 model: gpt-4-1106-preview
-summary: "Um exemplo mais din\xE2mico."
+summary: "Extrair substrings \xE9 um conceito antigo, aparecendo em linguagens mais\
+  \ velhas como C e Java."
 title: Extraindo substrings
 weight: 6
 ---

@@ -2,10 +2,16 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:17.421899-07:00
-description: "L\xE0m th\u1EBF n\xE0o: K\u1EBFt qu\u1EA3."
-lastmod: '2024-04-05T21:53:38.202563-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Tr\u01B0\u1EDBc \u0111\xE2y, Lua kh\xF4ng c\xF3\
+  \ m\u1ED9t b\u1ED9 khung ki\u1EC3m th\u1EED \u0111\u01B0\u1EE3c x\xE2y d\u1EF1ng\
+  \ s\u1EB5n, khi\u1EBFn c\xE1c l\u1EADp tr\xECnh vi\xEAn ph\u1EA3i t\u1EF1 t\u1EA1\
+  o c\u1EE7a ri\xEAng h\u1ECD ho\u1EB7c s\u1EED d\u1EE5ng c\xE1c b\xEAn th\u1EE9\u2026"
+lastmod: '2024-04-05T22:50:51.149229-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Tr\u01B0\u1EDBc \u0111\xE2y, Lua kh\xF4ng c\xF3 m\u1ED9t b\u1ED9 khung ki\u1EC3\
+  m th\u1EED \u0111\u01B0\u1EE3c x\xE2y d\u1EF1ng s\u1EB5n, khi\u1EBFn c\xE1c l\u1EAD\
+  p tr\xECnh vi\xEAn ph\u1EA3i t\u1EF1 t\u1EA1o c\u1EE7a ri\xEAng h\u1ECD ho\u1EB7\
+  c s\u1EED d\u1EE5ng c\xE1c b\xEAn th\u1EE9 ba nh\u01B0 LuaUnit hay busted."
 title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---

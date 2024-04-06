@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:41:13.845892-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:37.074353-06:00'
+description: "How to: Pliki tymczasowe s\u0105 stare jak sama informatyka. S\u0142\
+  u\u017C\u0105 do wielu cel\xF3w, od buforowania i przetwarzania danych po testy\
+  \ jednostkowe bez ryzyka\u2026"
+lastmod: '2024-04-05T22:50:49.977866-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Pliki tymczasowe s\u0105 stare jak sama informatyka."
 title: Tworzenie pliku tymczasowego
 weight: 21
 ---

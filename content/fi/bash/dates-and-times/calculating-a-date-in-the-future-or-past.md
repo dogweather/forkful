@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:30:51.285777-07:00
-description: 'Miten: Esimerkkitulostus.'
-lastmod: '2024-04-05T21:53:58.327135-06:00'
+description: "Miten: Bash-komentorivill\xE4 p\xE4iv\xE4m\xE4\xE4rien laskeminen k\xE4\
+  ytt\xE4\xE4 `date` komentoa, joka on ollut k\xE4yt\xF6ss\xE4 jo Unix-j\xE4rjestelmien\
+  \ alkuaikoina. Vaihtoehtoina\u2026"
+lastmod: '2024-04-05T22:51:10.904891-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Bash-komentorivill\xE4 p\xE4iv\xE4m\xE4\xE4rien laskeminen k\xE4ytt\xE4\xE4\
+  \ `date` komentoa, joka on ollut k\xE4yt\xF6ss\xE4 jo Unix-j\xE4rjestelmien alkuaikoina."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

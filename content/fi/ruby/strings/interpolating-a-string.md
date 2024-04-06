@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:28.257230-07:00
-description: "How to (Kuinka tehd\xE4): ."
-lastmod: '2024-04-05T21:53:58.655155-06:00'
+description: "How to (Kuinka tehd\xE4): Stringin interpolointissa #{...} sis\xE4ll\xE4\
+  \ oleva koodi suoritetaan, ja sen arvo muunnetaan merkkijonoksi. T\xE4m\xE4 tapahtui\
+  \ Rubyssa ensi\u2026"
+lastmod: '2024-04-05T22:51:11.214025-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Stringin interpolointissa #{...} sis\xE4ll\xE4 oleva koodi suoritetaan,\
+  \ ja sen arvo muunnetaan merkkijonoksi."
 title: Merkkijonon interpolointi
 weight: 8
 ---

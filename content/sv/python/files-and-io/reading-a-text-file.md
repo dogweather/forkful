@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 17:55:14.359205-07:00
-description: "How to: (Hur man g\xF6r:) ."
-lastmod: '2024-04-05T21:53:38.827818-06:00'
+description: ''
+lastmod: '2024-04-05T22:50:51.781669-06:00'
 model: gpt-4-1106-preview
 summary: ''
 title: "L\xE4sa en textfil"

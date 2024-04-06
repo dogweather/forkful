@@ -1,9 +1,8 @@
 ---
 date: 2024-01-20 17:33:31.497244-07:00
-description: "How to: (\u600E\u4E48\u505A\uFF1F) \u5728PHP\u4E2D\uFF0C`DateTime` \u7C7B\
-  \u81EAPHP\u2026"
+description: ''
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:48.184864-06:00'
+lastmod: '2024-04-05T22:51:01.086295-06:00'
 model: gpt-4-1106-preview
 summary: "(\u600E\u4E48\u505A\uFF1F) \u5728PHP\u4E2D\uFF0C`DateTime` \u7C7B\u81EA\
   PHP 5.2\u8D77\u5C31\u6210\u4E3A\u5904\u7406\u65E5\u671F\u548C\u65F6\u95F4\u7684\u9996\

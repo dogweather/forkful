@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:47:09.172167-07:00
-description: "Hvordan gj\xF8re det: Output."
-lastmod: '2024-04-05T21:53:41.414412-06:00'
+description: "Hvordan gj\xF8re det: Tilbake i tiden, f\xF8r Unicode, var strenglengde\
+  \ og antall byte ofte det samme. I Elixir jobber `String.length/1` med Unicode og\
+  \ gir\u2026"
+lastmod: '2024-04-05T22:50:54.445496-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Tilbake i tiden, f\xF8r Unicode, var strenglengde og antall byte ofte det\
+  \ samme."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

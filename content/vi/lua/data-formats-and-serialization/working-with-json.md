@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:45.538194-07:00
-description: "L\xE0m th\u1EBF n\xE0o: H\xE3y ph\xE2n t\xEDch m\u1ED9t s\u1ED1 JSON."
-lastmod: '2024-03-13T22:44:36.849607-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: JSON tr\u1EDF th\xE0nh ti\xEAu chu\u1EA9n de\
+  \ facto cho c\xE1c API, v\u01B0\u1EE3t qua XML v\xEC n\xF3 \xEDt d\xE0i d\xF2ng\
+  \ h\u01A1n. C\xF3 c\xE1c l\u1EF1a ch\u1ECDn kh\xE1c nh\u01B0 YAML, th\u1EADm ch\xED\
+  \ \u0111\u1ECDc d\u1EC5 h\u01A1n nh\u01B0ng\u2026"
+lastmod: '2024-04-05T22:50:51.169916-06:00'
 model: gpt-4-0125-preview
-summary: "H\xE3y ph\xE2n t\xEDch m\u1ED9t s\u1ED1 JSON."
+summary: "JSON tr\u1EDF th\xE0nh ti\xEAu chu\u1EA9n de facto cho c\xE1c API, v\u01B0\
+  \u1EE3t qua XML v\xEC n\xF3 \xEDt d\xE0i d\xF2ng h\u01A1n."
 title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---

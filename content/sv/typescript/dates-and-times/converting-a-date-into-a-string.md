@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:37.974193-07:00
-description: "Hur man g\xF6r: Ett annat s\xE4tt."
-lastmod: '2024-04-05T21:53:38.995499-06:00'
+description: "Hur man g\xF6r: Konvertering av datum till str\xE4ngar har varit en\
+  \ del av programmeringen sedan b\xF6rjan. Alternativ inkluderar anv\xE4ndning av\
+  \ bibliotek som\u2026"
+lastmod: '2024-04-05T22:50:51.953734-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Konvertering av datum till str\xE4ngar har varit en del av programmeringen\
+  \ sedan b\xF6rjan."
 title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---

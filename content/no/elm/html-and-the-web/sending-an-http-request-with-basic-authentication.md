@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:01:47.287386-07:00
-description: 'How to: Forventet output.'
-lastmod: '2024-04-05T21:53:41.687728-06:00'
+description: "How to: Bakgrunnen for grunnleggende autentisering innen HTTP g\xE5\
+  r tilbake til tidlig internett, hvor enkel tilgangssikring var n\xF8dvendig. Mens\
+  \ modernere\u2026"
+lastmod: '2024-04-05T22:50:54.719579-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Bakgrunnen for grunnleggende autentisering innen HTTP g\xE5r tilbake til\
+  \ tidlig internett, hvor enkel tilgangssikring var n\xF8dvendig."
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

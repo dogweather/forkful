@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:18.504972-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: K\u1EBFt qu\u1EA3 m\u1EABu."
-lastmod: '2024-04-05T21:53:37.766706-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF\
+  \ v\u0103n b\u1EA3n \u0111\xE3 t\u1ED3n t\u1EA1i t\u1EEB khi c\xE1c tr\xECnh so\u1EA1\
+  n th\u1EA3o v\u0103n b\u1EA3n \u0111\u1EA7u ti\xEAn xu\u1EA5t hi\u1EC7n. C\xE1c\
+  \ c\xF4ng c\u1EE5 nh\u01B0 sed trong Unix \u0111\xE3 l\xE0m\u2026"
+lastmod: '2024-04-05T22:50:50.699485-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Vi\u1EC7c t\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n \u0111\xE3\
+  \ t\u1ED3n t\u1EA1i t\u1EEB khi c\xE1c tr\xECnh so\u1EA1n th\u1EA3o v\u0103n b\u1EA3\
+  n \u0111\u1EA7u ti\xEAn xu\u1EA5t hi\u1EC7n."
 title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---

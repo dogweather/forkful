@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:20.277521-07:00
-description: "Hur man g\xF6r: Exempeloutput."
-lastmod: '2024-04-05T21:53:39.432992-06:00'
+description: "Hur man g\xF6r: Att j\xE4mf\xF6ra datum \xE4r viktigt, speciellt f\xF6\
+  re internets genomslag. D\xE5 sorterade man pappersdokument f\xF6r hand. I skriptv\xE4\
+  rlden kan du anv\xE4nda\u2026"
+lastmod: '2024-04-05T22:50:52.399365-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Att j\xE4mf\xF6ra datum \xE4r viktigt, speciellt f\xF6re internets genomslag."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

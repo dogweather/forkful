@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:36:37.615153-07:00
-description: 'Comment faire : Sortie de l''exemple .'
-lastmod: '2024-04-05T21:53:59.538788-06:00'
+description: "Comment faire : Initialement, les nombres complexes ont \xE9t\xE9 accueillis\
+  \ avec scepticisme, mais ils sont devenus centraux dans divers domaines\u2026"
+lastmod: '2024-04-05T22:51:12.018753-06:00'
 model: gpt-4-0125-preview
-summary: Sortie de l'exemple .
+summary: "Initialement, les nombres complexes ont \xE9t\xE9 accueillis avec scepticisme,\
+  \ mais ils sont devenus centraux dans divers domaines scientifiques."
 title: Manipulation des nombres complexes
 weight: 14
 ---

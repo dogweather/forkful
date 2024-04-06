@@ -1,10 +1,13 @@
 ---
 date: 2024-01-20 17:52:37.287113-07:00
-description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
-  \u0438:)."
-lastmod: '2024-04-05T21:53:49.077749-06:00'
+description: "How to: (\u041F\u043E\u0433\u043B\u0438\u0431\u043B\u0435\u043D\u0438\
+  \u0439 \u041E\u0433\u043B\u044F\u0434) Before ES6, string concatenation relied on\
+  \ the '+' operator, often leading to clunky code. String interpolation in TypeScript,\u2026"
+lastmod: '2024-04-05T22:51:01.984961-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\u041F\u043E\u0433\u043B\u0438\u0431\u043B\u0435\u043D\u0438\u0439 \u041E\
+  \u0433\u043B\u044F\u0434) Before ES6, string concatenation relied on the '+' operator,\
+  \ often leading to clunky code."
 title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F \u0440\
   \u044F\u0434\u043A\u0456\u0432"
 weight: 8

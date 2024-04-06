@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:34.837298-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: N\u1EBFu `example.txt` ch\u1EE9a."
-lastmod: '2024-04-05T21:53:38.420442-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Ng\xE0y x\u01B0a, vi\u1EC7c l\u01B0u tr\u1EEF\
+  \ v\xE0 truy xu\u1EA5t d\u1EEF li\u1EC7u kh\xE1 g\u1EB7p kh\xF3 kh\u0103n. V\u1EDB\
+  i s\u1EF1 ra \u0111\u1EDDi c\u1EE7a c\xE1c ng\xF4n ng\u1EEF l\u1EADp tr\xECnh c\u1EA5\
+  p cao, c\xE1c ho\u1EA1t \u0111\u1ED9ng nh\u01B0 \u0111\u1ECDc t\u1EEB\u2026"
+lastmod: '2024-04-05T22:50:51.373937-06:00'
 model: gpt-4-0125-preview
-summary: "N\u1EBFu `example.txt` ch\u1EE9a."
+summary: "Ng\xE0y x\u01B0a, vi\u1EC7c l\u01B0u tr\u1EEF v\xE0 truy xu\u1EA5t d\u1EEF\
+  \ li\u1EC7u kh\xE1 g\u1EB7p kh\xF3 kh\u0103n."
 title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---

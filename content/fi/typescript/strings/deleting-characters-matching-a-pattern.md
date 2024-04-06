@@ -1,9 +1,19 @@
 ---
 date: 2024-01-20 17:43:24.689964-07:00
-description: "How to: K\xE4yt\xE4nn\xF6ss\xE4."
-lastmod: '2024-04-05T21:53:57.857455-06:00'
+description: "How to: Syv\xE4sukellus: Mallien mukainen merkkien poistaminen merkkijonoista\
+  \ ei ole uusi idea; se on ollut osa ohjelmoinnin perusty\xF6kalupakkia jo regexin\u2026"
+lastmod: '2024-04-05T22:51:10.448648-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Syv\xE4sukellus: Mallien mukainen merkkien poistaminen merkkijonoista ei\
+  \ ole uusi idea; se on ollut osa ohjelmoinnin perusty\xF6kalupakkia jo regexin (s\xE4\
+  \xE4nn\xF6lliset lausekkeet) varhaisp\xE4ivist\xE4 l\xE4htien. TypeScriptissa, kuten\
+  \ JavaScriptiss\xE4, regexi\xE4 k\xE4ytet\xE4\xE4n mallien tunnistamiseen ja manipulaatioon.\
+  \ Vaihtoehtoja on toki olemassa: voit k\xE4ytt\xE4\xE4 yksinkertaisempia string-menetelmi\xE4\
+  \ kuten `split` ja `join` tai loopata merkkijonon l\xE4pi poistaen merkkej\xE4 yksi\
+  \ kerrallaan, mutta regex tarjoaa suoraviivaisen ja tehokkaan tavan suorittaa monimutkaisia\
+  \ haku- ja korvaustoimenpiteit\xE4. K\xE4ytett\xE4ess\xE4 TypeScripti\xE4, tyyppiturvallisuus\
+  \ auttaa varmistamaan, ett\xE4 funktiot k\xE4sittelev\xE4t odotetun tyyppisi\xE4\
+  \ merkkijonoja ja regex-malleja, v\xE4hent\xE4en virheiden mahdollisuutta."
 title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---

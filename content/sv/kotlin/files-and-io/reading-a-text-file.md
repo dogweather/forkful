@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:54:39.104745-07:00
-description: "Hur man g\xF6r: Exempelutskrift."
-lastmod: '2024-04-05T21:53:39.225462-06:00'
+description: "Hur man g\xF6r: Historiskt sett har filinl\xE4sning varit k\xE4rnan\
+  \ i m\xE5nga program och skript. I Java, som Kotlin ofta j\xE4mf\xF6rs med, finns\
+  \ det m\xE5nga olika s\xE4tt att\u2026"
+lastmod: '2024-04-05T22:50:52.185563-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiskt sett har filinl\xE4sning varit k\xE4rnan i m\xE5nga program och\
+  \ skript."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

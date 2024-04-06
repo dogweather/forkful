@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:04:38.541939-07:00
-description: 'How to: (Wie geht das:) .'
-lastmod: '2024-04-05T21:53:56.112797-06:00'
+description: "How to: (Wie geht das:) Die Tradition, mit \"Hello World\" zu starten,\
+  \ kommt aus dem 1978 erschienenen Buch \"The C Programming Language\". Es ist ein\u2026"
+lastmod: '2024-04-05T22:51:08.765401-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: (Wie geht das:) Die Tradition, mit "Hello World" zu starten, kommt aus dem
+  1978 erschienenen Buch "The C Programming Language".
 title: Einen neuen Projekt starten
 weight: 1
 ---

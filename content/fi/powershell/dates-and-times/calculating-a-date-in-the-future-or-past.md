@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:34.019672-07:00
-description: "How to: Laske p\xE4iv\xE4 10 p\xE4iv\xE4n p\xE4\xE4h\xE4n."
-lastmod: '2024-03-13T22:44:56.796047-06:00'
+description: "How to: PowerShellissa p\xE4iv\xE4m\xE4\xE4r\xE4laskenta onnistuu helposti\
+  \ `Get-Date`-komennon avulla, joka on osa j\xE4rjestelm\xE4n automaattista toimintaa.\
+  \ Ennen\u2026"
+lastmod: '2024-04-05T22:51:10.946343-06:00'
 model: gpt-4-1106-preview
-summary: "Laske p\xE4iv\xE4 10 p\xE4iv\xE4n p\xE4\xE4h\xE4n."
+summary: "PowerShellissa p\xE4iv\xE4m\xE4\xE4r\xE4laskenta onnistuu helposti `Get-Date`-komennon\
+  \ avulla, joka on osa j\xE4rjestelm\xE4n automaattista toimintaa."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

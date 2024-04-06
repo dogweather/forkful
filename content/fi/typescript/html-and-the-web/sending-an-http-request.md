@@ -1,9 +1,20 @@
 ---
 date: 2024-01-20 18:01:16.958881-07:00
-description: "How to: - Kuinka tehd\xE4: ."
-lastmod: '2024-04-05T21:53:57.869791-06:00'
+description: "How to: - Kuinka tehd\xE4: L\xE4hett\xE4m\xE4ll\xE4 HTTP-pyynt\xF6j\xE4\
+  \ ohjelmat voivat vaikuttaa tietoihin toisella tietokoneella, yleens\xE4 palvelimella.\
+  \ K\xE4yt\xE4nt\xF6 alkoi\u2026"
+lastmod: '2024-04-05T22:51:10.462244-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka tehd\xE4: L\xE4hett\xE4m\xE4ll\xE4 HTTP-pyynt\xF6j\xE4 ohjelmat\
+  \ voivat vaikuttaa tietoihin toisella tietokoneella, yleens\xE4 palvelimella. K\xE4\
+  yt\xE4nt\xF6 alkoi 1990-luvulla ja on nyt vakiintunut kehitysmalli verkkopalveluissa.\
+  \ Vaihtoehtoja `axios`-kirjastolle ovat muun muassa `fetch`-API, joka on sis\xE4\
+  \xE4nrakennettu selaimiin, ja `http`-moduuli Node.js:ss\xE4. Axios on valittu sen\
+  \ helppok\xE4ytt\xF6isyyden ja lupausten (promises) tukemisen vuoksi. L\xE4hett\xE4\
+  ess\xE4si pyynt\xF6j\xE4 on t\xE4rke\xE4\xE4 hallita asynkronisuus. TypeScript ja\
+  \ moderni JavaScript tarjoavat `async/await` syntaksin, joka tekee prosessista selke\xE4\
+  mm\xE4n. T\xE4m\xE4n avulla voidaan kirjoittaa koodia, joka odottaa vastausta ennen\
+  \ kuin jatkaa."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

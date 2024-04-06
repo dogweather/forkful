@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:25.831356-07:00
-description: 'How to: Sammenligne dager direkte.'
-lastmod: '2024-03-13T22:44:41.029629-06:00'
+description: "How to: F\xF8r PowerShell, brukte Windows-brukere batch-scripting som\
+  \ begrenset dato og tidsh\xE5ndtering. PowerShell introduserte en mer robust DateTime-\u2026"
+lastmod: '2024-04-05T22:50:55.033628-06:00'
 model: gpt-4-1106-preview
-summary: Sammenligne dager direkte.
+summary: "F\xF8r PowerShell, brukte Windows-brukere batch-scripting som begrenset\
+  \ dato og tidsh\xE5ndtering."
 title: Sammenlikning av to datoer
 weight: 27
 ---

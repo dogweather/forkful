@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:58:45.852215-07:00
-description: "C\xF3mo hacerlo: Salida."
-lastmod: '2024-04-05T21:54:00.751419-06:00'
+description: "C\xF3mo hacerlo: Historicamente, la necesidad de buscar y reemplazar\
+  \ texto surgi\xF3 de la edici\xF3n de grandes bloques de texto, un proceso que podr\xED\
+  a ser\u2026"
+lastmod: '2024-04-05T22:51:13.122576-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historicamente, la necesidad de buscar y reemplazar texto surgi\xF3 de la\
+  \ edici\xF3n de grandes bloques de texto, un proceso que podr\xEDa ser tedioso y\
+  \ propenso a errores si se hac\xEDa manualmente."
 title: Buscando y reemplazando texto
 weight: 10
 ---

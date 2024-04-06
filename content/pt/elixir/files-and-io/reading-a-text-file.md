@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:54:22.931555-07:00
-description: "Como Fazer: Sa\xEDda de exemplo."
-lastmod: '2024-04-05T21:53:46.583110-06:00'
+description: "Como Fazer: Historicamente, ler arquivos em linguagens de programa\xE7\
+  \xE3o sempre foi uma tarefa essencial porque arquivos s\xE3o uma forma comum de\
+  \ armazenamento\u2026"
+lastmod: '2024-04-05T22:50:59.520430-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historicamente, ler arquivos em linguagens de programa\xE7\xE3o sempre foi\
+  \ uma tarefa essencial porque arquivos s\xE3o uma forma comum de armazenamento persistente\
+  \ de dados."
 title: Lendo um arquivo de texto
 weight: 22
 ---

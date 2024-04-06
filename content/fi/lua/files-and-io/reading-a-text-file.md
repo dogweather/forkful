@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:54:37.360305-07:00
-description: "How to: (Miten tehd\xE4:) Output."
-lastmod: '2024-04-05T21:53:58.286787-06:00'
+description: "How to: (Miten tehd\xE4:) Lua, kevyt skriptikieli, on ollut olemassa\
+  \ 1990-luvun alkupuolelta. Tiedostonlukutoiminnot ovat perusominaisuuksia, ja\u2026"
+lastmod: '2024-04-05T22:51:10.867544-06:00'
 model: gpt-4-1106-preview
-summary: "(Miten tehd\xE4:) Output."
+summary: "(Miten tehd\xE4:) Lua, kevyt skriptikieli, on ollut olemassa 1990-luvun\
+  \ alkupuolelta."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

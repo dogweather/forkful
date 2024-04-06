@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:02.773936-07:00
-description: "Como Fazer: Sa\xEDda da amostra."
-lastmod: '2024-04-05T21:53:46.955661-06:00'
+description: "Como Fazer: Substituir texto \xE9 uma opera\xE7\xE3o t\xE3o antiga quanto\
+  \ os primeiros editores de texto. Em Haskell, a biblioteca `Data.Text` \xE9 uma\
+  \ alternativa\u2026"
+lastmod: '2024-04-05T22:50:59.867287-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Substituir texto \xE9 uma opera\xE7\xE3o t\xE3o antiga quanto os primeiros\
+  \ editores de texto."
 title: Pesquisando e substituindo texto
 weight: 10
 ---

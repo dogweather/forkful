@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:32.758925-07:00
-description: 'Comment faire : Sortie .'
-lastmod: '2024-04-05T21:53:59.286383-06:00'
+description: "Comment faire : \xC0 l\u2019origine, comparer deux dates \xE9tait une\
+  \ affaire de calendriers et d\u2019observations astronomiques. En informatique,\
+  \ cela s'est simplifi\xE9\u2026"
+lastmod: '2024-04-05T22:51:11.793705-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\xC0 l\u2019origine, comparer deux dates \xE9tait une affaire de calendriers\
+  \ et d\u2019observations astronomiques."
 title: Comparer deux dates
 weight: 27
 ---

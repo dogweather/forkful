@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:13:18.298276-07:00
-description: "Hvordan: Start med \xE5 lansere REPL."
-lastmod: '2024-03-13T22:44:40.403946-06:00'
+description: "Hvordan: REPL er n\xF8kkelen til Lisp-familiens interaktive utviklingsfilosofi,\
+  \ og Clojure, en moderne Lisp-dialekt, gj\xF8r stor bruk av dette verkt\xF8yet.\
+  \ Det\u2026"
+lastmod: '2024-04-05T22:50:54.413089-06:00'
 model: gpt-4-0125-preview
-summary: "Start med \xE5 lansere REPL."
+summary: "REPL er n\xF8kkelen til Lisp-familiens interaktive utviklingsfilosofi, og\
+  \ Clojure, en moderne Lisp-dialekt, gj\xF8r stor bruk av dette verkt\xF8yet."
 title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---

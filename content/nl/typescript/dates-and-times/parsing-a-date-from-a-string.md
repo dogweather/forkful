@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:04:31.160233-07:00
-description: 'Hoe: Voorbeelduitvoer voor beide.'
-lastmod: '2024-04-05T21:53:50.583073-06:00'
+description: "Hoe: Datums parsen uit tekenreeksen is altijd een beetje een pijnpunt\
+  \ geweest in JavaScript, de basistaal van TypeScript. Onnauwkeurige of inconsistente\u2026"
+lastmod: '2024-04-05T22:51:03.398530-06:00'
 model: gpt-4-0125-preview
-summary: Voorbeelduitvoer voor beide.
+summary: Datums parsen uit tekenreeksen is altijd een beetje een pijnpunt geweest
+  in JavaScript, de basistaal van TypeScript.
 title: Een datum uit een string parsen
 weight: 30
 ---

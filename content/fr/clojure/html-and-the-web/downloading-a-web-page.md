@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:43:30.126068-07:00
-description: "Comment faire : Sortie d'\xE9chantillon ."
-lastmod: '2024-04-05T21:53:58.861338-06:00'
+description: "Comment faire : Historiquement, t\xE9l\xE9charger des pages web \xE9\
+  tait plus laborieux, souvent fait avec de grosses biblioth\xE8ques Java ou par des\
+  \ commandes comme\u2026"
+lastmod: '2024-04-05T22:51:11.402483-06:00'
 model: gpt-4-1106-preview
-summary: "Sortie d'\xE9chantillon ."
+summary: "Historiquement, t\xE9l\xE9charger des pages web \xE9tait plus laborieux,\
+  \ souvent fait avec de grosses biblioth\xE8ques Java ou par des commandes comme\
+  \ `wget`."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:48.428377-07:00
-description: 'How To: (Wie geht''s?) Ausgabe.'
-lastmod: '2024-04-05T21:53:56.307051-06:00'
+description: "How To: (Wie geht's?) Das Vergleichen von Daten in Ruby ist dank der\
+  \ `Date`-Klasse einfach und intuitiv. Historisch gesehen war das Date-Handling in\u2026"
+lastmod: '2024-04-05T22:51:08.945209-06:00'
 model: gpt-4-1106-preview
-summary: (Wie geht's?) Ausgabe.
+summary: (Wie geht's?) Das Vergleichen von Daten in Ruby ist dank der `Date`-Klasse
+  einfach und intuitiv.
 title: Vergleich von zwei Daten
 weight: 27
 ---

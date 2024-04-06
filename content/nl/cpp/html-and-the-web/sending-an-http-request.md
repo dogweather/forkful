@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:07:23.046191-07:00
-description: 'Hoe: Voorbeelduitvoer.'
-lastmod: '2024-04-05T21:53:51.124736-06:00'
+description: "Hoe: HTTP-verzoeken zijn cruciaal geweest sinds de komst van het web;\
+  \ ze volgen een client-servermodel. V\xF3\xF3r C++-bibliotheken zoals CPR betekende\
+  \ het\u2026"
+lastmod: '2024-04-05T22:51:03.907229-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: HTTP-verzoeken zijn cruciaal geweest sinds de komst van het web; ze volgen
+  een client-servermodel.
 title: Een HTTP-verzoek verzenden
 weight: 44
 ---

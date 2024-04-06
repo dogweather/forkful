@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:55.488996-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:36.591954-06:00'
+description: "How to: (Jak to zrobi\u0107:) Pocz\u0105tkowo JavaScript (i tym samym\
+  \ TypeScript) wykorzystywa\u0142 obiekty `Date` do pracy z datami. Istnieje wiele\
+  \ metod do\u2026"
+lastmod: '2024-04-05T22:50:49.456085-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Pocz\u0105tkowo JavaScript (i tym samym TypeScript)\
+  \ wykorzystywa\u0142 obiekty `Date` do pracy z datami."
 title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---

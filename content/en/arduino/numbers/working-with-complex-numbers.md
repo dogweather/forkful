@@ -1,9 +1,11 @@
 ---
 date: 2024-01-25 02:59:36.547679-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:36.014099-06:00'
+description: "How to: Originally, complex numbers were met with skepticism, but they've\
+  \ become central in various scientific fields. Historically, they were recognized\u2026"
+lastmod: '2024-04-05T22:50:48.872422-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Originally, complex numbers were met with skepticism, but they've become
+  central in various scientific fields.
 title: Working with complex numbers
 weight: 14
 ---

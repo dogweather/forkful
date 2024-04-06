@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:16.521177-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:36.791806-06:00'
+description: "How to: (Jak to zrobi\u0107:) W Kotlinie i wielu innych j\u0119zykach\
+  \ programowania, wyodr\u0119bnianie podci\u0105g\xF3w to podstawowe narz\u0119dzie\
+  \ do pracy z tekstem.\u2026"
+lastmod: '2024-04-05T22:50:49.671274-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) W Kotlinie i wielu innych j\u0119zykach programowania,\
+  \ wyodr\u0119bnianie podci\u0105g\xF3w to podstawowe narz\u0119dzie do pracy z tekstem."
 title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:44:27.431995-07:00
-description: "Slik gj\xF8r du: Sample Output."
-lastmod: '2024-04-05T21:53:41.893269-06:00'
+description: "Slik gj\xF8r du: F\xF8r `socket.http` var den greie m\xE5ten \xE5 laste\
+  \ ned nettsider i Lua, brukte programmere ofte kommandolinje-verkt\xF8y som `curl`\
+  \ via\u2026"
+lastmod: '2024-04-05T22:50:54.932081-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "F\xF8r `socket.http` var den greie m\xE5ten \xE5 laste ned nettsider i Lua,\
+  \ brukte programmere ofte kommandolinje-verkt\xF8y som `curl` via `os.execute`."
 title: Nedlasting av en nettside
 weight: 42
 ---

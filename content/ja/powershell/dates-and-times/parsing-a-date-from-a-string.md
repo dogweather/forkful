@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:15:30.498522-07:00
-description: "\u65B9\u6CD5: PowerShell\u306F`Get-\u2026"
-lastmod: '2024-04-05T21:53:43.270862-06:00'
+description: ''
+lastmod: '2024-04-05T22:50:56.340002-06:00'
 model: gpt-4-0125-preview
 summary: "PowerShell\u306F`Get-Date`\u30B3\u30DE\u30F3\u30C9\u30EC\u30C3\u30C8\u3068\
   `[datetime]`\u30BF\u30A4\u30D7\u30A2\u30AF\u30BB\u30E9\u30EC\u30FC\u30BF\u3092\u4F7F\

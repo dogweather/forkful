@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:57:53.712183-07:00
-description: "C\xF3mo Hacerlo: Salida."
-lastmod: '2024-04-05T21:53:59.997304-06:00'
+description: "C\xF3mo Hacerlo: Buscar y reemplazar ha existido desde que los editores\
+  \ de texto se convirtieron en herramientas esenciales para la programaci\xF3n. Es\
+  \ parte de\u2026"
+lastmod: '2024-04-05T22:51:12.434039-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Buscar y reemplazar ha existido desde que los editores de texto se convirtieron\
+  \ en herramientas esenciales para la programaci\xF3n."
 title: Buscando y reemplazando texto
 weight: 10
 ---

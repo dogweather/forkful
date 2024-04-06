@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:52:02.358908-07:00
-description: "C\xF3mo: Salida esperada en consola."
-lastmod: '2024-04-05T21:54:00.423809-06:00'
+description: "C\xF3mo: Historicamente, imprimir salida de depuraci\xF3n ha sido una\
+  \ herramienta fundamental en la programaci\xF3n. Desde `System.out.println` en Java\
+  \ hasta\u2026"
+lastmod: '2024-04-05T22:51:12.820392-06:00'
 model: gpt-4-1106-preview
-summary: Salida esperada en consola.
+summary: "Historicamente, imprimir salida de depuraci\xF3n ha sido una herramienta\
+  \ fundamental en la programaci\xF3n."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

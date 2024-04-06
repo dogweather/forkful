@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:49.184447-07:00
-description: 'How to: Eller med template literals.'
-lastmod: '2024-04-05T21:53:41.502146-06:00'
+description: "How to: I gamle dager brukte man ofte plussoperatoren (`+`) til \xE5\
+  \ sette sammen strenger. Det fungerte greit, men kunne bli rotete med mange variabler\
+  \ og\u2026"
+lastmod: '2024-04-05T22:50:54.533674-06:00'
 model: gpt-4-1106-preview
-summary: Eller med template literals.
+summary: "I gamle dager brukte man ofte plussoperatoren (`+`) til \xE5 sette sammen\
+  \ strenger."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

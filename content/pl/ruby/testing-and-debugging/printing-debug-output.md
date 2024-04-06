@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:53:24.494309-07:00
-description: "Jak to zrobi\u0107: Output."
-lastmod: '2024-04-05T21:53:37.365916-06:00'
+description: "Jak to zrobi\u0107: Historia wypisywania informacji diagnostycznych\
+  \ si\u0119ga pocz\u0105tk\xF3w programowania \u2013 by\u0142o to niezb\u0119dne\
+  \ do zrozumienia, co robi\u0142y pierwsze\u2026"
+lastmod: '2024-04-05T22:50:50.286427-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historia wypisywania informacji diagnostycznych si\u0119ga pocz\u0105tk\xF3\
+  w programowania \u2013 by\u0142o to niezb\u0119dne do zrozumienia, co robi\u0142\
+  y pierwsze komputery."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

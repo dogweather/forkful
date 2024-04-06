@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 15:33:10.166240-07:00
-description: 'Hvordan: Eksempelresultat.'
-lastmod: '2024-04-05T21:53:41.976298-06:00'
+description: "Hvordan: \xC5 tolke HTML har vokst ut fra behovet for \xE5 forst\xE5\
+  \ og manipulere webinnhold. Web skraping er en vanlig bruk, men det bryter ofte\
+  \ med nettsidens\u2026"
+lastmod: '2024-04-05T22:50:55.018707-06:00'
 model: unknown
-summary: ''
+summary: "\xC5 tolke HTML har vokst ut fra behovet for \xE5 forst\xE5 og manipulere\
+  \ webinnhold."
 title: Analyse av HTML
 weight: 43
 ---

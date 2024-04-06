@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:36:15.831387-07:00
-description: "Como Fazer: Sa\xEDda de exemplo."
-lastmod: '2024-04-05T21:53:47.242022-06:00'
+description: "Como Fazer: Converter datas em strings \xE9 uma necessidade antiga em\
+  \ programa\xE7\xE3o. Inicialmente, lid\xE1vamos com datas por meio de estruturas\
+  \ `struct tm` da\u2026"
+lastmod: '2024-04-05T22:51:00.133863-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Converter datas em strings \xE9 uma necessidade antiga em programa\xE7\xE3\
+  o."
 title: Convertendo uma data em uma string
 weight: 28
 ---

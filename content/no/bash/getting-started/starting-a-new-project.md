@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:02:58.554797-07:00
-description: 'Hvordan: Output for `tree`.'
-lastmod: '2024-04-05T21:53:41.937012-06:00'
+description: "Hvordan: Start av nye prosjekter har endret seg mye. F\xF8r, ville man\
+  \ kanskje bare \xE5pne en teksteditor og begynne \xE5 kode. N\xE5 legger vi vekt\
+  \ p\xE5\u2026"
+lastmod: '2024-04-05T22:50:54.977188-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Start av nye prosjekter har endret seg mye.
 title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---

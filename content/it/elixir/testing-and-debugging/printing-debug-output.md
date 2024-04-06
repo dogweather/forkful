@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:52:29.351062-07:00
-description: 'How to: (Come fare:) .'
-lastmod: '2024-04-05T21:53:43.866908-06:00'
+description: "How to: (Come fare:) Elixir, nato nel 2011, consente di eseguire debug\
+  \ facilmente grazie a funzioni come `IO.puts` e `IO.inspect`. `IO.inspect` \xE8\u2026"
+lastmod: '2024-04-05T22:50:56.935158-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: (Come fare:) Elixir, nato nel 2011, consente di eseguire debug facilmente
+  grazie a funzioni come `IO.puts` e `IO.inspect`.
 title: Stampa dell'output di debug
 weight: 33
 ---

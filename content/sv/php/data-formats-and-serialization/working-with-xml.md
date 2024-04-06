@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:34:14.448313-07:00
-description: "Hur man g\xF6r: L\xE4sa XML med SimpleXML."
-lastmod: '2024-03-13T22:44:38.020731-06:00'
+description: "Hur man g\xF6r: XML, eller Extensible Markup Language, har varit en\
+  \ grundpelare i dataserialisering sedan dess W3C-rekommendation 1998. Det \xE4r\
+  \ utf\xF6rligt,\u2026"
+lastmod: '2024-04-05T22:50:52.323028-06:00'
 model: gpt-4-0125-preview
-summary: "L\xE4sa XML med SimpleXML."
+summary: XML, eller Extensible Markup Language, har varit en grundpelare i dataserialisering
+  sedan dess W3C-rekommendation 1998.
 title: Att arbeta med XML
 weight: 40
 ---

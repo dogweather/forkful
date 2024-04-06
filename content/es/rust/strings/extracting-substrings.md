@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:46:29.554901-07:00
-description: "C\xF3mo Hacerlo: Salida."
-lastmod: '2024-04-05T21:54:00.182986-06:00'
+description: "C\xF3mo Hacerlo: En Rust, las cadenas son una vista sobre una secuencia\
+  \ de bytes UTF-8. Extraer subcadenas no es tan simple como en otros lenguajes;\u2026"
+lastmod: '2024-04-05T22:51:12.600801-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: En Rust, las cadenas son una vista sobre una secuencia de bytes UTF-8.
 title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---

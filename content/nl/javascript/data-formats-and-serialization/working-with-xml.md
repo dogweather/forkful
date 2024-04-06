@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:11:13.288557-07:00
-description: 'Hoe: Hier is hoe je XML parsed.'
-lastmod: '2024-03-13T22:44:51.227001-06:00'
+description: "Hoe: XML staat voor eXtensible Markup Language, een gegevensformaat\
+  \ dat er sinds de late jaren 90 is. Het definieert een reeks regels voor het coderen\
+  \ van\u2026"
+lastmod: '2024-04-05T22:51:04.010977-06:00'
 model: gpt-4-0125-preview
-summary: Hier is hoe je XML parsed.
+summary: XML staat voor eXtensible Markup Language, een gegevensformaat dat er sinds
+  de late jaren 90 is.
 title: Werken met XML
 weight: 40
 ---

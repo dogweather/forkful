@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:00:17.712777-07:00
-description: "Hvordan: Eksempel p\xE5 output."
-lastmod: '2024-04-05T21:53:41.891477-06:00'
+description: "Hvordan: Tilbake i 1991 kom HTTP, designet av Tim Berners-Lee. Det ble\
+  \ raskt internettets ryggrad. Lua st\xF8tter ikke HTTP rett ut av boksen. Du m\xE5\
+  \ bruke et\u2026"
+lastmod: '2024-04-05T22:50:54.929977-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Tilbake i 1991 kom HTTP, designet av Tim Berners-Lee.
 title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---

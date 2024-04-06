@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:57:18.727246-07:00
-description: "How to (Jak to zrobi\u0107): ."
-lastmod: '2024-04-05T21:53:36.595059-06:00'
+description: "How to (Jak to zrobi\u0107): Czytanie argument\xF3w linii polece\u0144\
+  \ to funkcjonalno\u015B\u0107 widoczna w wielu j\u0119zykach, cz\u0119sto od ich\
+  \ zarania. W Node.js `process.argv` to\u2026"
+lastmod: '2024-04-05T22:50:49.459906-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Czytanie argument\xF3w linii polece\u0144 to funkcjonalno\u015B\u0107 widoczna\
+  \ w wielu j\u0119zykach, cz\u0119sto od ich zarania."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

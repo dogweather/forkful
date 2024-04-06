@@ -2,10 +2,13 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:08:28.764235-07:00
-description: 'Hoe te: Voorbeelduitvoer.'
-lastmod: '2024-04-05T21:53:51.255571-06:00'
+description: "Hoe te: De praktijk van het opzetten van een nieuw project heeft een\
+  \ lange stamboom en is meer gestandaardiseerd geworden met de opkomst van moderne\u2026"
+lastmod: '2024-04-05T22:51:04.030532-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: De praktijk van het opzetten van een nieuw project heeft een lange stamboom
+  en is meer gestandaardiseerd geworden met de opkomst van moderne versiebeheer zoals
+  Git.
 title: Een nieuw project starten
 weight: 1
 ---

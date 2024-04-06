@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:49.435927-07:00
-description: "Como Fazer: Sa\xEDda do exemplo."
-lastmod: '2024-04-05T21:53:46.642170-06:00'
+description: "Como Fazer: Historicamente, a interpola\xE7\xE3o de strings nem sempre\
+  \ foi t\xE3o direta em JavaScript. Antes do ECMAScript 2015 (ES6), concatenar strings\
+  \ e\u2026"
+lastmod: '2024-04-05T22:50:59.574331-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historicamente, a interpola\xE7\xE3o de strings nem sempre foi t\xE3o direta\
+  \ em JavaScript."
 title: Interpolando uma string
 weight: 8
 ---

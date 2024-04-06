@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:56:08.686519-07:00
-description: "C\xF3mo: Ejemplo sencillo."
-lastmod: '2024-04-05T21:54:00.869610-06:00'
+description: "C\xF3mo: Originalmente, leer argumentos de la l\xEDnea de comandos era\
+  \ esencial para scripts en sistemas Unix, lo que permit\xEDa mayor versatilidad\
+  \ y\u2026"
+lastmod: '2024-04-05T22:51:13.227997-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Originalmente, leer argumentos de la l\xEDnea de comandos era esencial para\
+  \ scripts en sistemas Unix, lo que permit\xEDa mayor versatilidad y reutilizaci\xF3\
+  n."
 title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:04.934666-07:00
-description: "Jak to zrobi\u0107: Przykladowy wynik."
-lastmod: '2024-04-05T21:53:37.223218-06:00'
+description: "Jak to zrobi\u0107: Podstawowa autoryzacja HTTP to stary, ale prosty\
+  \ spos\xF3b na zabezpieczenie dost\u0119pu do zasob\xF3w. Wysy\u0142asz login i\
+  \ has\u0142o zakodowane w Base64 w\u2026"
+lastmod: '2024-04-05T22:50:50.137113-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Podstawowa autoryzacja HTTP to stary, ale prosty spos\xF3b na zabezpieczenie\
+  \ dost\u0119pu do zasob\xF3w."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

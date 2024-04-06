@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:39:16.691373-07:00
-description: "How to: (Jak to zrobi\u0107:) Output."
-lastmod: '2024-04-05T21:53:36.609172-06:00'
+description: "How to: (Jak to zrobi\u0107:) W Rust, metoda `.to_lowercase()` powsta\u0142\
+  a z potrzeby uniwersalnego konwertera tekstu. Umo\u017Cliwia precyzyjn\u0105 zmian\u0119\
+  \ na ma\u0142e litery,\u2026"
+lastmod: '2024-04-05T22:50:49.475481-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107:) Output."
+summary: "(Jak to zrobi\u0107:) W Rust, metoda `.to_lowercase()` powsta\u0142a z potrzeby\
+  \ uniwersalnego konwertera tekstu."
 title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:43.173152-07:00
-description: 'How to: (Come fare:) Output.'
-lastmod: '2024-04-05T21:53:44.213816-06:00'
+description: "How to: (Come fare:) Comparare date \xE8 fondamentale in programmazione\
+  \ da quando i sistemi hanno dovuto gestire appuntamenti e scadenze. Ci sono metodi\u2026"
+lastmod: '2024-04-05T22:50:57.262429-06:00'
 model: gpt-4-1106-preview
-summary: (Come fare:) Output.
+summary: "(Come fare:) Comparare date \xE8 fondamentale in programmazione da quando\
+  \ i sistemi hanno dovuto gestire appuntamenti e scadenze."
 title: Confronto tra due date
 weight: 27
 ---

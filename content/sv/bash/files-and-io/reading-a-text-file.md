@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:37.334044-07:00
-description: "Hur Man G\xF6r: L\xE4s hela filen p\xE5 en g\xE5ng."
-lastmod: '2024-03-13T22:44:38.099451-06:00'
+description: "Hur Man G\xF6r: L\xE4sning av textfiler \xE4r grundl\xE4ggande och har\
+  \ anv\xE4nts \xE4nda sedan de tidiga dagarna av Unix, varifr\xE5n Bash h\xE4rstammar.\
+  \ Kommandon som `cat`,\u2026"
+lastmod: '2024-04-05T22:50:52.405076-06:00'
 model: gpt-4-1106-preview
-summary: "L\xE4s hela filen p\xE5 en g\xE5ng."
+summary: "L\xE4sning av textfiler \xE4r grundl\xE4ggande och har anv\xE4nts \xE4nda\
+  \ sedan de tidiga dagarna av Unix, varifr\xE5n Bash h\xE4rstammar."
 title: "L\xE4sa en textfil"
 weight: 22
 ---

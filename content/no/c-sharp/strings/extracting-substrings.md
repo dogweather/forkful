@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:45:29.679321-07:00
-description: "How to: (Slik gj\xF8r du) ."
-lastmod: '2024-04-05T21:53:41.760300-06:00'
+description: "How to: (Slik gj\xF8r du) I C# har du hatt muligheten til \xE5 trekke\
+  \ ut delstrenger siden de f\xF8rste versjonene. Substring-metoden er en del av System.String-\u2026"
+lastmod: '2024-04-05T22:50:54.793690-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Slik gj\xF8r du) I C# har du hatt muligheten til \xE5 trekke ut delstrenger\
+  \ siden de f\xF8rste versjonene."
 title: Uthenting av delstrenger
 weight: 6
 ---

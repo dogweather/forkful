@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:02:31.480111-07:00
-description: 'Comment faire : Sortie .'
-lastmod: '2024-04-05T21:53:59.824421-06:00'
+description: "Comment faire : Historiquement, l'authentification basique a \xE9t\xE9\
+  \ con\xE7ue pour \xEAtre simple mais pas particuli\xE8rement s\xE9curis\xE9e, car\
+  \ les identifiants ne sont\u2026"
+lastmod: '2024-04-05T22:51:12.277937-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, l'authentification basique a \xE9t\xE9 con\xE7ue pour \xEA\
+  tre simple mais pas particuli\xE8rement s\xE9curis\xE9e, car les identifiants ne\
+  \ sont encod\xE9s qu'en Base64, facilement d\xE9codable."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

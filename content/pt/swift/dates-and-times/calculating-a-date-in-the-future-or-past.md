@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:24.853859-07:00
-description: 'Como Fazer: Sample output.'
-lastmod: '2024-04-05T21:53:47.284854-06:00'
+description: "Como Fazer: A capacidade de calcular datas \xE9 essencial desde o in\xED\
+  cio da computa\xE7\xE3o. Algoritmos para c\xE1lculo de datas t\xEAm ra\xEDzes hist\xF3\
+  ricas, como o\u2026"
+lastmod: '2024-04-05T22:51:00.174141-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "A capacidade de calcular datas \xE9 essencial desde o in\xEDcio da computa\xE7\
+  \xE3o."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

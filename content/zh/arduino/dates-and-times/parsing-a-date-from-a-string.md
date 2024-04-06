@@ -2,12 +2,10 @@
 changelog:
 - 2024-02-03, gpt-4-0125-preview, translated from English
 date: 2024-02-03 19:13:33.902891-07:00
-description: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u4E0D\u4F7F\u7528\u7B2C\u4E09\u65B9\u5E93\
-  \u7684\u76F4\u63A5\u65B9\u6CD5\uFF1A."
-lastmod: '2024-04-05T22:38:47.228373-06:00'
+description: ''
+lastmod: '2024-04-05T22:51:01.282406-06:00'
 model: gpt-4-0125-preview
-summary: "\u5982\u4F55\u64CD\u4F5C\uFF1A \u4E0D\u4F7F\u7528\u7B2C\u4E09\u65B9\u5E93\
-  \u7684\u76F4\u63A5\u65B9\u6CD5\uFF1A."
+summary: ''
 title: "\u4ECE\u5B57\u7B26\u4E32\u89E3\u6790\u65E5\u671F"
 weight: 30
 ---

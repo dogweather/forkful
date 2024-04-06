@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:36:48.404629-07:00
-description: 'Kuinka: Esimerkkituloste.'
-lastmod: '2024-04-05T21:53:58.394740-06:00'
+description: "Kuinka: Alun perin kompleksiluvut kohtasivat skeptisismi\xE4, mutta\
+  \ ne ovat tulleet keskeisiksi monilla tieteellisill\xE4 aloilla. Historiallisesti\
+  \ ne\u2026"
+lastmod: '2024-04-05T22:51:10.968227-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Alun perin kompleksiluvut kohtasivat skeptisismi\xE4, mutta ne ovat tulleet\
+  \ keskeisiksi monilla tieteellisill\xE4 aloilla."
 title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---

@@ -1,9 +1,19 @@
 ---
 date: 2024-01-20 17:56:36.455037-07:00
-description: "How to: Miten tehd\xE4\xE4n."
-lastmod: '2024-04-05T21:53:58.285067-06:00'
+description: "How to: Syv\xE4sukellus: Lua otti k\xE4ytt\xF6\xF6n globaalin `arg`\
+  \ taulukon komentoriviparametrien k\xE4sittelyyn. Ennen Lua 5.0-versiota `arg` oli\
+  \ osa `*arg` globaalia\u2026"
+lastmod: '2024-04-05T22:51:10.865372-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Syv\xE4sukellus: Lua otti k\xE4ytt\xF6\xF6n globaalin `arg` taulukon komentoriviparametrien\
+  \ k\xE4sittelyyn. Ennen Lua 5.0-versiota `arg` oli osa `*arg` globaalia muuttujaa\
+  \ tai saatettiin lukea suoraan funktiolle annetuista argumenteista. Taulukon indeksi\
+  \ 0 sis\xE4lt\xE4\xE4 skriptin nimen, ja itse argumentit alkavat indeksist\xE4 1.\
+  \ Vaihtoehtoisesti voi k\xE4ytt\xE4\xE4 standardikirjastoja, kuten `lapp` tai `penlight`,\
+  \ jotka tarjoavat monipuolisempaa k\xE4sittely\xE4, kuten optioanalysointia ja oletusarvoja.\
+  \ Komentoriviparametrien lukemiseen liittyy joskus turvallisuusn\xE4k\xF6kohtia,\
+  \ kuten sy\xF6tteiden validointi ja escapen k\xE4sitteleminen, jotta v\xE4ltet\xE4\
+  \xE4n injektio- ja suorituskykyongelmia."
 title: Komennoriviparametrien lukeminen
 weight: 23
 ---

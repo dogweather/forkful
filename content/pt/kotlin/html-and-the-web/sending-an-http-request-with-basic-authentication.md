@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:21.681785-07:00
-description: "Como Fazer: Sa\xEDda esperada."
-lastmod: '2024-04-05T21:53:46.883186-06:00'
+description: "Como Fazer: A autentica\xE7\xE3o b\xE1sica \xE9 um m\xE9todo antigo,\
+  \ mas ainda amplamente utilizado devido \xE0 sua simplicidade. Esse m\xE9todo envia\
+  \ as credenciais no\u2026"
+lastmod: '2024-04-05T22:50:59.799452-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "A autentica\xE7\xE3o b\xE1sica \xE9 um m\xE9todo antigo, mas ainda amplamente\
+  \ utilizado devido \xE0 sua simplicidade."
 title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---

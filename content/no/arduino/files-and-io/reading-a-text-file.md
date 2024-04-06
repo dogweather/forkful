@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:51.432702-07:00
-description: "Hvordan gj\xF8re det: *Sample output:*."
-lastmod: '2024-04-05T21:53:42.036895-06:00'
+description: "Hvordan gj\xF8re det: \xC5 lese tekstfiler er en grunnleggende funksjon\
+  \ som har v\xE6rt en del av programmering siden begynnelsen. For Arduino er microSD-kort\
+  \ via\u2026"
+lastmod: '2024-04-05T22:50:55.082136-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\xC5 lese tekstfiler er en grunnleggende funksjon som har v\xE6rt en del\
+  \ av programmering siden begynnelsen."
 title: Lese en tekstfil
 weight: 22
 ---

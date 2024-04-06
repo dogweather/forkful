@@ -2,8 +2,8 @@
 changelog:
 - 2024-02-01, gpt-4-0125-preview, translated from English
 date: 2024-02-01 22:10:02.969924-07:00
-description: "\u65B9\u6CD5\uFF1A \u6B74\u53F2\u7684\u306B\u3001Google Apps\u2026"
-lastmod: '2024-04-05T22:37:49.782253-06:00'
+description: ''
+lastmod: '2024-04-05T22:50:55.450513-06:00'
 model: gpt-4-0125-preview
 summary: "\u65B9\u6CD5\uFF1A Google Apps Script\u306B\u306F\u3001\u4ED6\u306E\u30D7\
   \u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u74B0\u5883\u306E\u3088\u3046\u306A\u7D44\u307F\

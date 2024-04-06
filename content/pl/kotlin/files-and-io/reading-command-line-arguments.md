@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:56:20.422692-07:00
-description: 'How to: **Sample Output:**.'
-lastmod: '2024-04-05T21:53:36.817415-06:00'
+description: "How to: Argumenty linii polece\u0144 s\u0105 tak stare jak same wczesne\
+  \ komputery. Dawa\u0142y one mo\u017Cliwo\u015B\u0107 interakcji z programem bez\
+  \ potrzeby tworzenia interfejsu\u2026"
+lastmod: '2024-04-05T22:50:49.698540-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Argumenty linii polece\u0144 s\u0105 tak stare jak same wczesne komputery."
 title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---

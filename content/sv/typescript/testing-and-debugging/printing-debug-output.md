@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:53:25.853827-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:38.986378-06:00'
+description: "How to: Utskrift f\xF6r debuggning \xE4r lika gammalt som programmering\
+  \ sj\xE4lvt. F\xF6rr i tiden kunde det betyda att skriva ut p\xE5 papper. Idag anv\xE4\
+  nder vi\u2026"
+lastmod: '2024-04-05T22:50:51.943960-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Utskrift f\xF6r debuggning \xE4r lika gammalt som programmering sj\xE4lvt."
 title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---

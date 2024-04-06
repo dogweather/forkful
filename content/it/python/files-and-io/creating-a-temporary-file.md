@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:41:07.135966-07:00
-description: "Come si fa: Questo codice stamper\xE0."
-lastmod: '2024-04-05T21:53:43.803276-06:00'
+description: "Come si fa: I file temporanei sono usati per molti scopi, dai processi\
+  \ di backup alla manipolazione di dati grossi. Negli anni 80, su sistemi con memorie\u2026"
+lastmod: '2024-04-05T22:50:56.874092-06:00'
 model: gpt-4-1106-preview
-summary: "Questo codice stamper\xE0."
+summary: I file temporanei sono usati per molti scopi, dai processi di backup alla
+  manipolazione di dati grossi.
 title: Creazione di un file temporaneo
 weight: 21
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:16.094292-07:00
-description: "How to: (Hur man g\xF6r:) ."
-lastmod: '2024-04-05T21:53:39.643079-06:00'
+description: "How to: (Hur man g\xF6r:) I JavaScript skapas datumobjekt med `Date`-konstrukt\xF6\
+  ren. Att j\xE4mf\xF6ra datum var f\xF6rr komplicerat eftersom det inte fanns n\xE5\
+  gra\u2026"
+lastmod: '2024-04-05T22:50:52.619024-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Hur man g\xF6r:) I JavaScript skapas datumobjekt med `Date`-konstrukt\xF6\
+  ren."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:34.250543-07:00
-description: "C\xF3mo hacerlo: Salida."
-lastmod: '2024-04-05T21:54:00.365464-06:00'
+description: "C\xF3mo hacerlo: Antes de Kotlin, los programadores de Java utilizaban\
+  \ `String.format` o concatenaci\xF3n con `+`. La interpolaci\xF3n de cadenas en\
+  \ Kotlin,\u2026"
+lastmod: '2024-04-05T22:51:12.766975-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Antes de Kotlin, los programadores de Java utilizaban `String.format` o\
+  \ concatenaci\xF3n con `+`."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

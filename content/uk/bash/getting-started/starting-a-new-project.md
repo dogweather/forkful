@@ -1,10 +1,12 @@
 ---
 date: 2024-01-20 18:03:05.661238-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0440\u043E\u0431\u0438\u0442\u0438\
-  :) ."
-lastmod: '2024-04-05T21:53:49.718374-06:00'
+  :) Starting a new project wasn't always as standardized as it is today. In the past,\
+  \ programmers might have just started coding\u2026"
+lastmod: '2024-04-05T22:51:02.606946-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\u042F\u043A \u0446\u0435 \u0440\u043E\u0431\u0438\u0442\u0438:) Starting\
+  \ a new project wasn't always as standardized as it is today."
 title: "\u041F\u043E\u0447\u0438\u043D\u0430\u0454\u043C\u043E \u043D\u043E\u0432\u0438\
   \u0439 \u043F\u0440\u043E\u0435\u043A\u0442"
 weight: 1

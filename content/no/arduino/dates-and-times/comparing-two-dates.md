@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:15.278550-07:00
-description: 'How to: (Hvordan:) Sample output.'
-lastmod: '2024-04-05T21:53:42.031539-06:00'
+description: "How to: (Hvordan:) Historisk var tidsh\xE5ndtering i datasystemer primitiv,\
+  \ ofte uten st\xF8tte for tidszoner eller skudd\xE5r. Moderne mikrokontrollere,\
+  \ som de\u2026"
+lastmod: '2024-04-05T22:50:55.076444-06:00'
 model: gpt-4-1106-preview
-summary: (Hvordan:) Sample output.
+summary: "(Hvordan:) Historisk var tidsh\xE5ndtering i datasystemer primitiv, ofte\
+  \ uten st\xF8tte for tidszoner eller skudd\xE5r."
 title: Sammenlikning av to datoer
 weight: 27
 ---

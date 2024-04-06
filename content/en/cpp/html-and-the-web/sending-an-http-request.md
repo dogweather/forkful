@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:59:22.887557-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:36.054959-06:00'
+description: "How to: HTTP requests have been crucial since the advent of the web;\
+  \ they follow a client-server model. Prior to C++ libraries like CPR, sending HTTP\u2026"
+lastmod: '2024-04-05T22:50:48.914042-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: HTTP requests have been crucial since the advent of the web; they follow
+  a client-server model.
 title: Sending an HTTP request
 weight: 44
 ---

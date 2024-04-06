@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:48:58.534358-07:00
-description: "How to: (Kuinka tehd\xE4:) Sample Output."
-lastmod: '2024-04-05T21:53:57.906942-06:00'
+description: "How to: (Kuinka tehd\xE4:) Rustissa merkkijonon pituuden selvitt\xE4\
+  minen ei aina ole suoraviivaista. Merkkijonon `.len()` metodi palauttaa tavujen\
+  \ m\xE4\xE4r\xE4n, ei\u2026"
+lastmod: '2024-04-05T22:51:10.498322-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) Sample Output."
+summary: "(Kuinka tehd\xE4:) Rustissa merkkijonon pituuden selvitt\xE4minen ei aina\
+  \ ole suoraviivaista."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

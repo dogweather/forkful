@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:33.588686-07:00
-description: "Hvordan gj\xF8re det: ."
-lastmod: '2024-04-05T21:53:41.881118-06:00'
+description: "Hvordan gj\xF8re det: I historisk kontekst ble strenginterpolering ikke\
+  \ inkludert som en innebygd funksjon i tidligere versjoner av Lua. Dette f\xF8rte\
+  \ til at\u2026"
+lastmod: '2024-04-05T22:50:54.919098-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: I historisk kontekst ble strenginterpolering ikke inkludert som en innebygd
+  funksjon i tidligere versjoner av Lua.
 title: Interpolering av en streng
 weight: 8
 ---

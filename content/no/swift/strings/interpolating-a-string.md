@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:51:35.531592-07:00
-description: 'How to: Output: `Hei, Ola!`.'
-lastmod: '2024-04-05T22:37:49.480954-06:00'
+description: "How to: Stringinterpolasjon har v\xE6rt en del av Swift siden begynnelsen\
+  \ i 2014. Alternativer inkluderer sammensl\xE5ing av strenger med `+` og\u2026"
+lastmod: '2024-04-05T22:50:55.135664-06:00'
 model: gpt-4-1106-preview
-summary: 'Output: `Hei, Ola!`.'
+summary: "Stringinterpolasjon har v\xE6rt en del av Swift siden begynnelsen i 2014."
 title: Interpolering av en streng
 weight: 8
 ---

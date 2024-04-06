@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:48:09.542464-07:00
-description: "Hvordan gj\xF8re det: Output."
-lastmod: '2024-04-05T21:53:41.543697-06:00'
+description: "Hvordan gj\xF8re det: Helt fra Rusts tidlige dager var det \xE5 finne\
+  \ lengden p\xE5 en streng ikke alltid s\xE5 rett fram. Rusts `String` type er kodet\
+  \ i UTF-8, noe\u2026"
+lastmod: '2024-04-05T22:50:54.575896-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Helt fra Rusts tidlige dager var det \xE5 finne lengden p\xE5 en streng\
+  \ ikke alltid s\xE5 rett fram."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:36:44.306442-07:00
-description: "Hvordan gj\xF8re det: Sample output."
-lastmod: '2024-04-05T21:53:41.740173-06:00'
+description: "Hvordan gj\xF8re det: Historisk har dato- og tidsrepresentasjon variert\
+  \ mye mellom systemer. Kotlin bygger p\xE5 Java's datoh\xE5ndtering, og SimpleDateFormat\
+  \ er\u2026"
+lastmod: '2024-04-05T22:50:54.772281-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Historisk har dato- og tidsrepresentasjon variert mye mellom systemer.
 title: Konvertere en dato til en streng
 weight: 28
 ---

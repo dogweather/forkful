@@ -1,9 +1,19 @@
 ---
 date: 2024-01-20 17:51:00.387197-07:00
-description: "How to: - N\xE4in teet sen: ."
-lastmod: '2024-04-05T21:53:58.514620-06:00'
+description: "How to: - N\xE4in teet sen: String-interpolointi ei ole uusi juttu,\
+  \ mutta JavaScriptin ES6-versiossa (ECMAScript 2015) se sai helpomman muodon template\u2026"
+lastmod: '2024-04-05T22:51:11.082618-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- N\xE4in teet sen: String-interpolointi ei ole uusi juttu, mutta JavaScriptin\
+  \ ES6-versiossa (ECMAScript 2015) se sai helpomman muodon template literaleina.\
+  \ Ennen ES6:a koodarit k\xE4yttiv\xE4t `+`-operaattoria tai `concat`-metodia, mik\xE4\
+  \ teki koodista helposti sekavaa. Template literaleissa k\xE4ytet\xE4\xE4n takakenoviivoja\
+  \ (\\`) ja `${}`-syntaksia, mik\xE4 selkeytt\xE4\xE4 ilmaisujen ja muuttujien sijoittamista\
+  \ merkkijonojen sis\xE4\xE4n. Vaihtoehtona on my\xF6s kirjastoja, kuten Lodash,\
+  \ joka tarjoaa template-funktion. Kuitenkin, nyky\xE4\xE4n suositaan nativiin JavaScriptin\
+  \ tuomaa simplicity\xE4. Template literaleita voi my\xF6s k\xE4ytt\xE4\xE4 monirivisten\
+  \ merkkijonojen esitt\xE4miseen ilman, ett\xE4 joutuu k\xE4ytt\xE4m\xE4\xE4n rivinvaihto-merkkej\xE4\
+  \ (\\n)."
 title: Merkkijonon interpolointi
 weight: 8
 ---

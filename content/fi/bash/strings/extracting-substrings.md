@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:45:03.252593-07:00
-description: "How to - Kuinka tehd\xE4\xE4n Sample output."
-lastmod: '2024-04-05T22:38:57.339711-06:00'
+description: "How to - Kuinka tehd\xE4\xE4n Bash on ollut k\xE4yt\xF6ss\xE4 jo vuosikymmeni\xE4\
+  . Alkuaikoina, merkkijonojen k\xE4sittely oli rajoitetumpaa, mutta nykyisin Bash\
+  \ tukee\u2026"
+lastmod: '2024-04-05T22:51:10.880998-06:00'
 model: gpt-4-1106-preview
-summary: "How to - Kuinka tehd\xE4\xE4n Sample output."
+summary: "Alkuaikoina, merkkijonojen k\xE4sittely oli rajoitetumpaa, mutta nykyisin\
+  \ Bash tukee monipuolisesti substrings."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

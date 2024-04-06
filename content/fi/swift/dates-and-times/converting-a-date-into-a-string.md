@@ -1,9 +1,18 @@
 ---
 date: 2024-01-20 17:37:37.325190-07:00
-description: "How to: - Kuinka tehd\xE4: ."
-lastmod: '2024-04-05T21:53:58.497393-06:00'
+description: "How to: - Kuinka tehd\xE4: Date-olioista tulee stringej\xE4 melko usein,\
+  \ kuten n\xE4yt\xF6ll\xE4 kertominen, tiedon tallennus ja aikaleimojen luonti lokeille.\u2026"
+lastmod: '2024-04-05T22:51:11.066145-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "- Kuinka tehd\xE4: Date-olioista tulee stringej\xE4 melko usein, kuten n\xE4\
+  yt\xF6ll\xE4 kertominen, tiedon tallennus ja aikaleimojen luonti lokeille. Historiallinen\
+  \ konteksti: DateFormatter on osa Foundation frameworkia, joka tuli iOS:lle sen\
+  \ ensimm\xE4isen version mukana ja on sen j\xE4lkeen palvellut Swift-kehitt\xE4\
+  ji\xE4. Vaihtoehtoja: voi k\xE4ytt\xE4\xE4 my\xF6s `DateComponentsFormatter` ottaakseen\
+  \ esiin vain tietyt osat p\xE4iv\xE4m\xE4\xE4r\xE4st\xE4 tai `ISO8601DateFormatter`\
+  \ ISO 8601 -mukaisten merkkijonojen luomiseen. Implementation details: `DateFormatter`\
+  \ k\xE4ytt\xE4\xE4 ICU-kirjastoa taustalla, mik\xE4 mahdollistaa monimutkaisten\
+  \ p\xE4iv\xE4m\xE4\xE4r\xE4formaattejen k\xE4sittelyn."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

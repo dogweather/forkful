@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:39:24.573368-07:00
-description: "Hvordan gj\xF8r man det: Eksempelutskrift."
-lastmod: '2024-04-05T21:53:41.955263-06:00'
+description: "Hvordan gj\xF8r man det: Opprettelsen av midlertidige filer i UNIX-lignende\
+  \ systemer har lenge v\xE6rt vanlig, gjort med verkt\xF8y som `mktemp`, som ble\u2026"
+lastmod: '2024-04-05T22:50:54.996586-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Opprettelsen av midlertidige filer i UNIX-lignende systemer har lenge v\xE6\
+  rt vanlig, gjort med verkt\xF8y som `mktemp`, som ble tilgjengelig p\xE5 1980-tallet."
 title: Opprette en midlertidig fil
 weight: 21
 ---

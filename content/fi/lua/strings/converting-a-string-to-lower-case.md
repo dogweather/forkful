@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:38:54.255310-07:00
-description: "How to: \"Kuinka tehd\xE4\xE4n:\"."
-lastmod: '2024-04-05T21:53:58.256783-06:00'
+description: "How to: \"Sukellus syv\xE4lle\" Lua:ssa merkkijonon muuttaminen pieniksi\
+  \ kirjaimiksi k\xE4ytt\xE4\xE4 `string.lower`-funktiota. Historiallisesti, t\xE4\
+  m\xE4 on per\xE4isin C:n\u2026"
+lastmod: '2024-04-05T22:51:10.837198-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\"Sukellus syv\xE4lle\" Lua:ssa merkkijonon muuttaminen pieniksi kirjaimiksi\
+  \ k\xE4ytt\xE4\xE4 `string.lower`-funktiota."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

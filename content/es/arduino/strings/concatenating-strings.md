@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:34:06.997156-07:00
-description: "C\xF3mo: Salida de muestra."
-lastmod: '2024-04-05T21:54:00.673174-06:00'
+description: "C\xF3mo: Concatenar cadenas de texto es un concepto antiguo que ya exist\xED\
+  a en lenguajes predecesores como C y Java. En Arduino, hay varias maneras de\u2026"
+lastmod: '2024-04-05T22:51:13.049575-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Concatenar cadenas de texto es un concepto antiguo que ya exist\xEDa en\
+  \ lenguajes predecesores como C y Java."
 title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---

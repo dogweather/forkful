@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:12.679439-07:00
-description: 'How to: Mit Ruby ist es einfach.'
-lastmod: '2024-03-13T22:44:54.413519-06:00'
+description: "How to: Fr\xFCher, in den Zeiten vor einfachen Bibliotheken, mussten\
+  \ Entwickler komplexe Algorithmen selbst schreiben, um mit Datums- und Zeitangaben\
+  \ zu\u2026"
+lastmod: '2024-04-05T22:51:08.946304-06:00'
 model: gpt-4-1106-preview
-summary: Mit Ruby ist es einfach.
+summary: "Fr\xFCher, in den Zeiten vor einfachen Bibliotheken, mussten Entwickler\
+  \ komplexe Algorithmen selbst schreiben, um mit Datums- und Zeitangaben zu hantieren."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 01:09:40.462112-07:00
-description: 'Hvordan: Lag en enkel funksjon i Bash.'
-lastmod: '2024-03-13T22:44:40.980398-06:00'
+description: "Hvordan: I Bash, har funksjoner v\xE6rt en m\xE5te \xE5 inndele kode\
+  \ p\xE5 siden de tidlige versjonene. Historisk sett, har bruk av funksjoner v\xE6\
+  rt i tr\xE5d med\u2026"
+lastmod: '2024-04-05T22:50:54.982525-06:00'
 model: gpt-4-1106-preview
-summary: Lag en enkel funksjon i Bash.
+summary: "I Bash, har funksjoner v\xE6rt en m\xE5te \xE5 inndele kode p\xE5 siden\
+  \ de tidlige versjonene."
 title: Organisering av kode i funksjoner
 weight: 18
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:01.804020-07:00
-description: "Jak to zrobi\u0107: Sample output."
-lastmod: '2024-04-05T21:53:36.877037-06:00'
+description: "Jak to zrobi\u0107: String w Haskell to lista znak\xF3w, wi\u0119c \u0142\
+  \u0105czenie napis\xF3w odbywa si\u0119 przez konkatenacj\u0119 list. Operator `++`\
+  \ jest standardem od pocz\u0105tku\u2026"
+lastmod: '2024-04-05T22:50:49.766308-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "String w Haskell to lista znak\xF3w, wi\u0119c \u0142\u0105czenie napis\xF3\
+  w odbywa si\u0119 przez konkatenacj\u0119 list."
 title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---

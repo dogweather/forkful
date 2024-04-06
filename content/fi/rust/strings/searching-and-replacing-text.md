@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:58:53.513971-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:57.900920-06:00'
+description: "How to: Tekstin hakeminen ja korvaaminen ovat vanhoja k\xE4sitteit\xE4\
+  , jotka juontavat juurensa tekstink\xE4sittelyohjelmien alkuajoilta. Rustissa t\xE4\
+  m\xE4\u2026"
+lastmod: '2024-04-05T22:51:10.491912-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Tekstin hakeminen ja korvaaminen ovat vanhoja k\xE4sitteit\xE4, jotka juontavat\
+  \ juurensa tekstink\xE4sittelyohjelmien alkuajoilta."
 title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---

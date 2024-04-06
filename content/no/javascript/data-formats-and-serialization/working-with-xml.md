@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:32:37.548223-07:00
-description: 'Hvordan: Slik analyserer du XML.'
-lastmod: '2024-03-13T22:44:41.207660-06:00'
+description: "Hvordan: XML st\xE5r for eXtensible Markup Language, et dataformat som\
+  \ har v\xE6rt rundt siden slutten av 90-tallet. Det definerer et sett med regler\
+  \ for koding\u2026"
+lastmod: '2024-04-05T22:50:55.221044-06:00'
 model: gpt-4-0125-preview
-summary: Slik analyserer du XML.
+summary: "XML st\xE5r for eXtensible Markup Language, et dataformat som har v\xE6\
+  rt rundt siden slutten av 90-tallet."
 title: "\xC5 jobbe med XML"
 weight: 40
 ---

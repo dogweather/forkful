@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:34:14.586588-07:00
-description: 'Wie geht das: Beispielausgabe.'
-lastmod: '2024-04-05T21:53:56.009845-06:00'
+description: "Wie geht das: XML, oder eXtensible Markup Language, gibt es seit den\
+  \ sp\xE4ten 90ern und bleibt ein weit verbreitetes Format f\xFCr strukturierte Daten.\u2026"
+lastmod: '2024-04-05T22:51:08.671035-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "XML, oder eXtensible Markup Language, gibt es seit den sp\xE4ten 90ern und\
+  \ bleibt ein weit verbreitetes Format f\xFCr strukturierte Daten."
 title: Arbeiten mit XML
 weight: 40
 ---

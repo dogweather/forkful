@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:44:52.012652-07:00
-description: "How to: (Jak to zrobi\u0107:) Wyj\u015Bcie."
-lastmod: '2024-04-05T21:53:36.620309-06:00'
+description: "How to: (Jak to zrobi\u0107:) Pobieranie stron webowych to nic nowego.\
+  \ W dawnych czasach u\u017Cywano `wget` lub `curl` w terminalu. W Rust, wykorzystujemy\
+  \ bardziej\u2026"
+lastmod: '2024-04-05T22:50:49.488188-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107:) Wyj\u015Bcie."
+summary: "(Jak to zrobi\u0107:) Pobieranie stron webowych to nic nowego."
 title: Pobieranie strony internetowej
 weight: 42
 ---

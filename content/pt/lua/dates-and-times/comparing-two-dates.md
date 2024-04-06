@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:24.065231-07:00
-description: "Como Fazer: Sa\xEDda poss\xEDvel."
-lastmod: '2024-04-05T21:53:47.067060-06:00'
+description: "Como Fazer: Historicamente, em Lua, voc\xEA tem que penar um pouco com\
+  \ datas porque a linguagem n\xE3o tem um suporte t\xE3o direto para isso quanto\
+  \ outras. A\u2026"
+lastmod: '2024-04-05T22:50:59.970466-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historicamente, em Lua, voc\xEA tem que penar um pouco com datas porque\
+  \ a linguagem n\xE3o tem um suporte t\xE3o direto para isso quanto outras."
 title: Comparando duas datas
 weight: 27
 ---

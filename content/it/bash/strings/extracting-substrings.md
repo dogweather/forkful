@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:45:16.425975-07:00
-description: 'Come fare: Ecco alcuni esempi.'
-lastmod: '2024-04-05T21:53:44.351409-06:00'
+description: "Come fare: Estrarre sottostringhe \xE8 una pratica diffusa fin dagli\
+  \ albori della programmazione. In Bash, l'estrazione di sottostringhe \xE8 potente\
+  \ e piena di\u2026"
+lastmod: '2024-04-05T22:50:57.396929-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Estrarre sottostringhe \xE8 una pratica diffusa fin dagli albori della programmazione."
 title: Estrazione di sottostringhe
 weight: 6
 ---

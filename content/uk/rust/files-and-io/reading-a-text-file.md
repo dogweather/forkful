@@ -1,11 +1,12 @@
 ---
 date: 2024-01-20 17:55:09.110956-07:00
 description: "How to: (\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
-  \u0438:) Output."
-lastmod: '2024-04-05T21:53:49.181404-06:00'
+  \u0438:) Old days had it rough; reading files was low-level and cumbersome. Rust\
+  \ simplifies it, safely. Alternatives exist:\u2026"
+lastmod: '2024-04-05T22:51:02.088391-06:00'
 model: gpt-4-1106-preview
 summary: "(\u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\u0438:)\
-  \ Output."
+  \ Old days had it rough; reading files was low-level and cumbersome."
 title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0442\u0435\u043A\u0441\u0442\u043E\
   \u0432\u043E\u0433\u043E \u0444\u0430\u0439\u043B\u0443"
 weight: 22

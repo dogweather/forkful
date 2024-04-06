@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:39:05.509124-07:00
-description: 'Comment faire : Sortie .'
-lastmod: '2024-04-05T21:53:59.032048-06:00'
+description: "Comment faire : Historiquement, transformer des textes en minuscules\
+  \ est une pratique courante, surtout pour les recherches insensibles \xE0 la casse\
+  \ et le\u2026"
+lastmod: '2024-04-05T22:51:11.558937-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, transformer des textes en minuscules est une pratique courante,\
+  \ surtout pour les recherches insensibles \xE0 la casse et le tri de donn\xE9es\
+  \ textuelles."
 title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---

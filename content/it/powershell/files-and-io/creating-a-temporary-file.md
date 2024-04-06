@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:41:29.791737-07:00
-description: 'How to: (Come fare:) .'
-lastmod: '2024-04-05T21:53:44.422336-06:00'
+description: "How to: (Come fare:) I file temporanei sono utili da decenni perch\xE9\
+  \ offrono un modo sicuro per manipolare i dati senza impattare i file permanenti.\
+  \ In\u2026"
+lastmod: '2024-04-05T22:50:57.463727-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Come fare:) I file temporanei sono utili da decenni perch\xE9 offrono un\
+  \ modo sicuro per manipolare i dati senza impattare i file permanenti."
 title: Creazione di un file temporaneo
 weight: 21
 ---

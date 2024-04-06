@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:33:34.028017-07:00
-description: 'Hvordan: Sample output.'
-lastmod: '2024-04-05T21:53:41.905602-06:00'
+description: "Hvordan: Lua behandler datoer og tider gjennom `os` biblioteket, hvor\
+  \ `os.time()` funksjonen er sentral. Historisk har tidsregning og sammenligning\u2026"
+lastmod: '2024-04-05T22:50:54.945055-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Lua behandler datoer og tider gjennom `os` biblioteket, hvor `os.time()`
+  funksjonen er sentral.
 title: Sammenlikning av to datoer
 weight: 27
 ---

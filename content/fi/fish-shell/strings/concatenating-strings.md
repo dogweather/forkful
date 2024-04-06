@@ -1,9 +1,22 @@
 ---
 date: 2024-01-20 17:34:45.631617-07:00
-description: "How to: Kuinka tehd\xE4."
-lastmod: '2024-04-05T21:53:58.562366-06:00'
+description: "How to: Syv\xE4sukellus: Merkkijonojen yhdist\xE4minen on peruskonsepti,\
+  \ joka on ollut k\xE4yt\xF6ss\xE4 ohjelmoinnissa l\xE4hes sen alusta asti. Fish\
+  \ Shelliss\xE4\u2026"
+lastmod: '2024-04-05T22:51:11.129823-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Syv\xE4sukellus: Merkkijonojen yhdist\xE4minen on peruskonsepti, joka on\
+  \ ollut k\xE4yt\xF6ss\xE4 ohjelmoinnissa l\xE4hes sen alusta asti. Fish Shelliss\xE4\
+  \ yhdist\xE4minen on suoraviivaista: k\xE4yt\xE4t spacea erottamaan yhdistett\xE4\
+  v\xE4t osat. Toisin kuin joissakin muissa kuorissa tai ohjelmointikieliss\xE4, Fishiss\xE4\
+  \ ei tarvitse k\xE4ytt\xE4\xE4 erikoismerkkej\xE4 yhdist\xE4miseen, mik\xE4 tekee\
+  \ koodista selke\xE4\xE4 ja helppolukuista. Vaihtoehtoisia tapoja yhdist\xE4\xE4\
+  \ merkkijonoja ovat muun muassa `string` -komennon k\xE4ytt\xF6 tai kahdella merkkijonolla\
+  \ teht\xE4v\xE4 konkatenointi, esimerkiksi \"x\" . \"y\", joka on tyypillisemp\xE4\
+  \xE4 muissa kieliss\xE4. Se, ett\xE4 Fish k\xE4sittelee muuttujat ilman erityisi\xE4\
+  \ syntaksimerkkej\xE4 kuten dollareita muuttujien nimiss\xE4 komentojen ulkopuolella,\
+  \ tekee siit\xE4 ainutlaatuisen. T\xE4m\xE4 v\xE4hent\xE4\xE4 syntaksipohjaista\
+  \ h\xE4iri\xF6t\xE4 ja parantaa luettavuutta."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

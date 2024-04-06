@@ -1,9 +1,17 @@
 ---
 date: 2024-01-20 17:36:19.845274-07:00
-description: 'How to: - Kuinka: Esimerkkitulostus.'
-lastmod: '2024-04-05T22:38:57.618307-06:00'
+description: "How to: - Kuinka: Fish Shelliss\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen\
+  \ merkkijonoksi hy\xF6dynt\xE4\xE4 `date`-komentoa, joka on ollut Unix-j\xE4rjestelmiss\xE4\
+  \ vuosikymmeni\xE4.\u2026"
+lastmod: '2024-04-05T22:51:11.150600-06:00'
 model: gpt-4-1106-preview
-summary: '- Kuinka: Esimerkkitulostus.'
+summary: "- Kuinka: Fish Shelliss\xE4 p\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi\
+  \ hy\xF6dynt\xE4\xE4 `date`-komentoa, joka on ollut Unix-j\xE4rjestelmiss\xE4 vuosikymmeni\xE4\
+  . Vaihtoehtoina on k\xE4ytt\xE4\xE4 erilaisia p\xE4iv\xE4m\xE4\xE4r\xE4kirjastoja\
+  \ eri ohjelmointikielill\xE4. Fishiss\xE4 oleellista on yksinkertaisuus ja selkeys,\
+  \ siksi `date` on yleisin ty\xF6kalu. Muotom\xE4\xE4reet, kuten `%Y` vuodelle tai\
+  \ `%d` p\xE4iv\xE4lle, m\xE4\xE4ritt\xE4v\xE4t tulosteen muodon. Ne ovat standardoituja\
+  \ ja laajalti tuettuja."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

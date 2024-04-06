@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:28:36.793597-07:00
-description: "How to: (Kuinka tehd\xE4:) Sample output."
-lastmod: '2024-04-05T21:53:58.456979-06:00'
+description: "How to: (Kuinka tehd\xE4:) Maailmassa joukoittain tapoja k\xE4sitell\xE4\
+  \ aikaa, mutta C++20 toi standardikirjastoon `<chrono>` uudistuksia, helpottaen\
+  \ p\xE4iv\xE4m\xE4\xE4rien\u2026"
+lastmod: '2024-04-05T22:51:11.028383-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) Sample output."
+summary: "(Kuinka tehd\xE4:) Maailmassa joukoittain tapoja k\xE4sitell\xE4 aikaa,\
+  \ mutta C++20 toi standardikirjastoon `<chrono>` uudistuksia, helpottaen p\xE4iv\xE4\
+  m\xE4\xE4rien k\xE4sittely\xE4."
 title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

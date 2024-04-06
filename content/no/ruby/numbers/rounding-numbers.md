@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 03:46:37.321292-07:00
-description: "Hvordan: Eksempel p\xE5 utdata."
-lastmod: '2024-04-05T21:53:42.272050-06:00'
+description: "Hvordan: Avrunding av tall er ikke noe nytt\u2014mennesker har gjort\
+  \ det i \xE5rhundrer for \xE5 gj\xF8re beregninger enklere eller for \xE5 jobbe\
+  \ innenfor begrensningene\u2026"
+lastmod: '2024-04-05T22:50:55.326023-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Avrunding av tall er ikke noe nytt\u2014mennesker har gjort det i \xE5rhundrer\
+  \ for \xE5 gj\xF8re beregninger enklere eller for \xE5 jobbe innenfor begrensningene\
+  \ av deres verkt\xF8y."
 title: Avrunding av tall
 weight: 13
 ---

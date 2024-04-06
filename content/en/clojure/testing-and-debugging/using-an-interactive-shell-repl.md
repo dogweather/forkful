@@ -1,9 +1,12 @@
 ---
 date: 2024-01-25 03:39:48.374381-07:00
-description: 'How to: Start with launching REPL.'
-lastmod: '2024-03-13T22:44:59.747144-06:00'
+description: "How to: The REPL is key to the Lisp family's interactive development\
+  \ philosophy, and Clojure, a modern Lisp dialect, makes great use of this tool.\
+  \ It\u2026"
+lastmod: '2024-04-05T22:50:48.287709-06:00'
 model: gpt-4-1106-preview
-summary: Start with launching REPL.
+summary: The REPL is key to the Lisp family's interactive development philosophy,
+  and Clojure, a modern Lisp dialect, makes great use of this tool.
 title: Using an interactive shell (REPL)
 weight: 34
 ---

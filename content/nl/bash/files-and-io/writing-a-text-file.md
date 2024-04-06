@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:22.944482-07:00
-description: 'Hoe: Uitvoer voor `cat hallo.txt`.'
-lastmod: '2024-04-05T21:53:51.019797-06:00'
+description: "Hoe: Shell scripting is sinds de jaren 70 een kernonderdeel van Unix-achtige\
+  \ systemen, met de `sh` (Bourne shell) als de originele. Tegenwoordig is `bash`\u2026"
+lastmod: '2024-04-05T22:51:03.807900-06:00'
 model: gpt-4-0125-preview
-summary: Uitvoer voor `cat hallo.txt`.
+summary: Shell scripting is sinds de jaren 70 een kernonderdeel van Unix-achtige systemen,
+  met de `sh` (Bourne shell) als de originele.
 title: Een tekstbestand schrijven
 weight: 24
 ---

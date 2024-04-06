@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:34:16.164284-07:00
-description: 'How to: (Hvordan:) Sample output.'
-lastmod: '2024-04-05T21:53:41.522029-06:00'
+description: "How to: (Hvordan:) \xC5 sammenligne datoer i TypeScript kan gj\xF8res\
+  \ direkte fordi JavaScripts `Date`-objekter kan sammenlignes med vanlige operators\
+  \ som `<`\u2026"
+lastmod: '2024-04-05T22:50:54.553978-06:00'
 model: gpt-4-1106-preview
-summary: (Hvordan:) Sample output.
+summary: "(Hvordan:) \xC5 sammenligne datoer i TypeScript kan gj\xF8res direkte fordi\
+  \ JavaScripts `Date`-objekter kan sammenlignes med vanlige operators som `<` og\
+  \ `>`."
 title: Sammenlikning av to datoer
 weight: 27
 ---

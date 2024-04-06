@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:31:15.687933-07:00
-description: 'Anleitung: Beispiel-Ausgabe.'
-lastmod: '2024-04-05T21:53:55.659054-06:00'
+description: "Anleitung: Historisch gesehen wurde das Datum-Handling in Java mit `java.util.Date`\
+  \ und `java.util.Calendar` erledigt, was nicht ohne T\xFCcken war.\u2026"
+lastmod: '2024-04-05T22:51:08.344495-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historisch gesehen wurde das Datum-Handling in Java mit `java.util.Date`\
+  \ und `java.util.Calendar` erledigt, was nicht ohne T\xFCcken war."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

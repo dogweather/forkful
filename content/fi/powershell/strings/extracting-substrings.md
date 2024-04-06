@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:32.838555-07:00
-description: "How to: (Kuinka tehd\xE4:) Tulostus."
-lastmod: '2024-04-05T21:53:58.344452-06:00'
+description: "How to: (Kuinka tehd\xE4:) Substringien poiminnalla on pitk\xE4 historia\
+  \ ohjelmoinnissa; se on perusoperaatio, jota on k\xE4ytetty l\xE4hes kaikissa\u2026"
+lastmod: '2024-04-05T22:51:10.922062-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) Tulostus."
+summary: "(Kuinka tehd\xE4:) Substringien poiminnalla on pitk\xE4 historia ohjelmoinnissa;\
+  \ se on perusoperaatio, jota on k\xE4ytetty l\xE4hes kaikissa ohjelmointikieliss\xE4\
+  \ tiedon k\xE4sittelyyn."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

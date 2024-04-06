@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:55:16.685821-07:00
-description: "How to - Miten tehd\xE4\xE4n: Sample output."
-lastmod: '2024-04-05T21:53:58.686536-06:00'
+description: "How to - Miten tehd\xE4\xE4n: Tekstitiedoston lukeminen on perustoiminto,\
+  \ joka on ollut mukana ohjelmointikieliss\xE4 alusta asti. Historiallisesti se on\
+  \ t\xE4rke\xE4\xE4\u2026"
+lastmod: '2024-04-05T22:51:11.245371-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Tekstitiedoston lukeminen on perustoiminto, joka on ollut mukana ohjelmointikieliss\xE4\
+  \ alusta asti."
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

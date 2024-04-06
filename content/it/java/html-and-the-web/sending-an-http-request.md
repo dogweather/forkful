@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:00:00.371487-07:00
-description: 'How to: (Come fare:) Output.'
-lastmod: '2024-04-05T21:53:44.077331-06:00'
+description: "How to: (Come fare:) Il concetto di invio di richieste HTTP esiste da\
+  \ quando il protocollo HTTP \xE8 stato introdotto all'inizio degli anni '90. In\
+  \ Java,\u2026"
+lastmod: '2024-04-05T22:50:57.134970-06:00'
 model: gpt-4-1106-preview
-summary: (Come fare:) Output.
+summary: "(Come fare:) Il concetto di invio di richieste HTTP esiste da quando il\
+  \ protocollo HTTP \xE8 stato introdotto all'inizio degli anni '90."
 title: Inviare una richiesta http
 weight: 44
 ---

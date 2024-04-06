@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:01:22.396960-07:00
-description: 'Hoe te: Voorbeelduitvoer.'
-lastmod: '2024-04-05T21:53:50.802987-06:00'
+description: "Hoe te: Historisch gezien zijn datums een wirwar van problemen geweest\
+  \ voor ontwikkelaars. Tijdzones, schrikkeljaren, zomertijd; ze zijn lastig. Kotlin\u2026"
+lastmod: '2024-04-05T22:51:03.602824-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: Historisch gezien zijn datums een wirwar van problemen geweest voor ontwikkelaars.
 title: Het huidige datum ophalen
 weight: 29
 ---

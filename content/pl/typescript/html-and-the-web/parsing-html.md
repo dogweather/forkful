@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 15:34:39.122013-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:36.577816-06:00'
+description: "How to: (Jak to zrobi\u0107:) Parsing HTML nie zawsze by\u0142 tak prosty\
+  \ jak teraz. W przesz\u0142o\u015Bci u\u017Cywano skomplikowanych regularnych wyra\u017C\
+  e\u0144, kt\xF3re niezbyt dobrze\u2026"
+lastmod: '2024-04-05T22:50:49.440197-06:00'
 model: unknown
-summary: ''
+summary: "(Jak to zrobi\u0107:) Parsing HTML nie zawsze by\u0142 tak prosty jak teraz."
 title: Przetwarzanie HTML
 weight: 43
 ---

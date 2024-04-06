@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:02:44.643420-07:00
-description: 'Comment faire : Sortie attendue .'
-lastmod: '2024-04-05T21:53:59.044757-06:00'
+description: "Comment faire : Historiquement, l'authentification de base a \xE9t\xE9\
+  \ l'un des premiers m\xE9canismes pour s\xE9curiser les communications HTTP, mais\
+  \ elle n'est pas\u2026"
+lastmod: '2024-04-05T22:51:11.570847-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, l'authentification de base a \xE9t\xE9 l'un des premiers\
+  \ m\xE9canismes pour s\xE9curiser les communications HTTP, mais elle n'est pas aussi\
+  \ s\xFBre que des m\xE9thodes modernes comme OAuth."
 title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---

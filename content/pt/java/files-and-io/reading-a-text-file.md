@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:54:33.548968-07:00
-description: "Como Fazer: Sa\xEDda de exemplo."
-lastmod: '2024-04-05T21:53:46.813374-06:00'
+description: "Como Fazer: Antigamente, ler arquivos em Java era uma tarefa mais verbosa,\
+  \ pois exigia manipula\xE7\xE3o manual de `InputStreams`, `FileReaders` e\u2026"
+lastmod: '2024-04-05T22:50:59.734526-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Antigamente, ler arquivos em Java era uma tarefa mais verbosa, pois exigia\
+  \ manipula\xE7\xE3o manual de `InputStreams`, `FileReaders` e `BufferedReaders`."
 title: Lendo um arquivo de texto
 weight: 22
 ---

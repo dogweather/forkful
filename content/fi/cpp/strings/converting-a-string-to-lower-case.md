@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:37:55.368291-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-04-05T21:53:58.429864-06:00'
+description: "How to: (Kuinka tehd\xE4:) C++ ei ole tyypillisesti tarjonnut suoraviivaista\
+  \ tapaa muuttaa koko merkkijonoa pieneksi kirjaimiksi. Aiemmin ohjelmoijat tekiv\xE4\
+  t\u2026"
+lastmod: '2024-04-05T22:51:11.002246-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4:) C++ ei ole tyypillisesti tarjonnut suoraviivaista tapaa\
+  \ muuttaa koko merkkijonoa pieneksi kirjaimiksi."
 title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 15:14:01.855312-07:00
-description: "C\xF3mo hacerlo: Sample output."
-lastmod: '2024-04-05T21:54:00.345929-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, obtener la fecha en programaci\xF3\
+  n ha estado vinculado al sistema operativo del host. En Elm, se usa el m\xF3dulo\
+  \ `Time` para\u2026"
+lastmod: '2024-04-05T22:51:12.749003-06:00'
 model: unknown
-summary: ''
+summary: "Hist\xF3ricamente, obtener la fecha en programaci\xF3n ha estado vinculado\
+  \ al sistema operativo del host."
 title: Obteniendo la fecha actual
 weight: 29
 ---

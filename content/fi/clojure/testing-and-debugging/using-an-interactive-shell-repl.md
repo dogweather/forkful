@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 04:12:58.713902-07:00
-description: "Kuinka: Aloita k\xE4ynnist\xE4m\xE4ll\xE4 REPL."
-lastmod: '2024-03-13T22:44:56.186007-06:00'
+description: "Kuinka: REPL on ratkaisevan t\xE4rke\xE4 osa Lispien perheen interaktiivista\
+  \ kehitysfilosofiaa, ja Clojure, joka on moderni Lisp-dialekti, hy\xF6dynt\xE4\xE4\
+  \ t\xE4t\xE4\u2026"
+lastmod: '2024-04-05T22:51:10.344455-06:00'
 model: gpt-4-0125-preview
-summary: "Aloita k\xE4ynnist\xE4m\xE4ll\xE4 REPL."
+summary: "REPL on ratkaisevan t\xE4rke\xE4 osa Lispien perheen interaktiivista kehitysfilosofiaa,\
+  \ ja Clojure, joka on moderni Lisp-dialekti, hy\xF6dynt\xE4\xE4 t\xE4t\xE4 ty\xF6\
+  kalua suuresti."
 title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---

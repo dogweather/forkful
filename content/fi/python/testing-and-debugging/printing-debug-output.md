@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:08.184251-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-04-05T21:53:57.701858-06:00'
+description: "How to: (Kuinka tehd\xE4:) Historiallisesti tulostus oli yksi ensimm\xE4\
+  isist\xE4 debuggausmenetelmist\xE4. Se on nopea ja yksinkertainen tapa saada selville,\
+  \ mit\xE4\u2026"
+lastmod: '2024-04-05T22:51:10.306355-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4:) Historiallisesti tulostus oli yksi ensimm\xE4isist\xE4\
+  \ debuggausmenetelmist\xE4."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

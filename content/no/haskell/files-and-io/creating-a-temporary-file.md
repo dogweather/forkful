@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:40:24.344850-07:00
-description: "How to: Kj\xF8re eksempel."
-lastmod: '2024-04-05T21:53:41.831874-06:00'
+description: "How to: Midlertidige filer er ikke nytt. De har v\xE6rt brukt siden\
+  \ tidlige dagers databehandling for \xE5 h\xE5ndtere ekstra data uten \xE5 t\xE6\
+  re p\xE5 prim\xE6r lagring. I\u2026"
+lastmod: '2024-04-05T22:50:54.868420-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Midlertidige filer er ikke nytt.
 title: Opprette en midlertidig fil
 weight: 21
 ---

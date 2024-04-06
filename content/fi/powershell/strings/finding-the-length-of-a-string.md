@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:48:13.302475-07:00
-description: 'Miten toimitaan: Tuloste.'
-lastmod: '2024-04-05T21:53:58.346325-06:00'
+description: "Miten toimitaan: PowerShellissa merkkijonon pituuden selvitt\xE4minen\
+  \ on yksinkertaista k\xE4ytt\xE4en `.Length`-ominaisuutta, joka on ollut k\xE4yt\xF6\
+  ss\xE4\u2026"
+lastmod: '2024-04-05T22:51:10.924081-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "PowerShellissa merkkijonon pituuden selvitt\xE4minen on yksinkertaista k\xE4\
+  ytt\xE4en `.Length`-ominaisuutta, joka on ollut k\xE4yt\xF6ss\xE4 ohjelmointikieliss\xE4\
+  \ jo vuosikymmeni\xE4."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:31:22.955178-07:00
-description: 'So geht''s: Sample Output.'
-lastmod: '2024-04-05T21:53:55.911161-06:00'
+description: "So geht's: Historisch gesehen haben Menschen schon immer Daten vorausgesagt\
+  \ oder zur\xFCckgerechnet \u2013 von einfachen Tagerechnern bis zu komplexen\u2026"
+lastmod: '2024-04-05T22:51:08.579783-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historisch gesehen haben Menschen schon immer Daten vorausgesagt oder zur\xFC\
+  ckgerechnet \u2013 von einfachen Tagerechnern bis zu komplexen Kalendersystemen."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

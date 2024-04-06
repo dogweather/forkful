@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 15:30:39.019288-07:00
-description: "Comment faire : Sortie pr\xE9vue ."
-lastmod: '2024-04-05T21:53:58.860604-06:00'
+description: "Comment faire : Historiquement, l'analyse HTML \xE9tait ardue. La variabilit\xE9\
+  \ et la complexit\xE9 du HTML rendaient les parseurs classiques insuffisants.\u2026"
+lastmod: '2024-04-05T22:51:11.401149-06:00'
 model: unknown
-summary: ''
+summary: "Historiquement, l'analyse HTML \xE9tait ardue."
 title: Analyse syntaxique de HTML
 weight: 43
 ---

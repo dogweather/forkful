@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 21:56:28.212366-07:00
-description: 'Hoe: Voorbeelduitvoer.'
-lastmod: '2024-04-05T21:53:50.804927-06:00'
+description: "Hoe: Historisch gezien bood Java de klassen `Date` en `Calendar`, maar\
+  \ deze waren niet erg gebruiksvriendelijk. Kotlin gebruikt vergelijkbare klassen\u2026"
+lastmod: '2024-04-05T22:51:03.605051-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: Historisch gezien bood Java de klassen `Date` en `Calendar`, maar deze waren
+  niet erg gebruiksvriendelijk.
 title: Twee datums vergelijken
 weight: 27
 ---

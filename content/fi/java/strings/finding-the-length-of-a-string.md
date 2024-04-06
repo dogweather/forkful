@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:47:43.190090-07:00
-description: 'How to: Koodiesimerkit ja tulosteet.'
-lastmod: '2024-03-13T22:44:56.435617-06:00'
+description: "How to: Sukellus syvyyksiin: `String`-luokan `length()`-metodi on ollut\
+  \ osa Javaa sen alkuajoista l\xE4htien ja se on perusv\xE4line merkkijonojen pituuksien\u2026"
+lastmod: '2024-04-05T22:51:10.587317-06:00'
 model: gpt-4-1106-preview
-summary: Koodiesimerkit ja tulosteet.
+summary: Sukellus syvyyksiin.
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:53:55.205184-07:00
-description: "Hvordan gj\xF8r man det: Eksempelutdata."
-lastmod: '2024-04-05T21:53:41.439868-06:00'
+description: "Hvordan gj\xF8r man det: I Elixir gj\xF8res lesing av filer lett med\
+  \ innebygde moduler som `File`. Historisk sett har ulike spr\xE5k tilbudt forskjellige\
+  \ m\xE5ter \xE5\u2026"
+lastmod: '2024-04-05T22:50:54.471631-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "I Elixir gj\xF8res lesing av filer lett med innebygde moduler som `File`."
 title: Lese en tekstfil
 weight: 22
 ---

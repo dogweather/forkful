@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:40:15.925175-07:00
-description: "Hur g\xF6r man: Exempelutdata."
-lastmod: '2024-04-05T21:53:38.914805-06:00'
+description: "Hur g\xF6r man: I historisk kontext b\xF6rjade skapandet av tempor\xE4\
+  ra filer som en metod f\xF6r att hantera utrymmesbegr\xE4nsningar och s\xE4kerst\xE4\
+  lla integriteten hos\u2026"
+lastmod: '2024-04-05T22:50:51.872968-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "I historisk kontext b\xF6rjade skapandet av tempor\xE4ra filer som en metod\
+  \ f\xF6r att hantera utrymmesbegr\xE4nsningar och s\xE4kerst\xE4lla integriteten\
+  \ hos data under p\xE5g\xE5ende processer."
 title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---

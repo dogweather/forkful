@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:50:38.113165-07:00
-description: "How to: (Kuinka tehd\xE4\xE4n:) ."
-lastmod: '2024-04-05T21:53:57.727519-06:00'
+description: "How to: (Kuinka tehd\xE4\xE4n:) Clojure perustuu LISP:hen, joka on vanha\
+  \ ohjelmointikieli ilman sis\xE4\xE4nrakennettua string-interpolaatiota. String-interpolaatio\u2026"
+lastmod: '2024-04-05T22:51:10.329857-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4\xE4n:) Clojure perustuu LISP:hen, joka on vanha ohjelmointikieli\
+  \ ilman sis\xE4\xE4nrakennettua string-interpolaatiota."
 title: Merkkijonon interpolointi
 weight: 8
 ---

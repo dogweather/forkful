@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:00:46.339040-07:00
-description: "Hur man g\xF6r: Exempel p\xE5 svar."
-lastmod: '2024-04-05T21:53:39.420830-06:00'
+description: "Hur man g\xF6r: I b\xF6rjan av webben var Basic-auth ett enkelt s\xE4\
+  tt att skydda resurser. Information kodas i Base64 men \xE4r inte krypterad, vilket\
+  \ g\xF6r det\u2026"
+lastmod: '2024-04-05T22:50:52.387369-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "I b\xF6rjan av webben var Basic-auth ett enkelt s\xE4tt att skydda resurser."
 title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---

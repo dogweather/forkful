@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:34:16.884464-07:00
-description: "C\xF3mo: Salida de muestra."
-lastmod: '2024-04-05T21:54:00.662626-06:00'
+description: "C\xF3mo: XML, o lenguaje de marcado eXtensible, existe desde finales\
+  \ de los '90 y sigue siendo un formato ampliamente utilizado para datos estructurados.\u2026"
+lastmod: '2024-04-05T22:51:13.039504-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: XML, o lenguaje de marcado eXtensible, existe desde finales de los '90 y
+  sigue siendo un formato ampliamente utilizado para datos estructurados.
 title: Trabajando con XML
 weight: 40
 ---

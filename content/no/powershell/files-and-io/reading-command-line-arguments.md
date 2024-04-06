@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:56:27.305696-07:00
-description: "Hvordan: Kj\xF8r scriptet."
-lastmod: '2024-04-05T21:53:41.993768-06:00'
+description: "Hvordan: Kommandolinjeargumenter har v\xE6rt en standard for brukerinput\
+  \ siden tidlige dager av programmering. I PowerShell, spesifiseres de ved \xE5 bruke\u2026"
+lastmod: '2024-04-05T22:50:55.036844-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Kommandolinjeargumenter har v\xE6rt en standard for brukerinput siden tidlige\
+  \ dager av programmering."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

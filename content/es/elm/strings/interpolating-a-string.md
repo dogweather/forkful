@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 17:50:48.939595-07:00
-description: "C\xF3mo hacerlo: Salida."
-lastmod: '2024-04-05T21:54:00.319209-06:00'
+description: "C\xF3mo hacerlo: Hist\xF3ricamente, Elm se enfoca en ser un lenguaje\
+  \ simple y predecible. No incorpora interpolaci\xF3n de cadena directa como en JavaScript\u2026"
+lastmod: '2024-04-05T22:51:12.724496-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Hist\xF3ricamente, Elm se enfoca en ser un lenguaje simple y predecible."
 title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:07.595558-07:00
-description: "Hvordan gj\xF8re det: ."
-lastmod: '2024-04-05T21:53:41.522770-06:00'
+description: "Hvordan gj\xF8re det: Datoh\xE5ndtering i programmering har historie\
+  \ tilbake til begynnelsen av datatiden. Tidligere var det ofte avhengig av plattforms-\u2026"
+lastmod: '2024-04-05T22:50:54.555299-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Datoh\xE5ndtering i programmering har historie tilbake til begynnelsen av\
+  \ datatiden."
 title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---

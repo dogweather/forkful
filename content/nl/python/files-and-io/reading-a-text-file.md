@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:02.390705-07:00
-description: 'Hoe: Voorbeelduitvoer.'
-lastmod: '2024-04-05T21:53:50.419194-06:00'
+description: "Hoe: Het lezen van tekstbestanden is fundamenteel - en bestaat al sinds\
+  \ de vroege dagen van het programmeren. Python's eenvoudige `open` functie heeft\u2026"
+lastmod: '2024-04-05T22:51:03.244281-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: Het lezen van tekstbestanden is fundamenteel - en bestaat al sinds de vroege
+  dagen van het programmeren.
 title: Een tekstbestand lezen
 weight: 22
 ---

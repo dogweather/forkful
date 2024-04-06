@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:28.251142-07:00
-description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EA7u ra m\u1EABu."
-lastmod: '2024-04-05T21:53:38.268508-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Bash k\u1EBF th\u1EEBa kh\xE1i ni\u1EC7m 'm\xF4\
+  \ t\u1EA3 t\u1EADp tin' t\u1EEB Unix, v\u1EDBi `stdout` \u0111\u1EBFn fd `1` v\xE0\
+  \ `stderr` \u0111\u1EBFn fd `2`. \u0110i\u1EC1u h\u01B0\u1EDBng t\u1EDBi `&2` g\u1EED\
+  i \u0111\u1EA7u ra \u0111\u1EBFn `stderr`.\u2026"
+lastmod: '2024-04-05T22:50:51.216287-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Bash k\u1EBF th\u1EEBa kh\xE1i ni\u1EC7m 'm\xF4 t\u1EA3 t\u1EADp tin' t\u1EEB\
+  \ Unix, v\u1EDBi `stdout` \u0111\u1EBFn fd `1` v\xE0 `stderr` \u0111\u1EBFn fd `2`."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

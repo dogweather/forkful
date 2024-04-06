@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:31:55.303881-07:00
-description: "Hur g\xF6r man: Exempeloutput."
-lastmod: '2024-04-05T21:53:39.476783-06:00'
+description: "Hur g\xF6r man: Tidigare ans\xE5gs tidshantering i programmering som\
+  \ en komplex uppgift, speciellt \xF6ver olika tidszoner och skott\xE5r. PowerShell\
+  \ f\xF6renklar detta\u2026"
+lastmod: '2024-04-05T22:50:52.445070-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Tidigare ans\xE5gs tidshantering i programmering som en komplex uppgift,\
+  \ speciellt \xF6ver olika tidszoner och skott\xE5r."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---

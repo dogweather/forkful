@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:40:13.916001-07:00
-description: How to (Como fazer) Sample Output.
-lastmod: '2024-04-05T22:38:46.079594-06:00'
+description: "How to (Como fazer) Arquivos tempor\xE1rios t\xEAm sido uma parte fundamental\
+  \ das pr\xE1ticas de programa\xE7\xE3o h\xE1 d\xE9cadas. Originalmente, eles minimizavam\
+  \ o uso de\u2026"
+lastmod: '2024-04-05T22:51:00.142107-06:00'
 model: gpt-4-1106-preview
-summary: How to (Como fazer) Sample Output.
+summary: "Originalmente, eles minimizavam o uso de mem\xF3ria escassa nos primeiros\
+  \ computadores."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

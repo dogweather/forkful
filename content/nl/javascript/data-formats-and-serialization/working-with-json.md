@@ -2,10 +2,11 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:10:12.313184-07:00
-description: 'Hoe te: JSON parseren in JavaScript.'
-lastmod: '2024-03-13T22:44:51.224144-06:00'
+description: "Hoe te: JSON is afgeleid van JavaScript maar is nu een taalonafhankelijk\
+  \ formaat. Er bestaan veel alternatieven zoals XML, maar de minimale syntaxis van\u2026"
+lastmod: '2024-04-05T22:51:04.007151-06:00'
 model: gpt-4-0125-preview
-summary: JSON parseren in JavaScript.
+summary: JSON is afgeleid van JavaScript maar is nu een taalonafhankelijk formaat.
 title: Werken met JSON
 weight: 38
 ---

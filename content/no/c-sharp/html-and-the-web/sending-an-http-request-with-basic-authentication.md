@@ -1,9 +1,10 @@
 ---
 date: 2024-01-20 18:01:18.344600-07:00
-description: "How to (Slik gj\xF8r du det) ."
-lastmod: '2024-04-05T22:37:49.163929-06:00'
+description: "How to (Slik gj\xF8r du det) Autentisering med Basic Auth er en enkel\
+  \ og historisk tidlig metode for \xE5 sikre HTTP-foresp\xF8rsler, som legger til\u2026"
+lastmod: '2024-04-05T22:50:54.804668-06:00'
 model: gpt-4-1106-preview
-summary: "How to (Slik gj\xF8r du det) ."
+summary: Alternativer som OAuth er sikrere og mer komplekse.
 title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:45:27.032258-07:00
-description: 'So geht''s: Weitere Methoden.'
-lastmod: '2024-04-05T21:53:55.761689-06:00'
+description: "So geht's: Teilzeichenketten zu extrahieren ist keine neue Idee. Schon\
+  \ fr\xFChe Programmiersprachen boten \xE4hnliche Funktionen. Der `.Substring()`-Methode\
+  \ in\u2026"
+lastmod: '2024-04-05T22:51:08.439422-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Teilzeichenketten zu extrahieren ist keine neue Idee.
 title: Teilstrings extrahieren
 weight: 6
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:58:15.864864-07:00
-description: "How to: (\"Jak to zrobi\u0107:\") ."
-lastmod: '2024-04-05T21:53:36.702390-06:00'
+description: "How to: (\"Jak to zrobi\u0107:\") Zanim pojawi\u0142y si\u0119 wygodne\
+  \ biblioteki i funkcje, taki jak `replaceAll` w Javie, wyszukiwanie i zamiana tekstu\
+  \ wymaga\u0142y\u2026"
+lastmod: '2024-04-05T22:50:49.571946-06:00'
 model: gpt-4-1106-preview
-summary: "(\"Jak to zrobi\u0107:\") ."
+summary: "(\"Jak to zrobi\u0107:\") Zanim pojawi\u0142y si\u0119 wygodne biblioteki\
+  \ i funkcje, taki jak `replaceAll` w Javie, wyszukiwanie i zamiana tekstu wymaga\u0142\
+  y manualnej iteracji po znakach i por\xF3wnywania znalezionych ci\u0105g\xF3w."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

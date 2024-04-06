@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:31:35.109107-07:00
-description: 'Comment faire : Sortie exemple .'
-lastmod: '2024-04-05T21:53:59.377916-06:00'
+description: "Comment faire : Historiquement, PHP a utilis\xE9 la fonction `strtotime`\
+  \ pour manipuler les dates, mais depuis PHP 5.2.0, les classes `DateTime` et\u2026"
+lastmod: '2024-04-05T22:51:11.873503-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiquement, PHP a utilis\xE9 la fonction `strtotime` pour manipuler\
+  \ les dates, mais depuis PHP 5.2.0, les classes `DateTime` et `DateTimeImmutable`\
+  \ sont pr\xE9f\xE9r\xE9es pour leur meilleure gestion des fuseaux horaires et leur\
+  \ interface orient\xE9e objet."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:03:11.298366-07:00
-description: "Jak to zrobi\u0107: Sample output."
-lastmod: '2024-04-05T21:53:37.012929-06:00'
+description: "Jak to zrobi\u0107: Historia Bash zaczyna si\u0119 od systemu UNIX i\
+  \ jego pow\u0142oki `sh`. Bash, powsta\u0142y w ramach projektu GNU, by\u0142 odpowiedzi\u0105\
+  \ na potrzeb\u0119 wolnego\u2026"
+lastmod: '2024-04-05T22:50:49.910780-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historia Bash zaczyna si\u0119 od systemu UNIX i jego pow\u0142oki `sh`."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

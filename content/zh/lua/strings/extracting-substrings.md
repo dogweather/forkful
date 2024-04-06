@@ -1,9 +1,8 @@
 ---
 date: 2024-01-20 17:46:09.099427-07:00
-description: "How to \u5982\u4F55\u64CD\u4F5C\uFF1A \u63D0\u53D6\u5B50\u4E32\u529F\
-  \u80FD\u4ECELua\u2026"
+description: ''
 isCJKLanguage: true
-lastmod: '2024-04-05T22:38:47.056565-06:00'
+lastmod: '2024-04-05T22:51:01.107397-06:00'
 model: gpt-4-1106-preview
 summary: "How to \u5982\u4F55\u64CD\u4F5C\uFF1A \u63D0\u53D6\u5B50\u4E32\u529F\u80FD\
   \u4ECELua 1.0\u5C31\u5B58\u5728\u4E86\uFF0C\u4F7F\u7528`string.sub`\u51FD\u6570\u3002\

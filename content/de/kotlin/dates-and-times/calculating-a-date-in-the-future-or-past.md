@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:31:27.092630-07:00
-description: 'So geht''s: Sample Output.'
-lastmod: '2024-04-05T21:53:55.744077-06:00'
+description: "So geht's: In der Geschichte der Programmierung gab es immer wieder\
+  \ neue Herausforderungen bei der Datum- und Zeitverwaltung, da Dinge wie Zeitzonen\
+  \ und\u2026"
+lastmod: '2024-04-05T22:51:08.422889-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "In der Geschichte der Programmierung gab es immer wieder neue Herausforderungen\
+  \ bei der Datum- und Zeitverwaltung, da Dinge wie Zeitzonen und Schaltjahre beachtet\
+  \ werden m\xFCssen."
 title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---

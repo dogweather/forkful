@@ -1,9 +1,13 @@
 ---
 date: 2024-01-26 03:46:45.605535-07:00
-description: "C\xF3mo hacerlo: Salida de muestra."
-lastmod: '2024-04-05T21:54:00.943672-06:00'
+description: "C\xF3mo hacerlo: Redondear n\xFAmeros no es algo nuevo\u2014los humanos\
+  \ lo han estado haciendo por siglos para facilitar los c\xE1lculos o para trabajar\
+  \ dentro de los\u2026"
+lastmod: '2024-04-05T22:51:13.295081-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Redondear n\xFAmeros no es algo nuevo\u2014los humanos lo han estado haciendo\
+  \ por siglos para facilitar los c\xE1lculos o para trabajar dentro de los l\xED\
+  mites de sus herramientas."
 title: "Redondeo de n\xFAmeros"
 weight: 13
 ---

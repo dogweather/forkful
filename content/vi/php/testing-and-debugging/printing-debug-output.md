@@ -2,10 +2,14 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:05:00.301008-07:00
-description: "L\xE0m th\u1EBF n\xE0o: \u0110\u1EA7u ra M\u1EABu."
-lastmod: '2024-04-05T21:53:38.152469-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Th\xF4ng tin g\u1EE1 l\u1ED7i kh\xF4ng c\xF3\
+  \ nhi\u1EC1u thay \u0111\u1ED5i: n\xF3 \u0111\xE3 t\u1ED3n t\u1EA1i t\u1EEB nh\u1EEF\
+  ng ng\xE0y \u0111\u1EA7u khi c\xE1c l\u1EADp tr\xECnh vi\xEAn c\u1ED5 \u0111i\u1EC3\
+  n debug b\u1EB1ng l\u1EC7nh printf(). PHP \u0111\xE3\u2026"
+lastmod: '2024-04-05T22:50:51.096249-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Th\xF4ng tin g\u1EE1 l\u1ED7i kh\xF4ng c\xF3 nhi\u1EC1u thay \u0111\u1ED5\
+  i."
 title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---

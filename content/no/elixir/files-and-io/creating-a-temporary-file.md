@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:39:49.687813-07:00
-description: 'How to: Forventet resultat.'
-lastmod: '2024-04-05T21:53:41.441635-06:00'
+description: "How to: I Unix-lignende systemer, som for eksempel Linux og macOS, har\
+  \ midlertidige filer en lang historie for \xE5 hjelpe programmerere med \xE5 h\xE5\
+  ndtere\u2026"
+lastmod: '2024-04-05T22:50:54.473717-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "I Unix-lignende systemer, som for eksempel Linux og macOS, har midlertidige\
+  \ filer en lang historie for \xE5 hjelpe programmerere med \xE5 h\xE5ndtere mellomlagring."
 title: Opprette en midlertidig fil
 weight: 21
 ---

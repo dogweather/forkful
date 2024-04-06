@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:35:19.330805-07:00
-description: 'Como Fazer: Vejamos alguns exemplos.'
-lastmod: '2024-03-13T22:44:46.787278-06:00'
+description: "Como Fazer: A concatena\xE7\xE3o de strings \xE9 uma necessidade desde\
+  \ os prim\xF3rdios da computa\xE7\xE3o onde se queria gerar sa\xEDdas de texto compostas.\
+  \ No PowerShell,\u2026"
+lastmod: '2024-04-05T22:51:00.032088-06:00'
 model: gpt-4-1106-preview
-summary: Vejamos alguns exemplos.
+summary: "A concatena\xE7\xE3o de strings \xE9 uma necessidade desde os prim\xF3rdios\
+  \ da computa\xE7\xE3o onde se queria gerar sa\xEDdas de texto compostas."
 title: Concatenando strings
 weight: 3
 ---

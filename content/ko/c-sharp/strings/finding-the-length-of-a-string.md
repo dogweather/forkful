@@ -1,10 +1,16 @@
 ---
 date: 2024-01-20 17:47:02.942464-07:00
-description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) ."
+description: "How to: (\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) `Length` \uC18D\uC131\
+  \uC740 .NET Framework \uCD08\uAE30\uBD80\uD130 \uC788\uC5C8\uC2B5\uB2C8\uB2E4. \uBB38\
+  \uC790\uC758 \uC218\uB97C \uBC18\uD658\uD558\uB294 \uAC83\uC774\uC9C0\uB9CC, UTF-16\
+  \ \uC778\uCF54\uB529 \uB54C\uBB38\uC5D0 \uC774\uBAA8\uD2F0\uCF58\uC774\uB098 \uD2B9\
+  \uBCC4\uD55C \uBB38\uC790\uB294 \uB354 \uB9CE\uC740 \uAE38\uC774\uB97C \uAC00\uC9C8\
+  \ \uC218 \uC788\uC2B5\uB2C8\uB2E4. `StringInfo` \uD074\uB798\uC2A4\uB098\u2026"
 isCJKLanguage: true
-lastmod: '2024-04-05T21:53:56.951275-06:00'
+lastmod: '2024-04-05T22:51:09.562941-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(\uC5B4\uB5BB\uAC8C \uD558\uB098\uC694?) `Length` \uC18D\uC131\uC740 .NET\
+  \ Framework \uCD08\uAE30\uBD80\uD130 \uC788\uC5C8\uC2B5\uB2C8\uB2E4."
 title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 weight: 7
 ---

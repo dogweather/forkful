@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:44:21.158380-07:00
-description: 'Comment faire : Sortie exemple .'
-lastmod: '2024-04-05T21:53:59.227157-06:00'
+description: "Comment faire : \xC0 l'origine, t\xE9l\xE9charger une page web \xE9\
+  tait une t\xE2che de navigateur web, mais l'automatisation a rendu cette pratique\
+  \ courante en\u2026"
+lastmod: '2024-04-05T22:51:11.739550-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\xC0 l'origine, t\xE9l\xE9charger une page web \xE9tait une t\xE2che de\
+  \ navigateur web, mais l'automatisation a rendu cette pratique courante en programmation."
 title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---

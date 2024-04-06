@@ -1,9 +1,16 @@
 ---
 date: 2024-01-20 17:34:01.682983-07:00
-description: 'How to: (Comment faire : ) .'
-lastmod: '2024-04-05T22:38:58.066099-06:00'
+description: "How to: (Comment faire : ) Historiquement, comparer des dates en JavaScript\
+  \ (et par extension TypeScript) pouvait \xEAtre d\xE9licat \xE0 cause des diff\xE9\
+  rentes\u2026"
+lastmod: '2024-04-05T22:51:11.541062-06:00'
 model: gpt-4-1106-preview
-summary: '(Comment faire : ) .'
+summary: "(Comment faire : ) Historiquement, comparer des dates en JavaScript (et\
+  \ par extension TypeScript) pouvait \xEAtre d\xE9licat \xE0 cause des diff\xE9rentes\
+  \ zones horaires et formats. TypeScript, c'est juste JS avec des types, donc les\
+  \ m\xEAmes m\xE9thodes s'appliquent. Alternative: biblioth\xE8ques comme `moment.js`\
+  \ ou `date-fns` pour plus de contr\xF4le. D\xE9tail: TypeScript n'ajoute pas de\
+  \ magie pour les dates, c'est du JavaScript sous les types."
 title: Comparer deux dates
 weight: 27
 ---

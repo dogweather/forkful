@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:32:30.144854-07:00
-description: 'Wie geht das: So parsen Sie XML.'
-lastmod: '2024-04-05T21:53:56.179552-06:00'
+description: "Wie geht das: XML steht f\xFCr eXtensible Markup Language, ein Datenformat,\
+  \ das es seit den sp\xE4ten 90er Jahren gibt. Es definiert einen Satz von Regeln\
+  \ zur\u2026"
+lastmod: '2024-04-05T22:51:08.827368-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "XML steht f\xFCr eXtensible Markup Language, ein Datenformat, das es seit\
+  \ den sp\xE4ten 90er Jahren gibt."
 title: Arbeiten mit XML
 weight: 40
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:38:28.519667-07:00
-description: "C\xF3mo Hacerlo: Salida de muestra."
-lastmod: '2024-04-05T21:54:00.276594-06:00'
+description: "C\xF3mo Hacerlo: El m\xE9todo `toLowerCase()` en Java tiene sus ra\xED\
+  ces en el principio de la inform\xE1tica donde normalizar los datos para procesamiento\
+  \ era y\u2026"
+lastmod: '2024-04-05T22:51:12.686432-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "El m\xE9todo `toLowerCase()` en Java tiene sus ra\xEDces en el principio\
+  \ de la inform\xE1tica donde normalizar los datos para procesamiento era y sigue\
+  \ siendo esencial."
 title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:44:57.086864-07:00
-description: 'How to: (Anleitung:) Sample Output.'
-lastmod: '2024-04-05T21:53:55.855906-06:00'
+description: "How to: (Anleitung:) Historisch gesehen haben sich viele PHP-Versionen\
+  \ an der Art und Weise orientiert, wie das Web verstanden und bearbeitet wurde.\
+  \ Die\u2026"
+lastmod: '2024-04-05T22:51:08.526647-06:00'
 model: gpt-4-1106-preview
-summary: (Anleitung:) Sample Output.
+summary: (Anleitung:) Historisch gesehen haben sich viele PHP-Versionen an der Art
+  und Weise orientiert, wie das Web verstanden und bearbeitet wurde.
 title: Webseite herunterladen
 weight: 42
 ---

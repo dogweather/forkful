@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:41:48.198353-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:37.123011-06:00'
+description: "How to: (Jak to zrobi\u0107:) Usuwanie pasuj\u0105cych znak\xF3w jest\
+  \ tak stare jak same wyra\u017Cenia regularne, kt\xF3re pojawi\u0142y si\u0119 w\
+  \ latach 50. XX wieku. S\u0105 r\xF3\u017Cne\u2026"
+lastmod: '2024-04-05T22:50:50.030780-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Usuwanie pasuj\u0105cych znak\xF3w jest tak stare\
+  \ jak same wyra\u017Cenia regularne, kt\xF3re pojawi\u0142y si\u0119 w latach 50."
 title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---

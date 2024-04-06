@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:34:39.097866-07:00
-description: "Jak to zrobi\u0107: Przyk\u0142adowe wyj\u015Bcie."
-lastmod: '2024-04-05T21:53:37.079556-06:00'
+description: "Jak to zrobi\u0107: XML, czyli eXtensible Markup Language, istnieje\
+  \ od ko\u0144ca lat '90 i pozostaje szeroko u\u017Cywanym formatem dla strukturyzowanych\
+  \ danych.\u2026"
+lastmod: '2024-04-05T22:50:49.984161-06:00'
 model: gpt-4-0125-preview
-summary: "Przyk\u0142adowe wyj\u015Bcie."
+summary: "XML, czyli eXtensible Markup Language, istnieje od ko\u0144ca lat '90 i\
+  \ pozostaje szeroko u\u017Cywanym formatem dla strukturyzowanych danych."
 title: Praca z XML
 weight: 40
 ---

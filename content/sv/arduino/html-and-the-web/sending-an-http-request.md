@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:59:04.638473-07:00
-description: "Hur man g\xF6r: Sample Output."
-lastmod: '2024-04-05T21:53:39.501746-06:00'
+description: "Hur man g\xF6r: HTTP-beg\xE4ran kan sp\xE5ra sina r\xF6tter till 1990-talets\
+  \ webbutveckling. Alternativ till ESP8266 f\xF6r Arduino inkluderar Ethernet Shield\
+  \ och andra\u2026"
+lastmod: '2024-04-05T22:50:52.472846-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "HTTP-beg\xE4ran kan sp\xE5ra sina r\xF6tter till 1990-talets webbutveckling."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

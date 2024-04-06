@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:43.386486-07:00
-description: 'Comment faire : Sortie attendue .'
-lastmod: '2024-04-05T21:53:59.455800-06:00'
+description: "Comment faire : Autrefois, les projets \xE9taient souvent partag\xE9\
+  s sous forme de patches et de diffs via des emails ou des forums. Maintenant, Git\
+  \ et les\u2026"
+lastmod: '2024-04-05T22:51:11.942892-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Autrefois, les projets \xE9taient souvent partag\xE9s sous forme de patches\
+  \ et de diffs via des emails ou des forums."
 title: Lancement d'un nouveau projet
 weight: 1
 ---

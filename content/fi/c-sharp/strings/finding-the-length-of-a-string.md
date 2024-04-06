@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:47:14.015019-07:00
-description: "How to: (Kuinka tehd\xE4\xE4n:) ."
-lastmod: '2024-04-05T21:53:58.131699-06:00'
+description: "How to: (Kuinka tehd\xE4\xE4n:) Ennen .NET Frameworkia, C-kieliset funktiot,\
+  \ kuten `strlen`, olivat yleisi\xE4 merkkijonojen pituuksien m\xE4\xE4ritt\xE4miseen.\
+  \ C#:ssa\u2026"
+lastmod: '2024-04-05T22:51:10.721051-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4\xE4n:) Ennen .NET Frameworkia, C-kieliset funktiot, kuten\
+  \ `strlen`, olivat yleisi\xE4 merkkijonojen pituuksien m\xE4\xE4ritt\xE4miseen."
 title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---

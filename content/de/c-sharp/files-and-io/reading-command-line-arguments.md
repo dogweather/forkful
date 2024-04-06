@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:55:26.544284-07:00
-description: "Los geht's: Ausf\xFChrungsbeispiel."
-lastmod: '2024-04-05T21:53:55.787272-06:00'
+description: "Los geht's: Die Verarbeitung von Kommandozeilenargumenten stammt aus\
+  \ den Tagen der Text-basierten Benutzerschnittstellen und ist heute noch relevant\
+  \ f\xFCr\u2026"
+lastmod: '2024-04-05T22:51:08.462806-06:00'
 model: gpt-4-1106-preview
-summary: "Ausf\xFChrungsbeispiel."
+summary: "Die Verarbeitung von Kommandozeilenargumenten stammt aus den Tagen der Text-basierten\
+  \ Benutzerschnittstellen und ist heute noch relevant f\xFCr Skripte oder Konsolenanwendungen."
 title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---

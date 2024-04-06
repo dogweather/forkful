@@ -1,10 +1,13 @@
 ---
 date: 2024-01-20 18:00:37.393100-07:00
-description: "How to: \u042F\u043A \u0446\u0435 \u0437\u0440\u043E\u0431\u0438\u0442\
-  \u0438."
-lastmod: '2024-04-05T21:53:49.151399-06:00'
+description: "How to: \u041F\u043E\u0433\u043B\u0438\u0431\u043B\u0435\u043D\u0438\
+  \u0439 \u0440\u043E\u0437\u0433\u043B\u044F\u0434: HTTP requests have been fundamental\
+  \ to web communication since Tim Berners-Lee's first browser. Alternatives like\
+  \ gRPC are\u2026"
+lastmod: '2024-04-05T22:51:02.059463-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "\u041F\u043E\u0433\u043B\u0438\u0431\u043B\u0435\u043D\u0438\u0439 \u0440\
+  \u043E\u0437\u0433\u043B\u044F\u0434."
 title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437\u0430\
   \u043F\u0438\u0442\u0443"
 weight: 44

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:54:21.089500-07:00
-description: "N\xE4in se tehd\xE4\xE4n: Esimerkkitulostus."
-lastmod: '2024-04-05T21:53:58.028396-06:00'
+description: "N\xE4in se tehd\xE4\xE4n: Ennen Java 11 -versiota `Files.readString`\
+  \ ei ollut olemassa. Koodarit k\xE4yttiv\xE4t `BufferedReader`- tai `Scanner`-luokkia\
+  \ lukemiseen. Java\u2026"
+lastmod: '2024-04-05T22:51:10.623659-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Ennen Java 11 -versiota `Files.readString` ei ollut olemassa.
 title: Tekstitiedoston lukeminen
 weight: 22
 ---

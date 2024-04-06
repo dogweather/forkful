@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:08.930809-07:00
-description: 'Como Fazer: Sample Output.'
-lastmod: '2024-04-05T21:53:46.670360-06:00'
+description: "Como Fazer: Datas s\xE3o cruciais para quase todos os sistemas. A capacidade\
+  \ de manipular o tempo \xE9 herdada das linguagens C e C++, que influenciaram muito\
+  \ o\u2026"
+lastmod: '2024-04-05T22:50:59.599433-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Datas s\xE3o cruciais para quase todos os sistemas."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

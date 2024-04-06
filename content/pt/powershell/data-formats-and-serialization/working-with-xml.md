@@ -1,9 +1,11 @@
 ---
 date: 2024-01-26 04:34:19.691946-07:00
-description: "Como fazer: Sa\xEDda de exemplo."
-lastmod: '2024-04-05T21:53:47.169542-06:00'
+description: "Como fazer: O XML, ou Linguagem de Marca\xE7\xE3o Extens\xEDvel, existe\
+  \ desde o final dos anos 90 e continua sendo um formato amplamente usado para dados\u2026"
+lastmod: '2024-04-05T22:51:00.065350-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "O XML, ou Linguagem de Marca\xE7\xE3o Extens\xEDvel, existe desde o final\
+  \ dos anos 90 e continua sendo um formato amplamente usado para dados estruturados."
 title: Trabalhando com XML
 weight: 40
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:35:06.629855-07:00
-description: 'How to: (Hvordan:) .'
-lastmod: '2024-04-05T21:53:42.135814-06:00'
+description: "How to: (Hvordan:) F\xF8r i tiden, da JavaScript var ungt, var pluss-operatoren\
+  \ (+) det vanligste verkt\xF8yet for \xE5 sammenflette strenger. I ES5 (ECMAScript\u2026"
+lastmod: '2024-04-05T22:50:55.183244-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Hvordan:) F\xF8r i tiden, da JavaScript var ungt, var pluss-operatoren\
+  \ (+) det vanligste verkt\xF8yet for \xE5 sammenflette strenger."
 title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---

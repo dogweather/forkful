@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:00:30.085656-07:00
-description: "Hur man g\xF6r: Sample utdata."
-lastmod: '2024-04-05T21:53:39.459638-06:00'
+description: "Hur man g\xF6r: F\xF6rr anv\xE4nde vi ofta `Invoke-WebRequest` f\xF6\
+  r HTTP-interaktioner, men `Invoke-RestMethod` f\xF6renklar JSON-hantering och deserialisering.\u2026"
+lastmod: '2024-04-05T22:50:52.428405-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "F\xF6rr anv\xE4nde vi ofta `Invoke-WebRequest` f\xF6r HTTP-interaktioner,\
+  \ men `Invoke-RestMethod` f\xF6renklar JSON-hantering och deserialisering."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:13:48.660130-07:00
-description: "C\xE1ch th\u1EF1c hi\u1EC7n: M\u1EABu \u0111\u1EA7u ra."
-lastmod: '2024-04-05T21:53:38.320498-06:00'
+description: "C\xE1ch th\u1EF1c hi\u1EC7n: Theo truy\u1EC1n th\u1ED1ng, vi\u1EC7c\
+  \ t\xE1ch bi\u1EC7t stdout v\xE0 stderr c\xF3 g\u1ED1c Unix, cho ph\xE9p ng\u01B0\
+  \u1EDDi d\xF9ng \u0111i\u1EC1u h\u01B0\u1EDBng \u0111\u1EA7u ra ri\xEAng bi\u1EC7\
+  t. PowerShell, k\u1EBF th\u1EEBa kh\xE1i\u2026"
+lastmod: '2024-04-05T22:50:51.269342-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Theo truy\u1EC1n th\u1ED1ng, vi\u1EC7c t\xE1ch bi\u1EC7t stdout v\xE0 stderr\
+  \ c\xF3 g\u1ED1c Unix, cho ph\xE9p ng\u01B0\u1EDDi d\xF9ng \u0111i\u1EC1u h\u01B0\
+  \u1EDBng \u0111\u1EA7u ra ri\xEAng bi\u1EC7t."
 title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---

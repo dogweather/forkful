@@ -2,10 +2,15 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:12:20.770940-07:00
-description: "L\xE0m th\u1EBF n\xE0o: K\u1EBFt qu\u1EA3 m\u1EABu."
-lastmod: '2024-04-05T21:53:38.344445-06:00'
+description: "L\xE0m th\u1EBF n\xE0o: Ban \u0111\u1EA7u, s\u1ED1 ph\u1EE9c g\u1EB7\
+  p ph\u1EA3i s\u1EF1 ho\xE0i nghi, nh\u01B0ng ch\xFAng \u0111\xE3 tr\u1EDF th\xE0\
+  nh trung t\xE2m trong nhi\u1EC1u l\u0129nh v\u1EF1c khoa h\u1ECDc. L\u1ECBch s\u1EED\
+  , ch\xFAng \u0111\u01B0\u1EE3c c\xF4ng nh\u1EADn v\xEC\u2026"
+lastmod: '2024-04-05T22:50:51.294684-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: "Ban \u0111\u1EA7u, s\u1ED1 ph\u1EE9c g\u1EB7p ph\u1EA3i s\u1EF1 ho\xE0i\
+  \ nghi, nh\u01B0ng ch\xFAng \u0111\xE3 tr\u1EDF th\xE0nh trung t\xE2m trong nhi\u1EC1\
+  u l\u0129nh v\u1EF1c khoa h\u1ECDc."
 title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:04:35.245193-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:36.885767-06:00'
+description: "How to: (Jak to zrobi\u0107:) Haskell, jako j\u0119zyk funkcyjny, posiada\
+  \ wieloletni\u0105 histori\u0119 z r\xF3\u017Cnymi systemami zarz\u0105dzania projektami,\
+  \ gdzie g\u0142\xF3wn\u0105 rol\u0119 pe\u0142ni\u2026"
+lastmod: '2024-04-05T22:50:49.775728-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Haskell, jako j\u0119zyk funkcyjny, posiada wieloletni\u0105\
+  \ histori\u0119 z r\xF3\u017Cnymi systemami zarz\u0105dzania projektami, gdzie g\u0142\
+  \xF3wn\u0105 rol\u0119 pe\u0142ni obecnie Stack."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

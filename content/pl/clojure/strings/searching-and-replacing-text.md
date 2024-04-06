@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:57:29.505163-07:00
-description: "How to: (Jak to zrobi\u0107:) ."
-lastmod: '2024-04-05T21:53:36.426154-06:00'
+description: "How to: (Jak to zrobi\u0107:) Wyszukiwanie i zamiana tekstu w Clojure\
+  \ dzia\u0142a zgodnie z mechanizmami wykorzystuj\u0105cymi wyra\u017Cenia regularne\
+  \ z Javy. Pojawi\u0142o si\u0119\u2026"
+lastmod: '2024-04-05T22:50:49.287507-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Jak to zrobi\u0107:) Wyszukiwanie i zamiana tekstu w Clojure dzia\u0142\
+  a zgodnie z mechanizmami wykorzystuj\u0105cymi wyra\u017Cenia regularne z Javy."
 title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---

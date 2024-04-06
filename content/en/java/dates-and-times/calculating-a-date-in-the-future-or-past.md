@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:31:05.472226-07:00
-description: 'How to: Output could look like this.'
-lastmod: '2024-04-05T21:53:35.680901-06:00'
+description: "How to: Before Java 8, manipulating dates was a pain. Old classes like\
+  \ `java.util.Date` and `java.util.Calendar` were bug-prone and not user-friendly.\
+  \ The\u2026"
+lastmod: '2024-04-05T22:50:48.538457-06:00'
 model: gpt-4-1106-preview
-summary: Output could look like this.
+summary: Before Java 8, manipulating dates was a pain.
 title: Calculating a date in the future or past
 weight: 26
 ---

@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:46:41.547380-07:00
-description: "How to: (Kuinka tehd\xE4\xE4n:) ."
-lastmod: '2024-04-05T21:53:58.657848-06:00'
+description: "How to: (Kuinka tehd\xE4\xE4n:) Substringien poiminta Rubyss\xE4 on\
+  \ helppoa ja joustavaa, ja se on ollut kielen ominaisuus jo ensiversioista l\xE4\
+  htien.\u2026"
+lastmod: '2024-04-05T22:51:11.216937-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4\xE4n:) Substringien poiminta Rubyss\xE4 on helppoa ja joustavaa,\
+  \ ja se on ollut kielen ominaisuus jo ensiversioista l\xE4htien."
 title: Merkkijonojen osien poimiminen
 weight: 6
 ---

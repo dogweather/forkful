@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:37:16.432071-07:00
-description: 'So geht''s: Sample Output.'
-lastmod: '2024-04-05T21:53:55.997222-06:00'
+description: "So geht's: Urspr\xFCnglich hatten Computer M\xFChe mit der Interpretation\
+  \ von Daten und Zeiten, da diese menschliche Konstrukte sind. Um eine universelle\u2026"
+lastmod: '2024-04-05T22:51:08.658532-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Urspr\xFCnglich hatten Computer M\xFChe mit der Interpretation von Daten\
+  \ und Zeiten, da diese menschliche Konstrukte sind."
 title: Datum in einen String umwandeln
 weight: 28
 ---

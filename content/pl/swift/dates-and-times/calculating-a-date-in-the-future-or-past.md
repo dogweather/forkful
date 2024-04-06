@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:32:22.584825-07:00
-description: "Jak to zrobi\u0107: Przyk\u0142adowe wyj\u015Bcie."
-lastmod: '2024-04-05T21:53:37.194648-06:00'
+description: "Jak to zrobi\u0107: Kalkulacje dat to znana praktyka od gdy kalendarze\
+  \ sta\u0142y si\u0119 narz\u0119dziami u\u017Cywanymi na co dzie\u0144. W informatyce\
+  \ obliczenia czasu s\u0105 kluczowe\u2026"
+lastmod: '2024-04-05T22:50:50.106768-06:00'
 model: gpt-4-1106-preview
-summary: "Przyk\u0142adowe wyj\u015Bcie."
+summary: "Kalkulacje dat to znana praktyka od gdy kalendarze sta\u0142y si\u0119 narz\u0119\
+  dziami u\u017Cywanymi na co dzie\u0144."
 title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---

@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:00:33.683038-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-04-05T21:53:57.696011-06:00'
+description: "How to: (Kuinka tehd\xE4:) HTTP-pyynn\xF6t ovat perusta web-kommunikaatiolle,\
+  \ ja ne ovat olleet siit\xE4 l\xE4htien, kun Tim Berners-Lee kehitti ensimm\xE4\
+  isen HTTP-\u2026"
+lastmod: '2024-04-05T22:51:10.300842-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4:) HTTP-pyynn\xF6t ovat perusta web-kommunikaatiolle, ja\
+  \ ne ovat olleet siit\xE4 l\xE4htien, kun Tim Berners-Lee kehitti ensimm\xE4isen\
+  \ HTTP-version vuonna 1989."
 title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---

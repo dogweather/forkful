@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:53:42.441048-07:00
-description: "C\xF3mo hacerlo: Salida de muestra."
-lastmod: '2024-04-05T21:54:00.952147-06:00'
+description: "C\xF3mo hacerlo: Imprimir para depurar es un antiguo truco de programaci\xF3\
+  n, previo incluso a entornos de desarrollo sofisticados con herramientas de\u2026"
+lastmod: '2024-04-05T22:51:13.303265-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Imprimir para depurar es un antiguo truco de programaci\xF3n, previo incluso\
+  \ a entornos de desarrollo sofisticados con herramientas de depuraci\xF3n."
 title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---

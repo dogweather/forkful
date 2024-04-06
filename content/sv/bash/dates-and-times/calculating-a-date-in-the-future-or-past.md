@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:28:29.724641-07:00
-description: "Hur g\xF6r man: Exempelutdata."
-lastmod: '2024-04-05T21:53:39.433794-06:00'
+description: "Hur g\xF6r man: Tillbaka p\xE5 70-talet kunde man bara dr\xF6mma om\
+  \ enkla kommandon f\xF6r att manipulera datum. Unix `date` kommandot lades till\
+  \ p\xE5 tidigt 80-tal och\u2026"
+lastmod: '2024-04-05T22:50:52.400379-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Tillbaka p\xE5 70-talet kunde man bara dr\xF6mma om enkla kommandon f\xF6\
+  r att manipulera datum."
 title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
 weight: 26
 ---

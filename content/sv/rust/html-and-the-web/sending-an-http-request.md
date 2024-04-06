@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 18:00:53.738891-07:00
-description: "Hur g\xF6r man: Exempel p\xE5 output."
-lastmod: '2024-04-05T21:53:39.023268-06:00'
+description: "Hur g\xF6r man: Historiskt sett har HTTP-f\xF6rfr\xE5gningar varit sj\xE4\
+  lva grunden f\xF6r webben, m\xF6jligg\xF6rande kommunikation mellan klienter och\
+  \ servrar sedan tidigt\u2026"
+lastmod: '2024-04-05T22:50:51.984010-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historiskt sett har HTTP-f\xF6rfr\xE5gningar varit sj\xE4lva grunden f\xF6\
+  r webben, m\xF6jligg\xF6rande kommunikation mellan klienter och servrar sedan tidigt\
+  \ 90-tal."
 title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---

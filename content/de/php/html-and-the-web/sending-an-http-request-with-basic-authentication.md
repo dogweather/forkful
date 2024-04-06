@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:02:26.257898-07:00
-description: 'So geht''s: Beispiel-Ausgabe.'
-lastmod: '2024-04-05T21:53:55.856697-06:00'
+description: "So geht's: Die Basisauthentifizierung ist ein altbew\xE4hrtes Verfahren\
+  \ aus den Anfangstagen des Internets und geh\xF6rt zum HTTP-Standard. Es gibt sicherere\u2026"
+lastmod: '2024-04-05T22:51:08.527765-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Die Basisauthentifizierung ist ein altbew\xE4hrtes Verfahren aus den Anfangstagen\
+  \ des Internets und geh\xF6rt zum HTTP-Standard."
 title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---

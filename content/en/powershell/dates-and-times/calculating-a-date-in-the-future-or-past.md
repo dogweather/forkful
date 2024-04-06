@@ -1,7 +1,7 @@
 ---
 date: 2024-01-20 17:31:44.335842-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:35.993774-06:00'
+description: ''
+lastmod: '2024-04-05T22:50:48.850778-06:00'
 model: gpt-4-1106-preview
 summary: ''
 title: Calculating a date in the future or past

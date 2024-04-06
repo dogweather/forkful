@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:02:19.055460-07:00
-description: "How to: (Jak to zrobi\u0107:) Sample output."
-lastmod: '2024-04-05T21:53:36.968763-06:00'
+description: "How to: (Jak to zrobi\u0107:) Wysy\u0142anie \u017C\u0105dania HTTP\
+  \ z uwierzytelnianiem podstawowym nie jest nowo\u015Bci\u0105. Wczesne przegl\u0105\
+  darki internetowe ju\u017C to obs\u0142ugiwa\u0142y.\u2026"
+lastmod: '2024-04-05T22:50:49.862546-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107:) Sample output."
+summary: "(Jak to zrobi\u0107:) Wysy\u0142anie \u017C\u0105dania HTTP z uwierzytelnianiem\
+  \ podstawowym nie jest nowo\u015Bci\u0105."
 title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---

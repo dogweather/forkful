@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:53:24.527406-07:00
-description: "Jak to zrobi\u0107: Wynik."
-lastmod: '2024-04-05T21:53:36.623588-06:00'
+description: "Jak to zrobi\u0107: Debugowanie wywodzi si\u0119 z czas\xF3w wcze\u015B\
+  niejszych komputeryzacji, gdy \"debugowanie\" dos\u0142ownie oznacza\u0142o usuwanie\
+  \ owad\xF3w z maszyn. W Rust,\u2026"
+lastmod: '2024-04-05T22:50:49.491900-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Debugowanie wywodzi si\u0119 z czas\xF3w wcze\u015Bniejszych komputeryzacji,\
+  \ gdy \"debugowanie\" dos\u0142ownie oznacza\u0142o usuwanie owad\xF3w z maszyn."
 title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---

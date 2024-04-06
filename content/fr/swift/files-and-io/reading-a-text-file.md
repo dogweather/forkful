@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:55:17.497244-07:00
-description: "Comment faire : Sortie \xE9chantillon ."
-lastmod: '2024-04-05T21:53:59.652079-06:00'
+description: "Comment faire : Historiquement, la lecture de fichiers est l'une des\
+  \ op\xE9rations les plus fondamentales en programmation. En Swift,\u2026"
+lastmod: '2024-04-05T22:51:12.120320-06:00'
 model: gpt-4-1106-preview
-summary: "Sortie \xE9chantillon ."
+summary: "Historiquement, la lecture de fichiers est l'une des op\xE9rations les plus\
+  \ fondamentales en programmation."
 title: Lecture d'un fichier texte
 weight: 22
 ---

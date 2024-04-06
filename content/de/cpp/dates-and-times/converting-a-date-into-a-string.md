@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:36:13.718754-07:00
-description: "So geht\u2019s: **Ausgabebeispiel:**."
-lastmod: '2024-04-05T21:53:56.082177-06:00'
+description: "So geht\u2019s: Die Konversion von Datum zu String ist nicht neu und\
+  \ hat sich mit der Zeit entwickelt. Urspr\xFCnglich nutzte man `strftime()`, eine\
+  \ Funktion aus\u2026"
+lastmod: '2024-04-05T22:51:08.737663-06:00'
 model: gpt-4-1106-preview
-summary: '**Ausgabebeispiel:**.'
+summary: Die Konversion von Datum zu String ist nicht neu und hat sich mit der Zeit
+  entwickelt.
 title: Datum in einen String umwandeln
 weight: 28
 ---

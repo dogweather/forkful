@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:03.571927-07:00
-description: "Comment faire : Sortie d'\xE9chantillon ."
-lastmod: '2024-04-05T21:53:59.153108-06:00'
+description: "Comment faire : Historiquement, Java utilisait `Date` et `Calendar`\
+  \ pour manipuler les dates, mais ces classes avaient des d\xE9fauts de conception\
+  \ et\u2026"
+lastmod: '2024-04-05T22:51:11.673101-06:00'
 model: gpt-4-1106-preview
-summary: "Sortie d'\xE9chantillon ."
+summary: "Historiquement, Java utilisait `Date` et `Calendar` pour manipuler les dates,\
+  \ mais ces classes avaient des d\xE9fauts de conception et d'utilisation."
 title: Comparer deux dates
 weight: 27
 ---

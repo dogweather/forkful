@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:43:01.260168-07:00
-description: 'How to: (Comment faire :) Sortie .'
-lastmod: '2024-04-05T21:53:58.984995-06:00'
+description: "How to: (Comment faire :) Supprimer des caract\xE8res remonte aux premiers\
+  \ jours de la programmation quand la m\xE9moire \xE9tait pr\xE9cieuse et la clart\xE9\
+  \ cruciale.\u2026"
+lastmod: '2024-04-05T22:51:11.514438-06:00'
 model: gpt-4-1106-preview
-summary: (Comment faire :) Sortie .
+summary: "(Comment faire :) Supprimer des caract\xE8res remonte aux premiers jours\
+  \ de la programmation quand la m\xE9moire \xE9tait pr\xE9cieuse et la clart\xE9\
+  \ cruciale."
 title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---

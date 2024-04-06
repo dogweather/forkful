@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:51:14.346851-07:00
-description: "Hur g\xF6r man: \xC4ldre s\xE4tt, innan ES6."
-lastmod: '2024-04-05T21:53:39.616740-06:00'
+description: "Hur g\xF6r man: Interpolering av str\xE4ngar har funnits i programmeringsspr\xE5\
+  k l\xE4nge, men JavaScript fick det f\xF6rst med ES6 (EcmaScript 2015) och anv\xE4\
+  ndningen\u2026"
+lastmod: '2024-04-05T22:50:52.591635-06:00'
 model: gpt-4-1106-preview
-summary: "\xC4ldre s\xE4tt, innan ES6."
+summary: "Interpolering av str\xE4ngar har funnits i programmeringsspr\xE5k l\xE4\
+  nge, men JavaScript fick det f\xF6rst med ES6 (EcmaScript 2015) och anv\xE4ndningen\
+  \ av *template literals*."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

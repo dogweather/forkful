@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:51:30.648021-07:00
-description: "Hur man g\xF6r: Utskrift."
-lastmod: '2024-04-05T21:53:39.012918-06:00'
+description: "Hur man g\xF6r: I m\xE5nga spr\xE5k g\xF6rs str\xE4nginterpolering med\
+  \ specialtecken som `{}` eller `${}`. I Rust anv\xE4nder vi `{}` och format-makrot\
+  \ f\xF6r detta.\u2026"
+lastmod: '2024-04-05T22:50:51.971944-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "I m\xE5nga spr\xE5k g\xF6rs str\xE4nginterpolering med specialtecken som\
+  \ `{}` eller `${}`."
 title: "Interpolera en str\xE4ng"
 weight: 8
 ---

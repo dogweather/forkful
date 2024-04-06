@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 18:04:48.263773-07:00
-description: "How to: (Jak to zrobi\u0107:) Wynik."
-lastmod: '2024-04-05T21:53:36.580208-06:00'
+description: "How to: (Jak to zrobi\u0107:) TypeScript pojawi\u0142 si\u0119 w 2012\
+  \ roku jako nadzbi\xF3r JavaScript, dodaj\u0105c typowanie statyczne do j\u0119\
+  zyka. Alternatyw\u0105 mo\u017Ce by\u0107 Flow od\u2026"
+lastmod: '2024-04-05T22:50:49.442958-06:00'
 model: gpt-4-1106-preview
-summary: "(Jak to zrobi\u0107:) Wynik."
+summary: "(Jak to zrobi\u0107:) TypeScript pojawi\u0142 si\u0119 w 2012 roku jako\
+  \ nadzbi\xF3r JavaScript, dodaj\u0105c typowanie statyczne do j\u0119zyka."
 title: Rozpoczynanie nowego projektu
 weight: 1
 ---

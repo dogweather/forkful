@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:52:14.552323-07:00
-description: "How to: (Kuinka tehd\xE4:) Output."
-lastmod: '2024-04-05T21:53:58.446040-06:00'
+description: "How to: (Kuinka tehd\xE4:) Ennen `iostream`:in ja `std::cout`:in aikaa,\
+  \ `printf()` oli debug-tulostuksen kuningas C:ss\xE4. Monet k\xE4ytt\xE4v\xE4t edelleen\
+  \ `printf()`\u2026"
+lastmod: '2024-04-05T22:51:11.017430-06:00'
 model: gpt-4-1106-preview
-summary: "(Kuinka tehd\xE4:) Output."
+summary: "(Kuinka tehd\xE4:) Ennen `iostream`:in ja `std::cout`:in aikaa, `printf()`\
+  \ oli debug-tulostuksen kuningas C:ss\xE4."
 title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---

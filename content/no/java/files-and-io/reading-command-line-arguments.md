@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:56:22.556454-07:00
-description: "Hvordan: Kj\xF8r programmet."
-lastmod: '2024-04-05T21:53:41.661899-06:00'
+description: "Hvordan: Kommandolinjeargumenter er like gamle som kommandolinjen selv\
+  \ \u2013 tenk 60-tallet. Alternativene inkluderer bruk av milj\xF8variabler,\u2026"
+lastmod: '2024-04-05T22:50:54.693162-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Kommandolinjeargumenter er like gamle som kommandolinjen selv \u2013 tenk\
+  \ 60-tallet."
 title: Lese kommandolinjeargumenter
 weight: 23
 ---

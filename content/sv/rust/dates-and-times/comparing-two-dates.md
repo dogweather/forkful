@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:33:39.164901-07:00
-description: "Hur man g\xF6r: Resultat."
-lastmod: '2024-04-05T21:53:39.038924-06:00'
+description: "Hur man g\xF6r: Datumj\xE4mf\xF6relse \xE4r en central del av rust-programmering\
+  \ med `chrono`-biblioteket som standardvalet f\xF6r hantering av datum och tid.\
+  \ Innan\u2026"
+lastmod: '2024-04-05T22:50:52.001315-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Datumj\xE4mf\xF6relse \xE4r en central del av rust-programmering med `chrono`-biblioteket\
+  \ som standardvalet f\xF6r hantering av datum och tid."
 title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---

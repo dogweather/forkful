@@ -1,10 +1,17 @@
 ---
 date: 2024-01-20 17:33:29.179456-07:00
-description: "How to? (\uC5B4\uB5BB\uAC8C?) \uCD9C\uB825 \uC608\uC2DC."
+description: "How to? (\uC5B4\uB5BB\uAC8C?) \uB0A0\uC9DC \uBE44\uAD50\uB294 `java.util.Date`\uB85C\
+  \ \uC2DC\uC791\uD588\uC9C0\uB9CC, \uBD80\uC871\uD568\uC774 \uB9CE\uC558\uC2B5\uB2C8\
+  \uB2E4. \uADF8\uB798\uC11C `java.time.LocalDate`\uC640 \uAC19\uC740 \uC0C8\uB85C\
+  \uC6B4 API\uAC00 Java 8\uC5D0\uC11C \uB4F1\uC7A5\uD588\uC2B5\uB2C8\uB2E4. Kotlin\uB3C4\
+  \ Java\uC758 \uC774 API\uB97C \uBC14\uD0D5\uC73C\uB85C \uB0A0\uC9DC\uB97C \uB354\
+  \ \uD3B8\uB9AC\uD558\uAC8C\u2026"
 isCJKLanguage: true
-lastmod: '2024-04-05T22:38:55.930647-06:00'
+lastmod: '2024-04-05T22:51:09.538783-06:00'
 model: gpt-4-1106-preview
-summary: "How to? (\uC5B4\uB5BB\uAC8C?) \uCD9C\uB825 \uC608\uC2DC."
+summary: "(\uC5B4\uB5BB\uAC8C?) \uB0A0\uC9DC \uBE44\uAD50\uB294 `java.util.Date`\uB85C\
+  \ \uC2DC\uC791\uD588\uC9C0\uB9CC, \uBD80\uC871\uD568\uC774 \uB9CE\uC558\uC2B5\uB2C8\
+  \uB2E4."
 title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 weight: 27
 ---

@@ -1,9 +1,14 @@
 ---
 date: 2024-01-20 17:28:32.499239-07:00
-description: "Como fazer: Sa\xEDda Exemplo."
-lastmod: '2024-04-05T21:53:46.533809-06:00'
+description: "Como fazer: A biblioteca `clj-time` era a escolha padr\xE3o para manipula\xE7\
+  \xE3o de data e hora no Clojure at\xE9 a ado\xE7\xE3o do `java.time`, introduzido\
+  \ no Java 8,\u2026"
+lastmod: '2024-04-05T22:50:59.474894-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "A biblioteca `clj-time` era a escolha padr\xE3o para manipula\xE7\xE3o de\
+  \ data e hora no Clojure at\xE9 a ado\xE7\xE3o do `java.time`, introduzido no Java\
+  \ 8, que \xE9 agora considerado o padr\xE3o de fato devido a sua imutabilidade e\
+  \ API mais rica."
 title: Calculando uma data no futuro ou passado
 weight: 26
 ---

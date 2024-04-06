@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:52:02.397871-07:00
-description: "Slik gj\xF8r du: Sample output."
-lastmod: '2024-04-05T21:53:42.064526-06:00'
+description: "Slik gj\xF8r du: F\xF8r `iostream`, brukte vi `printf` fra C-standardbiblioteket.\
+  \ Alternativer idag inkluderer loggbiblioteker og innebygde debuggerverkt\xF8y.\
+  \ \xC5\u2026"
+lastmod: '2024-04-05T22:50:55.109754-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "F\xF8r `iostream`, brukte vi `printf` fra C-standardbiblioteket."
 title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---

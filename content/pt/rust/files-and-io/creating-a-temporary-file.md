@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:41:21.936140-07:00
-description: "Como Fazer: _Sa\xEDda esperada:_."
-lastmod: '2024-04-05T21:53:46.719775-06:00'
+description: "Como Fazer: Historicamente, arquivos tempor\xE1rios s\xE3o usados para\
+  \ prevenir a perda de dados durante falhas e para lidar com grandes conjuntos de\
+  \ dados que\u2026"
+lastmod: '2024-04-05T22:50:59.646513-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Historicamente, arquivos tempor\xE1rios s\xE3o usados para prevenir a perda\
+  \ de dados durante falhas e para lidar com grandes conjuntos de dados que podem\
+  \ n\xE3o caber na mem\xF3ria."
 title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---

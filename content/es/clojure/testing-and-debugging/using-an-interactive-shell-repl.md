@@ -1,9 +1,12 @@
 ---
 date: 2024-01-26 04:12:44.751038-07:00
-description: "C\xF3mo: Comienza lanzando REPL."
-lastmod: '2024-03-13T22:44:58.658275-06:00'
+description: "C\xF3mo: El REPL es clave en la filosof\xEDa de desarrollo interactivo\
+  \ de la familia Lisp, y Clojure, un dialecto moderno de Lisp, hace un gran uso de\
+  \ esta\u2026"
+lastmod: '2024-04-05T22:51:12.450151-06:00'
 model: gpt-4-0125-preview
-summary: Comienza lanzando REPL.
+summary: "El REPL es clave en la filosof\xEDa de desarrollo interactivo de la familia\
+  \ Lisp, y Clojure, un dialecto moderno de Lisp, hace un gran uso de esta herramienta."
 title: Usando una shell interactiva (REPL)
 weight: 34
 ---

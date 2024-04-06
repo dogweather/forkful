@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:47:06.833277-07:00
-description: "Slik gj\xF8r du: Utdata."
-lastmod: '2024-04-05T21:53:41.925917-06:00'
+description: "Slik gj\xF8r du: Finner lengden p\xE5 en streng i Bash er ganske rett\
+  \ frem og har v\xE6rt en del av Bash helt siden tidlige versjoner. Historisk har\
+  \ ulike\u2026"
+lastmod: '2024-04-05T22:50:54.965439-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Finner lengden p\xE5 en streng i Bash er ganske rett frem og har v\xE6rt\
+  \ en del av Bash helt siden tidlige versjoner."
 title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---

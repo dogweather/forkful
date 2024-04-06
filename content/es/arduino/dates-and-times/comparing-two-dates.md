@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:16.930960-07:00
-description: "C\xF3mo hacerlo: Salida de ejemplo."
-lastmod: '2024-04-05T21:54:00.693027-06:00'
+description: "C\xF3mo hacerlo: Comparar fechas en programaci\xF3n no es nuevo. Viene\
+  \ desde los principios de la computaci\xF3n. En Arduino, se hace uso de la biblioteca\
+  \ TimeLib\u2026"
+lastmod: '2024-04-05T22:51:13.068012-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Comparar fechas en programaci\xF3n no es nuevo."
 title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---

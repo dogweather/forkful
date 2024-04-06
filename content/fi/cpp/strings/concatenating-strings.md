@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:34:30.696372-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-04-05T21:53:58.434318-06:00'
+description: "How to: (Kuinka tehd\xE4:) Stringien yhdist\xE4minen C++:ssa on yksinkertaista,\
+  \ mutta se ei ole aina ollut n\xE4in. Alkuaikoina jouduttiin k\xE4ytt\xE4m\xE4\xE4\
+  n C:n\u2026"
+lastmod: '2024-04-05T22:51:11.007297-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4:) Stringien yhdist\xE4minen C++:ssa on yksinkertaista,\
+  \ mutta se ei ole aina ollut n\xE4in."
 title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---

@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:32:12.152076-07:00
-description: "Comment faire : R\xE9sultats."
-lastmod: '2024-04-05T21:53:59.058562-06:00'
+description: "Comment faire : Avant, on manipulait les dates en C avec `time.h`, qui\
+  \ \xE9tait d\xE9licat. Rust offre la crate `chrono` pour une meilleure gestion des\
+  \ dates et\u2026"
+lastmod: '2024-04-05T22:51:11.584167-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "Avant, on manipulait les dates en C avec `time.h`, qui \xE9tait d\xE9licat."
 title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---

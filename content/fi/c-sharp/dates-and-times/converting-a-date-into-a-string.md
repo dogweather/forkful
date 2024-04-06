@@ -1,9 +1,13 @@
 ---
 date: 2024-01-20 17:36:17.497638-07:00
-description: "How to: (Kuinka tehd\xE4:) ."
-lastmod: '2024-04-05T21:53:58.152245-06:00'
+description: "How to: (Kuinka tehd\xE4:) Alkujaan p\xE4iv\xE4m\xE4\xE4r\xE4t oli t\xE4\
+  rke\xE4\xE4 esitt\xE4\xE4 kirjoitusmuodossa, koska koneet k\xE4yttiv\xE4t ep\xE4\
+  ihmism\xE4isi\xE4 formaatteja. C#:ssa\u2026"
+lastmod: '2024-04-05T22:51:10.740226-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: "(Kuinka tehd\xE4:) Alkujaan p\xE4iv\xE4m\xE4\xE4r\xE4t oli t\xE4rke\xE4\xE4\
+  \ esitt\xE4\xE4 kirjoitusmuodossa, koska koneet k\xE4yttiv\xE4t ep\xE4ihmism\xE4\
+  isi\xE4 formaatteja."
 title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---

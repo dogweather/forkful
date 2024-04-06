@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 17:57:18.227559-07:00
-description: 'Come fare: Sample Output.'
-lastmod: '2024-04-05T21:53:44.429937-06:00'
+description: "Come fare: La ricerca e sostituzione di testo si basa su concetti degli\
+  \ anni '50 e '60, quando programmatori utilizzavano editor di testo per manipolare\u2026"
+lastmod: '2024-04-05T22:50:57.471871-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: La ricerca e sostituzione di testo si basa su concetti degli anni '50 e '60,
+  quando programmatori utilizzavano editor di testo per manipolare codice.
 title: Ricerca e sostituzione del testo
 weight: 10
 ---

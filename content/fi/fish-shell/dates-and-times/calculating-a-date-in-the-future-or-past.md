@@ -1,9 +1,12 @@
 ---
 date: 2024-01-20 17:30:54.171443-07:00
-description: "How to: (Miten tehd\xE4:) N\xE4ytt\xE4\xE4."
-lastmod: '2024-04-05T21:53:58.587431-06:00'
+description: "How to: (Miten tehd\xE4:) Ennen tietokoneiden aikaa p\xE4iv\xE4m\xE4\
+  \xE4r\xE4laskuja tehtiin kalentereiden ja laskimien avulla. Tietokoneet ja skriptausty\xF6\
+  kalut, kuten\u2026"
+lastmod: '2024-04-05T22:51:11.153051-06:00'
 model: gpt-4-1106-preview
-summary: "(Miten tehd\xE4:) N\xE4ytt\xE4\xE4."
+summary: "(Miten tehd\xE4:) Ennen tietokoneiden aikaa p\xE4iv\xE4m\xE4\xE4r\xE4laskuja\
+  \ tehtiin kalentereiden ja laskimien avulla."
 title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---

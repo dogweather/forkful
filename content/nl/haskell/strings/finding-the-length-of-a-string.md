@@ -2,10 +2,12 @@
 changelog:
 - 2024-01-28, gpt-4-0125-preview, translated from English
 date: 2024-01-28 22:00:15.439252-07:00
-description: 'Hoe te: Voorbeelduitvoer.'
-lastmod: '2024-04-05T21:53:50.867036-06:00'
+description: "Hoe te: Haskell is een puur functionele taal waar strings worden weergegeven\
+  \ als lijsten van karakters. De `length` functie, onderdeel van de Prelude (de\u2026"
+lastmod: '2024-04-05T22:51:03.664751-06:00'
 model: gpt-4-0125-preview
-summary: ''
+summary: Haskell is een puur functionele taal waar strings worden weergegeven als
+  lijsten van karakters.
 title: De lengte van een string vinden
 weight: 7
 ---

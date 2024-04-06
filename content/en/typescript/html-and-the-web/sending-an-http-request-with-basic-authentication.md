@@ -1,9 +1,11 @@
 ---
 date: 2024-01-20 18:02:54.663141-07:00
-description: 'How to: Sample output.'
-lastmod: '2024-04-05T21:53:35.546142-06:00'
+description: "How to: Once upon a time, before OAuth and JWTs swarmed the scene, basic\
+  \ auth was the go-to. It's still nifty for internal tools or Proof of Concepts\u2026"
+lastmod: '2024-04-05T22:50:48.402764-06:00'
 model: gpt-4-1106-preview
-summary: ''
+summary: Once upon a time, before OAuth and JWTs swarmed the scene, basic auth was
+  the go-to.
 title: Sending an HTTP request with basic authentication
 weight: 45
 ---
