@@ -1,13 +1,13 @@
 ---
-title: 'Elm: Tutorial di Programmazione Open Source'
+title: 'Elm: Forkful: Tutorial di Programmazione Open Source'
 linkTitle: Elm
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-27 21:26:02.180598-06:00
-description: 'Elm: Prime Passi, Stringhe, Numeri, Strutture dati, Buone pratiche di
-  programmazione, File e I/O, Date e orari, Elaborazione di dati e testo, Test e…'
-summary: 'Elm: Prime Passi, Stringhe, Numeri, Strutture dati, Buone pratiche di programmazione,
-  File e I/O, Date e orari, Elaborazione di dati e testo, Test e…'
+lastmod: 2024-04-09 22:23:22.443548-06:00
+description: Prime Passi, Stringhe, Numeri, Strutture dati, Buone pratiche di programmazione,
+  File e I/O, Date e orari, Elaborazione di dati e testo, Test e Debugging,…
+summary: Prime Passi, Stringhe, Numeri, Strutture dati, Buone pratiche di programmazione,
+  File e I/O, Date e orari, Elaborazione di dati e testo, Test e Debugging,…
 cascade:
   images:
   - /languages/elm.jpeg

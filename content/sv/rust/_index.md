@@ -1,13 +1,13 @@
 ---
-title: 'Rust: Handledningar för programmering med öppen källkod'
+title: 'Rust: Forkful: Handledningar för programmering med öppen källkod'
 linkTitle: Rust
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-27 21:26:14.831413-06:00
-description: 'Rust: Komma igång, Strängar, Tal, Datastrukturer, Bra kodningspraxis,
-  Filer och I/O, Datum och tider, Data och textbehandling, Testning och felsökning,…'
-summary: 'Rust: Komma igång, Strängar, Tal, Datastrukturer, Bra kodningspraxis, Filer
-  och I/O, Datum och tider, Data och textbehandling, Testning och felsökning,…'
+lastmod: 2024-04-09 22:23:34.175283-06:00
+description: Komma igång, Strängar, Tal, Datastrukturer, Bra kodningspraxis, Filer
+  och I/O, Datum och tider, Data och textbehandling, Testning och felsökning,…
+summary: Komma igång, Strängar, Tal, Datastrukturer, Bra kodningspraxis, Filer och
+  I/O, Datum och tider, Data och textbehandling, Testning och felsökning,…
 cascade:
   images:
   - /languages/rust.jpeg

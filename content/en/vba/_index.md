@@ -1,13 +1,13 @@
 ---
-title: 'Visual Basic for Applications: Open Source Coding Cookbook'
+title: 'Visual Basic for Applications: Forkful Open Source Coding Cookbook'
 linkTitle: Visual Basic for Applications
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-27 21:25:54.241059-06:00
-description: 'Visual Basic for Applications: Getting Started, Strings, Numbers, Data
-  Structures, Good Coding Practices, Files and I/O, Dates and Times, Data and Text…'
-summary: 'Visual Basic for Applications: Getting Started, Strings, Numbers, Data Structures,
-  Good Coding Practices, Files and I/O, Dates and Times, Data and Text…'
+lastmod: 2024-04-09 22:23:15.063889-06:00
+description: Getting Started, Strings, Numbers, Data Structures, Good Coding Practices,
+  Files and I/O, Dates and Times, Data and Text Processing, Testing and…
+summary: Getting Started, Strings, Numbers, Data Structures, Good Coding Practices,
+  Files and I/O, Dates and Times, Data and Text Processing, Testing and…
 cascade:
   images:
   - /languages/vba.jpeg

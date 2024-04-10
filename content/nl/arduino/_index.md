@@ -1,13 +1,13 @@
 ---
-title: 'Arduino: Open Source Programmeren Tutorials'
+title: 'Arduino: Forkful: Open Source Programmeren Tutorials'
 linkTitle: Arduino
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-27 21:26:06.156775-06:00
-description: 'Arduino: Aan de Slag, Strings, Nummers, Datastructuren, Goede Programmeerpraktijken,
-  Bestanden en I/O, Data en Tijden, Gegevens- en Tekstverwerking,…'
-summary: 'Arduino: Aan de Slag, Strings, Nummers, Datastructuren, Goede Programmeerpraktijken,
-  Bestanden en I/O, Data en Tijden, Gegevens- en Tekstverwerking,…'
+lastmod: 2024-04-09 22:23:26.138235-06:00
+description: Aan de Slag, Strings, Nummers, Datastructuren, Goede Programmeerpraktijken,
+  Bestanden en I/O, Data en Tijden, Gegevens- en Tekstverwerking, Testen en…
+summary: Aan de Slag, Strings, Nummers, Datastructuren, Goede Programmeerpraktijken,
+  Bestanden en I/O, Data en Tijden, Gegevens- en Tekstverwerking, Testen en…
 cascade:
   images:
   - /languages/arduino.jpeg

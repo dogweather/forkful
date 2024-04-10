@@ -1,13 +1,13 @@
 ---
-title: 'Haskell: Das open-source coding-Cookbook'
+title: 'Haskell: Das Forkful open-source coding-Cookbook'
 linkTitle: Haskell
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-27 21:25:52.094838-06:00
-description: 'Haskell: Einstieg in die Programmierung, Zeichenketten, Zahlen, Datenstrukturen,
-  Gute Programmierpraktiken, Dateien und Ein-/Ausgabe, Datum und Uhrzeit in…'
-summary: 'Haskell: Einstieg in die Programmierung, Zeichenketten, Zahlen, Datenstrukturen,
-  Gute Programmierpraktiken, Dateien und Ein-/Ausgabe, Datum und Uhrzeit in…'
+lastmod: 2024-04-09 22:23:13.041690-06:00
+description: Einstieg in die Programmierung, Zeichenketten, Zahlen, Datenstrukturen,
+  Gute Programmierpraktiken, Dateien und Ein-/Ausgabe, Datum und Uhrzeit in der…
+summary: Einstieg in die Programmierung, Zeichenketten, Zahlen, Datenstrukturen, Gute
+  Programmierpraktiken, Dateien und Ein-/Ausgabe, Datum und Uhrzeit in der…
 cascade:
   images:
   - /languages/haskell.jpeg

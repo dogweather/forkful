@@ -1,13 +1,13 @@
 ---
-title: 'Python: Open Source Programmeren Tutorials'
+title: 'Python: Forkful: Open Source Programmeren Tutorials'
 linkTitle: Python
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-27 21:26:07.277610-06:00
-description: 'Python: Aan de Slag, Strings, Nummers, Datastructuren, Goede Programmeerpraktijken,
-  Bestanden en I/O, Data en Tijden, Gegevens- en Tekstverwerking, Testen…'
-summary: 'Python: Aan de Slag, Strings, Nummers, Datastructuren, Goede Programmeerpraktijken,
-  Bestanden en I/O, Data en Tijden, Gegevens- en Tekstverwerking, Testen…'
+lastmod: 2024-04-09 22:23:27.181634-06:00
+description: Aan de Slag, Strings, Nummers, Datastructuren, Goede Programmeerpraktijken,
+  Bestanden en I/O, Data en Tijden, Gegevens- en Tekstverwerking, Testen en…
+summary: Aan de Slag, Strings, Nummers, Datastructuren, Goede Programmeerpraktijken,
+  Bestanden en I/O, Data en Tijden, Gegevens- en Tekstverwerking, Testen en…
 cascade:
   images:
   - /languages/python.jpeg

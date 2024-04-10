@@ -1,13 +1,13 @@
 ---
-title: 'Fish Shell: Tutoriels de Programmation Open Source'
+title: 'Fish Shell: Forkful: Tutoriels de Programmation Open Source'
 linkTitle: Fish Shell
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-27 21:25:57.793819-06:00
-description: 'Fish Shell: Premiers Pas en Programmation, Chaînes de caractères, Nombres,
-  Structures de données, Bonnes Pratiques de Programmation, Fichiers et…'
-summary: 'Fish Shell: Premiers Pas en Programmation, Chaînes de caractères, Nombres,
-  Structures de données, Bonnes Pratiques de Programmation, Fichiers et…'
+lastmod: 2024-04-09 22:23:18.369961-06:00
+description: Premiers Pas en Programmation, Chaînes de caractères, Nombres, Structures
+  de données, Bonnes Pratiques de Programmation, Fichiers et entrées/sorties,…
+summary: Premiers Pas en Programmation, Chaînes de caractères, Nombres, Structures
+  de données, Bonnes Pratiques de Programmation, Fichiers et entrées/sorties,…
 cascade:
   images:
   - /languages/fish-shell.jpeg

@@ -3,11 +3,11 @@ title: 'Swift: Tutoriais de Programação Open Source'
 linkTitle: Swift
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00
-lastmod: 2024-03-27 21:26:11.915907-06:00
-description: 'Swift: Introdução ao Programação, Cadeias de Caracteres, Números, Estruturas
-  de Dados, Boas Práticas de Codificação, Arquivos e E/S, Datas e Horários,…'
-summary: 'Swift: Introdução ao Programação, Cadeias de Caracteres, Números, Estruturas
-  de Dados, Boas Práticas de Codificação, Arquivos e E/S, Datas e Horários,…'
+lastmod: 2024-04-09 22:23:31.475848-06:00
+description: Introdução ao Programação, Cadeias de Caracteres, Números, Estruturas
+  de Dados, Boas Práticas de Codificação, Arquivos e E/S, Datas e Horários,…
+summary: Introdução ao Programação, Cadeias de Caracteres, Números, Estruturas de
+  Dados, Boas Práticas de Codificação, Arquivos e E/S, Datas e Horários,…
 cascade:
   images:
   - /languages/swift.jpeg
