@@ -1,4 +1,10 @@
 ---
-type: page_chapter
+title: 'Arduino: 10. รูปแบบข้อมูลและการเซรียลไลซ์'
+linkTitle: 10. รูปแบบข้อมูลและการเซรียลไลซ์
+description: การทำงานกับ CSV, ทำงานกับ JSON, การทำงานกับ XML, การทำงานกับ YAML
+summary: การทำงานกับ CSV, ทำงานกับ JSON, การทำงานกับ XML, การทำงานกับ YAML
 weight: 10
+type: page_chapter
+date: 2024-02-29 21:07:03.006780-07:00
+lastmod: 2024-04-10 22:53:15.711542-06:00
 ---

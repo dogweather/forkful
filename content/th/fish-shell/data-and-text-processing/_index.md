@@ -1,4 +1,10 @@
 ---
-type: page_chapter
+title: 'Fish Shell: 8. การประมวลผลข้อมูลและข้อความ'
+linkTitle: 8. การประมวลผลข้อมูลและข้อความ
+description: จัดการไฟล์ด้วย CLI one-liners, แก้ไขไฟล์ในที่เดียวด้วยคำสั่ง CLI ตัวเดียว
+summary: จัดการไฟล์ด้วย CLI one-liners, แก้ไขไฟล์ในที่เดียวด้วยคำสั่ง CLI ตัวเดียว
 weight: 8
+type: page_chapter
+date: 2024-02-29 21:07:03.006780-07:00
+lastmod: 2024-04-10 22:53:34.832259-06:00
 ---

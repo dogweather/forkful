@@ -1,4 +1,12 @@
 ---
-type: page_chapter
+title: 'Swift: 11. HTML और वेब'
+linkTitle: 11. HTML और वेब
+description: वेब पेज डाउनलोड करना, HTML विश्लेषण, HTTP अनुरोध भेजना, बेसिक प्रमाणीकरण
+  के साथ HTTP अनुरोध भेजना
+summary: वेब पेज डाउनलोड करना, HTML विश्लेषण, HTTP अनुरोध भेजना, बेसिक प्रमाणीकरण
+  के साथ HTTP अनुरोध भेजना
 weight: 11
+type: page_chapter
+date: 2024-02-29 21:07:03.006780-07:00
+lastmod: 2024-04-10 22:39:34.964585-06:00
 ---

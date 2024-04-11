@@ -1,4 +1,12 @@
 ---
-type: page_chapter
+title: 'Visual Basic for Applications: 10. รูปแบบข้อมูลและการเซรียลไลซ์'
+linkTitle: 10. รูปแบบข้อมูลและการเซรียลไลซ์
+description: การทำงานกับ CSV, ทำงานกับ JSON, การทำงานกับ TOML, การทำงานกับ XML, การทำงานกับ
+  YAML
+summary: การทำงานกับ CSV, ทำงานกับ JSON, การทำงานกับ TOML, การทำงานกับ XML, การทำงานกับ
+  YAML
 weight: 10
+type: page_chapter
+date: 2024-02-29 21:07:03.006780-07:00
+lastmod: 2024-04-10 22:53:35.251815-06:00
 ---

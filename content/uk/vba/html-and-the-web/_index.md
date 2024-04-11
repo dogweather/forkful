@@ -1,4 +1,12 @@
 ---
-type: page_chapter
+title: 'Visual Basic for Applications: 11. HTML та веб'
+linkTitle: 11. HTML та веб
+description: Завантаження веб-сторінки, Розбір HTML, Надсилання HTTP-запиту, Відправлення
+  HTTP-запиту з базовою аутентифікацією
+summary: Завантаження веб-сторінки, Розбір HTML, Надсилання HTTP-запиту, Відправлення
+  HTTP-запиту з базовою аутентифікацією
 weight: 11
+type: page_chapter
+date: 2024-02-29 21:07:03.006780-07:00
+lastmod: 2024-04-10 22:55:07.937820-06:00
 ---

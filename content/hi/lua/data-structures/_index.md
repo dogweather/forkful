@@ -1,4 +1,10 @@
 ---
-type: page_chapter
+title: 'Lua: 4. डेटा संरचनाएं'
+linkTitle: 4. डेटा संरचनाएं
+description: संघटक अरेज़ का उपयोग करना
+summary: संघटक अरेज़ का उपयोग करना
 weight: 4
+type: page_chapter
+date: 2024-02-29 21:07:03.006780-07:00
+lastmod: 2024-04-10 22:39:34.775787-06:00
 ---
