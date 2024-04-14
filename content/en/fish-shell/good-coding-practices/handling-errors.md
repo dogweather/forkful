@@ -56,7 +56,7 @@ try_ping
 ## Deep Dive
 Error handling in Fish doesn't match the `try/catch` paradigm you might know from higher-level languages. Instead, you have straightforward exit statuses provided by the `status` command.
 
-Historically, in Unix-like systems, an exit status of `0` means success, while any non-zero value indicates an error, which commonly reflects different failure reasons. This convention is employed by most command-line utilities and hence, by Fish iteself.
+Historically, in Unix-like systems, an exit status of `0` means success, while any non-zero value indicates an error, which commonly reflects different failure reasons. This convention is employed by most command-line utilities and hence, by Fish itself.
 
 Alternatives to `status` checks in Fish include signal handling via `trap` in other shells, but Fish prefers more explicit status checking, because it's cleaner and less prone to side effects.
 
