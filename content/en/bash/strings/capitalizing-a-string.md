@@ -2,7 +2,7 @@
 date: 2024-02-03 19:02:33.737797-07:00
 description: "How to: Bash does not have a built-in function specifically for capitalizing\
   \ strings, but you can accomplish this task using parameter expansion or\u2026"
-lastmod: '2024-03-13T22:45:00.228086-06:00'
+lastmod: 2024-04-14
 model: gpt-4-0125-preview
 summary: Bash does not have a built-in function specifically for capitalizing strings,
   but you can accomplish this task using parameter expansion or external tools like
@@ -40,18 +40,3 @@ Output:
 ```
 Hello world
 ```
-
-**Using `sed`:**
-
-For a more traditional approach, `sed` can be employed to capitalize the first letter of a string. However, it's a bit more complex compared to the previous methods.
-
-```bash
-str="hello world"
-echo "$str" | sed 's/./\u&/'
-```
-Output:
-```
-Hello world
-```
-
-These snippets demonstrate how to capitalize the first letter of a string in Bash, highlighting the flexibility of shell scripting when manipulating text.
