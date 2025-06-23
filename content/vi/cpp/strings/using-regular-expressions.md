@@ -69,3 +69,4 @@ Về mặt triển khai, `std::regex` có thể chậm hơn một số thuật t
 
 - Hướng dẫn Regular-Expressions.info: https://www.regular-expressions.info/tutorial.html
 - Regex101 (trình kiểm tra trực tuyến): https://regex101.com/
+- Cyrilex (công cụ kiểm tra trực quan trực tuyến): https://extendsclass.com/regex-tester.html
