@@ -1,5 +1,5 @@
 ---
-title: 'Google Apps Script: Forkful: ওপেন সোর্স কোডিং কুকবুক'
+title: 'Google Apps Script: shinyu.org: ওপেন সোর্স কোডিং কুকবুক'
 linkTitle: Google Apps Script
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

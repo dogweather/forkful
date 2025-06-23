@@ -1,5 +1,5 @@
 ---
-title: 'Java: Forkful: ওপেন সোর্স কোডিং কুকবুক'
+title: 'Java: shinyu.org: ওপেন সোর্স কোডিং কুকবুক'
 linkTitle: Java
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

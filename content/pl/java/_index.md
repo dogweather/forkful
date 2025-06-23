@@ -1,5 +1,5 @@
 ---
-title: 'Java: Forkful: Samouczki programowania open source'
+title: 'Java: shinyu.org: Samouczki programowania open source'
 linkTitle: Java
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

@@ -104,4 +104,4 @@ Wat implementatie betreft, de `Regex` klasse in C# bevindt zich in `System.Text.
 ## Zie ook
 - [Microsoft's Regex Documentatie](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
 - [Regex Tester & Debugger](https://regex101.com/)
-- [Beheersing van Reguliere Expressies](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/) door Jeffrey Friedl. _Opmerking van [Robert](https://forkful.ai/en/about/): zo heb ik Regexes geleerd. Ik had het gevoel dat ik ze echt begreep na het lezen van het boek. En tegenwoordig, gebruik ik de "Regex Tester & Debugger", hierboven vermeld, wanneer ik er een moet debuggen._
+- [Beheersing van Reguliere Expressies](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/) door Jeffrey Friedl. _Opmerking van [Robert](https://shinyu.org/en/about/): zo heb ik Regexes geleerd. Ik had het gevoel dat ik ze echt begreep na het lezen van het boek. En tegenwoordig, gebruik ik de "Regex Tester & Debugger", hierboven vermeld, wanneer ik er een moet debuggen._

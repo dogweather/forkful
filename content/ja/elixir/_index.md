@@ -1,5 +1,5 @@
 ---
-title: 'Elixir: Forkful: オープンソースプログラミングチュートリアル'
+title: 'Elixir: shinyu.org: オープンソースプログラミングチュートリアル'
 linkTitle: Elixir
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

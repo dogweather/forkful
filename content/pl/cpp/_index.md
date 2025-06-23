@@ -1,5 +1,5 @@
 ---
-title: 'C++: Forkful: Samouczki programowania open source'
+title: 'C++: shinyu.org: Samouczki programowania open source'
 linkTitle: C++
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

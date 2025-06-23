@@ -1,5 +1,5 @@
 ---
-title: 'Visual Basic for Applications: Forkful: Посібники з програмування з відкритим
+title: 'Visual Basic for Applications: shinyu.org: Посібники з програмування з відкритим
   вихідним кодом'
 linkTitle: Visual Basic for Applications
 type: page_proglang

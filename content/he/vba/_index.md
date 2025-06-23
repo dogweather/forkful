@@ -1,5 +1,5 @@
 ---
-title: 'Visual Basic for Applications: Forkful: מדריכי תכנות מקור פתוח'
+title: 'Visual Basic for Applications: shinyu.org: מדריכי תכנות מקור פתוח'
 linkTitle: Visual Basic for Applications
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

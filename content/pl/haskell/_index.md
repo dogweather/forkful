@@ -1,5 +1,5 @@
 ---
-title: 'Haskell: Forkful: Samouczki programowania open source'
+title: 'Haskell: shinyu.org: Samouczki programowania open source'
 linkTitle: Haskell
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

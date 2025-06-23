@@ -1,5 +1,5 @@
 ---
-title: 'Visual Basic for Applications: Forkful: 오픈 소스 프로그래밍 튜토리얼'
+title: 'Visual Basic for Applications: shinyu.org: 오픈 소스 프로그래밍 튜토리얼'
 linkTitle: Visual Basic for Applications
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

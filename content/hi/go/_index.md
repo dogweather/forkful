@@ -1,5 +1,5 @@
 ---
-title: 'Go: Forkful: ओपन सोर्स प्रोग्रामिंग ट्यूटोरियल्स'
+title: 'Go: shinyu.org: ओपन सोर्स प्रोग्रामिंग ट्यूटोरियल्स'
 linkTitle: Go
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

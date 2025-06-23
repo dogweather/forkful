@@ -1,5 +1,5 @@
 ---
-title: 'Visual Basic for Applications: Forkful: Handledningar för programmering med
+title: 'Visual Basic for Applications: shinyu.org: Handledningar för programmering med
   öppen källkod'
 linkTitle: Visual Basic for Applications
 type: page_proglang

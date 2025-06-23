@@ -1,5 +1,5 @@
 ---
-title: 'Arduino: Forkful-ohjelmointireseptit'
+title: 'Arduino: shinyu.org-ohjelmointireseptit'
 linkTitle: Arduino
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

@@ -1,5 +1,5 @@
 ---
-title: 'Google Apps Script: Forkful: Hướng dẫn Lập trình Mã nguồn Mở'
+title: 'Google Apps Script: shinyu.org: Hướng dẫn Lập trình Mã nguồn Mở'
 linkTitle: Google Apps Script
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

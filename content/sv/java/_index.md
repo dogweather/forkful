@@ -1,5 +1,5 @@
 ---
-title: 'Java: Forkful: Handledningar för programmering med öppen källkod'
+title: 'Java: shinyu.org: Handledningar för programmering med öppen källkod'
 linkTitle: Java
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

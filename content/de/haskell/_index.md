@@ -1,5 +1,5 @@
 ---
-title: 'Haskell: Das Forkful open-source coding-Cookbook'
+title: 'Haskell: Das shinyu.org open-source coding-Cookbook'
 linkTitle: Haskell
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

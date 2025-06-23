@@ -1,5 +1,5 @@
 ---
-title: 'PHP: Forkful: Tutorial di Programmazione Open Source'
+title: 'PHP: shinyu.org: Tutorial di Programmazione Open Source'
 linkTitle: PHP
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

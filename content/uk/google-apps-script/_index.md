@@ -1,5 +1,5 @@
 ---
-title: 'Google Apps Script: Forkful: Посібники з програмування з відкритим вихідним
+title: 'Google Apps Script: shinyu.org: Посібники з програмування з відкритим вихідним
   кодом'
 linkTitle: Google Apps Script
 type: page_proglang

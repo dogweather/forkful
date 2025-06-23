@@ -1,5 +1,5 @@
 ---
-title: 'Python: Forkful: Samouczki programowania open source'
+title: 'Python: shinyu.org: Samouczki programowania open source'
 linkTitle: Python
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

@@ -1,5 +1,5 @@
 ---
-title: 'Bash: Das Forkful open-source coding-Cookbook'
+title: 'Bash: Das shinyu.org open-source coding-Cookbook'
 linkTitle: Bash
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

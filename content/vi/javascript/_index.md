@@ -1,5 +1,5 @@
 ---
-title: 'JavaScript: Forkful: Hướng dẫn Lập trình Mã nguồn Mở'
+title: 'JavaScript: shinyu.org: Hướng dẫn Lập trình Mã nguồn Mở'
 linkTitle: JavaScript
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

@@ -117,4 +117,4 @@ public class Example
 ## Смотрите также
 - [Документация по Regex от Microsoft](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
 - [Тестер и отладчик Regex](https://regex101.com/)
-- [Освоение регулярных выражений](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/) от Джеффри Фридла. _Примечание от [Роберта](https://forkful.ai/en/about/): вот как я научился использовать Regex. Я по-настоящему их понял после прочтения этой книги. И в наши дни я использую "Тестер и отладчик Regex", указанный выше, когда мне нужно отладить что-то._
+- [Освоение регулярных выражений](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/) от Джеффри Фридла. _Примечание от [Роберта](https://shinyu.org/en/about/): вот как я научился использовать Regex. Я по-настоящему их понял после прочтения этой книги. И в наши дни я использую "Тестер и отладчик Regex", указанный выше, когда мне нужно отладить что-то._

@@ -1,5 +1,5 @@
 ---
-title: 'JavaScript: Forkful Open Source Coding Cookbook'
+title: 'JavaScript: shinyu.org Open Source Coding Cookbook'
 linkTitle: JavaScript
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

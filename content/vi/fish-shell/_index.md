@@ -1,5 +1,5 @@
 ---
-title: 'Fish Shell: Forkful: Hướng dẫn Lập trình Mã nguồn Mở'
+title: 'Fish Shell: shinyu.org: Hướng dẫn Lập trình Mã nguồn Mở'
 linkTitle: Fish Shell
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

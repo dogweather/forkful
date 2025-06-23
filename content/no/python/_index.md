@@ -1,5 +1,5 @@
 ---
-title: 'Python: Forkful: Åpen kildekode programmeringsveiledninger'
+title: 'Python: shinyu.org: Åpen kildekode programmeringsveiledninger'
 linkTitle: Python
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

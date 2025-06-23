@@ -1,5 +1,5 @@
 ---
-title: 'Ruby: Das Forkful open-source coding-Cookbook'
+title: 'Ruby: Das shinyu.org open-source coding-Cookbook'
 linkTitle: Ruby
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

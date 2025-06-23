@@ -1,5 +1,5 @@
 ---
-title: 'Kotlin: Forkful: Посібники з програмування з відкритим вихідним кодом'
+title: 'Kotlin: shinyu.org: Посібники з програмування з відкритим вихідним кодом'
 linkTitle: Kotlin
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

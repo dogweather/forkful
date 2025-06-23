@@ -105,4 +105,4 @@ Nói về triển khai, lớp `Regex` của C# nằm trong `System.Text.RegularE
 ## Xem thêm
 - [Tài liệu Regex của Microsoft](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
 - [Công cụ Kiểm tra & Gỡ lỗi Regex](https://regex101.com/)
-- [Làm chủ Biểu thức Chính Quy](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/) của Jeffrey Friedl. _Ghi chú từ [Robert](https://forkful.ai/en/about/): đây là cách tôi đã học Regex. Tôi cảm thấy thực sự hiểu chúng sau khi đọc cuốn sách. Và ngày nay, tôi sử dụng "Công cụ Kiểm tra & Gỡ lỗi Regex", được liệt kê ở trên, khi tôi cần gỡ lỗi._
+- [Làm chủ Biểu thức Chính Quy](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/) của Jeffrey Friedl. _Ghi chú từ [Robert](https://shinyu.org/en/about/): đây là cách tôi đã học Regex. Tôi cảm thấy thực sự hiểu chúng sau khi đọc cuốn sách. Và ngày nay, tôi sử dụng "Công cụ Kiểm tra & Gỡ lỗi Regex", được liệt kê ở trên, khi tôi cần gỡ lỗi._

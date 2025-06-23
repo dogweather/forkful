@@ -1,5 +1,5 @@
 ---
-title: 'Lua: Forkful: オープンソースプログラミングチュートリアル'
+title: 'Lua: shinyu.org: オープンソースプログラミングチュートリアル'
 linkTitle: Lua
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

@@ -1,5 +1,5 @@
 ---
-title: 'Dart: Forkful: מדריכי תכנות מקור פתוח'
+title: 'Dart: shinyu.org: מדריכי תכנות מקור פתוח'
 linkTitle: Dart
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

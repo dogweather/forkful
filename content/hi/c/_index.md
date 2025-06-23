@@ -1,5 +1,5 @@
 ---
-title: 'C: Forkful: ओपन सोर्स प्रोग्रामिंग ट्यूटोरियल्स'
+title: 'C: shinyu.org: ओपन सोर्स प्रोग्रामिंग ट्यूटोरियल्स'
 linkTitle: C
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

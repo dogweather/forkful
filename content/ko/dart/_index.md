@@ -1,5 +1,5 @@
 ---
-title: 'Dart: Forkful: 오픈 소스 프로그래밍 튜토리얼'
+title: 'Dart: shinyu.org: 오픈 소스 프로그래밍 튜토리얼'
 linkTitle: Dart
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

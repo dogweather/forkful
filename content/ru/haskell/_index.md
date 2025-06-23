@@ -1,5 +1,5 @@
 ---
-title: 'Haskell: Forkful: Учебники по программированию с открытым исходным кодом'
+title: 'Haskell: shinyu.org: Учебники по программированию с открытым исходным кодом'
 linkTitle: Haskell
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

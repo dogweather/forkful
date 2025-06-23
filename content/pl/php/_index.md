@@ -1,5 +1,5 @@
 ---
-title: 'PHP: Forkful: Samouczki programowania open source'
+title: 'PHP: shinyu.org: Samouczki programowania open source'
 linkTitle: PHP
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

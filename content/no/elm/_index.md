@@ -1,5 +1,5 @@
 ---
-title: 'Elm: Forkful: Åpen kildekode programmeringsveiledninger'
+title: 'Elm: shinyu.org: Åpen kildekode programmeringsveiledninger'
 linkTitle: Elm
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

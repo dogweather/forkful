@@ -1,5 +1,5 @@
 ---
-title: 'PowerShell: Forkful: ওপেন সোর্স কোডিং কুকবুক'
+title: 'PowerShell: shinyu.org: ওপেন সোর্স কোডিং কুকবুক'
 linkTitle: PowerShell
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

@@ -1,5 +1,5 @@
 ---
-title: 'Lua: Forkful: Åpen kildekode programmeringsveiledninger'
+title: 'Lua: shinyu.org: Åpen kildekode programmeringsveiledninger'
 linkTitle: Lua
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

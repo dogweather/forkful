@@ -1,5 +1,5 @@
 ---
-title: 'Elixir: Forkful Open Source Coding Cookbook'
+title: 'Elixir: shinyu.org Open Source Coding Cookbook'
 linkTitle: Elixir
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

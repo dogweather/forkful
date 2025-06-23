@@ -1,5 +1,5 @@
 ---
-title: 'Haskell: Forkful: Hướng dẫn Lập trình Mã nguồn Mở'
+title: 'Haskell: shinyu.org: Hướng dẫn Lập trình Mã nguồn Mở'
 linkTitle: Haskell
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

@@ -1,5 +1,5 @@
 ---
-title: 'Google Apps Script: Das Forkful open-source coding-Cookbook'
+title: 'Google Apps Script: Das shinyu.org open-source coding-Cookbook'
 linkTitle: Google Apps Script
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

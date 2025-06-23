@@ -1,5 +1,5 @@
 ---
-title: 'Arduino: Forkful: Учебники по программированию с открытым исходным кодом'
+title: 'Arduino: shinyu.org: Учебники по программированию с открытым исходным кодом'
 linkTitle: Arduino
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

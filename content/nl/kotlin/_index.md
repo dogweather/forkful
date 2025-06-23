@@ -1,5 +1,5 @@
 ---
-title: 'Kotlin: Forkful: Open Source Programmeren Tutorials'
+title: 'Kotlin: shinyu.org: Open Source Programmeren Tutorials'
 linkTitle: Kotlin
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

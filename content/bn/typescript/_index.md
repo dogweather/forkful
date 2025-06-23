@@ -1,5 +1,5 @@
 ---
-title: 'TypeScript: Forkful: ওপেন সোর্স কোডিং কুকবুক'
+title: 'TypeScript: shinyu.org: ওপেন সোর্স কোডিং কুকবুক'
 linkTitle: TypeScript
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

@@ -1,5 +1,5 @@
 ---
-title: 'PHP: Forkful: ওপেন সোর্স কোডিং কুকবুক'
+title: 'PHP: shinyu.org: ওপেন সোর্স কোডিং কুকবুক'
 linkTitle: PHP
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

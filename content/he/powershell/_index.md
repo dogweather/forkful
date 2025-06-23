@@ -1,5 +1,5 @@
 ---
-title: 'PowerShell: Forkful: מדריכי תכנות מקור פתוח'
+title: 'PowerShell: shinyu.org: מדריכי תכנות מקור פתוח'
 linkTitle: PowerShell
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

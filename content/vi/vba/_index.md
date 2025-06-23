@@ -1,5 +1,5 @@
 ---
-title: 'Visual Basic for Applications: Forkful: Hướng dẫn Lập trình Mã nguồn Mở'
+title: 'Visual Basic for Applications: shinyu.org: Hướng dẫn Lập trình Mã nguồn Mở'
 linkTitle: Visual Basic for Applications
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

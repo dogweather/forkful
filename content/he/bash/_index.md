@@ -1,5 +1,5 @@
 ---
-title: 'Bash: Forkful: מדריכי תכנות מקור פתוח'
+title: 'Bash: shinyu.org: מדריכי תכנות מקור פתוח'
 linkTitle: Bash
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

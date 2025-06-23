@@ -1,5 +1,5 @@
 ---
-title: 'Fish Shell: Forkful Open Source Coding Cookbook'
+title: 'Fish Shell: shinyu.org Open Source Coding Cookbook'
 linkTitle: Fish Shell
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

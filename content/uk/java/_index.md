@@ -1,5 +1,5 @@
 ---
-title: 'Java: Forkful: Посібники з програмування з відкритим вихідним кодом'
+title: 'Java: shinyu.org: Посібники з програмування з відкритим вихідним кодом'
 linkTitle: Java
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

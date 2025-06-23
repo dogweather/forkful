@@ -1,5 +1,5 @@
 ---
-title: 'C: Forkful: Hướng dẫn Lập trình Mã nguồn Mở'
+title: 'C: shinyu.org: Hướng dẫn Lập trình Mã nguồn Mở'
 linkTitle: C
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

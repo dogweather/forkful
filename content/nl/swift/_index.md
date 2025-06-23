@@ -1,5 +1,5 @@
 ---
-title: 'Swift: Forkful: Open Source Programmeren Tutorials'
+title: 'Swift: shinyu.org: Open Source Programmeren Tutorials'
 linkTitle: Swift
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00

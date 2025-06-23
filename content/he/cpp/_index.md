@@ -1,5 +1,5 @@
 ---
-title: 'C++: Forkful: מדריכי תכנות מקור פתוח'
+title: 'C++: shinyu.org: מדריכי תכנות מקור פתוח'
 linkTitle: C++
 type: page_proglang
 date: 2024-02-29 21:07:03.006780-07:00
